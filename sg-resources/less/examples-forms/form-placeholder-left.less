@@ -1,0 +1,41 @@
+/* CSS Document */
+.form-placeholder-left {
+    .form-group {
+        label {
+            float: left;
+            width: 150px;
+            padding: 6px 12px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            + input, + select {
+                width: ~"calc(100% - 150px)";
+                border-radius: 0 4px 4px 0;
+                border-left: 0;
+                float: left;
+            }
+        }
+        .chosen-container {
+            float: left;
+            width: ~"calc(100% - 150px) !important";
+            .chosen-single {
+                background: #fff;
+                border: 1px solid #ccc;
+                border-left: none;
+                border-radius: 0 4px 4px 0;
+            }
+        }
+        &.col-sm-4, &.col-sm-3{
+            label {
+                width: 100px;
+                + input, + select {
+                    width: ~"calc(100% - 100px)";
+                }
+            }
+            .chosen-container {
+                float: left;
+                width: ~"calc(100% - 100px) !important";
+            }
+        }
+    }
+}

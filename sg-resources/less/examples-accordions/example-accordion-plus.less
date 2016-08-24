@@ -1,0 +1,42 @@
+/* CSS Document */
+.example-accordion-plus {
+    a {
+        .transition;
+        display: block;
+        position: relative;
+        
+        &:before, &:after {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            background: @red;
+            content: " ";
+        }
+        
+        &:before {
+            height: 2px;
+            width: 14px;
+            transform: translate(0, -50%);
+        }
+        
+        &:after {
+            width: 2px;
+            height: 14px;
+            transform: translate(-6px, -50%);
+            .transition;
+        }
+        
+        &[aria-expanded="true"] {
+            color: @black;
+            cursor: default;
+            
+            &:before, &:after {
+                background: @black;
+            }
+            
+            &:after {
+                transform: translate(-6px, -50%) rotate(90deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,264 @@
+/* CSS DOCUMENT */
+/*---===<<< TEXT STYLING >>>===---*/
+/*---=== TEXT ALIGNMENT ===---*/
+.ta-left {
+    text-align: left;
+}
+
+.ta-right {
+    text-align: right;
+}
+
+.ta-center {
+    text-align: center;
+}
+/*---=== TEXT TRANSFORMS ===---*/
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+/*---=== WEIGHTS ===---*/
+.fw-xbold {
+    font-weight: 800;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-medi {
+    font-weight: 500;
+}
+
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-xlight {
+    font-weight: 200;
+}
+/*---=== STYLING ===---*/
+.fs-italic {
+    font-style: italic;
+}
+
+.fs-oblique {
+    font-style: oblique;
+}
+
+.fs-normal {
+    font-style: normal;
+}
+/*---=== FONT SIZE ===---*/
+.fs(@fs: 1.4) {
+    @remValue: @fs;
+    @pxValue: (@fs * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+}
+
+.lh(@lh: 1.5em;) {
+    line-height: @lh;
+}
+
+.fslh(@fs: 1.4, @lh: 1.5em) {
+    .fs(@fs);
+    line-height: @lh;
+}
+
+.fsVW(@fs: 14vw) {
+    font-size: @fs;
+}
+
+.fslhVW(@fs: 14vw, @lh: 1.5em) {
+    .fsVW(@fs);
+    line-height: @lh;
+}
+/*---===<<< CLEARS >>>===---*/
+.clear {
+    clear: both;
+}
+
+.clearfix {
+    &:before, &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+/*---===<<< COLORS >>>===---*/
+/*---=== BACKGROUNDS ===---*/
+/*---=== TEXT ===--*/
+/*---===<<< STYLING >>>===---*/
+/*---=== OPACITY  ===---*/
+.opacity(@val: 50) {
+    filter: alpha(opacity=@val);
+    opacity: (@val * .01);
+}
+/*---=== CSS 3 COMPONENTS ===---*/
+.border-radius(@rad: 0) {
+    -webkit-border-radius: @rad;
+    -moz-border-radius: @rad;
+    border-radius: @rad;
+}
+
+.transition(@prop: all, @dur: .15s, @tf: linear) {
+    -webkit-transition: @prop @dur @tf;
+    -moz-transition: @prop @dur @tf;
+    -ms-transition: @prop @dur @tf;
+    -o-transition: @prop @dur @tf;
+    transition: @prop @dur @tf;
+}
+
+.transition-slower(@prop: all, @dur: .4s, @tf: linear) {
+    -webkit-transition: @prop @dur @tf;
+    -moz-transition: @prop @dur @tf;
+    -ms-transition: @prop @dur @tf;
+    -o-transition: @prop @dur @tf;
+    transition: @prop @dur @tf;
+}
+
+.multi-transition(@def) {
+    -webkit-transition: @def;
+    -moz-transition: @def;
+    -ms-transition: @def;
+    -o-transition: @def;
+    transition: @def;
+}
+
+.box-shadow(@color: @black, @s: 0, @h: 0, @v: 0, @b: 15px) {
+    -webkit-box-shadow: @h @v @b @s @color;
+    -moz-box-shadow: @h @v @b @s @color;
+    box-shadow: @h @v @b @s @color;
+}
+
+.box-shadow-none {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.inset-box-shadow(@color: @white, @s: 5px, @h: 0, @v: 0, @b: 0) {
+    -webkit-box-shadow: @h @v @b @s @color inset;
+    -moz-box-shadow: @h @v @b @s @color inset;
+    box-shadow: @h @v @b @s @color inset;
+}
+
+.text-shadow(@color: @black, @h: 4px, @v: 4px, @b: 2px) {
+    -webkit-text-shadow: @h @v @b @color;
+    -moz-text-shadow: @h @v @b @color;
+    text-shadow: @h @v @b @color;
+}
+
+.text-shadow-none {
+    text-shadow: none;
+}
+
+.mix-blend-mode(@type: multiply) {
+    -webkit-mix-blend-mode: @type;
+    -moz-mix-blend-mode: @type;
+    mix-blend-mode: @type;
+}
+
+.columns(@count: 2, @gap: (@gutter * 4), @rule-w: 1px, @rule-color: @grey-6) {
+    -webkit-column-count: @count;
+    -moz-column-count: @count;
+    column-count: @count;
+    -webkit-column-gap: @gap;
+    -moz-column-gap: @gap;
+    column-gap: @gap;
+    -webkit-column-rule: @rule-w outset @rule-color;
+    -moz-column-rule: @rule-w outset @rule-color;
+    column-rule: @rule-w outset @rule-color;
+}
+/*--- TRANSFORMS ---*/
+.transform(@prop) {
+    -webkit-transform: @prop;
+    -moz-transform: @prop;
+    -ms-transform: @prop;
+    -o-transform: @prop;
+    transform: @prop;
+}
+
+.transformOrigin(@xaxis: center, @yaxis: center) {
+    -ms-transform-origin: @xaxis @yaxis;
+    -webkit-transform-origin: @xaxis @yaxis;
+    transform-origin: @xaxis @yaxis;
+}
+
+.rotate(@deg: 45deg) {
+    .transform(@prop: rotate(@deg));
+}
+
+.rotateY(@deg: 0deg) {
+    .transform(@prop: rotateY(@deg));
+}
+
+.translate(@x: 0, @y: 0) {
+    .transform(@prop: translate(@x, @y));
+}
+
+.translateX(@x: 0) {
+    .transform(@prop: translateX(@x));
+}
+
+.translateY(@y: 0) {
+    .transform(@prop: translateY(@y));
+}
+
+.translate3d(@x: 0, @y: 0, @z: 0) {
+    .transform(@prop: translate(@x, @y, @z));
+}
+
+.scale(@x: 0, @y: 0) {
+    .transform(@prop: scale(@x, @y));
+}
+
+.skew(@x, @y) {
+    .transform(@prop: skew(@x, @y));
+}
+/*--- FILTERS ---*/
+.filter(@filter: grayscale(100%)) {
+    -webkit-filter: @filter;
+    filter: @filter;
+}
+
+.grayscale(@scale: 100%) {
+    .filter(~'grayscale('@scale~')');
+}
+
+.greyscale(@scale: 100%) {
+    .filter(~'grayscale('@scale~')');
+}
+
+.brightness(@scale: 100%) {
+    .filter(~'brightness('@scale~')');
+}
+
+
+.contrast(@scale: 100%) {
+    .filter(~'contrast('@scale~')');
+}
+
+.invert(@scale: 100%) {
+    .filter(~'invert('@scale~')');
+}
+
+.opacity(@scale: 100%) {
+    .filter(~'opacity('@scale~')');
+}
+
+.saturate(@scale: 100%) {
+    .filter(~'saturate('@scale~')');
+}
+
+.sepia(@scale: 100%) {
+    .filter(~'sepia('@scale~')');
+}

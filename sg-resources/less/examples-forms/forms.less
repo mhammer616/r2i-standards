@@ -1,0 +1,99 @@
+/* CSS Document */
+.form-radio {
+    input {
+        position: absolute;
+        visibility: hidden;
+    }
+    label {
+        &:before {
+            content: '';
+            background: #fff;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px @teal;
+            display: block;
+            float: left;
+            margin: 0 10px 0 0;
+            position: relative;
+            top: 5px;
+            border-radius: 50%;
+            .transition;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    input:checked {
+        + label {
+            &:before {
+                background: @teal;
+            }
+        }
+    }
+}
+.form-checkbox {
+    input {
+        position: absolute;
+        visibility: hidden;
+    }
+    label {
+        &:before {
+            content: '';
+            background: #fff;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px @teal;
+            display: block;
+            float: left;
+            margin: 0 10px 0 0;
+            position: relative;
+            top: 5px;
+            .transition;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    input:checked {
+        + label {
+            &:before {
+                background: @teal;
+            }
+        }
+    }
+}
+.form {
+    .chosen-container {
+        .chosen-single {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 6px 12px;
+            height: 34px;
+            > div {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translate(0, -50%);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 6px 0 6px;
+                border-color: #000 transparent transparent transparent;
+                .transition();
+            }
+        }
+        &.chosen-with-drop {
+            .chosen-single {
+                > div {
+                    transform: translate(0, -50%) rotate(180deg);
+                    border-style: solid;
+                    border-width: 6px 6px 0 6px;
+                    border-color: #000 transparent transparent transparent;
+                }
+            }
+        }
+    }
+}
