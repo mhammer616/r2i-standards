@@ -62,9 +62,14 @@ a#navMainToggle {
         > li {
             > a {
                 color: #fff;
+                &:hover, &:focus, &:active {
+                    background: none;
+                    color: @navy;
+                }
             }
             &.active {
                 > a {
+                    color: @navy;
                 }
             }
             > ul {

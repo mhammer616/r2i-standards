@@ -73,8 +73,8 @@
             </div>
         </section>
         <section class="info" id="forms-info">
-            <div class="row">
-                <nav class="col-sm-3 hidden-xs nav-int" id="forms-nav" data-spy="affix" data-offset-top="60" data-offset-bottom="0" data-target="#forms-info">
+            <div class="row stickem-container">
+                <nav class="col-sm-3 hidden-xs nav-int stickem" id="forms-nav">
                     <ul class="nav">
                         <li><a href="#form-basics">Basic Guidelines</a>
                             <ul>
@@ -1655,8 +1655,8 @@ form .form-group textarea.form-control {}</code></pre>
             </div>
         </section>
         <section class="info" id="tabs-info">
-            <div class="row">
-                <nav class="col-sm-3 hidden-xs nav-int" id="tabs-nav">
+            <div class="row stickem-container">
+                <nav class="col-sm-3 hidden-xs nav-int stickem" id="tabs-nav">
                     <ul class="nav">
                         <li><a href="#overview-tabs">Overview</a></li>
                         <li><a href="#horizontal-tabs">Horizontal Tabs</a>
@@ -2811,8 +2811,8 @@ form .form-group textarea.form-control {}</code></pre>
             </div>
         </section>
         <section class="info" id="accordion-info">
-            <div class="row">
-                <nav class="col-sm-3 hidden-xs nav-int" id="accordion-nav">
+            <div class="row stickem-container">
+                <nav class="col-sm-3 hidden-xs nav-int stickem" id="accordion-nav">
                     <ul class="nav">
                         <li><a href="#overview-accordions">Overveiew</a></li>
                         <li><a href="#bootstrap-accordions">Bootstrap Accordions</a></li>
@@ -3679,8 +3679,8 @@ form .form-group textarea.form-control {}</code></pre>
             </div>
         </section>
         <section class="info" id="carousel-info">
-            <div class="row">
-                <nav class="col-sm-3 hidden-xs nav-int" id="carousel-nav">
+            <div class="row stickem-container">
+                <nav class="col-sm-3 hidden-xs nav-int stickem" id="carousel-nav">
                     <ul class="nav">
                         <li><a href="#overview-carousel">Overveiew</a></li>
                         <li><a href="#bootstrap-carousel">Bootstrap Carousel</a></li>
@@ -3692,7 +3692,7 @@ form .form-group textarea.form-control {}</code></pre>
                     <h2 id="overview-carousel">Overview</h2>
                     <p>We have three different accepted best practices for Carousels.  If Bootstrap Carousel fits your needs, it should be used first, but sometimes, we have a need to show multiple slides at once which Bootstrap was not built for, step in Owl Carousel and jCarousel.</p>
                     <p>Before diving into the code, decide which of the three is right for your website. Ask the following:</p>
-                    <ul>
+                    <ul class="custom">
                         <li>Which one most looks like the design?</li>
                         <li>Do I need to have multiple slides visible at once?</li>
                         <li>What controls do I need to include?</li>
@@ -3809,14 +3809,15 @@ form .form-group textarea.form-control {}</code></pre>
             </div>
         </section>
         <section class="info" id="coding-info">
-            <div class="row">
-                <nav class="col-sm-3 hidden-xs nav-int" id="coding-nav">
+            <div class="row stickem-container">
+                <nav class="col-sm-3 hidden-xs nav-int stickem" id="coding-nav">
                     <ul class="nav">
                         <li><a href="#overview-standards">Overveiew</a></li>
                         <li><a href="#basic-guidelines">Basic Guidelines</a></li>
                         <li><a href="#browsers">Browser Support</a></li>
                         <li><a href="#progressive-vs-gracefull">Progressive Enhancement vs. Graceful Degradation</a></li>
                         <li><a href="#folder-structure">Folder Structure</a></li>
+                        <li><a href="#naming-conventions">Naming Conventions</a></li>
                         <li><a href="#modernizr">Modernizr</a></li>
                         <li><a href="#jQuery">jQuery</a></li>
                         <li><a href="#bootstrap">Bootstrap</a></li>
@@ -3877,20 +3878,20 @@ form .form-group textarea.form-control {}</code></pre>
                     <p style="margin-left: 30px"><strong>Video</strong>: using HTML 5 video for backgrounds or even self-hosting videos is a great approach, however, get a Flash player to fallback to using the HTML tags properly to work on older browsers. For the backgrounds, just load an image instead of the video.</p>
                     <h2 id="folder-structure">Folder Structure</h2>
                     <p>Our ideal folder structure, which is what we want used when developing websites without CMS's is the following:</p>
-                    <ul>
+                    <ul class="custom">
                         <li>assets
-                            <ul>
+                            <ul class="custom">
                                 <li>global
-                                    <ul>
+                                    <ul class="custom">
                                         <li>JavaScript files
-                                            <ul>
+                                            <ul class="custom">
                                                 <li>modernizr.js</li>
                                                 <li>jquery.js</li>
                                                 <li>bootstrap.js</li>
                                             </ul>
                                         </li>
                                         <li>Less files
-                                            <ul>
+                                            <ul class="custom">
                                                 <li>variables.less</li>
                                                 <li>mixins.less</li>
                                                 <li>fonts.less</li>
@@ -3900,10 +3901,10 @@ form .form-group textarea.form-control {}</code></pre>
                                     </ul>
                                 </li>
                                 <li>template-folders
-                                    <ul>
+                                    <ul class="custom">
                                         <li>JavaScript files</li>
                                         <li>Less file that imports available components on that page
-                                            <ul>
+                                            <ul class="custom">
                                                 <li>@import url(../global/fonts.less);</li>
                                                 <li>@import url(../global/variables.less);</li>
                                                 <li>@import url(../global/mixins.less);</li>
@@ -3915,7 +3916,7 @@ form .form-group textarea.form-control {}</code></pre>
                                     </ul>
                                 </li>
                                 <li>component-folders
-                                    <ul>
+                                    <ul class="custom">
                                         <li>JavaScript files</li>
                                         <li>Less files</li>
                                         <li>HTML file (example markup of component, not necessary)</li>
@@ -3929,6 +3930,33 @@ form .form-group textarea.form-control {}</code></pre>
                     <p>Component naming convention should be {component use}-{specific component type}.  </p>
                     <p>For example: Main Navigation should be nav-main, and interior navigation should be nav-interior or nav-sub. </p>
                     <p>Another example: blog components list-blog, detail-blog, categories-blog, related-articles-blog.</p>
+                    <h2 id="naming-conventions">Naming Conventions</h2>
+                    <p>Our naming conventions is pretty simple and straightforward.  It should be used on modules, components, CSS/Less, and JavaScript.</p>
+                    <p>The basics are:</p>
+                    <ol class="custom">
+                        <li><h3>All class names lowercase and dashes</h3>
+                            <p>Keep all class names lowercased and if your class names are multiword, change the space to a dash.</p></li>
+                        <li><h3>IDs should be camel cased, most of the time</h3>
+                            <p>Unless the id is used as a hash on the page that is navigated to, camel case the id's, if the id is for navigation keep it all lower cased and separate words with dashes.</p></li>
+                        <li><h3>Name for what it does, not how it looks</h3>
+                            <p>By naming things for what, or how, it will be used, we avoid having names that are no longer meaningful, for instance a submit button that is green today may be blue tomorrow.</p>
+                            <p>That's not to say that naming based on color should never be used, like on a site where the client wants to be able to change colors from a choice of 8 or 9, giving them color based names to do so would make sense.</p></li>
+                        <li><h3>Naming structure generic to specific</h3>
+                            <p>Create a system where like components start with the same base and become more specific.  For example start all carousels with a base class of carousel that you can style similar features with, then make a more specific class like carousel-people and carousel-home for more specific carousels.</p>
+                            <p>Here are some common groupings that we should use:</p>
+                            <ul class="custom">
+                                <li>cta- all call to actions should start with this class prefix</li>
+                                <li>banner- all banners, full width call to actions, page headings, or anything else that goes all the way across the page, should start with this class prefix</li>
+                                <li>list- all article listings, blog, news, events, and resources, should start with this prefix</li>
+                                <li>carousel- all carousels should start with this prefix</li>
+                                <li>accordion- all accordions should start with this prefix</li>
+                                <li>tabs- all tabs should start with this prefix</li>
+                                <li>form- all forms should start with this prefix</li>
+                                <li>nav- all navigations should start with this prefix</li>
+                                <li>btn- all buttons should start with this prefix, and make sure that the class supports anchors, buttons, and inputs with that class.</li>
+                            </ul></li>
+                    </ol>
+                    <p>These rules should be followed for all things we create, for example, when creating a new Carousel Component for the Home Page, you would add a Less file named carousel-home, that contains all the style definitions needed for the carousel, in that file all the classes should fall within the .carousel-home wrapper, if special JavaScript needs to be loaded to make the component work, add a js file named carousel-home.  If you need a unique id on it start it with carouselHome then add a guid so that it's unique and can be used multiple times on a single page.</p>
                     <h2 id="modernizr">Modernizr</h2>
                     <p><a href="http://modernizr.com" target="_blank">Modernizr.js</a> is an online utility that allows us to identify and detect if a browser supports a speecial feature.  Outlined in the <a href="#progressive-vs-gracefull">Progressive Enhancement vs. Graceful Degradation</a> we said why we want to detect features over browsers and supply fallbacks for styling or features that may not be supported.  We always want to try to enhance the experience over degrading, so keep that in mind when using detection.</p>
                     <p>When using this tool, you can create a version custom built for your website, or you can load all the detections. Generally it's easier to add the detections as you build the website and keep updating the file.  The great thing about the download you receive when building Modernizr on their website is there will be a URL that you can go to that will have all your previously selected elements.  Keep that in the JS file so that someone coming in later can use that link to select the right items you've already setup for detection.</p>
@@ -3962,8 +3990,11 @@ form .form-group textarea.form-control {}</code></pre>
 </footer>
 <script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="/standards-guide/sg-resources/js/chosen.jquery.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/stickem.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
+        jQuery('.nav-int').each(function(i, obj) {
+        });
         jQuery('.nav-main a, .nav-int a, a.goto').on('click', function() {
             event.preventDefault();
             var loc = jQuery(this).attr('href'),
@@ -3974,8 +4005,7 @@ form .form-group textarea.form-control {}</code></pre>
             });
         });
         jQuery('body').scrollspy({
-            target: '.nav-main',
-            offset: jQuery('header').outerHeight(true) + 60
+            target: '.nav-main'
         });
         jQuery('#navMainToggle').on('click', function() {
             jQuery(this).toggleClass('active');
@@ -3984,6 +4014,7 @@ form .form-group textarea.form-control {}</code></pre>
         jQuery('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
+        jQuery('.info').stickem();
     });
 </script>
 </body>

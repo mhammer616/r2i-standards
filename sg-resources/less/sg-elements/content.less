@@ -57,11 +57,33 @@
             color: #fff;
         }
     }
+    ul.custom {
+        list-style: none;
+        
+        > li {
+            position: relative;
+            
+            + li {
+                margin-top: .75em;
+            }
+            
+            &:before {
+                content: '';
+                position: absolute;
+                left: -15px;
+                top: 8px;
+                width: 5px;
+                height: 5px;
+                background: @red;
+                display: block;
+            }
+        }
+    }
     ol.custom {
         list-style: none;
         counter-reset: my-badass-counter;
         
-        li {
+        > li {
             position: relative;
             
             &:before {
@@ -84,7 +106,14 @@
         h2, h3, h4, h5, h6 {
             color: @navy;
         }
-        ol {
+        ul.custom {
+            > li {
+                &:before {
+                    background: @navy;
+                }
+            }
+        }
+        ol.custom {
             li {
                 &:before {
                     color: @navy;
@@ -96,7 +125,14 @@
         h2, h3, h4, h5, h6 {
             color: @navy;
         }
-        ol {
+        ul.custom {
+            > li {
+                &:before {
+                    background: @navy;
+                }
+            }
+        }
+        ol.custom {
             li {
                 &:before {
                     color: @navy;
@@ -108,7 +144,14 @@
         h2, h3, h4, h5, h6 {
             color: @blue-grey;
         }
-        ol {
+        ul.custom {
+            > li {
+                &:before {
+                    background: @blue-grey;
+                }
+            }
+        }
+        ol.custom {
             li {
                 &:before {
                     color: @blue-grey;
@@ -120,7 +163,14 @@
         h2, h3, h4, h5, h6 {
             color: @blue;
         }
-        ol {
+        ul.custom {
+            > li {
+                &:before {
+                    background: @blue;
+                }
+            }
+        }
+        ol.custom {
             li {
                 &:before {
                     color: @blue;
@@ -132,7 +182,14 @@
         h2, h3, h4, h5, h6 {
             color: @teal;
         }
-        ol {
+        ul.custom {
+            > li {
+                &:before {
+                    background: @teal;
+                }
+            }
+        }
+        ol.custom {
             li {
                 &:before {
                     color: @teal;
@@ -144,7 +201,14 @@
         h2, h3, h4, h5, h6 {
             color: @red;
         }
-        ol {
+        ul.custom {
+            > li {
+                &:before {
+                    background: @red;
+                }
+            }
+        }
+        ol.custom {
             li {
                 &:before {
                     color: @red;
