@@ -1,44 +1,45 @@
 /* CSS Document */
-.jumbotron {
-    min-height: 100vh;
-    position: relative;
-    margin: 0;
-    .text {
-        max-width: 1440px;
-        width: 85vw;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        .translate(-50%, -50%);
-        .ta-center;
-        h1 {
-            font-size: 4vw;
-            .fw-bold;
-            .uppercase;
-            color: #fff;
-        }
-        p {
-            font-size: 1.25vw;
-            color: #fff;
-        }
-        
-    }
-    .theme-navy & {
-        background: @navy url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
-    }
-    .theme-grey & {
-        background: @grey url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
-    }
-    .theme-blue-grey & {
-        background: @blue-grey url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
-    }
-    .theme-blue & {
-        background: @blue url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
-    }
-    .theme-teal & {
-        background: @teal url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
-    }
-    .theme-red & {
-        background: @red url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
-    }
+> header {
+	min-height: 100vh;
+	position: relative;
+	margin: 0;
+	
+	> div {
+		max-width: 1440px;
+		width: 85vw;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		.translate(-50%, -50%);
+		.ta-center;
+		h1 {
+			font-size: 4vw;
+			.fw-bold;
+			.uppercase;
+			color: #fff;
+		}
+		p {
+			font-size: 1.25vw;
+			color: #fff;
+		}
+		
+	}
+}
+&.theme-navy > header {
+	background: @navy url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
+}
+&.theme-grey > header {
+	background: @grey url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
+}
+&.theme-blue-grey > header {
+	background: @blue-grey url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
+}
+&.theme-blue > header {
+	background: @blue url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
+}
+&.theme-teal > header {
+	background: @teal url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
+}
+&.theme-red > header {
+	background: @red url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
 }

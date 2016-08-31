@@ -1,42 +1,226 @@
 /* CSS Document */
-body {
-    font-size: 62.5%;
+> h2 {
+	font-size: 3.5rem;
+	.fw-bold;
+	margin: 0 0 (@gutter * 2);
+	padding: 0 0 (@gutter * 2);
+	border-bottom: 2px solid #c0c0c0;
+	~ h2 {
+		margin: (@gutter * 2) 0;
+		padding: (@gutter * 2) 0;
+		border-top: 2px solid #c0c0c0;
+	}
 }
-main {
-    h1, h2, h3, h4, h5, li, p, blockquote, div, td, th, article, section, figure, pre, table {
-        &.sg {
-        }
-    }
-    h1 {
-        &.sg {
-        }
-    }
-    h2 {
-        &.sg {
-        }
-    }
-    h3 {
-        &.sg {
-        }
-    }
-    h4 {
-        &.sg {
-        }
-    }
-    h5 {
-        &.sg {
-        }
-    }
-    h6 {
-        &.sg {
-        }
-    }
-    p, li, div, blockquote, article, section, figure, table {
-        &.sg {
-        }
-    }
-    p {
-        &.sg {
-        }
-    }
+> h3 {
+	font-size: 2.5rem;
+	.fw-bold;
+	margin: (@gutter * 2) 0;
+}
+> h4 {
+	font-size: 2rem;
+	.fw-bold;
+}
+> h5 {
+	font-size: 1.5rem;
+	.fw-bold;
+}
+> h6 {
+	font-size: 1.5rem;
+}
+> p {
+	font-size: 1.5rem;
+	line-height: 1.5em;
+	color: @navy;
+}
+.code {
+	color: @teal;
+	background: rgba(0, 192, 181, .15);
+}
+> .bs-example {
+	border: 1px solid #343436;
+	padding: (@gutter * 5) (@gutter * 2) (@gutter * 2);
+	margin: (@gutter * 2) 0 0;
+	box-shadow: 0 1px 1px #343436;
+	position: relative;
+	&:before {
+		display: block;
+		content: "Example:";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		padding: @gutter;
+		background: -moz-linear-gradient(top, #20282D 3%, #252E34 51%, #222A30 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#20282D), color-stop(51%,#252E34), color-stop(100%,#222A30));
+		background: gradient(linear, left top, left bottom, color-stop(3%,#20282D), color-stop(51%,#252E34), color-stop(100%,#222A30));
+		color: #fff;
+	}
+}
+.embed-responsive {
+	margin: 0 0 15px;
+}
+img.img-thumbnail {
+	border: 2px solid @grey;
+	.border-radius(15px);
+	padding: 15px;
+	margin: 0 0 15px;
+}
+ul.custom {
+	list-style: none;
+	
+	> li {
+		position: relative;
+		
+		+ li {
+			margin-top: .75em;
+		}
+		
+		&:before {
+			content: '';
+			position: absolute;
+			left: -15px;
+			top: 8px;
+			width: 5px;
+			height: 5px;
+			background: @red;
+			display: block;
+		}
+	}
+}
+ol.custom {
+	list-style: none;
+	counter-reset: my-badass-counter;
+	
+	> li {
+		position: relative;
+		
+		&:before {
+			content: counter(my-badass-counter);
+			counter-increment: my-badass-counter;
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 2.5rem;
+			.fw-bold;
+			line-height: 1em;
+			transform: translate(~"calc(-100% - 10px)", 0);
+		}
+	}
+}
+a {
+	color: @red;
+}
+.theme-navy & {
+	h2, h3, h4, h5, h6 {
+		color: @navy;
+	}
+	ul.custom {
+		> li {
+			&:before {
+				background: @navy;
+			}
+		}
+	}
+	ol.custom {
+		li {
+			&:before {
+				color: @navy;
+			}
+		}
+	}
+}
+.theme-grey & {
+	h2, h3, h4, h5, h6 {
+		color: @navy;
+	}
+	ul.custom {
+		> li {
+			&:before {
+				background: @navy;
+			}
+		}
+	}
+	ol.custom {
+		li {
+			&:before {
+				color: @navy;
+			}
+		}
+	}
+}
+.theme-blue-grey & {
+	h2, h3, h4, h5, h6 {
+		color: @blue-grey;
+	}
+	ul.custom {
+		> li {
+			&:before {
+				background: @blue-grey;
+			}
+		}
+	}
+	ol.custom {
+		li {
+			&:before {
+				color: @blue-grey;
+			}
+		}
+	}
+}
+.theme-blue & {
+	h2, h3, h4, h5, h6 {
+		color: @blue;
+	}
+	ul.custom {
+		> li {
+			&:before {
+				background: @blue;
+			}
+		}
+	}
+	ol.custom {
+		li {
+			&:before {
+				color: @blue;
+			}
+		}
+	}
+}
+.theme-teal & {
+	h2, h3, h4, h5, h6 {
+		color: @teal;
+	}
+	ul.custom {
+		> li {
+			&:before {
+				background: @teal;
+			}
+		}
+	}
+	ol.custom {
+		li {
+			&:before {
+				color: @teal;
+			}
+		}
+	}
+}
+.theme-red & {
+	h2, h3, h4, h5, h6 {
+		color: @red;
+	}
+	ul.custom {
+		> li {
+			&:before {
+				background: @red;
+			}
+		}
+	}
+	ol.custom {
+		li {
+			&:before {
+				color: @red;
+			}
+		}
+	}
 }
