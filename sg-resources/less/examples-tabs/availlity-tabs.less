@@ -1,0 +1,130 @@
+/* CSS Document */
+.example-availity-tabs {
+    .tab-wrap {
+        width: 100%;
+        background: #f2f2f1;
+        padding: 6.5rem 6rem 10rem;
+    }
+    .tab-wrap .nav-tabs {
+        margin: 0 auto -1px;
+        max-width: 1600px;
+        border: none;
+    }
+    .tab-wrap .nav-tabs li {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #d9d9d6;
+    }
+    .tab-wrap .nav-tabs li + li {
+        border-left: none;
+    }
+    .tab-wrap .nav-tabs li:before {
+        display: none;
+    }
+    .tab-wrap .nav-tabs li a {
+        border: none;
+        color: #8b8d8e;
+        font-size: 18px;
+        line-height: 22px;
+        display: block;
+        padding: 19px 38px 26px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    .tab-wrap .nav-tabs li a:hover {
+        background: transparent;
+    }
+    .tab-wrap .nav-tabs li a span {
+        padding: 0 0 17px 0;
+        margin: 0;
+        display: block;
+        position: relative;
+    }
+    .tab-wrap .nav-tabs li a span:before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 3px;
+        width: 50px;
+        background-color: #8b8d8e;
+        bottom: 0;
+        left: 0;
+    }
+    .tab-wrap .nav-tabs li.active {
+        background-color: white;
+        border-bottom: 1px solid white;
+    }
+    .tab-wrap .nav-tabs li.active a {
+        border: none;
+    }
+    .tab-wrap .nav-tabs li.active a.white span:before {
+        background-color: white;
+    }
+    .tab-wrap .nav-tabs li.active a.black span:before {
+        background-color: black;
+    }
+    .tab-wrap .nav-tabs li.active a.grey-1 span:before {
+        background-color: #4d4f53;
+    }
+    .tab-wrap .nav-tabs li.active a.grey-2 span:before {
+        background-color: #63666a;
+    }
+    .tab-wrap .nav-tabs li.active a.grey-3 span:before {
+        background-color: #8b8d8e;
+    }
+    .tab-wrap .nav-tabs li.active a.grey-4 span:before {
+        background-color: #bcbec0;
+    }
+    .tab-wrap .nav-tabs li.active a.grey-5 span:before {
+        background-color: #c8c9c7;
+    }
+    .tab-wrap .nav-tabs li.active a.grey-6 span:before {
+        background-color: #d9d9d6;
+    }
+    .tab-wrap .nav-tabs li.active a.orange span:before {
+        background-color: #ff671f;
+    }
+    .tab-wrap .nav-tabs li.active a.yellow span:before {
+        background-color: #dbe442;
+    }
+    .tab-wrap .nav-tabs li.active a.pale-green span:before {
+        background-color: #78d64b;
+    }
+    .tab-wrap .nav-tabs li.active a.green span:before {
+        background-color: #00ab84;
+    }
+    .tab-wrap .nav-tabs li.active a.aqua span:before {
+        background-color: #3cdbc0;
+    }
+    .tab-wrap .nav-tabs li.active a.blue span:before {
+        background-color: #2261b5;
+    }
+    .tab-wrap .nav-tabs li.active a.sky span:before {
+        background-color: #7cc3e2;
+    }
+    .tab-wrap .tab-content {
+        margin: 0 auto;
+        max-width: 1600px;
+        border: 1px solid #d9d9d6;
+    }
+    .tab-wrap .tab-content .tab-pane {
+        background-color: white;
+        width: 100%;
+        padding: 60px 30px;
+        padding: 6rem 3rem;
+    }
+    @media (max-width: 1100px) {
+        .tab-wrap {
+            padding: 3.25rem 1rem 5rem;
+        }
+        .tab-wrap .nav-tabs li a {
+            padding: 0;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        .tab-wrap .nav-tabs li a span {
+            padding: 8px 7px;
+        }
+    }
+}

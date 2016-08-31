@@ -53,6 +53,8 @@
         <li><a href="#accordions">Accordions</a></li>
         <li><a href="#carousels">Carousels</a></li>
         <li><a href="#coding-standards">Coding Standards</a></li>
+        <li><a href="#tools-and-resources">Online Tools and Resources</a></li>
+        <li><a href="#the-future">The Future Standards</a></li>
         <!-- END STYLE GUIDE PAGES -->
     </ul>
 </nav>
@@ -69,7 +71,7 @@
         <section class="jumbotron">
             <div class="text">
                 <h1>Forms</h1>
-                <p></p>
+                <p>Our standards and best practices for forms</p>
             </div>
         </section>
         <section class="info" id="forms-info">
@@ -581,9 +583,12 @@ form .form-group input.form-control[type="text"], form .form-group input.form-co
                             </div-->
                         </div>
                     </figure>
-                    <h3 id="form-selects">Selects</h3>
-                    <p>Selects are often styled in our designs, and they are one of the hardest things to style in HTML and CSS.  So we always rely on a plugin to do this.  Over the years we've had many different select plugins offering a variety of support, most of which was for styling, however there's only been one that gave us the ability to style in the way we needed as well as the functionality, usability, and accessibility we needed.</p>
-                    <p>Use <a href="https://harvesthq.github.io/chosen/" target="_blank">Chosen by HarvestHQ</a> for all selects to make styling easier.  The capabilities this tool gives us are worth doing the custom implementation for, even if you just want to use it with basic styles.  The other added benefit, it will look just like the traditional select on mobile devices, still giving us the default functionality people expect when on the go.</p>
+                    <h3 id="form-selects">Selects/Dropdowns</h3>
+                    <p>First, before deciding if you should use selects or dropdowns, watch this video:</p>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hcYAHix-riY?rel=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p>You still want to use selects, or dropdowns, use <a href="https://harvesthq.github.io/chosen/" target="_blank">Chosen by HarvestHQ</a> for all selects to make styling easier.  The capabilities this tool gives us are worth doing the custom implementation for, even if you just want to use it with basic styles.  The other added benefit, it will look just like the traditional select on mobile devices, still giving us the default functionality people expect when on the go.</p>
                     <p>Download the latest version of the plugin on <a href="https://github.com/harvesthq/chosen" target="_blank">GitHub</a>, or use the version we are using <a href="/standards-guide/downloads/chosen_v1.6.2.zip">here</a>.</p>
                     <div class="bs-example">
                         <form class="form row">
@@ -3978,6 +3983,83 @@ form .form-group textarea.form-control {}</code></pre>
                     <p>Again, we know there are other plugins and libraries of code that do something similar to Bootstrap, whether it's jQuery Tools, 960Grid.js, jQuery UI, and countless plugins that give you all the pieces that Bootstrap can, we've chosen to use Bootstrap. It gets us the biggest bang for the buck.</p>
                     <p>Don't over think it and try to force a square peg in a round hole, if Bootstrap doesn't work or have the component you need to build out, add to it. Find a plugin to supplement on to the Bootstrap and jQuery library we have.</p>
                     <p>But, don't find a new plugin for something that Bootstrap already has in it's aresenal.</p>
+                </div>
+            </div>
+        </section>
+    </article>
+    <article id="tools-and-resources" class="sg theme-teal">
+        <section class="jumbotron">
+            <div class="text">
+                <h1>Online Tools and Resources</h1>
+                <p>Some of the online tools and resources we utilize.</p>
+            </div>
+        </section>
+        <section class="info" id="tools-resources-info">
+            <div class="row stickem-container">
+                <nav class="col-sm-3 hidden-xs nav-int stickem" id="tools-resources-nav">
+                    <ul class="nav">
+                        <li><a href="#w3schools">W3schools</a></li>
+                        <li><a href="#w3org">W3C</a></li>
+                        <li><a href="#html5please">HTML5 Please</a></li>
+                        <li><a href="#jscompress">JSCompress</a></li>
+                        <li><a href="#lipsum">Lorem Ipsum</a></li>
+                        <li><a href="#codrops">Codrops</a></li>
+                        <li><a href="#codepen">Codepen</a></li>
+                        <li><a href="#favicon-generator">Favicon Generator</a></li>
+                        <li><a href="#quickdiff">Quick Diff</a></li>
+                    </ul>
+                </nav>
+                <div class="col-sm-9 pull-right content">
+                    <h2 id="w3schools">W3Schools</h2>
+                    <p>Probably one of the best and most informative websites for help with remembering how to format an HTML, CSS, JavaScript, or jQuery tag is <a href="http://w3schools.com/">W3schools.com</a>.</p>
+                    <a href="http://w3schools.com/" target="blank">
+                        <img src="/standards-guide/sg-resources/images/w3schools.jpg" class="img-responsive img-thumbnail" alt="W3Schools"/>
+                    </a>
+                    <h2 id="w3org">W3C</h2>
+                    <p>Want an even deeper dive into the spec, go to the source at <a href="http://W3.org" target="_blank">W3.org</a>.</p>
+                    <a href="http://w3.org/" target="blank">
+                        <img src="/standards-guide/sg-resources/images/w3org.jpg" class="img-responsive img-thumbnail" alt="W3org"/>
+                    </a>
+                    <p>Also on w3.orgs website we can do <a href="https://validator.w3.org/" target="_blank">HTML validation</a> and <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS validation</a>.</p>
+                    <h2 id="html5please">HTML5 Please</h2>
+                    <p><a href="http://html5please.com/" target="_blank">HTML5 Please</a> is an online resource that allows you to search what the best way to use various tags that are in development by the browser, and what the support of that feature may be.  It supplies information on status of HTML, CSS, and JavaScript features. You can use this to determine whether you need to worry about adding something to <a href="#modernizr">modernizr.js</a> to detect if you need to alter styles or JavaScript to make something work.</p>
+                    <a href="http://html5please.com/" target="_blank">
+                        <img src="sg-resources/images/html5please.jpg" class="img-responsive img-thumbnail" alt=""/>
+                    </a>
+                    <h2 id="jscompress">JSCompress</h2>
+                    <p><a href="https://jscompress.com/" target="_blank">JSCompress</a> is an online javascript compressor that allows you to compress and minify your javascript files. Compressed javascript files are ideal for production environments since they typically <strong>reduce the size of the file by 30-80%</strong>.</p>
+                    <a href="https://jscompress.com/" target="_blank">
+                        <img src="sg-resources/images/jscompress.jpg" class="img-responsive img-thumbnail" alt=""/>
+                    </a>
+                    <h2 id="lipsum">Lorem Ipsum</h2>
+                    <p>No, that's not just placeholder text I forgot to delete, there are several Lorem Ipsum generators out there, some are fun and will put lyrics from Snoop Dogg, or generate using names of cat breeds, but while those can be fun, most of the time they aren't very professional looking.  Please stick with <a href="http://www.lipsum.com/feed/html" target="_blank">Lorem Ipsum Feed</a> to generate the dummy content for our websites.</p>
+                    <a href="http://www.lipsum.com/feed/html" target="_blank">
+                        <img src="sg-resources/images/lipsum.jpg" class="img-responsive img-thumbnail" alt=""/>
+                    </a>
+                    <p>Need some dummy images, use <a href="http://lorempixel.com/" target="_blank">lorempixel.com</a> to generate some images in color or gray.</p>
+                    <a href="http://lorempixel.com/" target="_blank">
+                        <img src="sg-resources/images/lorempixel.jpg" class="img-responsive img-thumbnail" alt=""/>
+                    </a>
+                    <h2 id="codrops">Codrops</h2>
+                    <p>A great inspiration and example site that supplies various ways of implementing behaviors.  Take some time to explore, learn, and use some of the effects found on <a href="http://tympanus.net/codrops/" target="_blank">codrops</a>.</p>
+                    <a href="http://tympanus.net/codrops/" target="_blank">
+                        <img src="sg-resources/images/codrops.jpg" class="img-responsive img-thumbnail" alt="Responsive image"/>
+                    </a>
+                    <h2 id="codepen">Codepen</h2>
+                    <p>An online playground to show off your latest creation and get feedback, build examples to show a bug that you can't get out there, find examples of design patterns, or just send someone a code snippet, <a href="http://codepen.io/" target="_blank">CodePen</a> is the perfect tool to use.</p>
+                    <a href="http://codepen.io/" target="_blank">
+                        <img src="sg-resources/images/codepen.jpg" class="img-responsive img-thumbnail" alt="Responsive image"/>
+                    </a>
+                    <h2 id="favicon-generator">Favicon Generator</h2>
+                    <p>Create all favicons using this generator which will output all four sizes needed for the favicon.  <a href="http://www.xiconeditor.com/Default.aspx" target="_blank">X-icon Editor</a> lets you preview, and edit, what the favicon will look like at 64x64, 32x32, 24x24, and 16x16.  You can even create an icon from scratch.</p>
+                    <a href="http://www.xiconeditor.com/Default.aspx" target="_blank">
+                        <img src="/standards-guide/sg-resources/images/x-icon-ss.jpg" class="img-responsive img-thumbnail" alt="Responsive image">
+                    </a>
+                    <h2 id="quickdiff">Quick Diff</h2>
+                    <p><a href="http://www.quickdiff.com/" target="_blank">Quick Diff</a> is an online tool that allows you to compare two files online and see what and where the differences are.</p>
+                    <a href="http://www.quickdiff.com/" target="_blank">
+                        <img src="sg-resources/images/quickdiff.jpg" class="img-responsive img-thumbnail" alt="Responsive image"/>
+                    </a>
                 </div>
             </div>
         </section>
