@@ -1,0 +1,510 @@
+/*--===<<< ARTICLES >>>===---*/
+article {
+    position: relative;
+    z-index: 0;
+    
+    header {
+        height: 75vh;
+        position: relative;
+        background: @grey url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
+        
+        h1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            .translate(-50%, -50%);
+            width: 75%;
+            max-width: 1200px;
+            .ta-center;
+            font-size: 4vw;
+            line-height: 1.1em;
+            .tt-upper;
+            color: @white; 
+            
+            small {
+                .arvo;
+                font-size: .2em;
+                .fw-regular;
+                display: block;
+                line-height: 1.25em;
+                margin: 1.5em 0 0;
+                .tt-none;
+            }
+        }
+    }
+    > section {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1600px;
+        padding: 10vw 0 10vw;
+        position: relative;
+        min-height: 50vh;
+        
+        @media @mediaSM {
+            padding: 1vw 0 1vw 25%;
+        }
+        
+        > nav {
+            display: none;
+            width: 22.5%;
+            position: absolute;
+            top: 1vw;
+            left: 0;
+            
+            @media @mediaSM {
+                display: block;
+            }
+            
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                
+                li {
+                    font-size: 1.6rem;
+                    padding: .75em 0;
+                    .spartan;
+                    .tt-caps;
+                    
+                    + li {
+                        border-top: 1px solid @navy;
+                    }
+                }
+                
+                ul {
+                    padding: .75em 0 0 5%;
+                    li {
+                        .tt-caps;
+                        font-size: 1.4rem;
+                    }
+                }
+                
+                a {
+                    color: fade(@navy, 75);
+                    .td-none;
+                    
+                    &.active, &:hover {
+                        color: @navy;
+                    }
+                }
+            }
+        }
+        
+        > ul {
+            list-style: none;
+            
+            li {
+                padding: 0 0 .75em 2.5rem;
+                position: relative; 
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1.6rem;
+                color: @txt-grey;
+                
+                &:before {
+                    position: absolute;
+                    left: 1rem;
+                    top: .9rem;
+                    .translate(-50%, -50%);
+                    width: 5px;
+                    height: 5px;
+                    .border-radius(100%);
+                    background: @blue;
+                    content: '';
+                }
+            }
+            
+            ul {
+                list-style: none;
+                padding: .75em 0 0;
+            }
+        }
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        .spartan;
+        font-weight: normal;
+        margin: 0 0 .75em;
+    }
+    
+    h2 {
+        font-size: 3.2rem;
+        
+        ~ h2 {
+            margin: .75em 0;
+            padding: .75em 0 0;
+            border-top: 3px solid @blue;
+        }
+    }
+    
+    h3 {
+        font-size: 2.6rem;
+        margin: .75em 0;
+        padding: .75em 0 0;
+        border-top: 3px solid fade(@blue, 50);
+    }
+    
+    h4 {
+        font-size: 2.2rem;
+    }
+    
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        color: @txt-grey;
+        font-size: 1.6rem;
+        line-height: 1.5em;
+        margin: 0 0 1em;
+        
+        code {
+            background: fade(@teal, 15);
+            padding: 0 2px;
+            .fw-bold;
+        }
+        
+        a {
+            .td-none;
+            color: @red;
+            position: relative;
+            
+            &:before {
+                width: 0;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: fade(@red, 15);
+                content: '';
+                .transition;
+            }
+            
+            
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+    ol {
+        counter-reset: my-counter;
+        list-style: none;
+        
+        li {
+            padding: 0 0 1.5rem 5rem;
+            position: relative;
+            
+            &:before {
+                content: counter(my-counter) ".";
+                counter-increment: my-counter;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 2.2rem;
+                .spartan;
+                width: 4rem;
+                .ta-right;
+            }
+        }
+        
+        h3 {
+            font-size: 2.2rem;
+            border: none !important;
+            padding: 0 0 .75em;
+            margin: 0;
+        }
+    }
+    
+    figure.video {
+        padding: 56.25% 0 0;
+        position: relative;
+        margin: 0 0 1.5em;
+        
+        > iframe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    figure.img {
+        position: relative;
+        border: 2px solid @grey;
+        padding: 10px;
+        .border-radius(10px);
+        margin: 0 0 1.5em;
+        
+        a {
+            display: block;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    &.theme-blue {
+        header {
+            background-color: @blue;
+        }
+        nav {
+            a {
+                color: fade(@blue, 75);
+                
+                &.active, &:hover {
+                    color: @blue;
+                }
+            }
+        }
+        h2, h3, h4, h5, h6 {
+            color: @blue;
+        }
+        h2 {
+            ~ h2 {
+                border-top: 3px solid @blue;
+            }
+        }
+        h3 {
+            border-top: 3px solid fade(@blue, 50);
+        }
+        
+        section {
+            > ul {
+            
+                li {
+            
+                    &:before {
+                        background: @blue;
+                    }
+                }
+            }
+        }
+    }
+    &.theme-navy {
+        header {
+            background-color: @navy;
+        }
+        nav {
+            a {
+                color: fade(@navy, 75);
+                
+                &.active, &:hover {
+                    color: @navy;
+                }
+            }
+        }
+        h2, h3, h4, h5, h6 {
+            color: @navy;
+        }
+        h2 {
+            ~ h2 {
+                border-top: 3px solid @navy;
+            }
+        }
+        h3 {
+            border-top: 3px solid fade(@navy, 50);
+        }
+        
+        section {
+            > ul {
+            
+                li {
+            
+                    &:before {
+                        background: @navy;
+                    }
+                }
+            }
+        }
+    
+        ol {
+            li {
+                &:before {
+                    color: @navy;
+                }
+            }
+        }
+    }
+    &.theme-grey {
+        header {
+            background-color: @grey;
+        }
+        nav {
+            a {
+                color: fade(@grey, 75);
+                
+                &.active, &:hover {
+                    color: @grey;
+                }
+            }
+        }
+        h2, h3, h4, h5, h6 {
+            color: @grey;
+        }
+        h2 {
+            ~ h2 {
+                border-top: 3px solid @grey;
+            }
+        }
+        h3 {
+            border-top: 3px solid fade(@grey, 50);
+        }
+        
+        section {
+            > ul {
+            
+                li {
+            
+                    &:before {
+                        background: @grey;
+                    }
+                }
+            }
+        }
+    
+        ol {
+            li {
+                &:before {
+                    color: @grey;
+                }
+            }
+        }
+    }
+    &.theme-blue-grey {
+        header {
+            background-color: @blue-grey;
+        }
+        nav {
+            a {
+                color: fade(@blue-grey, 75);
+                
+                &.active, &:hover {
+                    color: @blue-grey;
+                }
+            }
+        }
+        h2, h3, h4, h5, h6 {
+            color: @blue-grey;
+        }
+        h2 {
+            ~ h2 {
+                border-top: 3px solid @blue-grey;
+            }
+        }
+        h3 {
+            border-top: 3px solid fade(@blue-grey, 50);
+        }
+        
+        section {
+            > ul {
+            
+                li {
+            
+                    &:before {
+                        background: @blue-grey;
+                    }
+                }
+            }
+        }
+    
+        ol {
+            li {
+                &:before {
+                    color: @blue-grey;
+                }
+            }
+        }
+    }
+    &.theme-teal {
+        header {
+            background-color: @teal;
+        }
+        nav {
+            a {
+                color: fade(@teal, 75);
+                
+                &.active, &:hover {
+                    color: @teal;
+                }
+            }
+        }
+        h2, h3, h4, h5, h6 {
+            color: @teal;
+        }
+        h2 {
+            ~ h2 {
+                border-top: 3px solid @teal;
+            }
+        }
+        h3 {
+            border-top: 3px solid fade(@teal, 50);
+        }
+        
+        section {
+            > ul {
+            
+                li {
+            
+                    &:before {
+                        background: @teal;
+                    }
+                }
+            }
+        }
+    
+        ol {
+            li {
+                &:before {
+                    color: @teal;
+                }
+            }
+        }
+    }
+    &.theme-red {
+        header {
+            background-color: @red;
+        }
+        nav {
+            a {
+                color: fade(@red, 75);
+                
+                &.active, &:hover {
+                    color: @red;
+                }
+            }
+        }
+        h2, h3, h4, h5, h6 {
+            color: @red;
+        }
+        h2 {
+            ~ h2 {
+                border-top: 3px solid @red;
+            }
+        }
+        h3 {
+            border-top: 3px solid fade(@red, 50);
+        }
+        
+        section {
+            > ul {
+            
+                li {
+            
+                    &:before {
+                        background: @red;
+                    }
+                }
+            }
+        }
+    
+        ol {
+            li {
+                &:before {
+                    color: @red;
+                }
+            }
+        }
+    }
+}
