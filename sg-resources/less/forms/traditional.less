@@ -1,0 +1,65 @@
+/*---===<<< FORM TRADITIONAL >>>===---*/
+form#formTraditonalSample {
+    .clearfix;
+    .ta-center;
+    
+    > div {
+        width: 100%;
+        padding: 0 1rem 1.75rem;
+        .ta-left;
+        
+        &[class*="col-"] {
+            float: left;
+        }
+        &.col-8 {
+            width: 66.667%;
+        }
+        &.col-6 {
+            width: 50%;
+        }
+        &.col-4 {
+            width: 33.333%;
+        }
+        &.col-3 {
+            width: 25%;
+        }
+        &.col-2 {
+           width: 16.667%;
+        }
+    }
+    
+    label {
+        display: block;
+        padding: 0 0 1rem;
+        font-size: 1.6rem;
+    }
+    
+    input, textarea, select {
+        width: 100%;
+        border: 1px solid @grey;
+        font-size: 1.6rem;
+        padding: 1rem;
+        .arvo;
+        .border-radius(5px);
+    }
+    
+    input[type="submit"], input[type="reset"] {
+        display: inline-block;
+        width: auto;
+        margin: 2.5rem .5rem 0;
+        .tt-upper;
+        .spartan;
+        font-size: 1.3rem;
+    }
+    
+    input[type="submit"] {
+        background: @orange;
+        color: @white;
+        border: none;
+    }
+    input[type="reset"] {
+        background: @grey;
+        color: @white;
+        border: none;
+    }
+}

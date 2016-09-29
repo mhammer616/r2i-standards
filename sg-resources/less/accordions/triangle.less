@@ -1,0 +1,26 @@
+/*---=== TRIANGLE STYLING ===---*/
+.triangle {
+    dt {
+        position: relative;
+        
+        &:before {
+            content: '';
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid @white;
+            position: absolute;
+            top: 50%;
+            .transform(~"translate(-50%, -50%) rotate(0deg)");
+            .transition;
+            height: 0;
+            width: 0;
+            right: 25px;
+        }
+        
+        &.active {
+            &:before {
+                .transform(~"translate(-50%, -50%) rotate(-180deg)");
+            }
+        }
+    }
+}
