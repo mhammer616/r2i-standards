@@ -7,6 +7,7 @@
 <script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js"></script>
 <link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/forms/base.less" rel="stylesheet/less" type="text/css" />
 <script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
 </script>
 <link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
@@ -89,6 +90,156 @@
                 <h2>Inputs</h2>
                 <p>Basic text inputs can be styled very simply by using CSS to manipulate the look and feel, we can easily control the following types: <code>text</code>, <code>password</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, and <code>tel</code>.</p>
                 <p>By using the proper type for the input, accessibility is increased by changing the keyboards on mobile and tablet devices, along with allowing basic validation of the elements to be performed.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="formInputsExample">
+                            <form id="formInputs">
+                                <div class="col-4">
+                                    <label for="inputText">Text</label>
+                                    <input id="inputText" type="text" placeholder="Text" />
+                                </div>
+                                <div class="col-4">
+                                    <label for="inputPassword">Password</label>
+                                    <input id="inputPassword" type="password" placeholder="Password" />
+                                </div>
+                                <div class="col-4">
+                                    <label for="inputNum">Number</label>
+                                    <input id="inputNum" type="number" placeholder="5,000,000" />
+                                </div>
+                                <div class="col-4">
+                                    <label for="inputEmail">Email</label>
+                                    <input id="inputEmail" type="email" placeholder="anyone@gmail.com" />
+                                </div>
+                                <div class="col-4">
+                                    <label for="inputURL">URL</label>
+                                    <input id="inputURL" type="url" placeholder="http://www.google.com/" />
+                                </div>
+                                <div class="col-4">
+                                    <label for="inputTel">Telephone</label>
+                                    <input id="inputTel" type="tel" placeholder="(410) 555-5555" maxlength="14" />
+                                </div>
+                                <div class="col-4">
+                                    <label for="inputSearch">Search</label>
+                                    <input id="inputSearch" type="tel" placeholder="Keyword" />
+                                </div>
+                            </form>
+                        </div>
+                        <div role="tabpanel" id="formInputsHTML">
+                            <pre><code code="hljs html">&lt;form id="formInputs"&gt;
+    &lt;div class="col-4"&gt;
+        &lt;label for="inputText"&gt;Text&lt;/label&gt;
+        &lt;input id="inputText" type="text" placeholder="Text" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;label for="inputPassword"&gt;Password&lt;/label&gt;
+        &lt;input id="inputPassword" type="password" placeholder="Password" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;label for="inputNum"&gt;Number&lt;/label&gt;
+        &lt;input id="inputNum" type="number" placeholder="5,000,000" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;label for="inputEmail"&gt;Email&lt;/label&gt;
+        &lt;input id="inputEmail" type="email" placeholder="anyone@gmail.com" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;label for="inputURL"&gt;URL&lt;/label&gt;
+        &lt;input id="inputURL" type="url" placeholder="http://www.google.com/" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;label for="inputTel"&gt;Telephone&lt;/label&gt;
+        &lt;input id="inputTel" type="tel" placeholder="(410) 555-5555" maxlength="14" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;label for="inputSearch"&gt;Search&lt;/label&gt;
+        &lt;input id="inputSearch" type="tel" placeholder="Keyword" /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="formInputsLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; FORM BASIC &gt;&gt;&gt;===---*/
+form {
+    .clearfix;
+    .ta-center;
+    
+    &gt; div {
+        width: 100%;
+        padding: 0 1rem 1.75rem;
+        .ta-left;
+        
+        &[class*="col-"] {
+            float: left;
+        }
+        &.col-8 {
+            width: 66.667%;
+        }
+        &.col-6 {
+           width: 50%;
+        }
+        &.col-5 {
+            width: 41.667%;
+        }
+        &.col-4 {
+           width: 33.333%;
+        }
+        &.col-3 {
+            width: 25%;
+        }
+        &.col-2 {
+           width: 16.667%;
+        }
+    }
+    
+    label {
+        display: block;
+        padding: 0 0 1rem;
+        font-size: 1.6rem;
+    }
+    
+    input, textarea, select {
+        width: 100%;
+        border: 1px solid @grey;
+        font-size: 1.6rem;
+        padding: 1rem;
+        .arvo;
+        .border-radius(5px);
+    }
+    
+    input[type="submit"], input[type="reset"] {
+        display: inline-block;
+        width: auto;
+        margin: 3rem .5rem 0;
+        .tt-upper;
+        .spartan;
+        font-size: 1.3rem;
+    }
+    
+    input[type="submit"] {
+        background: @orange;
+        color: @white;
+        border: none;
+    }
+    input[type="reset"] {
+        background: @grey;
+        color: @white;
+        border: none;
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="formInputsJS">
+                            <pre>
+                                <code></code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#formInputsExample" role="tab">Example</a>
+                        <a href="#formInputsHTML" role="tab">HTML</a>
+                        <a href="#formInputsLESS" role="tab">LESS</a>
+                        <a href="#formInputsJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+
             </section>
         </article>
     </section>
@@ -115,20 +266,6 @@
         </div>
     </nav>
 </main>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('a[data-toggle="nav"]').on('click', function(event) {
-            event.preventDefault();
-            var el = $(this).attr('href'),
-                $el = $(el);
-                
-            $el.addClass('active');
-        });
-        $('nav button').on('click', function(event) {
-            event.preventDefault();
-            $(this).closest('nav').removeClass('active');
-        });
-    });
-</script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
 </body>
 </html>

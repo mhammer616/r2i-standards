@@ -1,0 +1,53 @@
+/*--===<<< CODE TABS >>>===---*/
+figure.tabs {
+    border: .5rem solid #333;
+    
+    > div {
+        > div {
+            display: none;
+            background: #333;
+            
+            &:first-child {
+                background: @white;
+                padding: 2.5rem;
+            }
+            
+            &.active {
+                display: block;
+            }
+        }
+    }
+    
+    pre {
+        font-size: 1.2rem;
+        line-height: 2em;
+        max-height: 50vh;
+        overflow: auto;
+    }
+    
+    > figcaption {
+        .clearfix;
+        padding: 2rem;
+        background: #333;
+        
+        > a {
+            float: left;
+            margin: 0 1rem 0 0;
+            padding: 1rem;
+            background: #555;
+            color: @white;
+            .td-none;
+            .border-radius(1rem);
+            font-size: 1.2rem;
+            
+            &[disabled] {
+                opacity: 0.15;
+                cursor: default;
+            }
+            
+            &.active {
+                background: @red;
+            }
+        }
+    }
+}

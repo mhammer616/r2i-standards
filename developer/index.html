@@ -93,20 +93,6 @@
         </div>
     </nav>
 </main>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('a[data-toggle="nav"]').on('click', function(event) {
-            event.preventDefault();
-            var el = $(this).attr('href'),
-                $el = $(el);
-                
-            $el.addClass('active');
-        });
-        $('nav button').on('click', function(event) {
-            event.preventDefault();
-            $(this).closest('nav').removeClass('active');
-        });
-    });
-</script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
 </body>
 </html>
