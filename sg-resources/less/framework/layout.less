@@ -1,0 +1,68 @@
+/*---===<<< LAYOUT >>>===---*/
+main {
+    position: relative;
+    width: 100%;
+    padding: 100vh 0 0;
+    z-index: 0;
+    overflow: hidden;
+    min-height: 600px;
+    
+    > header, > nav {
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 10vw;
+    }
+    > header {
+        left: 0;
+        z-index: 100;
+        > div {
+            position: absolute;
+            left: 50vw;
+            top: 50vh;
+            width: 66.667vw;
+            .translate(-50%, -50%);
+        }
+    }
+    > nav {
+        width: 100%;
+        height: 100%;
+        z-index: 900;
+        .transition;
+        
+        &.active {
+            left: 0;
+        }
+        
+        > div {
+            position: absolute;
+            left: 50vw;
+            top: 50vh;
+            width: 66.667%;
+            .translate(-50%, -50%);
+        }
+    }
+    > section {
+        margin: 100vh 0 0;
+        padding: 5vw 0;
+        width: 100%;
+        position: relative;
+        z-index: 200;
+        background: @white;
+        min-height: 100vh;
+        .clearfix;
+        
+        > article {
+            width: 90%;
+            max-width: 1600px;
+            margin: 0 auto;
+            
+            > section {
+                width: 75%;
+                float: right;
+            }
+        }
+    }
+}

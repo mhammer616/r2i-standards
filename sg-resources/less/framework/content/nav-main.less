@@ -1,0 +1,64 @@
+/*---===<<< MAIN NAV >>>===---*/
+> nav {
+    background: @teal url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
+    button {
+        position: absolute;
+        top: 5vw;
+        right: 5vw;
+        padding: 0;
+        height: 40px;
+        width: 40px;
+        .transition;
+        background: @navy;
+        border: 4px solid @navy;
+        
+        &:before, &:after {
+            .transition;
+            content: '';
+            height: 4px;
+            display: block;
+            background: @white;
+            width: 80%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        &:before {
+            .transform(~"translate(-50%, -50%) rotate(45deg)");
+        }
+        
+        &:after {
+            .transform(~"translate(-50%, -50%) rotate(-45deg)");
+        }
+    }
+    > div {
+        h2 {
+            .ta-center;
+            font-size: 4vw;
+            .tt-upper;
+            color: @white;
+            margin: 0 0 .75em;
+        }
+        > ul {
+            .columns(@count: 3, @gap: (@gutter * 4), @rule-w: 0, @rule-color: @white);
+            list-style: none;
+            > li {
+                margin: 0 0 5px;
+                display: inline-block;
+                width: 100%;
+                
+                > a {
+                    display: block;
+                    .ta-center;
+                    background: @white;
+                    color: @navy;
+                    .td-none;
+                    padding: 15px;
+                    font-size: 1vw;
+                    .spartan;
+                    .tt-upper;
+                }
+            }
+        }
+    }
+}

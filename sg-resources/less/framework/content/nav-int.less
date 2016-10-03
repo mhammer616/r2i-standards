@@ -1,0 +1,41 @@
+/* CSS Document */
+article {
+    > nav {
+        float: left;
+        width: 25%;
+        padding: 0 (@gutter * 4) 0 0;
+        .spartan;
+        font-size: 1.8rem;
+        font-weight: normal;
+        
+        @media @mediaLG {
+            width: 20%;
+        }
+        
+        a {
+            .td-none;
+            color: @navy;
+            
+            &:hover, &.active {
+                color: @teal;
+            }
+        }
+        
+        > ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+            li {
+                + li {
+                    padding: 15px 0 0;
+                }
+                ul {
+                    font-size: 1.5rem;
+                    list-style: none;
+                    padding: 15px 0 0 15px;
+                }
+            }
+        }
+    }
+}

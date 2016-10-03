@@ -14,7 +14,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-<body class="home">
+<body>
 <header>
     <a href="/standards-guide/"> 
         <!-- START SVG LOGO -->
@@ -43,32 +43,55 @@
 <main>
     <header>
         <div>
-            <h1>UX and Front End Standards Guide</h1>
-            <h2>I am a:</h2>
-            <p><a href="#designer" data-toggle="nav">UX Designer</a> <a href="#developer" data-toggle="nav">Front End Developer</a></p>
+            <h1>Forms</h1>
         </div>
     </header>
-    <nav id="designer">
-        <button></button>
-        <div>
-            <h2>I want to design...</h2>
-            <ul>
-                <li><a href="#">Headers</a></li>
-                <li><a href="#">Layouts</a></li>
-                <li><a href="#">Footers</a></li>
-                <li><a href="#">Navs</a></li>
-                <li><a href="#">Tabs</a></li>
-                <li><a href="#">Carousels</a></li>
-                <li><a href="#">Accordions</a></li>
-                <li><a href="#">Tooltips</a></li>
-                <li><a href="#">Modal Windows</a></li>
-                <li><a href="#">Forms</a></li>
-                <li><a href="#">Content</a></li>
-                <li><a href="#">Listings</a></li>
-                <li><a href="#">Details</a></li>
-            </ul>
-        </div>
-    </nav>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#">Basic Form Guidelines</a></li>
+                    <li><a href="#">Labels</a></li>
+                    <li><a href="#">Inputs</a>
+                        <ul>
+                            <li><a href="#">Text Inputs</a></li>
+                            <li><a href="#">Date Inputs</a></li>
+                            <li><a href="#">Checkboxes</a></li>
+                            <li><a href="#">Radio Buttons</a></li>
+                            <li><a href="#">Button Inputs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Selects</a></li>
+                    <li><a href="#">Textareas</a></li>
+                    <li><a href="#">Examples</a>
+                        <ul>
+                            <li><a href="#">Traditional Form</a></li>
+                            <li><a href="#">Inline Form</a></li>
+                            <li><a href="#">Vertical Form</a></li>
+                            <li><a href="#">Placeholder Form</a></li>
+                            <li><a href="#">MadLib Form</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <h2>Basic Form Guidelines</h2>
+                <p>Every site or landing page that we build probably has at least one Form somewhere on them. Forms can be time consuming to build, style, and make functional, this section will help define some basic resets, and supply some code to help make this easier.</p>
+                <p>Forms, like the website in general, should follow a grid layout with rows of fields that cover any number of columns.</p>
+                <p>Forms are made up of various ways for the user to supply information back to the client. The basics of form elements are listed below, along with some custom implementations.</p>
+            </section>
+            <section>
+                <h2>Labels</h2>
+                <p>A label, even if hidden, has to be supplied for usability for every form element.</p>
+                <p>The label tag must be properly hooked up using the for attribute to associate it with the id of the input.</p>
+            </section>
+            <section>
+                <h2>Inputs</h2>
+                <p>Basic text inputs can be styled very simply by using CSS to manipulate the look and feel, we can easily control the following types: <code>text</code>, <code>password</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, and <code>tel</code>.</p>
+                <p>By using the proper type for the input, accessibility is increased by changing the keyboards on mobile and tablet devices, along with allowing basic validation of the elements to be performed.</p>
+            </section>
+        </article>
+    </section>
     <nav id="developer">
         <button></button>
         <div>
