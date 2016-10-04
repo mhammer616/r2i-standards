@@ -1,0 +1,44 @@
+/*---===<<< HORIZONTAL TABS >>>===---*/
+.horizontal-tabs {
+    > ul[role="tablist"] {
+        .clearfix;
+        position: relative;
+        z-index: 10;
+        
+        > li {
+            float: left;
+            list-style: none;
+            margin: 0 1px 0 0;
+            
+            a {
+                padding: 1rem;
+                border: 1px solid @grey;
+                background: @grey;
+                color: @white;
+                .td-none;
+                border-radius: 5px 5px 0 0;
+                font-size: 1.4rem;
+                display: block;
+            }
+            
+            &.active {
+                a {
+                    background: @white;
+                    color: @grey;
+                    border-bottom: 1px solid @white;
+                }
+            }
+        }
+    }
+    
+    > div {
+        border: 1px solid @grey;
+        margin: -1px 0 0;
+        position: relative;
+        z-index: 0;
+        
+        > div {
+            padding: 25px;
+        }
+    }
+}
