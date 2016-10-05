@@ -1,0 +1,9 @@
+/*---<<< FLOATED LEFT BUTTON STYLE >>>---*/
+&.floated-left {
+    [class*="btn-"] {
+        float: left;
+        + [class*="btn-"] {
+            margin-left: .5rem;
+        }
+    }
+}
