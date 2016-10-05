@@ -7,6 +7,7 @@
 <script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js"></script>
 <link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/layouts/base.less" rel="stylesheet/less" type="text/css" />
 <script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
 </script>
 <link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
@@ -50,45 +51,361 @@
         <article>
             <nav>
                 <ul>
-                    <li><a href="#">Basic Form Guidelines</a></li>
-                    <li><a href="#">Labels</a></li>
-                    <li><a href="#">Inputs</a>
+                    <li><a href="#BasicLayoutGuidelines">Basic Layout Guidelines</a></li>
+                    <li><a href="#HTML5Semantics">HTML5 Semantic Markup</a></li>
+                    <li><a href="#Examples">Examples</a>
                         <ul>
-                            <li><a href="#">Text Inputs</a></li>
-                            <li><a href="#">Date Inputs</a></li>
-                            <li><a href="#">Checkboxes</a></li>
-                            <li><a href="#">Radio Buttons</a></li>
-                            <li><a href="#">Button Inputs</a></li>
+                            <li><a href="#Column1">1 Column</a></li>
+                            <li><a href="#Column2WithNav">2 Column With Nav</a></li>
+                            <li><a href="#Column2WithAside">2 Column With Aside</a></li>
+                            <li><a href="#Column3">3 Column</a></li>
                         </ul>
-                    </li>
-                    <li><a href="#">Selects</a></li>
-                    <li><a href="#">Textareas</a></li>
-                    <li><a href="#">Examples</a>
-                        <ul>
-                            <li><a href="#">Traditional Form</a></li>
-                            <li><a href="#">Inline Form</a></li>
-                            <li><a href="#">Vertical Form</a></li>
-                            <li><a href="#">Placeholder Form</a></li>
-                            <li><a href="#">MadLib Form</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </nav>
-            <section>
-                <h2>Basic Form Guidelines</h2>
-                <p>Every site or landing page that we build probably has at least one Form somewhere on them. Forms can be time consuming to build, style, and make functional, this section will help define some basic resets, and supply some code to help make this easier.</p>
-                <p>Forms, like the website in general, should follow a grid layout with rows of fields that cover any number of columns.</p>
-                <p>Forms are made up of various ways for the user to supply information back to the client. The basics of form elements are listed below, along with some custom implementations.</p>
+            <section id="BasicLayoutGuidelines">
+                <h2>Basic Layout Guidelines</h2>
+                <p>Every page we create will most likely be able to fall into one of the following layouts we've defined below. Follow the markup and patterns defined to layout your page.</p>
+                <p>When you get the design, think of the rows and columns needed to create the page.  Define the areas into rows and columns that you will place components into that will add content to your page. Use the appropriate Semantic tag to define the columns and elements throughout the page.  If a semantic element does not exist, then use a <code>div</code> to define it.</p>
             </section>
-            <section>
-                <h2>Labels</h2>
-                <p>A label, even if hidden, has to be supplied for usability for every form element.</p>
-                <p>The label tag must be properly hooked up using the for attribute to associate it with the id of the input.</p>
+            <section id="HTML5Semantics">
+                <h2>HTML5 Semantic Markup Guide</h2>
+                <p>The use of semantic markup will cut down on classnames and ids used to define areas for the page layout. Below is a list of semantic tags that should be used to define our layouts and what they should be used for.</p>
+                <p>The use of semantic markup will help define areas of content for screenreaders and aria enabled browsers to make the markup more accessible for people that assistance.</p>
+                <dl>
+                    <dt><code>&lt;header&gt;</code></dt>
+                    <dd>this tag should wrap the site header used on every page of the site as a direct child of either the body, or the outer most element that we have access to in the CMS</dd>
+                    <dd>this tag can also wrap the header within the main content of the site giving additional semantic meaning to things like banners</dd>
+                    <dt><code>&lt;footer&gt;</code></dt>
+                    <dd>this tag should wrap the site footer used on every page of the site as a direct child of either the body, or the outer most element that we have access to in the CMS</dd>
+                    <dd>this tag can also wrap the footer of an article or section to add semantic meaning to things that are less meaningful to the article or section</dd>
+                    <dt><code>&lt;main&gt;</code></dt>
+                    <dd>this should appear only once on a page and should wrap the bulk of the content on the site, this element should be placed after the header and before the footer at the root level, or closest we have access to, of the page</dd>
+                    <dt><code>&lt;nav&gt;</code></dt>
+                    <dd>this should wrap every navigational list or area on the page</dd>
+                    <dt><code>&lt;aside&gt;</code></dt>
+                    <dd>this should wrap the sidebar element on the page</dd>
+                    <dt><code>&lt;section&gt;</code></dt>
+                    <dd>this can be used to define a group of content that is related to each other</dd>
+                    <dt><code>&lt;article&gt;</code></dt>
+                    <dd>this should wrap a group of content that can stand on it's own independent from the rest of the page</dd>
+                </dl>
             </section>
-            <section>
-                <h2>Inputs</h2>
-                <p>Basic text inputs can be styled very simply by using CSS to manipulate the look and feel, we can easily control the following types: <code>text</code>, <code>password</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, and <code>tel</code>.</p>
-                <p>By using the proper type for the input, accessibility is increased by changing the keyboards on mobile and tablet devices, along with allowing basic validation of the elements to be performed.</p>
+            <section id="Examples">
+                <h2>Examples</h2>
+                <h3 id="Column1">1 Column</h3>                
+                <figure class="tabs">
+                    <div>
+                        <div class="layout active" role="tabpanel" id="col1Example">
+                            <header>
+                                <code>Header</code>
+                            </header>
+                            <main class="col-1">
+                                <code>Main</code>
+                                <header>
+                                    <code>Header</code>
+                                </header>
+                                <article>
+                                    <code>Article</code>
+                                </article>
+                                <footer>
+                                    <code>Footer</code>
+                                    <section>
+                                        <code>Section</code>
+                                    </section>
+                                    <section>
+                                        <code>Section</code>
+                                    </section>
+                                    <section>
+                                        <code>Section</code>
+                                    </section>
+                                </footer>
+                            </main>
+                            <footer>
+                                <code>Footer</code>
+                            </footer>
+                        </div>
+                        <div role="tabpanel" id="col1HTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;header&gt;&lt;/header&gt;
+&lt;main class="col-1"&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;article&gt;&lt;/article&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/main&gt;
+&lt;footer&gt;&lt;/footer&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="col1LESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; LAYOUTS &gt;&gt;&gt;===---*/
+main {
+    .clearfix;
+    &gt; header {
+        .clear;
+    }
+    &gt; footer {
+        .clear;
+    }
+    /*---=== 1 COLUMN ===---*/
+    &amp;.col-1 {
+        &gt; article {}
+    }
+    /*---=== 2 COLUMN ===---*/
+    &amp;.col-2 {
+        &gt; nav, &gt; aside {}
+        &gt; article {}
+    }
+    /*---=== 1 COLUMN ===---*/
+    &amp;.col-2 {
+        &gt; nav {}
+        &gt; aside {}
+        &gt; article {}
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="col1JS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#col1Example" role="tab">Example</a>
+                        <a href="#col1HTML" role="tab">HTML</a>
+                        <a href="#col1LESS" role="tab">LESS</a>
+                        <a href="#col1JS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Column2WithNav">2 Column - With Interior Navigation</h3>                
+                <figure class="tabs">
+                    <div>
+                        <div class="layout active" role="tabpanel" id="col2NavExample">
+                            <header>
+                                <code>Header</code>
+                            </header>
+                            <main class="col-2">
+                                <code>Main</code>
+                                <header>
+                                    <code>Header</code>
+                                </header>
+                                <nav>
+                                    <code>Nav</code>
+                                </nav>
+                                <article>
+                                    <code>Article</code>
+                                </article>
+                                <footer>
+                                    <code>Footer</code>
+                                </footer>
+                            </main>
+                            <footer>
+                                <code>Footer</code>
+                            </footer>
+                        </div>
+                        <div role="tabpanel" id="col2NavHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;header&gt;&lt;/header&gt;
+&lt;main class="col-2"&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;nav&gt;&lt;/nav&gt;
+    &lt;article&gt;&lt;/article&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/main&gt;
+&lt;footer&gt;&lt;/footer&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="col2NavLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; LAYOUTS &gt;&gt;&gt;===---*/
+main {
+    .clearfix;
+    &gt; header {
+        .clear;
+    }
+    &gt; footer {
+        .clear;
+    }
+    /*---=== 1 COLUMN ===---*/
+    &amp;.col-1 {
+        &gt; article {}
+    }
+    /*---=== 2 COLUMN ===---*/
+    &amp;.col-2 {
+        &gt; nav, &gt; aside {}
+        &gt; article {}
+    }
+    /*---=== 1 COLUMN ===---*/
+    &amp;.col-2 {
+        &gt; nav {}
+        &gt; aside {}
+        &gt; article {}
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="col2NavJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#col2NavExample" role="tab">Example</a>
+                        <a href="#col2NavHTML" role="tab">HTML</a>
+                        <a href="#col2NavLESS" role="tab">LESS</a>
+                        <a href="#col2NavJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Column2WithAside">2 Column - With Sidebar</h3>               
+                <figure class="tabs">
+                    <div>
+                        <div class="layout active" role="tabpanel" id="col2AsideExample">
+                            <header>
+                                <code>Header</code>
+                            </header>
+                            <main class="col-2">
+                                <code>Main</code>
+                                <header>
+                                    <code>Header</code>
+                                </header>
+                                <article>
+                                    <code>Article</code>
+                                </article>
+                                <aside>
+                                    <code>Aside</code>
+                                </aside>
+                                <footer>
+                                    <code>Footer</code>
+                                    <section>
+                                        <code>Section</code>
+                                    </section>
+                                    <section>
+                                        <code>Section</code>
+                                    </section>
+                                    <section>
+                                        <code>Section</code>
+                                    </section>
+                                </footer>
+                            </main>
+                            <footer>
+                                <code>Footer</code>
+                            </footer>
+                        </div>
+                        <div role="tabpanel" id="col2AsideHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;header&gt;&lt;/header&gt;
+&lt;main class="col-2"&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;article&gt;&lt;/article&gt;
+    &lt;aside&gt;&lt;/aside&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/main&gt;
+&lt;footer&gt;&lt;/footer&gt;</code></pre>
+                    </div>
+                    <div role="tabpanel" id="col2AsideLESS">
+                        <pre><code class="hljs css">/*---===&lt;&lt;&lt; LAYOUTS &gt;&gt;&gt;===---*/
+main {
+    .clearfix;
+    &gt; header {
+        .clear;
+    }
+    &gt; footer {
+        .clear;
+    }
+    /*---=== 1 COLUMN ===---*/
+    &amp;.col-1 {
+        &gt; article {}
+    }
+    /*---=== 2 COLUMN ===---*/
+    &amp;.col-2 {
+        &gt; nav, &gt; aside {}
+        &gt; article {}
+    }
+    /*---=== 1 COLUMN ===---*/
+    &amp;.col-2 {
+        &gt; nav {}
+        &gt; aside {}
+        &gt; article {}
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="col2AsideJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#col2AsideExample" role="tab">Example</a>
+                        <a href="#col2AsideHTML" role="tab">HTML</a>
+                        <a href="#col2AsideLESS" role="tab">LESS</a>
+                        <a href="#col2AsideJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Column3">3 Column - With Interior and Sidebar</h3>               
+                <figure class="tabs">
+                    <div>
+                        <div class="layout active" role="tabpanel" id="col3Example">
+                            <header>
+                                <code>Header</code>
+                            </header>
+                            <main class="col-3">
+                                <code>Main</code>
+                                <header>
+                                    <code>Header</code>
+                                </header>
+                                <nav>
+                                    <code>Nav</code>
+                                </nav>
+                                <article>
+                                    <code>Article</code>
+                                </article>
+                                <aside>
+                                    <code>Aside</code>
+                                </aside>
+                                <footer>
+                                    <code>Footer</code>
+                                </footer>
+                            </main>
+                            <footer>
+                                <code>Footer</code>
+                            </footer>
+                        </div>
+                        <div role="tabpanel" id="col3HTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;header&gt;&lt;/header&gt;
+&lt;main class="col-3"&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;nav&gt;&lt;/nav&gt;
+    &lt;article&gt;&lt;/article&gt;
+    &lt;aside&gt;&lt;/aside&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/main&gt;
+&lt;footer&gt;&lt;/footer&gt;</code></pre>
+                    </div>
+                    <div role="tabpanel" id="col3LESS">
+                        <pre><code class="hljs css">/*---===&lt;&lt;&lt; LAYOUTS &gt;&gt;&gt;===---*/
+main {
+    .clearfix;
+    &gt; header {
+        .clear;
+    }
+    &gt; footer {
+        .clear;
+    }
+    /*---=== 1 COLUMN ===---*/
+    &amp;.col-1 {
+        &gt; article {}
+    }
+    /*---=== 2 COLUMN ===---*/
+    &amp;.col-2 {
+        &gt; nav, &gt; aside {}
+        &gt; article {}
+    }
+    /*---=== 1 COLUMN ===---*/
+    &amp;.col-2 {
+        &gt; nav {}
+        &gt; aside {}
+        &gt; article {}
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="col3JS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#col3Example" role="tab">Example</a>
+                        <a href="#col3HTML" role="tab">HTML</a>
+                        <a href="#col3LESS" role="tab">LESS</a>
+                        <a href="#col3JS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
             </section>
         </article>
     </section>
