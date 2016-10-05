@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/grid/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>R2i Grid</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicGridGuidelines">Basic Grid Guidelines</a></li>
+                    <li><a href="#When">When To Use</a></li>
+                    <li><a href="#How">How To Use</a></li>
+                    <li><a href="#Dive">Dive into the Code</a></li>
+                    <li><a href="#Create">Create Custom Grids</a></li>
+                </ul>
+            </nav>
+            <section id="BasicGridGuidelines">
+                <h2>Basic Grid Guidelines</h2>
+                <p>All our websites are built using a Grid. Generally the designers use a 12 Column Base for their grid and stick with that. Instead of using Bootstraps 12 Column Grid we took the idea and re-worked it to meet our needs.</p>
+                <p>Our grid is designed to work in a wrapping element similar to how Bootstrap does there, the real difference is that we can spin off custom grids and do 8, 10, or 100 column grids with our new grid layout. The reason for this is to give our designers some flexibility, while maintaining a solid base for the grid systems.</p>
+            </section>
+            <section id="When">
+                <h2>When To Use Our Grid</h2>
+                <p>Since our standard approach is use as little classes and extra elements as possible, try to avoid using these for page layout purpose, and more for content or grid layouts within the page.  If your <code>nav</code> page element and <code>main</code> page element are 3 columns and 9 columns on large sizes but 4 columns and 8 columns on small and medium, just use media queries in the css to set these.  However for something like a form where you want the fields to be lined up in a grid and have them change based on browser size, use the grid.</p>
+                <h4>Some examples of when to use the grid:</h4>
+                <ul>
+                    <li>Form Layouts</li>
+                    <li>Article Listing Layouts</li>
+                    <li>Image or Video Gallery Layouts</li>
+                    <li>Profiles</li>
+                </ul>
+            </section>
+            <section id="How">
+                <h2>How To Use Our Grid Out of The Box</h2>
+                <p>Our standard grid is for all browser sizes to have 12 columns, this should work for most websites we design and build. An equal padding of <code>15px</code> is applied to the left and right side of the grid.</p>
+                <p>In the <em>boilerplate variable.less</em> file you will find two grid related variables.  <code>@gutter</code> defines the amount of padding applied to each colum, it will also apply <code>(-1 * @gutter)</code> to the wrapping <code>row</code>. <code>@colCount</code> is used to define how many columns should be in your grid.</p>
+                <p>These variables should be altered if the design changes either the Gutter or the amount of columns you need.</p>
+                <h3>Example</h3>
+                <figure class="grid-example">
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5"></div>
+                        <div class="col-sm-7"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6"></div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7"></div>
+                        <div class="col-sm-5"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8"></div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9"></div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10"></div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11"></div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12"></div>
+                    </div>
+                </figure>
+            </section>
+            <section id="Dive">
+                <h2>Dive Into The Code</h2>
+                <p>Let's take a look at how the grid is created, and how you can modify this to create new grids for the site.</p>
+                <h3>The Variables</h3>
+                <p>There are two variables used to define items, the first is <code>@colCount</code> which is used later to define how many columns your grid will have.  <code>@gutter</code> will be used to define how much padding is applied to the left and right of each column</p>
+                <p>Use these variables to alter the padding or column count for the grid the designer used.</p>
+                <figure class="code">
+                    <pre><code class="hljs css">/*---=== COLUMN COUNT===---*/
+@colCount: 12;
+/*---=== GUTTER ===---*/
+@gutter: 1.5rem;</code></pre>
+                </figure>
+                <h3>The Loop</h3>
+                <p>Using Less' Loop function we can create a loop that will create all our classes needed for the columns on the fly, also doing the math to figure out the percentage width needed for that class.</p>
+                <p>This is done by creating a function <code>.generate-columns()</code> that will be iterated over using the count <code>@i: 1</code> until it hits our limit <code>@n</code>.</p>
+                <p>When we initiate our <code>.generate-columns()</code> function we'll call <code>.generate-columns(@colCount)</code>.  This will run the loop and itterate over where ever we called it adding 1 to whatever <code>@colCount</code> is set to. After writing out our class name it will then take the iterative count multiply that by 100% then divide it by our n variable. After that's complete it will run it again adding 1 to the iterative count. This function will run until it reaches the limit defined by <code>@n</code>.</p>
+                <figure class="code">
+                    <pre><code class="hljs css">/*---=== GENERATE COLUMNS LOOP ===---*/
+.generate-columns(@n, @i: 1) when (@i =&lt; @n) {
+    &@{i} {
+        width: (@i * 100% / @n);
+    }
+    .generate-columns(@n, (@i + 1));
+}</code></pre>
+                </figure>
+                <h3>Calling the Loop</h3>
+                <p>Calling the loop within each mediaquery will trigger Less to preform the loop function we've defined.</p>
+                <p>For example the <code>col-xs-</code> will output the class for <code>col-xs-<strong>1</strong></code> through <code>col-xs-<strong>12</strong></code> with the width property properly defined.</p>
+                <figure class="code">
+                    <pre><code class="hljs css">/*---=== XS ===---*/
+.col-xs- {
+    .generate-columns(@colCount);
+}
+/*---=== SM ===---*/
+@media @mediaSM {
+    .col-sm- {
+        .generate-columns(@colCount);
+    }
+}
+/*---=== MD ===---*/
+@media @mediaMD {
+    .col-md- {
+        .generate-columns(@colCount);
+    }
+}
+/*---=== LG ===---*/
+@media @mediaLG {
+    .col-lg- {
+        .generate-columns(@colCount);
+    }
+}
+/*---=== XL ===---*/
+@media @mediaXL {
+    .col-xl- {
+        .generate-columns(@colCount);
+    }
+}</code></pre>
+                </figure>
+            </section>
+            <section id="Create">
+                <h2>Create Custom Grids</h2>
+                <p>We can use the above generic setup that is in the boilerplate package, to then create additional grid systems as needed.</p>
+                <p>To customize the grid for your needs you must first figure out what custom grids you will need.  Figure this out by determining how many columns are used in the design.</p>
+                <p>Some designers may want to do a <strong>8</strong> or <strong>10</strong> for a particular design or browser size.</p>
+                <p>When this happens, do one of three things: change the variable <code>@colCount</code> to the appropriate size if all the grids are the same; change the variable for the particular size you want to have the unique grids; create a new grid class.  Examples of each method can be found below.</p>
+                <figure class="code">
+                    <pre><code class="hljs css">/*---===&lt;&lt;&lt; UPDATING COLUMN COUNT VARIABLE &gt;&gt;&gt;===---*/
+@colCount: 10;
+
+
+/*---===&lt;&lt;&lt; CHANGING THE GENERATE COLUMNS FOR MEDIA SIZE &gt;&gt;&gt;===---*/
+/*---=== XS ===---*/
+.col-xs- {
+    .generate-columns(4);
+}
+/*---=== SM ===---*/
+@media @mediaSM {
+    .col-sm- {
+        .generate-columns(8);
+    }
+}
+/*---=== MD ===---*/
+@media @mediaMD {
+    .col-md- {
+        .generate-columns(@colCount);
+    }
+}
+
+
+/*---===&lt;&lt;&lt; CHANGING CUSTOM CLASSES FOR USE WITH MULTIPLE GRIDS&gt;&gt;&gt;===---*/
+/*---=== XS ===---*/
+.col-xs- {
+    .generate-columns(@colCount);
+}
+.col-xs-g10- {
+    .generate-columns(10);
+}
+/*---=== SM ===---*/
+.col-sm- {
+    .generate-columns(@colCount);
+}
+.col-sm-g10- {
+    .generate-columns(10);
+}
+/*---=== MD ===---*/
+.col-md- {
+    .generate-columns(@colCount);
+}
+.col-md-g10- {
+    .generate-columns(10);
+}</code></pre>
+                </figure>
+                
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content/Typography</a></li>
+                <li><a href="/standards-guide/developer/listings.html#!watch">Article Listings</a></li>
+                <li><a href="/standards-guide/developer/details.html#!watch">Article Details</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.accordion > dt').on('click', function() {
+        var $this = $(this);
+        
+        $this.siblings('.active').removeClass('active');
+        $this.addClass('active');
+    });
+});
+</script>
+</body>
+</html>
