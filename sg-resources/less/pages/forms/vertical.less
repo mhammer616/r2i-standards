@@ -1,2 +1,41 @@
-/* CSS Document */
-
+/*---===<<< VERTICAL FORM STYLING >>>===---*/
+&.vertical {
+    > div {
+        .clearfix;
+    }
+    
+    label {
+        float: left;
+        margin: 0 1% 0 0;
+        width: 24%;
+        padding: .8rem 0 0;
+        .ta-right;
+    }
+    
+    input, textarea, select, .chosen-container {
+        width: 75%;
+    }
+    
+    input[maxlength="2"] {
+        width: 60px;
+    }
+    
+    input[maxlength="5"] {
+        width: 70px;
+    }
+    
+    input[type="checkbox"], input[type="radio"] {
+        + label {
+            display: inline-block;
+            width: auto;
+            .ta-left;
+        }
+    }
+    
+    fieldset {
+        margin: 0 0 3rem 24%;
+    }
+    input[type="submit"], input[type="reset"], input[type="button"] {
+        width: auto;
+    }
+}

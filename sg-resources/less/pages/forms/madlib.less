@@ -1,2 +1,26 @@
 /* CSS Document */
-
+&.mad-lib {
+    p {
+        font-size: 1.6rem;
+        line-height: 2em;
+        margin: 0 0 2.5em;
+    }
+    input, select {
+        display: inline-block;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid @grey;
+        .ta-center;
+        font-size: 1.6rem;
+        .fw-bold;
+    }
+    
+    input[type="submit"], input[type="reset"], input[type="button"] {
+        padding: 1rem 1.5rem;
+        .fw-regular;
+        font-size: 1.4rem;
+        border: 1px solid @grey;
+    }
+}

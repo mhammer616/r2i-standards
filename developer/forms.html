@@ -69,7 +69,7 @@
                             <li><a href="#TraditionalForm">Traditional Form</a></li>
                             <li><a href="#InlineForm">Inline Form</a></li>
                             <li><a href="#VerticalForm">Vertical Form</a></li>
-                            <li><a href="#PlaceholderForm">Placeholder Form</a></li>
+                            <!--li><a href="#PlaceholderForm">Placeholder Form</a></li-->
                             <li><a href="#MadLibForm">MadLib Form</a></li>
                         </ul>
                     </li>
@@ -95,31 +95,31 @@
                     <div>
                         <div class="active" role="tabpanel" id="inputsExample">
                             <form id="inputs">
-                                <div class="col-12 col-sm-3">
+                                <div class="col-sm-4">
                                     <label for="inputText">Text</label>
                                     <input id="inputText" type="text" placeholder="Text" />
                                 </div>
-                                <div class="col-12 col-sm-3">
+                                <div class="col-sm-4">
                                     <label for="inputPassword">Password</label>
                                     <input id="inputPassword" type="password" placeholder="Password" />
                                 </div>
-                                <div class="col-12 col-sm-3">
+                                <div class="col-sm-4">
                                     <label for="inputNum">Number</label>
                                     <input id="inputNum" type="number" placeholder="5,000,000" />
                                 </div>
-                                <div class="col-12 col-sm-3">
+                                <div class="col-sm-4">
                                     <label for="inputEmail">Email</label>
                                     <input id="inputEmail" type="email" placeholder="anyone@gmail.com" />
                                 </div>
-                                <div class="col-12 col-sm-3">
+                                <div class="col-sm-4">
                                     <label for="inputURL">URL</label>
                                     <input id="inputURL" type="url" placeholder="http://www.google.com/" />
                                 </div>
-                                <div class="col-12 col-sm-3">
+                                <div class="col-sm-4">
                                     <label for="inputTel">Telephone</label>
                                     <input id="inputTel" type="tel" placeholder="(410) 555-5555" maxlength="14" />
                                 </div>
-                                <div class="col-12 col-sm-3">
+                                <div class="col-sm-4">
                                     <label for="inputSearch">Search</label>
                                     <input id="inputSearch" type="tel" placeholder="Keyword" />
                                 </div>
@@ -127,31 +127,31 @@
                         </div>
                         <div role="tabpanel" id="inputsHTML">
                             <pre><code code="hljs html">&lt;form id="inputs"&gt;
-    &lt;div class="col-4"&gt;
+    &lt;div class="col-sm-4"&gt;
         &lt;label for="inputText"&gt;Text&lt;/label&gt;
         &lt;input id="inputText" type="text" placeholder="Text" /&gt;
     &lt;/div&gt;
-    &lt;div class="col-4"&gt;
+    &lt;div class="col-sm-4"&gt;
         &lt;label for="inputPassword"&gt;Password&lt;/label&gt;
         &lt;input id="inputPassword" type="password" placeholder="Password" /&gt;
     &lt;/div&gt;
-    &lt;div class="col-4"&gt;
+    &lt;div class="col-sm-4"&gt;
         &lt;label for="inputNum"&gt;Number&lt;/label&gt;
         &lt;input id="inputNum" type="number" placeholder="5,000,000" /&gt;
     &lt;/div&gt;
-    &lt;div class="col-4"&gt;
+    &lt;div class="col-sm-4"&gt;
         &lt;label for="inputEmail"&gt;Email&lt;/label&gt;
         &lt;input id="inputEmail" type="email" placeholder="anyone@gmail.com" /&gt;
     &lt;/div&gt;
-    &lt;div class="col-4"&gt;
+    &lt;div class="col-sm-4"&gt;
         &lt;label for="inputURL"&gt;URL&lt;/label&gt;
         &lt;input id="inputURL" type="url" placeholder="http://www.google.com/" /&gt;
     &lt;/div&gt;
-    &lt;div class="col-4"&gt;
+    &lt;div class="col-sm-4"&gt;
         &lt;label for="inputTel"&gt;Telephone&lt;/label&gt;
         &lt;input id="inputTel" type="tel" placeholder="(410) 555-5555" maxlength="14" /&gt;
     &lt;/div&gt;
-    &lt;div class="col-4"&gt;
+    &lt;div class="col-sm-4"&gt;
         &lt;label for="inputSearch"&gt;Search&lt;/label&gt;
         &lt;input id="inputSearch" type="tel" placeholder="Keyword" /&gt;
     &lt;/div&gt;
@@ -662,6 +662,7 @@ input[type="radio"] {
                 </figure>
                 <h3 id="Buttons">Buttons</h3>
                 <p>There are two different ways to write buttons for forms, one with the <code>input</code> tag and using <code>type</code> to assign one of three options <code>submit</code>, <code>reset</code>, or <code>button</code>, or, using the <code>button</code> tag and setting one of the same three options.  It all depends on your styling need and whether you need to have additional code inside the button to add before or after attributes or icons. If you do have to use additional code, then the <code>button</code> tag is appropriate since it has a closing tag, where if you don't need any additional markup then you can use the <code>input</code> tag.</p>
+                <p>See the <a href="buttons.html">buttons</a> page for more information on buttons.</p>
                 <figure class="tabs">
                     <div>
                         <div class="active" role="tabpanel" id="buttonsExample">
@@ -2275,12 +2276,269 @@ textarea {
                 <h3 id="TraditionalForm">Traditional Form</h3>
                 <figure class="tabs">
                     <div>
-                        <div class="active" role="tabpanel" id="traditionalExample"></div>
+                        <div class="active" role="tabpanel" id="traditionalExample">
+                            <form class="traditional">
+                                <div class="col-sm-6">
+                                    <label for="tradFirstName">First Name</label>
+                                    <input type="text" id="tradFirstName" placeholder="John" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="tradLastName">Last Name</label>
+                                    <input type="text" id="tradLastName" placeholder="Doe" />
+                                </div>
+                                <div class="col-sm-12">
+                                    <label for="tradEmail">Email</label>
+                                    <input type="email" id="tradEmail" placeholder="name@company.com" />
+                                </div>
+                                <div class="col-sm-12">
+                                    <label for="tradAddress">Address</label>
+                                    <input type="text" id="tradAddress" />
+                                </div>
+                                <div class="col-sm-8">
+                                    <label for="tradCity">City</label>
+                                    <input type="text" id="tradCity" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="tradState">State</label>
+                                    <input type="text" id="tradState" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="tradZip">Postal Code</label>
+                                    <input type="text" id="tradZip" />
+                                </div>
+                                <fieldset>
+                                    <legend>Choices <small>(Select All That Apply)</small></legend>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="tradOption1" />
+                                        <label for="tradOption1">Option 1</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="tradOption2" />
+                                        <label for="tradOption2">Option 2</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="tradOption3" />
+                                        <label for="tradOption3">Option 3</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="tradOption4" />
+                                        <label for="tradOption4">Option 4</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="tradOption5" />
+                                        <label for="tradOption5">Option 5</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="tradOption6" />
+                                        <label for="tradOption6">Option 6</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="tradOption7" />
+                                        <label for="tradOption7">Option 7</label>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Choices <small>(Select The Best Option)</small></legend>
+                                    <div class="col-sm-4">
+                                        <input type="radio" id="tradChoice1" name="choice" />
+                                        <label for="tradChoice1">Choice 1</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="radio" id="tradChoice2" name="choice" />
+                                        <label for="tradChoice2">Choice 2</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="radio" id="tradChoice3" name="choice" />
+                                        <label for="tradChoice3">Choice 3</label>
+                                    </div>
+                                </fieldset>
+                                <input type="reset" value="Reset" />
+                                <input type="submit" value="Submit" />
+                            </form>
+                        </div>
                         <div role="tabpanel" id="traditionalHTML">
-                            <pre><code code="hljs html"></code></pre>
+                            <pre><code code="hljs html">&lt;form class="traditional"&gt;
+    &lt;div class="col-sm-6"&gt;
+        &lt;label for="tradFirstName"&gt;First Name&lt;/label&gt;
+        &lt;input type="text" id="tradFirstName" placeholder="John" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-6"&gt;
+        &lt;label for="tradLastName"&gt;Last Name&lt;/label&gt;
+        &lt;input type="text" id="tradLastName" placeholder="Doe" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-12"&gt;
+        &lt;label for="tradEmail"&gt;Email&lt;/label&gt;
+        &lt;input type="email" id="tradEmail" placeholder="name@company.com" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-12"&gt;
+        &lt;label for="tradAddress"&gt;Address&lt;/label&gt;
+        &lt;input type="text" id="tradAddress" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-8"&gt;
+        &lt;label for="tradCity"&gt;City&lt;/label&gt;
+        &lt;input type="text" id="tradCity" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-2"&gt;
+        &lt;label for="tradState"&gt;State&lt;/label&gt;
+        &lt;input type="text" id="tradState" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-2"&gt;
+        &lt;label for="tradZip"&gt;Postal Code&lt;/label&gt;
+        &lt;input type="text" id="tradZip" /&gt;
+    &lt;/div&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Choices &lt;small&gt;(Select All That Apply)&lt;/small&gt;&lt;/legend&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="tradOption1" /&gt;
+            &lt;label for="tradOption1"&gt;Option 1&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="tradOption2" /&gt;
+            &lt;label for="tradOption2"&gt;Option 2&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="tradOption3" /&gt;
+            &lt;label for="tradOption3"&gt;Option 3&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="tradOption4" /&gt;
+            &lt;label for="tradOption4"&gt;Option 4&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="tradOption5" /&gt;
+            &lt;label for="tradOption5"&gt;Option 5&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="tradOption6" /&gt;
+            &lt;label for="tradOption6"&gt;Option 6&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="tradOption7" /&gt;
+            &lt;label for="tradOption7"&gt;Option 7&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Choices &lt;small&gt;(Select The Best Option)&lt;/small&gt;&lt;/legend&gt;
+        &lt;div class="col-sm-4"&gt;
+            &lt;input type="radio" id="tradChoice1" name="choice" /&gt;
+            &lt;label for="tradChoice1"&gt;Choice 1&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-4"&gt;
+            &lt;input type="radio" id="tradChoice2" name="choice" /&gt;
+            &lt;label for="tradChoice2"&gt;Choice 2&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-4"&gt;
+            &lt;input type="radio" id="tradChoice3" name="choice" /&gt;
+            &lt;label for="tradChoice3"&gt;Choice 3&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;input type="reset" value="Reset" /&gt;
+    &lt;input type="submit" value="Submit" /&gt;
+&lt;/form&gt;</code></pre>
                         </div>
                         <div role="tabpanel" id="traditionalLESS">
-                            <pre><code class="hljs css"></code></pre>
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; SAMPLE FORM ELEMENTS &gt;&gt;&gt;===---*/
+&gt; div {
+    margin: 0 0 1.5rem;
+    position: relative;
+    .ta-left;
+}
+/*---=== LABELS ===---*/
+label {
+    display: block;
+    margin: 0 0 .5rem;
+}
+/*---=== INPUTS ===---*/
+/*--- TEXT ---*/
+input {
+    display: block;
+    padding: 1rem 1.5rem;
+    border: .1rem solid @grey;
+    width: 100%;
+}
+/*--- CHECKBOX AND RADIOS ---*/
+input[type="checkbox"], input[type="radio"] {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    + label {
+        padding: 0 0 0 3rem;
+        
+        &:before {
+            height: 1.6rem;
+            width: 1.6rem;
+            border: .2rem solid @grey;
+            background: @white;
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            .translate(0, -50%);
+        }
+    }
+    
+    &:checked {
+        + label {
+            &:before {
+                background: @grey;
+                .inset-box-shadow(@color: @white, @s: .2rem, @h: 0, @v: 0, @b: 0);
+            }
+        }
+    }
+}
+/* RADIOS */
+input[type="radio"] {
+    + label {
+        &:before {
+            .border-radius(100%);
+        }
+    }
+}
+/*--- BUTTONS ---*/
+input[type="submit"], input[type="reset"], input[type="button"], button {
+    padding: 1rem 1.5rem;
+    .border-radius(0);
+    width: auto;
+    display: inline-block;
+    background: fade(@grey, 50);
+    color: darken(@grey, 50);
+    border: .1rem solid @grey;
+}
+/*---=== TEXTAREAS ===---*/
+textarea {
+    padding: 1rem 1.5rem;
+    border: 1px solid @grey;
+    width: 100%;
+}
+/*---=== SELECT ===---*/
+select {
+    padding: 1rem 1.5rem;
+    border: .1rem solid @grey;
+    width: 100%;
+}
+/*---=== FIELDSET ===---*/
+fieldset {
+    border: none;
+    padding: 0 @gutter;
+    margin: 0 0 3rem;
+    .ta-left;
+
+    &gt; div {
+        margin: 0 0 .5rem;
+        position: relative;
+        .ta-left;
+    }
+    
+    legend {
+        display: block;
+        margin: 0 0 1.5rem;
+        padding: 0;
+    }
+}</code></pre>
                         </div>
                         <div role="tabpanel" id="traditionalJS">
                             <pre>
@@ -2298,12 +2556,46 @@ textarea {
                 <h3 id="InlineForm">Inline Form</h3>
                 <figure class="tabs">
                     <div>
-                        <div class="active" role="tabpanel" id="inlineExample"></div>
+                        <div class="active" role="tabpanel" id="inlineExample">
+                            <form class="inline">
+                                <div class="col-sm-5">
+                                    <label for="inlineUser">Username</label>
+                                    <input type="text" id="inlineUser" placeholder="name@company.com" />
+                                </div>
+                                <div class="col-sm-5">
+                                    <label for="inlinePassword">Password</label>
+                                    <input type="text" id="inlinePassword" placeholder="Password" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="submit" value="Login" />
+                                    <input type="reset" value="Clear" />
+                                </div>
+                            </form>
+                        </div>
                         <div role="tabpanel" id="inlineHTML">
-                            <pre><code code="hljs html"></code></pre>
+                            <pre><code code="hljs html">&lt;form&gt;
+    &lt;div class="col-sm-5"&gt;
+        &lt;label for="inlineUser"&gt;Username&lt;/label&gt;
+        &lt;input type="text" id="inlineUser" placeholder="name@company.com" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-5"&gt;
+        &lt;label for="inlinePassword"&gt;Password&lt;/label&gt;
+        &lt;input type="text" id="inlinePassword" placeholder="Password" /&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-2"&gt;
+        &lt;input type="submit" value="Login" /&gt;
+        &lt;input type="reset" value="Clear" /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
                         </div>
                         <div role="tabpanel" id="inlineLESS">
-                            <pre><code class="hljs css"></code></pre>
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; COPY SAMPLE STYLING ABOVE FROM TRADITONAL &gt;&gt;&gt;===---*/
+/*---===&lt;&lt;&lt; INLINE STYLING &gt;&gt;&gt;===---*/
+&gt; div {
+    &:last-of-type {
+        margin: ~"calc(1.5em + .5rem)" 0 0;
+    }
+}</code></pre>
                         </div>
                         <div role="tabpanel" id="inlineJS">
                             <pre>
@@ -2321,12 +2613,208 @@ textarea {
                 <h3 id="VerticalForm">Vertical Form</h3>
                 <figure class="tabs">
                     <div>
-                        <div class="active" role="tabpanel" id="verticalExample"></div>
+                        <div class="active" role="tabpanel" id="verticalExample">
+                            <form class="vertical">
+                                <div>
+                                    <label for="vertFirstName">First Name</label>
+                                    <input type="text" id="vertFirstName" placeholder="John" />
+                                </div>
+                                <div>
+                                    <label for="vertLastName">Last Name</label>
+                                    <input type="text" id="vertLastName" placeholder="Doe" />
+                                </div>
+                                <div>
+                                    <label for="vertEmail">Email</label>
+                                    <input type="email" id="vertEmail" placeholder="name@company.com" />
+                                </div>
+                                <div>
+                                    <label for="vertAddress">Address</label>
+                                    <input type="text" id="vertAddress" />
+                                </div>
+                                <div>
+                                    <label for="vertCity">City</label>
+                                    <input type="text" id="vertCity" />
+                                </div>
+                                <div>
+                                    <label for="vertState">State</label>
+                                    <input type="text" id="vertState" maxlength="2" />
+                                </div>
+                                <div>
+                                    <label for="vertZip">Postal Code</label>
+                                    <input type="text" id="vertZip" maxlength="5" />
+                                </div>
+                                <fieldset>
+                                    <legend>Choices <small>(Select All That Apply)</small></legend>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="vertOption1" />
+                                        <label for="vertOption1">Option 1</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="vertOption2" />
+                                        <label for="vertOption2">Option 2</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="vertOption3" />
+                                        <label for="vertOption3">Option 3</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="vertOption4" />
+                                        <label for="vertOption4">Option 4</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="vertOption5" />
+                                        <label for="vertOption5">Option 5</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="vertOption6" />
+                                        <label for="vertOption6">Option 6</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="checkbox" id="vertOption7" />
+                                        <label for="vertOption7">Option 7</label>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Choices <small>(Select The Best Option)</small></legend>
+                                    <div class="col-sm-4">
+                                        <input type="radio" id="vertChoice1" name="choice" />
+                                        <label for="vertChoice1">Choice 1</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="radio" id="vertChoice2" name="choice" />
+                                        <label for="vertChoice2">Choice 2</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="radio" id="vertChoice3" name="choice" />
+                                        <label for="vertChoice3">Choice 3</label>
+                                    </div>
+                                </fieldset>
+                                <input type="reset" value="Reset" />
+                                <input type="submit" value="Submit" />
+                            </form>
+                        </div>
                         <div role="tabpanel" id="verticalHTML">
-                            <pre><code code="hljs html"></code></pre>
+                            <pre><code code="hljs html">&lt;form class="vertical"&gt;
+    &lt;div&gt;
+        &lt;label for="vertFirstName"&gt;First Name&lt;/label&gt;
+        &lt;input type="text" id="vertFirstName" placeholder="John" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="vertLastName"&gt;Last Name&lt;/label&gt;
+        &lt;input type="text" id="vertLastName" placeholder="Doe" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="vertEmail"&gt;Email&lt;/label&gt;
+        &lt;input type="email" id="vertEmail" placeholder="name@company.com" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="vertAddress"&gt;Address&lt;/label&gt;
+        &lt;input type="text" id="vertAddress" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="vertCity"&gt;City&lt;/label&gt;
+        &lt;input type="text" id="vertCity" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="vertState"&gt;State&lt;/label&gt;
+        &lt;input type="text" id="vertState" maxlength="2" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="vertZip"&gt;Postal Code&lt;/label&gt;
+        &lt;input type="text" id="vertZip" maxlength="5" /&gt;
+    &lt;/div&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Choices &lt;small&gt;(Select All That Apply)&lt;/small&gt;&lt;/legend&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="vertOption1" /&gt;
+            &lt;label for="vertOption1"&gt;Option 1&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="vertOption2" /&gt;
+            &lt;label for="vertOption2"&gt;Option 2&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="vertOption3" /&gt;
+            &lt;label for="vertOption3"&gt;Option 3&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="vertOption4" /&gt;
+            &lt;label for="vertOption4"&gt;Option 4&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="vertOption5" /&gt;
+            &lt;label for="vertOption5"&gt;Option 5&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="vertOption6" /&gt;
+            &lt;label for="vertOption6"&gt;Option 6&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-xs-6"&gt;
+            &lt;input type="checkbox" id="vertOption7" /&gt;
+            &lt;label for="vertOption7"&gt;Option 7&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Choices &lt;small&gt;(Select The Best Option)&lt;/small&gt;&lt;/legend&gt;
+        &lt;div class="col-sm-4"&gt;
+            &lt;input type="radio" id="vertChoice1" name="choice" /&gt;
+            &lt;label for="vertChoice1"&gt;Choice 1&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-4"&gt;
+            &lt;input type="radio" id="vertChoice2" name="choice" /&gt;
+            &lt;label for="vertChoice2"&gt;Choice 2&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-4"&gt;
+            &lt;input type="radio" id="vertChoice3" name="choice" /&gt;
+            &lt;label for="vertChoice3"&gt;Choice 3&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;input type="reset" value="Reset" /&gt;
+    &lt;input type="submit" value="Submit" /&gt;
+&lt;/form&gt;</code></pre>
                         </div>
                         <div role="tabpanel" id="verticalLESS">
-                            <pre><code class="hljs css"></code></pre>
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; VERTICAL FORM STYLING &gt;&gt;&gt;===---*/
+&.vertical {
+    &gt; div {
+        .clearfix;
+    }
+    
+    label {
+        float: left;
+        margin: 0 1% 0 0;
+        width: 24%;
+        padding: .8rem 0 0;
+        .ta-right;
+    }
+    
+    input, textarea, select, .chosen-container {
+        width: 75%;
+    }
+    
+    input[maxlength="2"] {
+        width: 60px;
+    }
+    
+    input[maxlength="5"] {
+        width: 70px;
+    }
+    
+    input[type="checkbox"], input[type="radio"] {
+        + label {
+            display: inline-block;
+            width: auto;
+            .ta-left;
+        }
+    }
+    
+    fieldset {
+        margin: 0 0 3rem 24%;
+    }
+    input[type="submit"], input[type="reset"], input[type="button"] {
+        width: auto;
+    }
+}</code></pre>
                         </div>
                         <div role="tabpanel" id="verticalsJS">
                             <pre>
@@ -2341,7 +2829,7 @@ textarea {
                         <a href="#verticalsJS" role="tab" disabled>JavaScript</a>
                     </figcaption>
                 </figure>
-                <h3 id="PlaceholderForm">Placeholder Form</h3>
+                <!--h3 id="PlaceholderForm">Placeholder Form</h3>
                 <figure class="tabs">
                     <div>
                         <div class="active" role="tabpanel" id="placeholderExample"></div>
@@ -2363,16 +2851,112 @@ textarea {
                         <a href="#placeholderLESS" role="tab">LESS</a>
                         <a href="#placeholderJS" role="tab" disabled>JavaScript</a>
                     </figcaption>
-                </figure>
+                </figure-->
                 <h3 id="MadLibForm">MadLib Form</h3>
                 <figure class="tabs">
                     <div>
-                        <div class="active" role="tabpanel" id="madLibExample"></div>
-                        <div role="tabpanel" id="madLibHTML">
-                            <pre><code code="hljs html"></code></pre>
+                        <div class="active" role="tabpanel" id="madLibExample"><form class="mad-lib">
+                            <p>Picture yourself in a <input type="text" placeholder="noun" /> on a river,<br />
+With <input type="text" placeholder="food" /> trees and <input type="text" placeholder="food" /> skies<br />
+Somebody calls you, you <input type="text" placeholder="verb" /> quite <input type="text" placeholder="adverb" />,<br />
+A girl with <input type="text" placeholder="adjective" /> eyes.</p>
+
+                            <p>Cellophane <input type="text" placeholder="noun" /> of <input type="text" placeholder="color" /> and green,<br />
+<input type="text" placeholder="verb" /> over your head.<br />
+<input type="text" placeholder="verb" /> for the girl with the <input type="text" placeholder="noun" /> in her eyes,<br />
+And she`s gone.</p>
+
+                            <p><input type="text" placeholder="female name" /> in the sky with <input type="text" placeholder="noun (plural)" />...<br />
+<input type="text" placeholder="female name" /> in the sky with <input type="text" placeholder="noun (plural)" />...<br />
+<input type="text" placeholder="female name" /> in the sky with <input type="text" placeholder="noun (plural)" />...</p>
+
+                            <p>Follow her down to a <input type="text" placeholder="noun" /> by a fountain<br />
+Where rocking horse <input type="text" placeholder="noun (plural)" /> eat <input type="text" placeholder="noun" /> pies,<br />
+Everyone <input type="text" placeholder="verb ending in s" /> as you <input type="text" placeholder="verb" /> past the flowers,<br />
+That <input type="text" placeholder="verb" /> so incredibly high.</p>
+
+                            <p>Newspaper <input type="text" placeholder="noun" /> appear on the shore,<br />
+Waiting to take you away.<br />
+Climb in the back with your <input type="text" placeholder="body part" /> in the clouds,<br />
+And you`re gone.</p>
+
+                            <p>Picture yourself on a train in a <input type="text" placeholder="place" />,<br />
+With <input type="text" placeholder="adjective" /> porters with looking glass <input type="text" placeholder="article of clothing" />,<br />
+Suddenly someone is there at the turnstile,<br />
+The girl with <input type="text" placeholder="adjective" /> eyes.</p>
+
+                            <p><input type="text" placeholder="female name" /> in the sky with <input type="text" placeholder="noun (plural)" />...<br />
+<input type="text" placeholder="female name" /> in the sky with <input type="text" placeholder="noun (plural)" />...<br />
+<input type="text" placeholder="female name" /> in the sky with <input type="text" placeholder="noun (plural)" />...</p>
+                            <input type="reset" value="Clear" />
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                    <div role="tabpanel" id="madLibHTML">
+                        <pre><code code="hljs html">&lt;form class="mad-lib"&gt;
+    &lt;p&gt;Picture yourself in a &lt;input type="text" placeholder="noun" /&gt; on a river,&lt;br /&gt;
+        With &lt;input type="text" placeholder="food" /&gt; trees and &lt;input type="text" placeholder="food" /&gt; skies&lt;br /&gt;
+        Somebody calls you, you &lt;input type="text" placeholder="verb" /&gt; quite &lt;input type="text" placeholder="adverb" /&gt;,&lt;br /&gt;
+        A girl with &lt;input type="text" placeholder="adjective" /&gt; eyes.&lt;/p&gt;
+
+    &lt;p&gt;Cellophane &lt;input type="text" placeholder="noun" /&gt; of &lt;input type="text" placeholder="color" /&gt; and green,&lt;br /&gt;
+        &lt;input type="text" placeholder="verb" /&gt; over your head.&lt;br /&gt;
+        &lt;input type="text" placeholder="verb" /&gt; for the girl with the &lt;input type="text" placeholder="noun" /&gt; in her eyes,&lt;br /&gt;
+        And she`s gone.&lt;/p&gt;
+
+    &lt;p&gt;&lt;input type="text" placeholder="female name" /&gt; in the sky with &lt;input type="text" placeholder="noun (plural)" /&gt;...&lt;br /&gt;
+        &lt;input type="text" placeholder="female name" /&gt; in the sky with &lt;input type="text" placeholder="noun (plural)" /&gt;...&lt;br /&gt;
+        &lt;input type="text" placeholder="female name" /&gt; in the sky with &lt;input type="text" placeholder="noun (plural)" /&gt;...&lt;/p&gt;
+
+    &lt;p&gt;Follow her down to a &lt;input type="text" placeholder="noun" /&gt; by a fountain&lt;br /&gt;
+        Where rocking horse &lt;input type="text" placeholder="noun (plural)" /&gt; eat &lt;input type="text" placeholder="noun" /&gt; pies,&lt;br /&gt;
+        Everyone &lt;input type="text" placeholder="verb ending in s" /&gt; as you &lt;input type="text" placeholder="verb" /&gt; past the flowers,&lt;br /&gt;
+        That &lt;input type="text" placeholder="verb" /&gt; so incredibly high.&lt;/p&gt;
+
+    &lt;p&gt;Newspaper &lt;input type="text" placeholder="noun" /&gt; appear on the shore,&lt;br /&gt;
+        Waiting to take you away.&lt;br /&gt;
+        Climb in the back with your &lt;input type="text" placeholder="body part" /&gt; in the clouds,&lt;br /&gt;
+        And you`re gone.&lt;/p&gt;
+
+    &lt;p&gt;Picture yourself on a train in a &lt;input type="text" placeholder="place" /&gt;,&lt;br /&gt;
+        With &lt;input type="text" placeholder="adjective" /&gt; porters with looking glass &lt;input type="text" placeholder="article of clothing" /&gt;,&lt;br /&gt;
+        Suddenly someone is there at the turnstile,&lt;br /&gt;
+        The girl with &lt;input type="text" placeholder="adjective" /&gt; eyes.&lt;/p&gt;
+
+    &lt;p&gt;&lt;input type="text" placeholder="female name" /&gt; in the sky with &lt;input type="text" placeholder="noun (plural)" /&gt;...&lt;br /&gt;
+        &lt;input type="text" placeholder="female name" /&gt; in the sky with &lt;input type="text" placeholder="noun (plural)" /&gt;...&lt;br /&gt;
+        &lt;input type="text" placeholder="female name" /&gt; in the sky with &lt;input type="text" placeholder="noun (plural)" /&gt;...&lt;/p&gt;
+    &lt;input type="reset" value="Clear" /&gt;
+    &lt;input type="submit" value="Submit" /&gt;
+&lt;/form&gt;</code></pre>
                         </div>
                         <div role="tabpanel" id="madLibLESS">
-                            <pre><code class="hljs css"></code></pre>
+                            <pre><code class="hljs css">/* CSS Document */
+form.mad-lib {
+    p {
+        font-size: 1.6rem;
+        line-height: 2em;
+        margin: 0 0 2.5em;
+    }
+    input, select {
+        display: inline-block;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid @grey;
+        .ta-center;
+        font-size: 1.6rem;
+        .fw-bold;
+    }
+    
+    input[type="submit"], input[type="reset"], input[type="button"] {
+        padding: 1rem 1.5rem;
+        .fw-regular;
+        font-size: 1.4rem;
+        border: 1px solid @grey;
+    }
+}</code></pre>
                         </div>
                         <div role="tabpanel" id="madLibJS">
                             <pre>

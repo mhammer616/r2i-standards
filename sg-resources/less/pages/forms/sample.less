@@ -1,8 +1,8 @@
 /*---===<<< SAMPLE FORM ELEMENTS >>>===---*/
-
 > div {
     margin: 0 0 1.5rem;
     position: relative;
+    .ta-left;
 }
 /*---=== LABELS ===---*/
 label {
@@ -14,7 +14,7 @@ label {
 input {
     display: block;
     padding: 1rem 1.5rem;
-    border: 1px solid @grey;
+    border: .1rem solid @grey;
     width: 100%;
 }
 /*--- CHECKBOX AND RADIOS ---*/
@@ -26,7 +26,7 @@ input[type="checkbox"], input[type="radio"] {
     left: 0;
     
     + label {
-        padding: 0 0 0 30px;
+        padding: 0 0 0 3rem;
         
         &:before {
             height: 1.6rem;
@@ -46,7 +46,7 @@ input[type="checkbox"], input[type="radio"] {
         + label {
             &:before {
                 background: @grey;
-                .inset-box-shadow(@color: @white, @s: 2px, @h: 0, @v: 0, @b: 0);
+                .inset-box-shadow(@color: @white, @s: .2rem, @h: 0, @v: 0, @b: 0);
             }
         }
     }
@@ -61,13 +61,13 @@ input[type="radio"] {
 }
 /*--- BUTTONS ---*/
 input[type="submit"], input[type="reset"], input[type="button"], button {
-    padding: 10px 15px;
+    padding: 1rem 1.5rem;
     .border-radius(0);
     width: auto;
     display: inline-block;
     background: fade(@grey, 50);
     color: darken(@grey, 50);
-    border: 1px solid @grey;
+    border: .1rem solid @grey;
 }
 /*---=== TEXTAREAS ===---*/
 textarea {
@@ -78,6 +78,25 @@ textarea {
 /*---=== SELECT ===---*/
 select {
     padding: 1rem 1.5rem;
-    border: 1px solid @grey;
+    border: .1rem solid @grey;
     width: 100%;
+}
+/*---=== FIELDSET ===---*/
+fieldset {
+    border: none;
+    padding: 0 @gutter;
+    margin: 0 0 3rem;
+    .ta-left;
+
+    > div {
+        margin: 0 0 .5rem;
+        position: relative;
+        .ta-left;
+    }
+    
+    legend {
+        display: block;
+        margin: 0 0 1.5rem;
+        padding: 0;
+    }
 }
