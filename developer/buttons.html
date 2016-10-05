@@ -7,6 +7,7 @@
 <script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js"></script>
 <link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/buttons/base.less" rel="stylesheet/less" type="text/css" />
 <script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
 </script>
 <link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
@@ -50,45 +51,403 @@
         <article>
             <nav>
                 <ul>
-                    <li><a href="#">Basic Form Guidelines</a></li>
-                    <li><a href="#">Labels</a></li>
-                    <li><a href="#">Inputs</a>
+                    <li><a href="#">Button Guidelines</a></li>
+                    <li><a href="#">Button Styles</a>
                         <ul>
-                            <li><a href="#">Text Inputs</a></li>
-                            <li><a href="#">Date Inputs</a></li>
-                            <li><a href="#">Checkboxes</a></li>
-                            <li><a href="#">Radio Buttons</a></li>
-                            <li><a href="#">Button Inputs</a></li>
+                            <li><a href="#">Base Style</a></li>
+                            <li><a href="#">Primary</a></li>
+                            <li><a href="#">Secondary</a></li>
+                            <li><a href="#">Tertiary</a></li>
+                            <li><a href="#">Outline</a></li>
+                            <li><a href="#">Link</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Selects</a></li>
-                    <li><a href="#">Textareas</a></li>
-                    <li><a href="#">Examples</a>
+                    <li><a href="#">Button Layouts</a>
                         <ul>
-                            <li><a href="#">Traditional Form</a></li>
-                            <li><a href="#">Inline Form</a></li>
-                            <li><a href="#">Vertical Form</a></li>
-                            <li><a href="#">Placeholder Form</a></li>
-                            <li><a href="#">MadLib Form</a></li>
+                            <li><a href="#">Stacked</a></li>
+                            <li><a href="#">Floated Left</a></li>
+                            <li><a href="#">Floated Right</a></li>
+                            <li><a href="#">Centered</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
             <section>
-                <h2>Basic Form Guidelines</h2>
-                <p>Every site or landing page that we build probably has at least one Form somewhere on them. Forms can be time consuming to build, style, and make functional, this section will help define some basic resets, and supply some code to help make this easier.</p>
-                <p>Forms, like the website in general, should follow a grid layout with rows of fields that cover any number of columns.</p>
-                <p>Forms are made up of various ways for the user to supply information back to the client. The basics of form elements are listed below, along with some custom implementations.</p>
+                <h2>Button Guidelines</h2>
+                <p>Buttons are extremley essential to every website we build. The only problem is that button class naming conventions can become messy and inconsistent. In order to standardize our naming system, follow the class naming conventions and code examples below.</p>
             </section>
             <section>
-                <h2>Labels</h2>
-                <p>A label, even if hidden, has to be supplied for usability for every form element.</p>
-                <p>The label tag must be properly hooked up using the for attribute to associate it with the id of the input.</p>
+                <h2>Button Styles</h2>
+                <p>There is no more need to define the btn and btn style class anymore, like so <code>class="btn btn-primary"</code>. Our new set of css styling pre-defines that button structure via the css style <code>[class*="btn-"]</code>. All you'll need is to use the btn class style to define the type of button you need to insert.</p>
+                <h3>Base Style</h3>
+                <p>When using any button style class, the base button style gets inherited to that button. Just make sure to change the variables in the less file to match the colors, fonts & spacing to the design.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonBaseExample">
+                            <div class="buttons">
+                                <a href="#" class="btn-primary">Base Button Example</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonBaseHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons"&gt;
+    &lt;a href="#" class="btn-primary"&gt;Primary Button&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonBaseLESS">
+                            <pre><code class="hljs css">[class*="btn-"] {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    .spartan;
+    .tt-upper;
+    .fs(@fs:1.2);
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonBaseJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonBaseExample" role="tab">Example</a>
+                        <a href="#buttonBaseHTML" role="tab">HTML</a>
+                        <a href="#buttonBaseLESS" role="tab">LESS</a>
+                        <a href="#buttonBaseJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
+                <h3>Primary Style</h3>
+                <p>Use class <code>btn-primary</code> to acheive the look below.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonPrimaryExample">
+                            <div class="buttons">
+                                <a href="#" class="btn-primary">Primary Button</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonPrimaryHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons"&gt;
+    &lt;a href="#" class="btn-primary"&gt;Primary Button&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonPrimaryLESS">
+                            <pre><code class="hljs css">.btn-primary {
+    background: @orange;
+    color: @white;
+    &:hover, &:focus {
+        background: fade(@orange, 50);
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonPrimaryJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonPrimaryExample" role="tab">Example</a>
+                        <a href="#buttonPrimaryHTML" role="tab">HTML</a>
+                        <a href="#buttonPrimaryLESS" role="tab">LESS</a>
+                        <a href="#buttonPrimaryJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
+                <h3>Secondary Style</h3>
+                <p>Use class <code>btn-secondary</code> to acheive the look below.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonSecondaryExample">
+                            <div class="buttons">
+                                <a href="#" class="btn-secondary">Secondary Button</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonSecondaryHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons"&gt;
+    &lt;a href="#" class="btn-secondary"&gt;Secondary Button&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonSecondaryLESS">
+                            <pre><code class="hljs css">.btn-secondary {
+    background: @navy;
+    color: @white;
+    &:hover, &:focus {
+        background: fade(@navy, 50);
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonSecondaryJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonSecondaryExample" role="tab">Example</a>
+                        <a href="#buttonSecondaryHTML" role="tab">HTML</a>
+                        <a href="#buttonSecondaryLESS" role="tab">LESS</a>
+                        <a href="#buttonSecondaryJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
+                <h3>Tertiary Style</h3>
+                <p>Use class <code>btn-tertiary</code> to acheive the look below.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonTertiaryExample">
+                            <div class="buttons">
+                                <a href="#" class="btn-tertiary">Tertiary Button</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonTertiaryHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons"&gt;
+    &lt;a href="#" class="btn-tertiary"&gt;Tertiary Button&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonTertiaryLESS">
+                            <pre><code class="hljs css">.btn-tertiary {
+    background: @teal;
+    color: @white;
+    &:hover, &:focus {
+        background: fade(@teal, 50);
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonTertiaryJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonTertiaryExample" role="tab">Example</a>
+                        <a href="#buttonTertiaryHTML" role="tab">HTML</a>
+                        <a href="#buttonTertiaryLESS" role="tab">LESS</a>
+                        <a href="#buttonTertiaryJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
+                <h3>Outline Style</h3>
+                <p>Use class <code>btn-outline</code> to acheive the look below.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonOutlineExample">
+                            <div class="buttons">
+                                <a href="#" class="btn-outline">Outline Button</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonOutlineHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons"&gt;
+    &lt;a href="#" class="btn-outline"&gt;Outline Button&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonOutlineLESS">
+                            <pre><code class="hljs css">.btn-outline {
+    border: 3px solid @teal;
+    color: @teal;
+    padding-top: calc(~'1.5rem - 3px');
+    padding-bottom: calc(~'1.5rem - 3px');
+    &:hover, &:focus {
+        background: @teal;
+        color: @white;
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonOutlineJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonOutlineExample" role="tab">Example</a>
+                        <a href="#buttonOutlineHTML" role="tab">HTML</a>
+                        <a href="#buttonOutlineLESS" role="tab">LESS</a>
+                        <a href="#buttonOutlineJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
+                <h3>Link Style</h3>
+                <p>Use class <code>btn-link</code> to acheive the look below.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonLinkExample">
+                            <div class="buttons">
+                                <a href="#" class="btn-link">Link Button</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonLinkHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons"&gt;
+    &lt;a href="#" class="btn-link"&gt;Link Button&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonLinkLESS">
+                            <pre><code class="hljs css">.btn-link {
+    color: @navy;
+    &:hover, &:focus {
+        color: @teal;
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonLinkJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonLinkExample" role="tab">Example</a>
+                        <a href="#buttonLinkHTML" role="tab">HTML</a>
+                        <a href="#buttonLinkLESS" role="tab">LESS</a>
+                        <a href="#buttonLinkJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
             </section>
             <section>
-                <h2>Inputs</h2>
-                <p>Basic text inputs can be styled very simply by using CSS to manipulate the look and feel, we can easily control the following types: <code>text</code>, <code>password</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, and <code>tel</code>.</p>
-                <p>By using the proper type for the input, accessibility is increased by changing the keyboards on mobile and tablet devices, along with allowing basic validation of the elements to be performed.</p>
+                <h2>Button Layouts</h2>
+                <p>In some cases where there are multiple buttons displayed, you'll need different layouts for how they align. Add the classes below on the <code>class="buttons"</code> div to acheive these layouts.</p>
+                <h3>Stacked Layout</h3>
+                <p>Add class <code>stacked</code> to acheive the look below. Make sure to set a <code>max-width</code> property to the [class*="btn-"] element in LESS if you need the button width to be smaller.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonStackedExample">
+                            <div class="buttons stacked">
+                                <a href="#" class="btn-primary">Primary Button</a>
+                                <a href="#" class="btn-secondary">Secondary Button</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonStackedHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons stacked"&gt;
+    &lt;a href="#" class="btn-primary"&gt;Primary Button&lt;/a&gt;
+    &lt;a href="#" class="btn-secondary"&gt;Secondary Button&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonStackedLESS">
+                            <pre><code class="hljs css">&.stacked {
+    [class*="btn-"] {
+        display: block;
+        .ta-center;
+        + [class*="btn-"] {
+            margin-top: .5rem;
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonStackedJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonStackedExample" role="tab">Example</a>
+                        <a href="#buttonStackedHTML" role="tab">HTML</a>
+                        <a href="#buttonStackedLESS" role="tab">LESS</a>
+                        <a href="#buttonStackedJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
+                <h3>Centered Layout</h3>
+                <p>Add class <code>centered</code> to acheive the look below.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonCenteredExample">
+                            <div class="buttons centered">
+                                <a href="#" class="btn-primary">Primary Button</a>
+                                <a href="#" class="btn-secondary">Secondary Button</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonCenteredHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons centered"&gt;
+    &lt;a href="#" class="btn-primary"&gt;Primary Button&lt;/a&gt;
+    &lt;a href="#" class="btn-secondary"&gt;Secondary Button&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonCenteredLESS">
+                            <pre><code class="hljs css">&.centered {
+    text-align:center;
+    [class*="btn-"] {
+        + [class*="btn-"] {
+            margin-left: .5rem;
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonCenteredJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonCenteredExample" role="tab">Example</a>
+                        <a href="#buttonCenteredHTML" role="tab">HTML</a>
+                        <a href="#buttonCenteredLESS" role="tab">LESS</a>
+                        <a href="#buttonCenteredJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
+                <h3>Floated Right Layout</h3>
+                <p>Add class <code>floated-right</code> to acheive the look below.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonFlRightExample">
+                            <div class="buttons floated-right">
+                                <a href="#" class="btn-primary">Submit</a>
+                                <a href="#" class="btn-outline">Cancel</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonFlRightHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons floated-right"&gt;
+    &lt;a href="#" class="btn-primary"&gt;Submit&lt;/a&gt;
+    &lt;a href="#" class="btn-outline"&gt;Cancel&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonFlRightLESS">
+                            <pre><code class="hljs css">&.floated-right {
+    [class*="btn-"] {
+        float: right;
+        + [class*="btn-"] {
+            margin-right: .5rem;
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonFlRightJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonFlRightExample" role="tab">Example</a>
+                        <a href="#buttonFlRightHTML" role="tab">HTML</a>
+                        <a href="#buttonFlRightLESS" role="tab">LESS</a>
+                        <a href="#buttonFlRightJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
+                <h3>Floated Left Layout</h3>
+                <p>Add class <code>floated-left</code> to acheive the look below.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="buttonFlLeftExample">
+                            <div class="buttons floated-left">
+                                <a href="#" class="btn-primary">Submit</a>
+                                <a href="#" class="btn-link">Cancel</a>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="buttonFlLeftHTML">
+                            <pre><code code="hljs html">&lt;div class="buttons floated-left"&gt;
+    &lt;a href="#" class="btn-primary"&gt;Submit&lt;/a&gt;
+    &lt;a href="#" class="btn-link"&gt;Cancel&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonFlLeftLESS">
+                            <pre><code class="hljs css">&.floated-left {
+    [class*="btn-"] {
+        float: left;
+        + [class*="btn-"] {
+            margin-left: .5rem;
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="buttonFlLeftJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#buttonFlLeftExample" role="tab">Example</a>
+                        <a href="#buttonFlLeftHTML" role="tab">HTML</a>
+                        <a href="#buttonFlLeftLESS" role="tab">LESS</a>
+                        <a href="#buttonFlLeftJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure> 
             </section>
         </article>
     </section>
