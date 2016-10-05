@@ -1,0 +1,37 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+/*---===<<< ACCORDION BASE >>>===---*/
+dl.accordion {
+    border: 2px solid @navy;
+    padding: .5rem;
+    
+    dt {
+        position: relative;
+        background: @navy;
+        cursor: pointer;
+        font-size: 15px;
+        padding: 1rem;
+        color: @white;
+        
+        ~ dt {
+            margin: 1rem 0 0;
+        }
+    }
+    
+    dd {
+        display: none;
+        border: 1px solid @navy;
+        padding: 25px;
+        
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    @import url(plus-minus.less);
+    @import url(plus-close.less);
+    @import url(triangles.less);
+    @import url(arrows.less);
+}
