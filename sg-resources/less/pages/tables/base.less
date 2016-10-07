@@ -1,0 +1,40 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+/*---=== EXAMPLES ===---*/
+.responsive-table {
+    width: 100%;
+    overflow: auto;
+}
+table {
+    min-width: 700px;
+    border-collapse: collapse;
+    width: 100%;
+        
+    td, th {
+        padding: .5rem;
+        .ta-left;
+    }
+    
+    thead {
+        th {
+            border-bottom: 2px solid @grey;
+        }
+    }
+    tbody {
+        tr {
+            th {
+                width: 50px;
+            }
+            th, td {
+                border-top: 1px solid @grey;
+            }
+        }
+    }
+    
+    @import url(striped.less);
+    @import url(hover.less);
+    @import url(responsive-2a.less);
+}
+@import url(responsive-3.less);

@@ -7,6 +7,11 @@ article {
         margin: 0 0 1em;
         line-height: 1em;
         .spartan;
+        
+        small {
+            font-size: .667em;
+            opacity: .5;
+        }
     }
     
     h2 {
@@ -21,12 +26,11 @@ article {
         font-size: 2.2rem;
     }
     
-    h5 {
+    h5, h6 {
         font-size: 1.7rem;
-    }
-    
-    h6 {
-        font-size: 1.7rem;
+        small {
+            font-size: .75em;
+        }
     }
     
     hr {
@@ -74,8 +78,15 @@ article {
     }
     
     section {
-        > ul {
+        > ul, > ol {
             margin: 0 0 1.5rem 3rem;
+            ol {
+                margin: 1rem 0 0 3rem;
+            }
+            
+            li {
+                margin: 0 0 1rem;
+            }
         }
         
         > dl {

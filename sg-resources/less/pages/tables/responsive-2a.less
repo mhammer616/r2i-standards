@@ -1,0 +1,55 @@
+/* CSS Document */
+&.resp-2a {
+    .clearfix;
+    @media @mediaXS {
+        thead, tfoot {
+            display: none;
+        }
+        
+        tr {
+            display: block;
+            padding: 5px 0;
+            border-bottom: 1px solid @grey;
+            
+            th {
+                display: none;
+            }
+            
+            td {
+                display: block;
+                border: none;
+                padding: 0;
+            }
+        }
+    }
+    @media @mediaSMOnly {
+        thead, tfoot {
+            display: none;
+        }
+        
+        tr {
+            display: block;
+            padding: 5px 0;
+            float: left;
+            width: ~"calc(50% - @{gutter})";
+            border-bottom: 1px solid @grey;
+            
+            &:nth-child(even) {
+                margin: 0;
+            }
+            &:nth-child(odd) {
+                margin: 0 (@gutter * 2) 0 0;
+            }
+            
+            th {
+                display: none;
+            }
+            
+            td {
+                display: block;
+                border: none;
+                padding: 0;
+            }
+        }
+    }
+}
