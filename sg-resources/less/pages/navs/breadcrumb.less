@@ -1,0 +1,22 @@
+/* CSS Document */
+article {
+    > nav {
+        ol {
+            list-style: none;
+            .clearfix;
+            
+            li {
+                float: left;
+                font-size: 1.4rem;
+                
+                + li {
+                    
+                    &:before {
+                        content: '\00bb';
+                        margin: 0 .75rem;
+                    }
+                }
+            }
+        }
+    }
+}
