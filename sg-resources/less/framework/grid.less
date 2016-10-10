@@ -2,11 +2,26 @@
 [class*="col-"] {
     float: left;
     padding: 0 @gutter;
+    position: relative;
 }
 /*---=== GENERATE COLUMNS LOOP ===---*/
+/*--- COLUMNS ---*/
 .generate-columns(@n, @i: 1) when (@i =< @n) {
+    
     &@{i} {
         width: (@i * 100% / @n);
+    }
+    
+    &offset-@{i} {
+        margin-left: (@i * 100% / @n);
+    }
+    
+    &pull-@{i} {
+        right: (@i * 100% / @n);
+    }
+    
+    &push-@{i} {
+        left: (@i * 100% / @n);
     }
     
     .generate-columns(@n, (@i + 1));

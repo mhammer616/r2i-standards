@@ -54,6 +54,12 @@
                     <li><a href="#BasicGridGuidelines">Basic Grid Guidelines</a></li>
                     <li><a href="#When">When To Use</a></li>
                     <li><a href="#How">How To Use</a></li>
+                    <li><a href="#Classes">Offsets and Helper Classes</a>
+                        <ul>
+                            <li><a href="#Offsets">Offsets</a></li>
+                            <li><a href="#Helper">Helpers</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#Dive">Dive into the Code</a></li>
                     <li><a href="#Create">Create Custom Grids</a></li>
                 </ul>
@@ -147,6 +153,54 @@
                     </div>
                 </figure>
             </section>
+            <section id="Classes">
+                <h2>Offsets and Helper Classes</h2>
+                <p>Just like in bootstrap we have added offsets and a few helper classes that will assist in the use of our grid.</p>
+                <h3 id="Offsets">Offsets</h3>
+                <p>The offsets are done exactly as they are in bootstrap, with adding <code>col-sm-offset-##</code> to the <code>col-sm-</code> class to offset a certain number of columns.</p>
+                <figure class="grid-example">
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1"></div>
+                    </div>
+                </figure>
+                <h3 id="Helpers">Helpers</h3>
+                <p>There are occasions where you'll want to change the float to rearrange content/structure for visual importance.  Using <code>col-[size]-push-[columncount]</code>  or <code>col-[size]-push-[columncount]</code> you can change the positioning of the elements. Push indicates the element goes to the right from the left, and pull indicatees it should go to the left from the right. The column count is replaced with the amount of columns it should be moved.</p>
+                <figure class="grid-example">
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9 col-md-push-3"></div>
+                        <div class="col-md-3 col-md-pull-9"></div>
+                    </div>
+                </figure>
+                <p>In addition to these we've also added just <code>pull-left</code> and <code>push-right</code> classes which float left and right respectively.</p>
+            </section>
             <section id="Dive">
                 <h2>Dive Into The Code</h2>
                 <p>Let's take a look at how the grid is created, and how you can modify this to create new grids for the site.</p>
@@ -169,6 +223,11 @@
     &@{i} {
         width: (@i * 100% / @n);
     }
+    
+    &offset-@{i} {
+        margin-left: (@i * 100% / @n);
+    }
+    
     .generate-columns(@n, (@i + 1));
 }</code></pre>
                 </figure>
