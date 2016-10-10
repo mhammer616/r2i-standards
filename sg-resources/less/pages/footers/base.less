@@ -1,0 +1,21 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+/*---=== LAYOUTS ===---*/
+.footers {
+    footer {
+        background: darken(@grey, 25);
+    
+        > div {
+            position: relative;
+            .clearfix;
+            width: 90%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@import url(simple.less);
+@import url(expanded.less);

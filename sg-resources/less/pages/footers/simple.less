@@ -1,0 +1,87 @@
+#simpleFooterExample {
+    footer {
+        padding: 2.5rem 0;
+        .ta-center;
+        
+        p {
+            font-size: 1.4rem;
+            margin: 0 0 1.5rem;
+            padding: 0;
+            color: fade(@white, 50);
+        }
+        nav {
+            margin: 0;
+            font-size: 1.4rem;
+            
+            a {
+                margin: 0 1rem;
+                color: fade(@white, 50);
+                .transition;
+                
+                &:hover {
+                    color: @white;
+                }
+                
+                &:before {
+                    position: static;
+                    display: inline;
+                    background: none;
+                }
+                
+                display: inline-block;
+                width: 7.5rem;
+                background: @grey;
+                height: 1.5em;
+            }
+            
+            + nav {
+                margin: 1.5rem 0 0;
+                
+                a {
+                    width: 1.5em;
+                }
+            }
+        }
+        
+        @media @mediaMD {
+            padding: 0;
+            height: 7.5rem;
+            
+            > div {
+                height: 7.5rem;
+            }
+            
+            p {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                .translate(0, -50%);
+                margin: 0;
+            }
+            
+            nav {
+                position: absolute;
+                top: 50%;
+                white-space: nowrap;
+                
+                a {
+                    margin: 0 1.5rem;
+                }
+                
+                &:nth-of-type(1) {
+                    left: 50%;
+                    .translate(-50%, -50%);
+                }
+                &:nth-of-type(2) {
+                    margin: 0;
+                    right: 0;
+                    .translate(0, -50%);
+                    
+                    a {
+                        margin: 0 0 0 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

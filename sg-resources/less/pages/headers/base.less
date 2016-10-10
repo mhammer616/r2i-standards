@@ -1,0 +1,72 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+/*---=== LAYOUTS ===---*/
+.headers {
+    height: 50vh;
+    
+    header {
+        position: relative;
+        width: 100%;
+        background: fade(@grey, 50);
+        
+        > div {
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+            max-width: 1600px;
+            height: 7.5rem;
+            
+            > a {
+                width: 8rem;
+                height: 5rem;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                .translate(0, -50%);
+                background: @grey;
+            }
+            
+            > button {
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                .translate(0, -50%);
+                height: 2rem;
+                
+                &:nth-of-type(1) {
+                    width: 3rem;
+                    border: .4rem solid @navy;
+                    border-left: none;
+                    border-right: none;
+                
+                    &:before, &:after {
+                        content: '';
+                        height: 4px;
+                        top: 50%;
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        .translate(0, -50%);
+                        background: @navy;
+                    }
+                }
+                
+                &:nth-of-type(2) {
+                    right: 6rem;
+                    border: none;
+                    background: none;
+                }
+            }
+            
+            > nav, > form {
+                display: none;
+            }
+        }
+    }
+}
+@import url(average.less);
+@import url(complex.less);
+@import url(centered.less);

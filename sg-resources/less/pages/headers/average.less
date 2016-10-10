@@ -1,0 +1,141 @@
+#averageHeaderExample {
+    header {
+        
+        > div {
+            
+            > a {
+            }
+            
+            > button {
+            }
+            
+            > nav {
+                position: absolute;
+                left: -5.5555%;
+                height: ~"calc(40vh - 7.5rem)";
+                top: 7.5rem;
+                width: 111.1111%;
+                
+                > ul {
+                    background: fade(@grey, 50);
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    
+                    > li {
+                        border-top: .2rem solid @grey;
+                        padding: 1.5rem 5.555%;
+                        
+                        > a {
+                            display: block;
+                            height: 2rem;
+                            background: darken(@grey, 15);
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media screen and (min-width: 1200px) {
+            height: 10rem;
+            
+            > div {
+                height: 10rem;
+                
+                > a {
+                    height: 6.665rem;
+                    width: 10.664rem;
+                }
+                
+                > button {
+                    display: none;
+                }
+                
+                > nav {
+                    display: block;
+                    position: static;
+                    left: auto;
+                    height: auto;
+                    top: 0;
+                    width: auto;
+                    
+                    > ul {
+                        background: none;
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                                            
+                        > li {
+                            border-top: none;
+                            padding: 0 .5rem 1.5rem;
+                            float: left;
+                            
+                            > a {
+                                display: block;
+                                height: 2rem;
+                                background: darken(@grey, 15);
+                                width: 8rem;
+                            }
+                        }
+                        
+                        &:nth-of-type(1) {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            
+                            > li {
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            position: absolute;
+                            right: 0;
+                            top: 1.5rem;
+                            
+                            form {
+                                font-size: 1.2rem;
+                                
+                                input[type="submit"] {
+                                    background: @grey;
+                                    font-size: 1rem;
+                                    border: none;
+                                    padding: .5rem;
+                                    color: @white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media @mediaXL {
+            height: 11.25rem;
+            
+            > div {
+                height: 11.25rem;
+                > a {
+                    height: 8rem;
+                    width: 12.8rem;
+                }
+                
+                > nav {
+                    
+                    > ul {
+                                            
+                        > li {
+                            padding: 0 1rem 1.5rem;
+                        }
+                        
+                        &:nth-of-type(1) {
+                            > li {
+                                > a {
+                                    height: 2.25rem;
+                                    width: 9rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
