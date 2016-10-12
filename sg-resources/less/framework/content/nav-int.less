@@ -1,17 +1,12 @@
 /* CSS Document */
 article {
     > nav {
-        float: left;
-        width: 25%;
+		display: none;
         padding: 0 (@gutter * 4) 0 0;
         .spartan;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         font-weight: normal;
-        
-        @media @mediaLG {
-            width: 20%;
-        }
-        
+		
         a {
             .td-none;
             color: @navy;
@@ -34,11 +29,27 @@ article {
                     padding: 15px 0 0;
                 }
                 ul {
-                    font-size: 1.5rem;
+                    font-size: 1.3rem;
                     list-style: none;
                     padding: 15px 0 0 15px;
+                    display: none;
                 }
             }
         }
+		@media @mediaMD {
+			float: left;
+			width: 28.333%;
+			display: block;
+
+            &.fixed {
+                position: fixed;
+                left: auto;
+                top: 5vw;
+				max-width: 320px;
+            }
+		}
+		@media @mediaLG {
+            width: 20%;
+		}
     }
 }

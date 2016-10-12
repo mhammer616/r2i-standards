@@ -1,5 +1,6 @@
 // JavaScript Document
 $(document).ready(function() {
+    "use strict";
     $('a[data-toggle="nav"]').on('click', function(event) {
         event.preventDefault();
         var el = $(this).attr('href'),
@@ -24,5 +25,14 @@ $(document).ready(function() {
             $this.addClass('active');
         }
     });
+});
 
+$(window).on('scroll resize', function() {
+    "use strict";
+    if ($(window).scrollTop() >=  $('main > header').outerHeight(true)) {
+        $('main > section > article > nav').addClass('fixed');
+    } else {
+        $('main > section > article > nav .active').removeClass('active');
+        $('main > section > article > nav').removeClass('fixed');
+    }
 });

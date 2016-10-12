@@ -34,13 +34,25 @@
     > div {
         h2 {
             .ta-center;
-            font-size: 4vw;
+            font-size: 2.5vw;
             .tt-upper;
             color: @white;
             margin: 0 0 .75em;
+			
+			~ h2 {
+				margin: .75em 0;
+			}
         }
         > ul {
-            .columns(@count: 3, @gap: (@gutter * 4), @rule-w: 0, @rule-color: @white);
+			@media @mediaSM {
+	            .columns(@count: 2, @gap: (@gutter * 4), @rule-w: 0, @rule-color: @white);
+			}
+			@media @mediaMD {
+	            .columns(@count: 3, @gap: (@gutter * 4), @rule-w: 0, @rule-color: @white);
+			}
+			@media @mediaLG {
+	            .columns(@count: 4, @gap: (@gutter * 4), @rule-w: 0, @rule-color: @white);
+			}
             list-style: none;
             > li {
                 margin: 0 0 5px;
@@ -53,8 +65,8 @@
                     background: @white;
                     color: @navy;
                     .td-none;
-                    padding: 15px;
-                    font-size: 1vw;
+                    padding: 1.5rem;
+                    font-size: 1.4rem;
                     .spartan;
                     .tt-upper;
                 }

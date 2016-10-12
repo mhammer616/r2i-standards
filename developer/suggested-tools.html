@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.6.2.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/tooltips/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Suggested Tools</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#SuggestedTools">Suggested Tools</a></li>
+                    <li><a href="#IDE">IDEs</a></li>
+                    <li><a href="#FTPClients">FTP Clients</a></li>
+                    <li><a href="#JSComporess">JSCompress</a></li>
+                    <li><a href="#LoremIpsum">LoremIpsum</a></li>
+                    <li><a href="#CodePen">Codepen</a></li>
+                    <li><a href="#Favicon">Favicon Generator</a></li>
+                    <li><a href="#QuickDiff">Quick Diff</a></li>
+                </ul>
+            </nav>
+            <section id="SuggestedTools">
+                <h2>Suggested Tools</h2>
+                <p>Below you will find some good tools that are downloads or online that we utilize daily.</p>
+            </section>
+            <section id="IDE">
+                <h2>IDEs</h2>
+                <p>We have a few different options when it comes to IDEs and it all depends on what type of CMS you work with, some may be more flexible and allow for choices, while others are more strict and require the use of one particular IDE.</p>
+                <ul>
+                	<li><h5>Adobe</h5>
+                    	<ul>
+                        	<li><a href="http://brackets.io/" target="_blank">Brackets</a></li>
+                            <li><a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ</a></li>
+                        </ul>
+	                </li>
+                	<li><h5>Sitecore</h5>
+                    	<ul>
+                        	<li><a href="https://www.visualstudio.com/" target="_blank">Visual Studio</a></li>
+                        </ul>
+	                </li>
+                	<li><h5>DNN, Drupal, WordPress, Static Sites</h5>
+                    	<ul>
+                        	<li><a href="http://www.adobe.com/products/dreamweaver.html?sdid=KKQTJ&mv=search&s_kwcid=AL!3085!3!110812694563!e!!g!!dreamweaver&ef_id=V8g6RQAAAVErod@d:20161012142228:s" target="_blank">Dreamweaver</a></li>
+                            <li><a href="http://brackets.io/" target="_blank">Brackets</a></li>
+                            <li><a href="https://www.visualstudio.com/" target="_blank">Visual Studio</a></li>
+                            <li><a href="https://panic.com/coda/" target="_blank">Coda</a></li>
+                            <li><a href="https://notepad-plus-plus.org/download/v7.html" target="_blank">NotePad++</a></li>
+                        </ul>
+	                </li>
+                </ul>
+            </section>
+            <section id="FTP">
+                <h2>FTP Clients</h2>
+                <p>We have a few different options when it comes to IDEs and it all depends on what type of CMS you work with, some may be more flexible and allow for choices, while others are more strict and require the use of one particular IDE.</p>
+                <ul>
+                	<li><a href="https://filezilla-project.org/" target="_blank">FileZilla</a></li>
+                	<li><a href="https://cyberduck.io/" target="_blank">Cyberduck</a> (Mac OS X)</li>
+                </ul>
+            </section>
+            <section id="JSComporess">
+                <h2>JSCompress</h2>
+                <p><a href="https://jscompress.com/" target="_blank">JSCompress</a> is an online javascript compressor that allows you to compress and minify your javascript files. Compressed javascript files are ideal for production environments since they typically <strong>reduce the size of the file by 30-80%</strong>.</p>
+                <figure class="img">
+                    <a href="https://jscompress.com/" target="_blank">
+                        <img src="/standards-guide/sg-resources/images/jscompress.jpg" alt="">
+                    </a>
+                </figure>
+            </section>
+            <section id="LoremIpsum">
+                <h2>Lorem Ipsum</h2>
+                <p>No, that's not just placeholder text I forgot to delete, there are several Lorem Ipsum generators out there, some are fun and will put lyrics from Snoop Dogg, or generate using names of cat breeds, but while those can be fun, most of the time they aren't very professional looking.  Please stick with <a href="http://www.lipsum.com/feed/html" target="_blank">Lorem Ipsum Feed</a> to generate the dummy content for our websites.</p>
+                <figure class="img">
+                    <a href="http://www.lipsum.com/feed/html" target="_blank">
+                        <img src="/standards-guide/sg-resources/images/lipsum.jpg" alt="">
+                    </a>
+                </figure>
+                <p>Need some dummy images, use <a href="http://lorempixel.com/" target="_blank">lorempixel.com</a> to generate some images in color or gray.</p>
+                <figure class="img">
+                    <a href="http://lorempixel.com/" target="_blank">
+                        <img src="/standards-guide/sg-resources/images/lorempixel.jpg" alt="">
+                    </a>
+                </figure>
+            </section>
+            <section id="CodePen">
+                <h2>Codepen</h2>
+                <p>An online playground to show off your latest creation and get feedback, build examples to show a bug that you can't get out there, find examples of design patterns, or just send someone a code snippet, <a href="http://codepen.io/" target="_blank">CodePen</a> is the perfect tool to use.</p>
+                <figure class="img">
+                    <a href="http://codepen.io/" target="_blank">
+                        <img src="/standards-guide/sg-resources/images/codepen.jpg" alt="Responsive image">
+                    </a>
+                </figure>
+            </section>
+            <section id="Favicon">
+                <h2>Favicon Generator</h2>
+                <p>Create all favicons using this generator which will output all four sizes needed for the favicon.  <a href="http://www.xiconeditor.com/Default.aspx" target="_blank">X-icon Editor</a> lets you preview, and edit, what the favicon will look like at 64x64, 32x32, 24x24, and 16x16.  You can even create an icon from scratch.</p>
+                <figure class="img">
+                    <a href="http://www.xiconeditor.com/Default.aspx" target="_blank">
+                        <img src="/standards-guide/sg-resources/images/x-icon-ss.jpg" alt="Responsive image">
+                    </a>
+                </figure>
+            </section>
+            <section id="QuickDiff">
+                <h2>Quick Diff</h2>
+                <p><a href="http://www.quickdiff.com/" target="_blank">Quick Diff</a> is an online tool that allows you to compare two files online and see what and where the differences are.</p>
+                <figure class="img">
+                    <a href="http://www.quickdiff.com/" target="_blank">
+                        <img src="/standards-guide/sg-resources/images/quickdiff.jpg" alt="Responsive image">
+                    </a>
+                </figure>
+        	</section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content/Typography</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+</body>
+</html>

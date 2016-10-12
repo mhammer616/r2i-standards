@@ -80,7 +80,7 @@ article {
     section {
         > ul, > ol {
             margin: 0 0 1.5rem 3rem;
-            ol {
+            ul, ol {
                 margin: 1rem 0 0 3rem;
             }
             
@@ -164,5 +164,22 @@ article {
             font-size: 1.2rem;
             line-height: 2.5rem;
         }
+    }
+    
+    figure.img {
+        border: .2rem solid #333;
+		padding: 1.5rem;
+		.border-radius(1rem);
+        margin: 0 0 3rem;
+        
+        > a {
+			display: block;
+			width: 100%;
+			
+			> img {
+				width: 100%;
+				.border-radius(1rem);
+			}
+		}
     }
 }

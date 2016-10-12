@@ -36,6 +36,9 @@ main {
             left: 0;
         }
         
+        &.fixed {
+        }
+        
         > div {
             position: absolute;
             left: 50vw;
@@ -59,16 +62,28 @@ main {
             max-width: 1600px;
             margin: 0 auto;
             
-            > section {
-                width: 75%;
-                float: right;
-                
-                + section {
-                    padding: 5vh 0 0;
-                    margin: 5vh 0 0;
-                    border-top: 2px solid @grey;
-                }
-            }
+			> section {
+				+ section {
+					border-top: 2px solid @grey;
+					margin: 3rem 0 0;
+					padding: 3rem 0 0;
+				}
+		
+				@media @mediaMD {
+					width: 66.667%;
+					float: right;
+					
+					+ section {
+						padding: 5rem 0 0;
+						margin: 5rem 0 0;
+					}
+					
+				}
+				
+				@media @mediaLG {
+					width: 75%;
+				}
+			}
         }
     }
 }
