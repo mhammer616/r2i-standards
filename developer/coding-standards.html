@@ -64,15 +64,15 @@
             </nav>
             <section id="BasicCodingGuidelines">
                 <h2>Basic Coding Standards</h2>
-                <p>We try not to have too many standards and best practices, and try to give people the freedom to code how they are used to. However, we do have a few things that we have defined so that we do write our code in a similar fashion, so that we can pick up projects working as a team and hop on and off as needed.</p>
-                <p>By following a few simple rules and not getting to high level or in the weeds we can hand off projects with little to no documentation to other front end developers on the team.</p>
+                <p>We try not to have too many standards and best practices, and try to give people the freedom to code however they are accustomed. However, we do have a few things defined so that when we write our code, it is in a similar fashion. This allows us to work as a team to pick up projects and hop on and off as needed.</p>
+                <p>By following a few simple rules and not getting too high-level or in the weeds, we can hand off projects with little to no documentation to other front end developers on the team.</p>
             </section>
             <section id="VersionStandards">
                 <h2>Version Control Standards</h2>
                 <p>These standards apply across all languages and are mainly implemented for version control so that you only see the changes you make.</p>
                 <ol>
                 	<li>
-                    	<h5>4 Spaces <strong>NO</strong> Tabs</h5>
+                    	<h5>Four Spaces, <strong>NO</strong> Tabs</h5>
                         <p>ALL of our coding teams need to follow this in whatever IDE you choose to use.  Make sure the default for a tab is equal to inserting 4 spaces regardless of language.</p>
                     </li>
                     <li>
@@ -81,7 +81,7 @@
                     </li>
                     <li>
                     	<h5>Only commit changes you made</h5>
-                        <p>Review your commit and make sure what you are committing you actually altered, if there's something you didn't do, review it carefully before committing to Git.</p>
+                        <p>Review your commit and make sure the code you are committing is code that you actually altered. If there's something you didn't do, review it carefully before committing to Git.</p>
                     </li>
                 </ol>
             </section>
@@ -94,7 +94,7 @@
                     </li>
                     <li>
                     	<h5>Dash Class Names</h5>
-                        <p>Multi-word class names should be separated using dashes, this helps distinguish them from IDs that we've created.</p>
+                        <p>Multi-word class names should be separated using dashes, this helps distinguish them from IDs.</p>
                     </li>
                     <li>
                     	<h5>Naming Classes</h5>
@@ -109,12 +109,12 @@
                 <ol>
                 	<li>
                         <h5>Write Semantic Meaningful Markup</h5>
-                        <p>With HTML5 we have the additon of meaningful tags like the header, main, footer, article, section, aside, and nav tags.  Use them, and then use them not only for making your content more accessible for users, and digestable by crawlers, but use them to apply CSS.</p>
-                        <p>We shouldn't see something like <code>&lt;header role="header" class="header"&gt;</code> that is a lot of redundancy, all that should be needed in this case is <code>&lt;header&gt;</code>.  Style the main site header based on location to the body, or if working in DNN or other CMS's that add wrapping elements style based on it's relation to the wrapping element. Then for your main article, if you have a hero on the page, make that a <code>&lt;header&gt;</code> and style it in corellation to the <code>&lt;article&gt;</code> or <code>&lt;main&gt;</code>.</p>
-                        <p>By doing this you will not only remove code from your HTML but your CSS will shrink substantially as well.</p>
+                        <p>With HTML5 we have the addition of meaningful tags like the header, main, footer, article, section, aside, and nav tags.  Use them, not only for making your content more accessible for users, and digestible by crawlers, but use also to apply CSS.</p>
+                        <p>We shouldn't see something like <code>&lt;header role="header" class="header"&gt;</code>. That is a lot of redundancy and all that should be needed in this case is <code>&lt;header&gt;</code>.  Style the main site header based on location to the body, or if working in DNN or other CMS's that add wrapping elements style based on it's relation to the wrapping element. Then if you have a hero on the page in your main article, make that a <code>&lt;header&gt;</code> and style it in corellation to the <code>&lt;article&gt;</code> or <code>&lt;main&gt;</code>.</p>
+                        <p>This will not only remove code from your HTML but will shrink your CSS substantially as well.</p>
                     </li>
                     <li>
-                    	<h5>Keep the Code Layer Separate From The Design Layer</h5>
+                    	<h5>Keep the Code Layer Separate from the Design Layer</h5>
                         <p>Remember to take the MVC approach of Model|View|Control when building even a static website.  Your View layer should be separated from your Control layer.  HTML should only be used for the control layer, while CSS will be in place for controlling look and feel.</p>
                     </li>
                 </ol>
@@ -124,14 +124,14 @@
                 <p>Follow these standard practices when writing CSS:</p>
                 <ol>
                 	<li>
-                    	<h5>Each Property On A Line</h5>
+                    	<h5>Each Property On a Line</h5>
                         <p>Writing this way helps with version control so you can see exactly what changed within each commit.  It will also help with resolving merge conflicts.</p>
-                        <p>Since most of our sites use less, they will be compiled into a single line and minified. So, readability is more important in the file than file size.</p>
+                        <p>Since most of our sites use LESS, they will be compiled into a single line and minified. So, readability in the file is more important than file size.</p>
                     </li>
                     <li>
-                    	<h5>Avoid The Use Of IDs</h5>
+                    	<h5>Avoid The Use of IDs</h5>
                         <p>Avoiding ID's in CSS creates more re-usable code since ID's can only be used once on a page while classes can be used multiple times.</p>
-                        <p>The other issue when working with CMS's is often ID's are controled and created dyanmically causing them to be unreliable if the component is deleted and re-added to a page.</p>
+                        <p>The other issue when working with CMS sites is often ID's are controlled and created dynamically causing them to be unreliable if the component is deleted and re-added to a page.</p>
                     </li>
                 </ol>
             </section>
@@ -154,18 +154,18 @@
                     </li>
                     <li>
                     	<h5>Be Consistent</h5>
-                        <p>Be consistent with your use of punction in JavaScript, it doesn't matter if you use ' or ", $ or jQuery, just pick an approach and be consistent with that throughout the project.</p>
+                        <p>Be consistent with your use of punctuation in JavaScript, it doesn't matter if you use ' or ", $ or jQuery, just pick an approach and be consistent with that throughout the project.</p>
                     </li>
                     <li>
                     	<h5>Use Plugins When Necessary.</h5>
-                        <p>Feel free to utilize additional plugins as you may need, but try not to use one if it's a simple 5-10 line function, and check out our standards for things before choosing a different plugin.</p>
-                        <p>We have standard plugins for <a href="forms.html#Selects">Selects</a>, <a href="forms.html#DateInputs">Date Picker</a>, <a href="carousels.html">Carousels</a>, <a href="tabs.html">Tabs</a>, <a href="accordions.html">Accordions</a>, and <a href="modals.html">Modals</a>.</p>
+                        <p>Feel free to utilize additional plugins as needed, but try not to use one if it's a simple 5-10 line function, and check out our standards for things before choosing a different plugin.</p>
+                        <p>We have standard plugins for <a href="forms.html#Selects">Selects</a>, <a href="forms.html#DateInputs">Date Picker</a>, <a href="carousels.html">Carousels</a>, <a href="tabs.html">Tabs</a>, <a href="accordions.html">Accordions</a>, <a href="modals.html">Modals</a>, etc.</p>
                     </li>
                 </ol>
             </section>
             <section id="FolderStructure">
                 <h2>Folder Structure</h2>
-                <p>For any project, go and download the <a href="boilerplate">boilerplate</a> for the type of project you are working on. This will start you off with the correct folder structure, and include some base files to work from.</p>
+                <p>For any project, download the <a href="boilerplate">boilerplate</a> for the type of project you are working on. This will start you off with the correct folder structure, and include some base files to work from.</p>
                 <p>Here is a basic overview of the folder structure and naming conventions used within them, along with some basic guidelines:</p>
                 <p><em>The following example is made with a static site in mind, some folder uses may be different with different CMS's.</em></p>
                 <ul>
@@ -212,7 +212,7 @@
             </section>
             <section id="SupportStandards">
                 <h2>Support Standards</h2>
-                <p>While this can vary on a project to project basis, depending on the Statement of Work for that project, our base support level is as follows:</p>
+                <p>While this can vary on a project-to-project basis, and depending on the Statement of Work for that project, our base support level is as follows:</p>
                 <p><strong>Desktop Operating Systems:</strong><br>
 					<strong>Mac</strong>: latest version of OS + versions back<br>
 					<strong>Windows</strong>: Microsoft actively supported versions of Windows, currently Windows 7, 8, 8.1, and 10.</p>
@@ -230,27 +230,27 @@
                     iOS: Chrome and Safari latest release only<br>
                     Android: Chrome latest release only<br>
                     Windows Phone: Edge/Internet Explorer current release only</p>
-                <p>To test browsers we utilize BrowserStack, documentation on this is located under the Tools tab.</p>
+                <p>To test browsers we utilize <a href="suggested-tools.html">BrowserStack</a>. Documentation on this is located under the Tools tab.</p>
             </section>
             <section id="ProgressiveVsGraceful">
                 <h2>Progressive Enhancement vs Graceful Degradation</h2>
-                <p>As a team, and as a company, we try to take the approach of progressively enhancing our websites, opposed to gracefully degrading the experience. While this may seem like it's saying the same thing in different ways, they are fundamentally different.</p>
-                <p>First, let's look at how we define approach:</p>
-                <p><strong>Progressive Enhancement</strong>: start by establishing our basic level, this is done by identifying what our base requirement of support is for the website, then we can build our base element to this specification. After that we enhance the code by adding support for new features, like transitions, transforms, transparent background elements, hover effects, etc. We should only be supporting features that are supported by each browser, accepting that there may be slight differences between browser experiences.</p>
+                <p>As a team, and as a company, we try to take the approach of progressively enhancing our websites, as opposed to gracefully degrading the experience. While this may seem like it's saying the same thing in different ways, they are fundamentally different.</p>
+                <p>First, let's look at how we define each approach:</p>
+                <p><strong>Progressive Enhancement</strong>: start by establishing our basic level. This is done by identifying what our base requirement of support is for the website, then building our base element to this specification. After that, we enhance the code by adding support for new features like transitions, transforms, transparent background elements, hover effects, etc. We should only be supporting features that are supported by each browser, accepting that there may be slight differences between browser experiences.</p>
                 <p><strong>Graceful Degradation</strong>: start by building out the final result with all the bells and whistles. Then use plugins, polyfills, and hacks to make older browsers work the same.</p>
-                <p>We utilize modernizr.js, to test whether a feature that we want to use is supported or not supported, then write our CSS accordingly. Modernizr.js will add a class to the html tag identifying if the desired feature you tested for is or isn't available for use. Then you can make different definitions based on that feature.</p>
+                <p>We utilize modernizr.js to test whether a feature that we want to use is supported or not supported, then write our CSS accordingly. Modernizr.js will add a class to the html tag identifying if the desired feature you tested for is or isn't available for use. Then you can make different definitions based on that feature.</p>
                 <p>We do accept that each browser may vary in appearance slightly, however, the majority of the look and feel should be similar. Everything does need to function correctly, so a form has to submit or a wizard has to step you through each step of the process, but it doesn't have to animate between each step the same in every browser.</p>
-                <p>While we try to be strict on our approach, there are some exceptions, especially where a couple small lines of JavaScript can make something work across all browsers.</p>
+                <p>While we try to be strict on our approach, there are some exceptions. Especially where a couple small lines of JavaScript can make something work across all browsers.</p>
                 <p>Here are some things we want do, and how we want to do them:</p>
-                <p><strong>Animations</strong>: all animations should be done using CSS wherever possible, you can trigger the animation by adding a class to the element, or changing an attribute with JavaScript or jQuery, but the styles that are altered should be managed within CSS.</p>
-                <p><strong>Transitions</strong>: same rules as animations</p>
-                <p><strong>SVG</strong>: using SVG for icons and images as much as possible, this may require the use of a third party tool like SnapSVG to do more sophisticated drawing and animations.</p>
-                <p><strong>Text Shadows and Box Shadows</strong>: using CSS only to achieve this, if they don't exist in older browsers that's an acceptable difference, it's not worth the additional markup or code and use of images to create such small effects.</p>
-                <p><strong>Rounded Corners</strong>: using CSS border-radius for this feature, if an older browser doesn't support it, they will just get squared off corners, again the extra weight of markup and images is not worth it to create rounded corners.</p>
-                <p><strong>Video</strong>: using HTML 5 video for backgrounds or even self-hosting videos is a great approach, however, get a Flash player to fallback to using the HTML tags properly to work on older browsers. For the backgrounds, just load an image instead of the video.</p>
+                <p><strong>Animations</strong>: all animations should be done using CSS wherever possible. You can trigger the animation by adding a class to the element or changing an attribute with JavaScript or jQuery, but the styles that are altered should be managed within CSS.</p>
+                <p><strong>Transitions</strong>: same rules as animations.</p>
+                <p><strong>SVG</strong>: use SVG for icons and images as much as possible. This may require the use of a third party tool like SnapSVG to do more sophisticated drawing and animations.</p>
+                <p><strong>Text Shadows and Box Shadows</strong>: use CSS only to achieve this. If they don't exist in older browsers, that's an acceptable difference. It's not worth the additional markup or code and use of images to create such small effects.</p>
+                <p><strong>Rounded Corners</strong>: use CSS border-radius for this feature. If an older browser doesn't support it, they will just get squared off corners. Again the extra weight of markup and images is not worth it to create rounded corners.</p>
+                <p><strong>Video</strong>: using HTML 5 video for backgrounds or even self-hosting videos is a great approach. However, get a Flash player to fallback to using the HTML tags properly to work on older browsers. For the backgrounds, just load an image instead of the video.</p>
                 <h3>Use Modernizr</h3>
-                <p><a href="https://modernizr.com/" target="_blank">Modernizr.js</a> is an online utility that allows us to identify and detect if a browser supports a speecial feature. Outlined in the Progressive Enhancement vs. Graceful Degradation we said why we want to detect features over browsers and supply fallbacks for styling or features that may not be supported. We always want to try to enhance the experience over degrading, so keep that in mind when using detection.</p>
-				<p>When using this tool, you can create a version custom built for your website, or you can load all the detections. Generally it's easier to add the detections as you build the website and keep updating the file. The great thing about the download you receive when building Modernizr on their website is there will be a URL that you can go to that will have all your previously selected elements. Keep that in the JS file so that someone coming in later can use that link to select the right items you've already setup for detection.</p>
+                <p><a href="https://modernizr.com/" target="_blank">Modernizr.js</a> is an online utility that allows us to identify and detect if a browser supports a special feature. Outlined in the Progressive Enhancement vs. Graceful Degradation section, we said why we want to detect features over browsers and supply fallbacks for styling or features that may not be supported. We always want to try to enhance the experience over degrading, so keep that in mind when using detection.</p>
+				<p>When using this tool, you can create a version custom built for your website, or you can load all the detections. Generally, it's easier to add the detections as you build the website and keep updating the file. The great thing about the download you receive when building Modernizr on their website is there will be a URL that you can go to that will have all your previously selected elements saved. Keep that in the JS file so that someone coming in later can use that link to select the right items you've already setup for detection.</p>
             </section>
         </article>
     </section>
