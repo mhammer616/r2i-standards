@@ -12,6 +12,36 @@ article {
             font-size: .667em;
             opacity: .5;
         }
+		
+		a {
+            position: relative;
+            color: @red;
+            .transition;
+            .td-none;
+			padding: 5px 5px 3px;
+			display: inline-block;
+            
+            &:before {
+                background: @red;
+                position: absolute; 
+                left: 0;
+                top: 0;
+                z-index: -1;
+                width: 0;
+                height: 100%;
+                .transition;
+                display: block;
+                content: "";
+            }
+            
+            &:hover {
+                color: @white;
+                
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
     }
     
     h2 {

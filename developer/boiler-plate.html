@@ -44,177 +44,74 @@
 <main>
     <header>
         <div>
-            <h1>Tooltips</h1>
+            <h1>Boilerplates</h1>
         </div>
     </header>
     <section>
         <article>
             <nav>
                 <ul>
-                    <li><a href="#BasicTooltipGuidelines">Basic Tooltip Guidelines</a></li>
-                    <li><a href="#Examples">Examples</a>
-                        <ul>
-                            <li><a href="#SimpleTooltip">Simple Tooltip</a></li>
-                            <li><a href="#ComplexTooltip">Complex Tooltip</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#BasicTooltipGuidelines">Boilerplate Guidelines</a></li>
+                    <li><a href="#Static">Static Site Boilerplate</a></li>
+                    <li><a href="#Adobe">Adobe Boilerplate</a></li>
+                    <li><a href="#Sitecore">Sitecore Boilerplate</a></li>
+                    <li><a href="#DNN">DNN Boilerplate</a></li>
+                    <li><a href="#Drupal">Drupal Boilerplate</a></li>
+                    <li><a href="#Wordpress">WordPress Boilerplate</a></li>
                 </ul>
             </nav>
             <section id="BasicTooltipGuidelines">
-                <h2>Basic Tooltip Guidelines</h2>
-                <p>We tend to not use tooltips that often anymore, they have kind of come and gone as clients have simpler content on their websites that don't require a lot of further explanation. They do offer a nice way to supply additional information.</p>
-                <p>There are two examples below, one will use an attribute on a span to create the tooltip, while the second one will have a little more complex code that allows the user to place HTML inside of it as well. The first example will require the content author to add a little bit of markup. The latter of the two examples would require the client/content author to add, or edit, extensive markup.</p>
-                <p>Both of these approaches can, and should, require no JavaScript to display the tooltips.</p>
+                <h2>Boilerplate Guidelines</h2>
+                <p>The boilerplate is meant to help get the folder structure setup for resources, and give you a base set of files to use as a starting point.</p>
+                <p>The boilerplate downloads below give you the following files:</p>
+                <ul>
+                	<li>Less Files and Folders
+                    	<ul>
+		                	<li>base/base.less - this is where you will load everything needed for the site</li>
+		                	<li>base/mixins.less - a set of mixins that should be used when developing the site</li>
+		                	<li>base/variables.less - a set of variables that should be used when developing the site</li>
+		                	<li>base/resets.less - a set of resets and classes that should be used when developing the site</li>
+		                	<li>framework/grid.less - the file used to generate the grid and everything that goes with it, documentation found <a href="grid.html">here</a></li>
+		                	<li>framework/header.less - a file that should be used for the header of the website</li>
+		                	<li>framework/footer.less - a file that should be used for the footer of the website</li>
+		                	<li>framework/layouts.less - a file that should be used for the layouts of the website</li>
+                            <li>components/component - a base folder that contains a base.less file for you to build out each component used throughout the site.</li>
+                        </ul>
+                    </li>
+                	<li>JS Files
+                    	<ul>
+		                	<li>base.js - this is where you will put js that is uesd throughout the site</li>
+                            <li>components/component - a base folder for you to copy for each component used throughout the site.</li>
+                        </ul>
+                    </li>
+                </ul>
             </section>
-            <section id="Examples">
-                <h2>Examples</h2>
-                <p>These examples are meant to be starting points for the header for your website, locate the one that closely resembles and build using that as a base.</p>
-                <h3 id="SimpleTooltip">Simple Tooltip</h3>
-                <p>This solution is good for just showing additional information about the text, but it's not good for showing content that you want the user to interact with by clicking.</p>
-                <figure class="tabs">
-                    <div>
-                        <div class="headers active" role="tabpanel" id="simpleTooltipExample">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, est, maxime! Hic, dolore nesciunt sunt quidem molestias deleniti dolorum possimus! Accusantium, nostrum quod ipsam nobis dignissimos <span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aspernatur ipsam corporis maxime veniam eaque.">blanditiis ab</span> atque totam quasi porro voluptatum ipsa deserunt voluptates vel quaerat animi non! Culpa, praesentium, laborum, totam quia cupiditate incidunt doloribus qui laboriosam unde officiis numquam similique accusamus quidem <span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aspernatur ipsam corporis maxime veniam eaque.">velit illo</span> error aliquam provident atque deleniti nihil illum id distinctio repudiandae voluptates rem vitae eius harum temporibus laudantium voluptatem ea fuga optio voluptatibus dolores corporis accusantium iusto. Quia ipsa labore optio suscipit velit. Molestias, veritatis eveniet dolore alias in obcaecati voluptatum quasi vel repudiandae autem commodi hic quisquam laborum vero molestiae cupiditate magni ipsa tempora voluptate voluptates ab quo fuga quis accusamus quod architecto iure ea sunt quia!</p>
-                            <p>Earum, ab, eveniet, quo at repudiandae corporis voluptatibus perferendis vitae quas praesentium impedit a labore provident. Autem, ipsam, praesentium, dolore, reiciendis exercitationem earum impedit tempora adipisci omnis quod voluptate hic architecto corrupti expedita sapiente consequatur saepe nemo ad doloribus ab ipsum quos cumque nesciunt quae voluptates placeat eius eum laudantium nobis iste. Sed, rem, pariatur, aperiam alias <span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aspernatur ipsam corporis maxime veniam eaque.">dolorem unde</span> cumque a repudiandae dolor provident quam debitis sunt eligendi nemo error eaque minus ipsam voluptates numquam atque officia iusto quod voluptatem sapiente labore quos quae aliquam vero culpa hic. Aliquam, nisi velit voluptas facere nesciunt eius deleniti quos aspernatur laboriosam adipisci? Atque, dolorem, adipisci maiores officia nesciunt tenetur consequuntur impedit placeat et quasi omnis distinctio sed culpa sequi fuga dolores mollitia quaerat ex! Quaerat, odio, nam.</p>
-                            <p>Provident, sunt, nisi nobis voluptatum repudiandae soluta qui obcaecati consectetur iste mollitia incidunt magni voluptas corrupti quibusdam repellendus aliquam expedita voluptates. Sapiente, ab, deserunt reiciendis accusantium <span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aspernatur ipsam corporis maxime veniam eaque.">repellat ea</span> itaque cum suscipit rem maiores quaerat doloremque mollitia facere tempora perspiciatis dolorum excepturi dolores similique aspernatur possimus nobis laudantium perferendis nihil libero unde voluptatibus harum aliquid saepe voluptatem commodi non ratione delectus ad autem animi id culpa et eligendi aut quisquam laborum accusamus? Rerum, minima, animi odit esse dolores inventore veniam laboriosam quam maxime minus temporibus culpa possimus cumque fuga sunt asperiores corrupti quos repellendus impedit incidunt mollitia amet reiciendis velit consequatur tempora quidem quasi iure quisquam dolore a. Autem, alias, debitis nesciunt excepturi quaerat laboriosam modi nostrum harum veritatis maxime soluta fugit culpa consectetur distinctio repellendus.</p>
-                        </div>
-                        <div role="tabpanel" id="simpleTooltipHTML">
-                            <pre><code code="hljs html" class="hljs xml">&lt;span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aspernatur ipsam corporis maxime veniam eaque."&gt;repellat ea&lt;/span&gt;</code></pre>
-                        </div>
-                        <div role="tabpanel" id="simpleTooltipLESS">
-                            <pre><code class="hljs css">/* CSS Document */
-[data-tooltip] {
-    position: relative;
-    text-decoration: underline;
-    color: @teal;
-    
-    &:before, &:after {
-        display: none;
-    }
-    
-    &:before {
-        background: @grey;
-        padding: 1.5rem;
-        position: absolute;
-        left: 50%;
-        bottom: ~"calc(100% + 1.5rem)";
-        max-width: 300px;
-        min-width: 250px;
-        .translate(-50%, 0);
-        content: attr(data-tooltip);
-        .border-radius(1rem);
-        color: @white;
-    }
-    
-    &:after {
-        position: absolute;
-        left: 50%;
-        bottom: ~"calc(100% + .5rem)";
-        border-left: 1rem solid transparent;
-        border-right: 1rem solid transparent;
-        border-top: 1rem solid @grey;
-        .translate(-50%, 0);
-        content: '';
-    }
-    
-    &:hover {
-        &:before, &:after {
-            display: block;
-        }
-    }
-}</code></pre>
-                    </div>
-                    <div role="tabpanel" id="simpleTooltipJS" class="">
-                        <pre><code class="hljs javascript"></code></pre>
-                        </div>
-                    </div>
-                    <figcaption role="tablist">
-                        <a class="active" href="#simpleTooltipExample" role="tab">Example</a>
-                        <a href="#simpleTooltipHTML" role="tab">HTML</a>
-                        <a href="#simpleTooltipLESS" role="tab">LESS</a>
-                        <a href="#simpleTooltipJS" role="tab" disabled>JavaScript</a>
-                    </figcaption>
-                </figure><h3 id="ComplexTooltip">Complex Tooltip</h3>
-                <p>This solution is good for just showing additional information about the text that contains content that can have interactions.</p>
-                <figure class="tabs">
-                    <div>
-                        <div class="headers active" role="tabpanel" id="complexTooltipExample">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, est, maxime! Hic, dolore nesciunt sunt quidem molestias deleniti dolorum possimus! Accusantium, nostrum quod ipsam nobis dignissimos <span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aspernatur ipsam corporis maxime veniam eaque.">blanditiis ab</span> atque totam quasi porro voluptatum ipsa deserunt voluptates vel quaerat animi non! Culpa, praesentium, laborum, totam quia cupiditate incidunt doloribus qui laboriosam unde officiis numquam similique accusamus quidem <span data-tooltip="tooltip">velit illo <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, saepe <a href="#">maxime illo a ea sit</a>.</span></span> error aliquam provident atque deleniti nihil illum id distinctio repudiandae voluptates rem vitae eius harum temporibus laudantium voluptatem ea fuga optio voluptatibus dolores corporis accusantium iusto. Quia ipsa labore optio suscipit velit. Molestias, veritatis eveniet dolore alias in obcaecati voluptatum quasi vel repudiandae autem commodi hic quisquam laborum vero molestiae cupiditate magni ipsa tempora voluptate voluptates ab quo fuga quis accusamus quod architecto iure ea sunt quia!</p>
-                            <p>Earum, ab, eveniet, quo at repudiandae corporis voluptatibus perferendis vitae quas praesentium impedit a labore provident. Autem, ipsam, praesentium, dolore, reiciendis exercitationem earum impedit tempora adipisci omnis quod voluptate hic architecto corrupti expedita sapiente consequatur saepe nemo ad doloribus ab ipsum quos cumque nesciunt quae voluptates placeat eius eum laudantium nobis iste. Sed, rem, pariatur, aperiam alias <span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aspernatur ipsam corporis maxime veniam eaque.">dolorem unde</span> cumque a repudiandae dolor provident quam debitis sunt eligendi nemo error eaque minus ipsam voluptates numquam atque officia iusto quod voluptatem sapiente labore quos quae aliquam vero culpa hic. Aliquam, nisi velit voluptas facere nesciunt eius deleniti quos aspernatur laboriosam adipisci? Atque, dolorem, adipisci maiores officia nesciunt tenetur consequuntur impedit placeat et quasi omnis distinctio sed culpa sequi fuga dolores mollitia quaerat ex! Quaerat, odio, nam.</p>
-                            <p>Provident, sunt, nisi nobis voluptatum repudiandae soluta qui obcaecati consectetur iste mollitia incidunt magni voluptas corrupti quibusdam repellendus aliquam expedita voluptates. Sapiente, ab, deserunt reiciendis accusantium <span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, aspernatur ipsam corporis maxime veniam eaque.">repellat ea</span> itaque cum suscipit rem maiores quaerat doloremque mollitia facere tempora perspiciatis dolorum excepturi dolores similique aspernatur possimus nobis laudantium perferendis nihil libero unde voluptatibus harum aliquid saepe voluptatem commodi non ratione delectus ad autem animi id culpa et eligendi aut quisquam laborum accusamus? Rerum, minima, animi odit esse dolores inventore veniam laboriosam quam maxime minus temporibus culpa possimus cumque fuga sunt asperiores corrupti quos repellendus impedit incidunt mollitia amet reiciendis velit consequatur tempora quidem quasi iure quisquam dolore a. Autem, alias, debitis nesciunt excepturi quaerat laboriosam modi nostrum harum veritatis maxime soluta fugit culpa consectetur distinctio repellendus.</p>
-                        </div>
-                        <div role="tabpanel" id="complexTooltipHTML">
-                            <pre><code code="hljs html" class="hljs xml">&lt;span data-tooltip="tooltip"&gt;velit illo &lt;span&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, saepe &lt;a href="#"&gt;maxime illo a ea sit&lt;/a&gt;.&lt;/span&gt;&lt;/span&gt;</code></pre>
-                        </div>
-                        <div role="tabpanel" id="complexTooltipLESS">
-                            <pre><code class="hljs css">/* CSS Document */
-[data-tooltip="tooltip"] {
-    &:before, &:after {
-        display: none;
-    }
-    &:hover {
-        &:before, &:after {
-            display: none;
-        }
-    }
-    
-    &gt; span {
-        background: @white;
-        position: absolute;
-        left: 50%;
-        bottom: ~"calc(100% + 1rem)";
-        width: 300px;
-        .translate(-50%, 0);
-        .border-radius(1rem);
-        color: @navy;
-        padding: 1.5rem;
-        border: 1px solid @navy;
-        display: none;
-        font-size: 1.4rem;
-        
-        &:before, &:after {
-            position: absolute;
-            left: 50%;
-            top: 100%;
-            .translate(-50%, 0);
-            content: '';
-        }
-        
-        &:before {
-            border-left: 1.1rem solid transparent;
-            border-right: 1.1rem solid transparent;
-            border-top: 1.1rem solid @navy;
-        }
-        
-        &:after {
-            border-left: 1rem solid transparent;
-            border-right: 1rem solid transparent;
-            border-top: 1rem solid @white;
-        }
-        
-        a:hover {
-            color: @teal;
-        }
-    }
-    
-    &:hover {
-        &gt; span {
-            display: block;
-        }
-    }
-}</code></pre>
-                    </div>
-                    <div role="tabpanel" id="complexTooltipJS" class="">
-                        <pre><code class="hljs javascript"></code></pre>
-                        </div>
-                    </div>
-                    <figcaption role="tablist">
-                        <a class="active" href="#complexTooltipExample" role="tab">Example</a>
-                        <a href="#complexTooltipHTML" role="tab">HTML</a>
-                        <a href="#complexTooltipLESS" role="tab">LESS</a>
-                        <a href="#complexTooltipJS" role="tab" disabled>JavaScript</a>
-                    </figcaption>
-                </figure>
+            <section id="Static">
+                <h2>Static Site Boilerplate</h2>
+                <p>The static site boilerplate is the most generic and can be used when building a landing page or site that does not have a CMS behind it.</p>
+                <h5><a href="../sg-resources/boilerplates/StaticSite.zip">Download Static Site Boilerplate</a></h5>
+            </section>
+            <section id="Adobe">
+                <h2>Adobe Boilerplate</h2>
+                <p><em><strong>NICK CREATE ME AND UPDATE TEXT</strong></em></p>
+            </section>
+            <section id="Sitecore">
+                <h2>Sitecore Boilerplate</h2>
+                <p>The sitecore boilerplate is basic a duplicate of the Static Site Boilerplate, and should be layered on top of the build when you get started.</p>
+                <h5><a href="../sg-resources/boilerplates/StaticSite.zip">Download Sitecore Boilerplate</a></h5>
+            </section>
+            <section id="DNN">
+                <h2>DNN Boilerplate</h2>
+                <p>The DNN boilerplate is modified from the static site boilerplate to include a Skin and Container folder that should be renamed to match your site. The Container folder will contain blank, and h1-h5 containers. The Skin folder will contain a home skin file, includes (header, and footer), and navs.</p>
+                <h5><a href="../sg-resources/boilerplates/StaticSite.zip">Download DNN Boilerplate</a></h5>
+            </section>
+            <section id="Drupal">
+                <h2>Drupal Boilerplate</h2>
+                <p><em><strong>JV CREATE ME AND UPDATE TEXT</strong></em></p>
+            </section>
+            <section id="Wordpress">
+                <h2>WordPress Boilerplate</h2>
+                <p><em><strong>JV CREATE ME AND UPDATE TEXT</strong></em></p>
             </section>
         </article>
     </section>
