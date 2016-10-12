@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function() {
     "use strict";
-    $('a[data-toggle="nav"]').on('click', function(event) {
+    $('[data-toggle="nav"]').on('click', function(event) {
         event.preventDefault();
         var el = $(this).attr('href'),
             $el = $(el);
@@ -25,6 +25,15 @@ $(document).ready(function() {
             $this.addClass('active');
         }
     });
+	
+	$('main article > nav a').on('click', function(event) {
+		event.preventDefault();
+		var id = $(this).attr('href');
+		
+		$('html, body').animate({
+			scrollTop: ($(id).offset().top - 15)
+		}, 500);
+	});
 });
 
 $(window).on('scroll resize', function() {
