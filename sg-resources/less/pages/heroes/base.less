@@ -1,0 +1,41 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+@import url(../../base/fonts.less);
+/*---===<<< HERO >>>---*/
+.heroes {
+	main {
+		padding: 0;
+		height: 75vh;
+		
+		> header {
+			position: relative;
+			top: auto;
+			left: auto;
+			padding: 0;
+		}
+		> section {
+			.clearfix;
+			padding: 0;
+			margin: 0;
+			
+			> article {
+				background: darken(@grey, 15);
+				height: 35vh;
+				float: right;
+				width: 66.667%;
+			}
+			
+			> nav {
+				background: @grey;
+				height: 35vh;
+				float: left;
+				width: 33.333%;
+			}
+		}
+	}
+}
+
+@import url(home.less);
+@import url(interior.less);
