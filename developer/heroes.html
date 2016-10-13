@@ -65,25 +65,25 @@
             </nav>
             <section id="BasicTooltipGuidelines">
                 <h2>Basic Hero Guidelines</h2>
-                <p>These go by a lot of different names, we want to try and unify these different names and use the term Hero.  The different terms you may here are home campaign, landing banner, page banner, banner, header, page header, or hero.</p>
-                <p>The hero is generally contains a background graphic, color, image or video, a heading, and subheading. Depending on SEO's recommendation the heading text may or may not be the <code>&lt;h1&gt;</code> tag, always check with them before placing the <code>&lt;h1&gt;</code> in the hero. </p>
-                <p>The hero may also contain a carousel that rotates through various slides. Using semantic markup you should place a <code>&lt;header&gt;</code> tag as a direct descendent of the <code>&lt;main&gt;</code> tag to place the hero inside, then style based on that hierarchy. All the examples below will use that as a base.</p>
+                <p>These go by a lot of different names, so we want to try and unify these different names and use the term Hero.  The different terms you may hear are home campaign, landing banner, page banner, banner, header, page header, or hero.</p>
+                <p>The hero generally contains a background graphic, color, image or video, a heading, and subheading. Depending on SEO's recommendation, the heading text may or may not be the <code>&lt;h1&gt;</code> tag, always check with them before placing the <code>&lt;h1&gt;</code> in the hero. </p>
+                <p>The hero may also contain a carousel that rotates through various slides. Using semantic markup, you should place a <code>&lt;header&gt;</code> tag as a direct descendent of the <code>&lt;main&gt;</code> tag to place the hero inside, then style based on that hierarchy. All the examples below will use that as a base.</p>
             </section>
             <section id="ImagesAndVideosInHeroes">
-            	<h2>Images And Videos In Heroes</h2>
+            	<h2>Images and Videos in Heroes</h2>
                 <h3>Sitecore, Adobe, Drupal, WordPress and Static Sites should use this approach for images:</h3>
-                <p>Images should be done as background images, this probably means using inline styles to apply <code>background-image</code> to apply it.  Then in the CSS files we can do everything else with background properties that is necessary, such <code>background-size: cover;</code> and <code>background-position: center center;</code> or <code>background-position: center top;</code>.</p>
+                <p>Images should be done as background images, which probably means using inline styles wight <code>background-image</code> to apply it.  Then in the CSS files we can do everything else with background properties that is necessary, such <code>background-size: cover;</code> and <code>background-position: center center;</code> or <code>background-position: center top;</code>.</p>
                 <h3>DNN should use this approach for images:</h3>
-                <p>If this approach is not possible within the CMS then use and <code>&lt;img /&gt;</code> tag and position the image absolute and size appropriately using CSS. If taking this approach make sure the image properly scales within the wrapping element and doesn't appear less than the height or width. This can be done using <code>position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); min-height: 100%; min-width: 100%;</code>.</p>
+                <p>If the previous approach is not possible within the CMS, then use an <code>&lt;img /&gt;</code> tag and position the image absolute and size appropriately using CSS. If taking this approach, make sure the image properly scales within the wrapping element and doesn't appear less than the height or width. This can be done using <code>position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); min-height: 100%; min-width: 100%;</code>.</p>
                 <h3>Placing videos as a background:</h3>
                 <p>Match the aspect ratio of the video to the wrapping element and apply using <code>padding-top</code>.  Absolute position all child elements, including the video.  The video should have the following properties set: <code>height: 100%; width: 100%; left: 0; top: 0; position: absolute;</code>.</p>
                 <p>The video should also be set to <code>loop</code> and have no audio track so that it doesn't annoy people when your page loads.</p>
             </section>
             <section id="Examples">
                 <h2>Examples</h2>
-                <p>These examples are meant to be starting points for the header for your website, locate the one that closely resembles and build using that as a base.</p>
+                <p>These examples are meant to be starting points for the header for your website. Locate the one that closely resembles yours, and build using the following code as a base.</p>
                 <h3 id="HeroH1">Hero with H1</h3>
-                <p>This solution is good for just the basic starting point of a hero, it is simple with a background color, h1, and subheading.</p>
+                <p>Good for just the basic starting point of a hero, this solution is simple with a background color, h1, and subheading.</p>
                 <figure class="tabs">
                     <div>
                         <div class="heroes active" role="tabpanel" id="heroH1Example">
@@ -157,7 +157,7 @@
                     </figcaption>
                 </figure>
                 <h3 id="HeroText">Hero with Text</h3>
-                <p>This solution is good for just the basic starting point of a hero, it is simple with a background color, title, and subheading.</p>
+                <p>Good for just the basic starting point of a hero, this solution is simple with a background color, title, and subheading.</p>
                 <figure class="tabs">
                     <div>
                         <div class="heroes active" role="tabpanel" id="heroTextExample">
@@ -229,7 +229,7 @@
                     </figcaption>
                 </figure>
                 <h3 id="SmallHeroH1">Small Hero with H1</h3>
-                <p>This solution is good for just the basic starting point of a hero, it is simple with a background color, h1, and subheading.</p>
+                <p>Good for just the basic starting point of a hero, this solution is simple with a background color, h1, and subheading.</p>
                 <figure class="tabs">
                     <div>
                         <div class="heroes active" role="tabpanel" id="smallHeroH1Example">
@@ -307,7 +307,7 @@
                     </figcaption>
                 </figure>
                 <h3 id="SmallHeroH1">Small Hero with Text</h3>
-                <p>This solution is good for just the basic starting point of a hero, it is simple with a background color, h1, and subheading.</p>
+                <p>Good for just the basic starting point of a hero, this solution is simple with a background color, div, and subheading.</p>
                 <figure class="tabs">
                     <div>
                         <div class="heroes active" role="tabpanel" id="smallHeroTextExample">

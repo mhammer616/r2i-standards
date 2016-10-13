@@ -65,28 +65,28 @@
             </nav>
             <section id="BasicHeaderGuidelines">
                 <h2>Basic Header Guidelines</h2>
-                <p>Every website we build will no doubt have a site header, it may be at it's simplest just holding the logo, or at it's most complex housing the logo, a utility navigation, login form, and main navigation.  Most likely the header will be either fixed or relative positioned at the top of the page, but sometimes the header could be fixed to the left of the page.  Whatever way the designers layout the header, the more complex headers can be one of the most time consuming pieces we build for the whole project.</p>
-                <p>For responsive needs, our approach to headers and it's contents, is not to have multiple for mobile devices, hide and show elements, write your code in away that elements can be positioned and moved to the correct location for various screen sizes. Start with the mobile header to get your code structure in place, and move up through each macro media query adjusting font-sizes, padding, heights, and widths as needed. Everything from logo to the utility and main navs should only appear once in the dom.</p>
+                <p>Every website we build will no doubt have a site header. It may be at its simplest. just holding the logo, or at its most complex, housing the logo, a utility navigation, login form, and main navigation.  Most likely the header will be either fixed or relative positioned at the top of the page, but sometimes the header could be fixed to the left of the page.  Whatever way the designers layout the header, the more complex headers can be one of the most time consuming pieces we build for the whole project.</p>
+                <p>For responsive needs, our approach to headers and its contents is not to have multiple for mobile devices or hide and show elements. Write your code in a way that elements can be positioned and moved to the correct location for various screen sizes. Start with the mobile header to get your code structure in place, and move up through each macro media query adjusting font-sizes, padding, heights, and widths as needed. Everything from logo to the utility and main navs should only appear once in the dom.</p>
             </section>
             <section id="MarkupForTheHeader">
                 <h2>Markup For The Header</h2>
                 <p>Below is a list of semantic markup that should be used in headers to create the layout.</p>
                 <dl>
                     <dt><code>&lt;header&gt;</code></dt>
-                    <dd>this tag should wrap the entire contents of the header</dd>
+                    <dd>This tag should wrap the entire contents of the header</dd>
                     <dt><code>&lt;nav&gt;</code></dt>
-                    <dd>this tag should be used to wrap each navigation found in the header</dd>
+                    <dd>This tag should be used to wrap each navigation found in the header</dd>
                     <dt><code>&lt;ul&gt;</code></dt>
-                    <dd>use unordered lists to wrap the navigations children, this is one place where an extra dom element is acceptable, because it provides meaningful information to users on screen reads and provides additional structure</dd>
+                    <dd>Use unordered lists to wrap the navigations children, this is one place where an extra dom element is acceptable, because it provides meaningful information to users on screen reads and provides additional structure</dd>
                     <dt><code>&lt;form&gt;</code></dt>
-                    <dd>any forms in the header should be wrapped in form tags</dd>
+                    <dd>Any forms in the header should be wrapped in form tags</dd>
                 </dl>
             </section>
             <section id="Examples">
                 <h2>Examples</h2>
-                <p>These examples are meant to be starting points for the header for your website, locate the one that closely resembles and build using that as a base.</p>
+                <p>These examples are meant to be starting points for the header for your website. Locate the one that closely resembles yours, and build using the following code as a base.</p>
                 <h3 id="SimpleHeader">Simple Header</h3>
-                <p>Our simple header example is based on the R2i website header, where it is simply the logo and a button to expand the main navigation.</p>
+                <p>Our simple header example is based on the R2i website header, where it utilizes simply the logo and a button to expand the main navigation.</p>
                 <figure class="tabs">
                     <div>
                         <div class="headers active" role="tabpanel" id="simpleHeaderExample">
