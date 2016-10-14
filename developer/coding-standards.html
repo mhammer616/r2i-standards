@@ -52,6 +52,8 @@
             <nav>
                 <ul>
                     <li><a href="#BasicCodingGuidelines">Basic Coding Standards</a></li>
+                    <li><a href="#ResponsiveDesign">Responsive Design</a></li>
+                    <li><a href="#ProgressiveVsGraceful">Progressive Enhancement vs Graceful Degradation</a></li>
                     <li><a href="#VersionStandards">Version Control Standards</a></li>
                     <li><a href="#NamingConventions">Naming Conventions</a></li>
                     <li><a href="#HTMLStandards">HTML Standards</a></li>
@@ -59,13 +61,89 @@
                     <li><a href="#JavaScriptStandards">JavaScript Standards</a></li>
                     <li><a href="#FolderStructure">Folder Structure</a></li>
                     <li><a href="#SupportStandards">Support Standards</a></li>
-                    <li><a href="#ProgressiveVsGraceful">Progressive Enhancement vs Graceful Degradation</a></li>
                 </ul>
             </nav>
             <section id="BasicCodingGuidelines">
                 <h2>Basic Coding Standards</h2>
                 <p>We try not to have too many standards and best practices, and try to give people the freedom to code however they are accustomed. However, we do have a few things defined so that when we write our code, it is in a similar fashion. This allows us to work as a team to pick up projects and hop on and off as needed.</p>
                 <p>By following a few simple rules and not getting too high-level or in the weeds, we can hand off projects with little to no documentation to other front end developers on the team.</p>
+            </section>
+            <section id="ResponsiveDesign">
+                <h2>Responsive Design</h2>
+                <p><strong>All our websites, emails, and landing pages should be responsive.</strong></p>
+                <p>If we are doing the designs for the website, you will receive a home page design for both mobile and desktop versions of the website.  Then, you wil receive either interior designs for each unique page, or a component library design to build the rest of the website. If budget and timeline allow you might receive additional responsive concepts for complex components, or if you really need something ask your project manager to request the designer to design something out.  We have decided on this workflow to do a couple things, a) it saves budget and time; b) it gives us flexibility in how we write the markup.</p>
+                <p>By placing this meta tag: <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>; at the top of your page you can make the page work on mobile and desktop.</p>
+                <p>Additonal settings can be applied:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>width</td>
+                            <td>The width of the virtual viewport of the device.</td>
+                        </tr>
+                        <tr>
+                            <td>device-width</td>
+                            <td>The physical width of the device's screen.</td>
+                        </tr>
+                        <tr>
+                            <td>height</td>
+                            <td>The height of the "virtual viewport" of the device.</td>
+                        </tr>
+                        <tr>
+                            <td>device-height</td>
+                            <td>The physical height of the device's screen.</td>
+                        </tr>
+                        <tr>
+                            <td>initial-scale</td>
+                            <td>The initial zoom when visiting the page. 1.0 does not zoom.</td>
+                        </tr>
+                        <tr>
+                            <td>minimum-scale</td>
+                            <td>The minimum amount the visitor can zoom on the page. 1.0 does not zoom.</td>
+                        </tr>
+                        <tr>
+                            <td>maximum-scale</td>
+                            <td>The maximum amount the visitor can zoom on the page. 1.0 does not zoom.</td>
+                        </tr>
+                        <tr>
+                            <td>user-scalable</td>
+                            <td>Allows the device to zoom in and out. Values are yes or no.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Generally, unless you are building an app, or absolutely don't want the user to scale, don't prevent scaling, as it is potentially opening a door for accessibility issues.</p>
+                <p>Include the following to help IE on Windows Phone be responsive:</p>
+                <figure class="code">
+                    <pre><code class="hljs css">/*---=== VIEWPORT RESET ===---*/
+@-ms-viewport {
+    width: device-width;
+}</code></pre>
+                </figure>
+            </section>
+            <section id="ProgressiveVsGraceful">
+                <h2>Progressive Enhancement vs Graceful Degradation</h2>
+                <p>As a team, and as a company, we try to take the approach of progressively enhancing our websites, as opposed to gracefully degrading the experience. While this may seem like it's saying the same thing in different ways, they are fundamentally different.</p>
+                <p>First, let's look at how we define each approach:</p>
+                <p><strong>Progressive Enhancement</strong>: start by establishing our basic level. This is done by identifying what our base requirement of support is for the website, then building our base element to this specification. After that, we enhance the code by adding support for new features like transitions, transforms, transparent background elements, hover effects, etc. We should only be supporting features that are supported by each browser, accepting that there may be slight differences between browser experiences.</p>
+                <p><strong>Graceful Degradation</strong>: start by building out the final result with all the bells and whistles. Then use plugins, polyfills, and hacks to make older browsers work the same.</p>
+                <p>We utilize modernizr.js to test whether a feature that we want to use is supported or not supported, then write our CSS accordingly. Modernizr.js will add a class to the html tag identifying if the desired feature you tested for is or isn't available for use. Then you can make different definitions based on that feature.</p>
+                <p>We do accept that each browser may vary in appearance slightly, however, the majority of the look and feel should be similar. Everything does need to function correctly, so a form has to submit or a wizard has to step you through each step of the process, but it doesn't have to animate between each step the same in every browser.</p>
+                <p>While we try to be strict on our approach, there are some exceptions. Especially where a couple small lines of JavaScript can make something work across all browsers.</p>
+                <p>Here are some things we want do, and how we want to do them:</p>
+                <p><strong>Animations</strong>: all animations should be done using CSS wherever possible. You can trigger the animation by adding a class to the element or changing an attribute with JavaScript or jQuery, but the styles that are altered should be managed within CSS.</p>
+                <p><strong>Transitions</strong>: same rules as animations.</p>
+                <p><strong>SVG</strong>: use SVG for icons and images as much as possible. This may require the use of a third party tool like SnapSVG to do more sophisticated drawing and animations.</p>
+                <p><strong>Text Shadows and Box Shadows</strong>: use CSS only to achieve this. If they don't exist in older browsers, that's an acceptable difference. It's not worth the additional markup or code and use of images to create such small effects.</p>
+                <p><strong>Rounded Corners</strong>: use CSS border-radius for this feature. If an older browser doesn't support it, they will just get squared off corners. Again the extra weight of markup and images is not worth it to create rounded corners.</p>
+                <p><strong>Video</strong>: using HTML 5 video for backgrounds or even self-hosting videos is a great approach. However, get a Flash player to fallback to using the HTML tags properly to work on older browsers. For the backgrounds, just load an image instead of the video.</p>
+                <h3>Use Modernizr</h3>
+                <p><a href="https://modernizr.com/" target="_blank">Modernizr.js</a> is an online utility that allows us to identify and detect if a browser supports a special feature. Outlined in the Progressive Enhancement vs. Graceful Degradation section, we said why we want to detect features over browsers and supply fallbacks for styling or features that may not be supported. We always want to try to enhance the experience over degrading, so keep that in mind when using detection.</p>
+				<p>When using this tool, you can create a version custom built for your website, or you can load all the detections. Generally, it's easier to add the detections as you build the website and keep updating the file. The great thing about the download you receive when building Modernizr on their website is there will be a URL that you can go to that will have all your previously selected elements saved. Keep that in the JS file so that someone coming in later can use that link to select the right items you've already setup for detection.</p>
             </section>
             <section id="VersionStandards">
                 <h2>Version Control Standards</h2>
@@ -231,26 +309,6 @@
                     Android: Chrome latest release only<br>
                     Windows Phone: Edge/Internet Explorer current release only</p>
                 <p>To test browsers we utilize <a href="suggested-tools.html">BrowserStack</a>. Documentation on this is located under the Tools tab.</p>
-            </section>
-            <section id="ProgressiveVsGraceful">
-                <h2>Progressive Enhancement vs Graceful Degradation</h2>
-                <p>As a team, and as a company, we try to take the approach of progressively enhancing our websites, as opposed to gracefully degrading the experience. While this may seem like it's saying the same thing in different ways, they are fundamentally different.</p>
-                <p>First, let's look at how we define each approach:</p>
-                <p><strong>Progressive Enhancement</strong>: start by establishing our basic level. This is done by identifying what our base requirement of support is for the website, then building our base element to this specification. After that, we enhance the code by adding support for new features like transitions, transforms, transparent background elements, hover effects, etc. We should only be supporting features that are supported by each browser, accepting that there may be slight differences between browser experiences.</p>
-                <p><strong>Graceful Degradation</strong>: start by building out the final result with all the bells and whistles. Then use plugins, polyfills, and hacks to make older browsers work the same.</p>
-                <p>We utilize modernizr.js to test whether a feature that we want to use is supported or not supported, then write our CSS accordingly. Modernizr.js will add a class to the html tag identifying if the desired feature you tested for is or isn't available for use. Then you can make different definitions based on that feature.</p>
-                <p>We do accept that each browser may vary in appearance slightly, however, the majority of the look and feel should be similar. Everything does need to function correctly, so a form has to submit or a wizard has to step you through each step of the process, but it doesn't have to animate between each step the same in every browser.</p>
-                <p>While we try to be strict on our approach, there are some exceptions. Especially where a couple small lines of JavaScript can make something work across all browsers.</p>
-                <p>Here are some things we want do, and how we want to do them:</p>
-                <p><strong>Animations</strong>: all animations should be done using CSS wherever possible. You can trigger the animation by adding a class to the element or changing an attribute with JavaScript or jQuery, but the styles that are altered should be managed within CSS.</p>
-                <p><strong>Transitions</strong>: same rules as animations.</p>
-                <p><strong>SVG</strong>: use SVG for icons and images as much as possible. This may require the use of a third party tool like SnapSVG to do more sophisticated drawing and animations.</p>
-                <p><strong>Text Shadows and Box Shadows</strong>: use CSS only to achieve this. If they don't exist in older browsers, that's an acceptable difference. It's not worth the additional markup or code and use of images to create such small effects.</p>
-                <p><strong>Rounded Corners</strong>: use CSS border-radius for this feature. If an older browser doesn't support it, they will just get squared off corners. Again the extra weight of markup and images is not worth it to create rounded corners.</p>
-                <p><strong>Video</strong>: using HTML 5 video for backgrounds or even self-hosting videos is a great approach. However, get a Flash player to fallback to using the HTML tags properly to work on older browsers. For the backgrounds, just load an image instead of the video.</p>
-                <h3>Use Modernizr</h3>
-                <p><a href="https://modernizr.com/" target="_blank">Modernizr.js</a> is an online utility that allows us to identify and detect if a browser supports a special feature. Outlined in the Progressive Enhancement vs. Graceful Degradation section, we said why we want to detect features over browsers and supply fallbacks for styling or features that may not be supported. We always want to try to enhance the experience over degrading, so keep that in mind when using detection.</p>
-				<p>When using this tool, you can create a version custom built for your website, or you can load all the detections. Generally, it's easier to add the detections as you build the website and keep updating the file. The great thing about the download you receive when building Modernizr on their website is there will be a URL that you can go to that will have all your previously selected elements saved. Keep that in the JS file so that someone coming in later can use that link to select the right items you've already setup for detection.</p>
             </section>
         </article>
     </section>

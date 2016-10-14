@@ -71,7 +71,7 @@ article {
         margin: 2.5rem 0;
     }
     
-    p, div, li {
+    p, div, li, th, td {
         line-height: 1.5em;
         
         a {
@@ -138,6 +138,35 @@ article {
         
         :last-child {
             margin-bottom: 0;
+        }
+        
+        > table {
+            
+            margin: 0 0 1.5rem;
+            width: 100%;
+            border-collapse: collapse;
+            border: .1rem solid @grey;
+            
+            thead {
+                th {
+                    background: @grey;
+                    color: @white;
+                    .ta-left;
+                    padding: 1rem;
+                }
+            }
+            tbody {
+                td {
+                    padding: 1rem;
+                    border-top: .1rem solid @grey;
+                }
+                
+                tr:nth-child(even) {
+                    td {
+                        background: lighten(@grey, 22.5);
+                    }
+                }
+            }
         }
     }
     
