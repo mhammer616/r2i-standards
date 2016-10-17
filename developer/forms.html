@@ -77,14 +77,14 @@
             </nav>
             <section id="BasicFormGuidelines">
                 <h2>Basic Form Guidelines</h2>
-                <p>Every site or landing page that we build probably has at least one Form somewhere on them. Forms can be time consuming to build, style, and make functional, this section will help define some basic resets, and supply some code to help make this easier.</p>
+                <p>Every site or landing page that we build probably has at least one Form somewhere on it. Forms can be time consuming to build, style, and make functional. This section will help define some basic resets, and supply some code to help make this easier.</p>
                 <p>Forms, like the website in general, should follow a grid layout with rows of fields that cover any number of columns.</p>
                 <p>Forms are made up of various ways for the user to supply information back to the client. The basics of form elements are listed below, along with some custom implementations.</p>
             </section>
             <section id="Labels">
                 <h2>Labels</h2>
                 <p>A label, even if hidden, has to be supplied for usability for every form element.</p>
-                <p>The label tag must be properly hooked up using the for attribute to associate it with the id of the input.</p>
+                <p>The label tag must be properly hooked up using the <code>for</code> attribute to associate it with the id of the input.</p>
             </section>
             <section id="Inputs">
                 <h2>Inputs</h2>
@@ -242,7 +242,7 @@ form {
                 </figure>
                 <h3 id="DateInputs">Date Inputs</h3>
                 <p>When using the input type of date, we can see that each browser processes it somewhat differently by outputting their own datepicker, which can't be styled yet. For this we want to use a third party plugin to allow for a more custom view and selection of dates.</p>
-                <p>The <a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">Bootstrap Datepicker by eternicode</a> is the plugin we have chosen to be our standard use. The styling of the datepicker gives us the desired flexibility and usability.</p>
+                <p>The <a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">Bootstrap Datepicker by eternicode</a> is the plugin we have chosen to be our standard use. The styling of the datepicker gives the desired flexibility and usability.</p>
                 <p>There is even an <a href="https://eternicode.github.io/bootstrap-datepicker/?markup=input&amp;format=&amp;weekStart=&amp;startDate=&amp;endDate=&amp;startView=0&amp;minViewMode=0&amp;maxViewMode=4&amp;todayBtn=false&amp;clearBtn=false&amp;language=en&amp;orientation=auto&amp;multidate=&amp;multidateSeparator=&amp;keyboardNavigation=on&amp;forceParse=on#sandbox" target="_blank">online sandbox</a> that will write out the code needed to supply the desired end result. Use this to define what options are necessary to create the Datepicker you want to show on the website.</p>
                 <p>Download the latest version of the plugin on <a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">GitHub</a>, or use the version we are using <a href="downloads/bootstrap-datepicker-1.6.1-dist.zip">here</a>.</p>
                 <figure class="tabs">
@@ -479,7 +479,7 @@ form {
                     </figcaption>
                 </figure>
                 <h3 id="Checkboxes">Checkboxes</h3>
-                <p>It's common in our designs that checkboxes are styled. This can be a relatively easy process if the code is setup and written properly. It does however require the use of a different way than the standard approach to setting up checkboxes inputs. But, this approach will require no JavaScript, and allow the checkboxes to function properly.</p>
+                <p>It's common in our designs that checkboxes are styled. This can be a relatively easy process if the code is setup and written properly. It does, however, require the use of a different method than the standard approach to setting up checkboxes inputs, but, this approach will require no JavaScript, and will allow the checkboxes to function properly.</p>
                 <figure class="tabs">
                     <div>
                         <div class="active" role="tabpanel" id="checkboxesExample">
@@ -570,7 +570,7 @@ input[type="radio"] {
                     </figcaption>
                 </figure>
                 <h3 id="RadioButtons">Radio Buttons</h3>
-                <p>It's common in our designs that radio buttons are styled. This can be a relatively easy process if the code is setup and written properly. It does however require the use of a different way than the standard approach to setting up radio buttons. But, this approach will require no JavaScript, and allow the radio buttons to function properly.</p>
+                <p>It's common in our designs that radio buttons are styled. This can be a relatively easy process if the code is setup and written properly. It does, however, require the use of a different method than the standard approach to setting up radio buttons, but, this approach will require no JavaScript, and will allow the radio buttons to function properly.</p>
                 <figure class="tabs">
                     <div>
                         <div class="active" role="tabpanel" id="radioExample">
@@ -661,7 +661,7 @@ input[type="radio"] {
                     </figcaption>
                 </figure>
                 <h3 id="Buttons">Buttons</h3>
-                <p>There are two different ways to write buttons for forms, one with the <code>input</code> tag and using <code>type</code> to assign one of three options <code>submit</code>, <code>reset</code>, or <code>button</code>, or, using the <code>button</code> tag and setting one of the same three options.  It all depends on your styling need and whether you need to have additional code inside the button to add before or after attributes or icons. If you do have to use additional code, then the <code>button</code> tag is appropriate since it has a closing tag, where if you don't need any additional markup then you can use the <code>input</code> tag.</p>
+                <p>There are two different ways to write buttons for forms, one with the <code>input</code> tag and using <code>type</code> to assign one of three options <code>submit</code>, <code>reset</code>, or <code>button</code>, or, using the <code>button</code> tag and setting one of the same three options.  It all depends on your styling need and whether you need to have additional code inside the button to add <code>:before</code> or <code>:after</code> attributes or icons. If you do have to use additional code, then the <code>button</code> tag is appropriate since it has a closing tag, where if you don't need any additional markup then you can use the <code>input</code> tag.</p>
                 <p>See the <a href="buttons.html">buttons</a> page for more information on buttons.</p>
                 <figure class="tabs">
                     <div>
@@ -713,7 +713,7 @@ input[type="radio"] {
                 <figure class="video">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hcYAHix-riY?rel=0" frameborder="0" allowfullscreen=""></iframe>
                 </figure>
-                <p>You still want to use selects, or dropdowns, use Chosen by HarvestHQ for all selects to make styling easier. The capabilities this tool gives us are worth doing the custom implementation for, even if you just want to use it with basic styles. The other added benefit, it will look just like the traditional select on mobile devices, still giving us the default functionality people expect when on the go.</p>
+                <p>If you still want to use selects or dropdowns use Chosen by HarvestHQ for all selects to make styling easier. The capabilities this tool gives us are worth doing the custom implementation for, even if you just want to use it with basic styles. The other added benefit is that it will look just like the traditional select on mobile devices, still giving us the default functionality people expect when on the go.</p>
                 <p>Download the latest version of the plugin on <a href="https://github.com/harvesthq/chosen" target="_blank">GitHub</a>, or use the version we are using <a href="downloads/chosen_v1.6.2.zip">here</a>.</p>
                 <figure class="tabs">
                     <div>
@@ -2232,7 +2232,7 @@ input[type="radio"] {
             </section>
             <section id="Textareas">
                 <h2>Textareas</h2>
-                <p>Textareas are used to show multiple lines for a response, commonly used for Comments, Concerns, or a freeform box.</p>
+                <p>Commonly used for comments, concerns, or a freeform box, textareas are used to show multiple lines for a response.</p>
                 <figure class="tabs">
                     <div>
                         <div class="active" role="tabpanel" id="textareasExample">

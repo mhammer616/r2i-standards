@@ -104,47 +104,47 @@
             </nav>
             <section id="BasicTypographyGuidelines">
                 <h2>Basic Typography Guidelines</h2>
-                <p>Designers spend a lot of time making sure the right fonts are paired together and the sizes work well with the design.  It's our job to make sure when those fonts are placed on the page the pairings work well at all sizes.  There are different approaches that can be taken from choosing which font-size to use at different media-queries to alter the font size. We'll review some basic guideliness that should be followed while maintaining the designers intent.</p>
+                <p>Designers spend a lot of time making sure the right fonts are paired together and the sizes work well with the design.  It's our job to make sure that when those fonts are placed on the page, the pairings work well at all sizes.  There are different approaches that can be taken from choosing which font-size to use at different media-queries to alter the font size. We'll review some basic guidelines that should be followed in order to maintain the designers' intent.</p>
                 <h3 id="MeasuringFont-Sizes">Measuring Font-Sizes</h3>
                 <p>We have many different ways to write our CSS measurements: pixels, points, ems, rems, viewport, percentage, inches, centimeters, etc... Why limit ourselves to just using one on the whole website?  Before diving into how to choose which measurement to use, lets first get a good understanding of what each measurement type means.</p>
                 <dl>
                     <dt>Pixels (px)</dt>
-                    <dd>This is an absolute measurement of related to pixels on the screen, 1px = 1pixel of the monitor.</dd>
+                    <dd>This is an absolute measurement related to pixels on the screen, 1px = 1pixel of the monitor.</dd>
                     <dt>Points (pt)</dt>
-                    <dd>This is an absolute measurement used for print, there are 72 points in an inch.</dd>
+                    <dd>This is an absolute measurement used for print. There are 72 points in an inch.</dd>
                     <dt>Inches (in), Centimeters (cm), Millimeters (mm)</dt>
-                    <dd>These are all absolute forms of measurement, they really shouldn't be used in CSS.</dd>
+                    <dd>These are all absolute forms of measurement; they really shouldn't be used in CSS.</dd>
                     <dt>Percentage (%)</dt>
                     <dd>This is a relative form of measurement that is based on the parent element.</dd>
                     <dt>EM (em)</dt>
-                    <dd>Relatvie to the font-size of the parent element, a <code>font-size</code> of 1.5 em is 1.5 times the size of the parent elements <code>font-size</code>.</dd>
+                    <dd>Relative to the font-size of the parent element, a <code>font-size</code> of 1.5 em is 1.5 times the size of the parent element's <code>font-size</code>.</dd>
                     <dt>REM (rem)</dt>
-                    <dd>Releative to the Root Elements font-size, coupled with resetting the <code>font-size</code> of the <code>body</code>, or <code>html</code> tag to 62.5%, means everything is base 10 (on normal browser settings) and you can use REM to do things like 1.6 = 16px.</dd>
+                    <dd>Relative to the root element's font-size, when coupled with resetting the <code>font-size</code> of the <code>body</code>, or <code>html</code> tag to 62.5%, means everything is base 10 (on normal browser settings), with that set, setting the property of font-size to 1.6rem would be the same as setting it to 16px at a default browser install. However, if someone altered their browser's zoom or font-size to large or 18px as the base, now our 1.6rem would be equal to 18px, making the user who has difficulty reading smaller font sizes now able to read and see at a scale that is more comfortable for them.</dd>
                     <dt>Viewport Height (vh), Viewport Width (vw)</dt>
-                    <dd>Relative measurement where 1vh = 1% of the viewports height, and 1vw = 1% of the viewports width.</dd>
+                    <dd>These are relative forms of measurement, where 1vh = 1% of the viewports height, and 1vw = 1% of the viewports width.</dd>
                 </dl>
                 <p>Now that we understand what each measurement means, here's a list to help choose which type of measurement you should use.</p>
                 <ul>
-                    <li><strong>Hero headings and text</strong> - use viewport measurements so the scale will stay consistent, use media queries to set minimum and maximum font-sizes in rems.</li>
-                    <li><strong>Body copy</strong> - start by setting <code>body {font-size: 62.5%;}</code>, then use rems to set headings, paragraphs, etc font-sizes.</li>
-                    <li><strong>Line Heights</strong> - these should be set in ems related to the font-size set for the body copy, typical line-heights are 1.5em or 2em.</li>
-                    <li><strong>Padding and Margins</strong> - these can be set in REMs or EMs depending on if you want it to be relative to the root element or the element itself.</li>
+                    <li><strong>Hero headings and text</strong> - use viewport measurements so the scale will stay consistent, and use media queries to set minimum and maximum font-sizes in rems.</li>
+                    <li><strong>Body copy</strong> - start by setting <code>body {font-size: 62.5%;}</code>, then use rems to set heading, paragraph, etc. font-sizes.</li>
+                    <li><strong>Line Heights</strong> - these should be set in ems related to the font-size set for the body copy. Typical line-heights are 1.5em or 2em.</li>
+                    <li><strong>Padding and Margins</strong> - these can be set in REMs or EMs depending on if you want them to be relative to the root element or the element itself.</li>
                 </ul>
                 <h3 id="DeterminingFont-Sizes">Determining Font-Sizes for Responsive</h3>
-                <p>Line-length is the most important part for determining font-sizes on a web-site, while the designers set this up for large desktops, it's on the Front End Developer to make sure the site maintains readability throughout the build. Optimal line-length is bestween <strong>45 to 75 characters</strong> for body copy. Ideally the number is <strong>66 characters</strong>.  This helps the reader be able to maintain their line when reading the copy.</p>
+                <p>Line-length is the most important part for determining font-sizes on a website. While the designers set this up for large desktops, it's on the Front End Developer to make sure the site maintains readability throughout the build. Optimal line-length is between <strong>45 to 75 characters</strong> for body copy. Ideally the number is <strong>66 characters</strong>.  This helps the reader ability to maintain their line when reading the copy.</p>
                 <p>Mobile sites should be on the lower end of that line-length, usually being somewhere between 45-55 characters per line, while large devices shouldn't exceed 75 characters.</p>
-                <p>To acheive optimal line-length use media-queries to set font-sizes that are flexible and help achieve optimal line-length, <em>but don't go overboard creating code bloat</em>. Adjusting at the macro media-queries should be substantial.</p>
-                <p>Lock in our max-width for the main article to something between 1440px and 1600px should also help with achieveing an optimal line-length.</p>
+                <p>To achieve optimal line-length use media-queries to set font-sizes that are flexible, <em>but don't go overboard creating code bloat</em>. Adjusting at the macro media-queries should be substantial.</p>
+                <p>Lock in our max-width for the main article to something between 1440px and 1600px. This should also help with achieving an optimal line-length.</p>
                 <p><a href="https://css-tricks.com/bookmarklet-colorize-text-45-75-characters-line-length-testing/" target="_blank">Bookmarklet</a> is a tool that can help determine line-length and highlights characters 45-75 in any copy you want to test. This tool should only be used when testing, and never be enabled on a production site.</p>
-                <p>Optimal line-length's don't apply to large format fonts used in headings, although they shouldn't look bad when they line-break either.</p>
+                <p>Optimal line-lengths don't apply to large format fonts used in headings, although they shouldn't look bad when they line-break either.</p>
                 <h3 id="TextAlignments">Text Alignments</h3>
                 <p>Most of your copy on the site should be left aligned, while headers and large text may break this rule, body copy should be left aligned to make things easier to read.</p>
-                <p>You options for the text-align property are <code>left</code>, <code>right</code>, <code>center</code>, and <code>justify</code>, while some people like reading and having nice flush ending points for their lines of copy that justify provides, the jagged edge that left provides actually increases readibility. While center creates too much disruption with jagged edges on both sides of the block of text. Right should be used when building a website for rtl languages or aligning something in an element, like a button or navigation.</p>
+                <p>Your options for the text-align property are <code>left</code>, <code>right</code>, <code>center</code>, and <code>justify</code>. While some people like reading and having nice flush-ending points for their lines of copy that justify provides, the jagged edge that left provides actually increases readibility. Centering creates too much disruption with jagged edges on both sides of the block of text. Right should be used when building a website for rtl languages or aligning something in an element, like a button or navigation.</p>
             </section>
             <section id="HeadingElements">
                 <h2>Heading Elements</h2>
-                <p>Heading elements are used to define importance of text, with the <code>&lt;h1&gt;</code> being the most important heading on the page, while the <code>&lt;h6&gt;</code> is the least important heading.</p>
-                <p>Headings should be used to style text, as well as create an outline of the page, each section of copy with equal importance should have a heading associated with it that defines it's importance in the copy heirarchy.</p>
+                <p>Heading elements are used to define importance of text, with the <code>&lt;h1&gt;</code> being the most important heading on the page, and the <code>&lt;h6&gt;</code> is the least important.</p>
+                <p>Headings should be used to style text, as well as create an outline of the page. Each section of copy with equal importance should have a heading associated with it that defines its importance in the copy hierarchy.</p>
                 <figure class="tabs">
                     <div>
                         <div class="active" role="tabpanel" id="headingsExample">
@@ -203,9 +203,9 @@ h6 {
             </section>
             <section id="BlockElements">
                 <h2>Block Elements</h2>
-                <p>Block elements are elements that are <code>display: block;</code> by default in CSS and unless you set properties on them will create new lines of copy.</p>
+                <p>Block elements are elements that are <code>display: block;</code> by default in CSS, and unless you set properties on them will create new lines of copy.</p>
                 <h3 id="Paragraph">Paragraph</h3>
-                <p>This ones obvious so not really going to go into any real detail, if you don't know what a paragraph is <a href="http://lmgtfy.com/?q=paragraph" target="_blank">click here</a>.</p>
+                <p>This one's obvious, so not really going to go into any real detail. If you don't know what a paragraph is <a href="http://lmgtfy.com/?q=paragraph" target="_blank">click here</a>.</p>
                 <figure class="tabs">
                     <div>
                         <div class="active" role="tabpanel" id="paragraphsExample">
@@ -247,14 +247,14 @@ figure {
                     </figcaption>
                 </figure>
                 <h3 id="Blockquote">Blockquote</h3>
-                <p>The <code>blockquote</code> is used to show quoted text, commonly used for client/customer testimonials, but should also be styled out for use within text to show a quote from source.</p>
-                <p>You can also use the <code>cite</code> attribute to provide context in conjunction with the <code>blockquote</code>, if your attribution line is simple enough, the attribute could be used for content in the after to add the attribution line to your <code>blockquote</code>.</p>
+                <p>The <code>blockquote</code> is used to show quoted text, and while it's commonly used for client/customer testimonials, it should also be styled out for use within text to show a quote from source.</p>
+                <p>You can use the <code>cite</code> attribute to provide context in conjunction with the <code>blockquote</code>. If your attribution line is simple enough, the attribute could be used for content in the <code>:after</code> to add the attribution line to your <code>blockquote</code>.</p>
                 <figure class="tabs">
                     <div>
                         <div class="active" role="tabpanel" id="blockquoteExample">
-                            <blockquote class="with-citation" cite="James Earl Jones - Field of Dreams">The one constant through all the years has been baseball, America has rolled by like an army of steamrollers. It's been erassed like a blackboard rebuilt and erased again. But baseball has marked the time. This field this game, is a part of our past. It reminds us of all that once was good and that could be again.</blockquote>
+                            <blockquote class="with-citation" cite="James Earl Jones - Field of Dreams">The one constant through all the years has been baseball America has rolled by like an army of steamrollers. It's been erassed like a blackboard rebuilt and erased again. But baseball has marked the time. This field. This game. Is a part of our past. It reminds us of all that once was good and that could be again.</blockquote>
                             <blockquote cite="Babe Ruth - The Sandlot">
-                                <p>Let me tell you something kid; everybody gets one chance to do something great. Most people never take teh chance, either because they're scared or the don't recognize it when it spits on their shoes. Remember kid, there's hero's and there's legends. Hero's get remembered, but legends never die.  Follow your heart kid, and you'll never go wrong.</p>
+                                <p>Let me tell you something kid; everybody gets one chance to do something great. Most people never take the chance, either because they're scared or they don't recognize it when it spits on their shoes. Remember kid, there's hero's and there's legends. Hero's get remembered, but legends never die.  Follow your heart kid, and you'll never go wrong.</p>
                                 <strong>Babe Ruth - <em>The Sandlot</em></strong>
                             </blockquote>
                         </div>
@@ -308,7 +308,7 @@ figure {
                 </figure>
                 <h3 id="Figure">Figure</h3>
                 <p>One of the new HTML5 tags, <code>figure</code>, allows you to add context to information that is supplemental to the content.</p>
-                <p>This tag has two parts, the <code>figure</code> where an image, video, audio, or table can be inserted, then a <code>figcaption</code> to add a caption underneath the figure.</p>
+                <p>This tag has two parts, the <code>figure</code> where an image, video, audio, or table can be inserted, and a <code>figcaption</code> to add a caption underneath the figure.</p>
                 <p>These can be used to style and call out various pieces of supplemental information.</p>
                 <figure class="tabs">
                     <div>
@@ -391,10 +391,10 @@ figure {
                 </figure>
                 <h3 id="Div">Div</h3>
                 <p><code>Div</code>s should be used for any element that doesn't fall into the above contexts.</p>
-                <p>Adding classes to div becomes a necessity if they are used multiple times in the same element.</p>
+                <p>Adding classes to divs becomes a necessity if they are used multiple times in the same element.</p>
                 <h3 id="LineBreak">Line Break</h3>
                 <p><code>&lt;br /&gt;</code> can be used to insert a new line of text without causing additional spacing from margins and padding.</p>
-                <p>They should not be used to apply two line breaks to create a space for a paragraph of text, that should be a closing and new <code>p</code> tag.</p>
+                <p>They should not be used to apply two line breaks to create a space for a paragraph of text, for that should be accomplished using a closing and new <code>p</code> tag.</p>
                 <h3 id="HorizontalRule">Horizontal Rule</h3>
                 <p>The <code>hr</code> tag can be used to create lines separating blocks of copy.</p>
             </section>
@@ -402,21 +402,21 @@ figure {
                 <h2>List Elements</h2>
                 <p>While lists are block elements, they have additional elements, so we separated them from normal block related content elements.</p>
                 <h3 id="UnorderedList">Unordered List</h3>
-                <p>The <code>&lt;ul&gt;</code> element should be used to create lists where the order doesn't matter to the context of the list. Each item is either of the similar importance or don't involve the previous item to be read first.</p>
-                <p>The <code>&lt;ul&gt;</code> element wraps it's child elements using <code>&lt;li&gt;</code> tags.</p>
+                <p>The <code>&lt;ul&gt;</code> element should be used to create lists where the order doesn't matter to the context of the list. Each item is either of similar importance or doesn't involve the previous item to be read first.</p>
+                <p>The <code>&lt;ul&gt;</code> element wraps its child elements using <code>&lt;li&gt;</code> tags.</p>
                 <h3 id="OrderedList">Ordered List</h3>
                 <p>The <code>&lt;ol&gt;</code> element should be used to create lists where the order does matter to the context of the list. The order of each child element is important to the context of the list.</p>
-                <p>The <code>&lt;ol&gt;</code> element wraps it's child elements using <code>&lt;li&gt;</code> tags.</p>
+                <p>The <code>&lt;ol&gt;</code> element wraps its child elements using <code>&lt;li&gt;</code> tags.</p>
                 <h3 id="DefinitionList">Definition List</h3>
                 <p>The <code>&lt;dl&gt;</code> element should be used to create lists where a definition is being given.</p>
-                <p>The <code>&lt;dl&gt;</code> element wraps it's child elements using <code>&lt;dt&gt;</code> for the term and <code>&lt;dd&gt;</code> for the definitions, multiple definitions can be given to a single term.  Both the <code>dt</code> and <code>dd</code> are direct children of the wrapping <code>dl</code> tag.</p>
+                <p>The <code>&lt;dl&gt;</code> element wraps its child elements using <code>&lt;dt&gt;</code> for the term and <code>&lt;dd&gt;</code> for the definitions. Multiple definitions can be given to a single term.  Both the <code>dt</code> and <code>dd</code> are direct children of the wrapping <code>dl</code> tag.</p>
             </section>
             <section id="InlineElements">
                 <h2>Inline Elements</h2>
                 <p>Inline elements are used mainly to style and provide context to content.</p>
                 <h3 id="Anchors">Anchors</h3>
-                <p>Anchors <code>&lt;a&gt;</code> are used to create hyperlinks, either to external pages or internal id's.</p>
-                <p>When linking to an external website, anything other than the domain of the website you are building, you should open a new tab, or window, by using the <code>target="_blank"</code> attribute.</p>
+                <p>Anchors <code>&lt;a&gt;</code> are used to create hyperlinks either to external pages or internal id's.</p>
+                <p>When linking to an external website, or any site other than the domain of the website you are building, you should set the browser to open a new tab or window by using the <code>target="_blank"</code> attribute.</p>
                 <h3 id="Bold">Bold</h3>
                 <p>To <strong>bold</strong> text within a block element, apply the <code>&lt;strong&gt;</code> tag to the text.</p>
                 <p>Even though the <code>&lt;b&gt;</code> tag will do the same thing, it is deprecated from the HTML spec and should not be used anymore.</p>
@@ -425,13 +425,13 @@ figure {
                 <p>Even though the <code>&lt;i&gt;</code> tag will do the same thing, it is deprecated from the HTML spec and should not be used anymore.</p>
                 <h3 id="Underline">Underline</h3>
                 <p>To <u>underline</u> text within a block element, apply the <code>&lt;u&gt;</code> tag to the text.</p>
-                <p>Be careful when using the underline tag as it could cause confusion, a lot of websites use an underline to signify clickable text on a page.</p>
+                <p>Be careful when using the underline tag as it could cause confusion. A lot of websites use an underline to signify clickable text on a page.</p>
                 <h3 id="Small">Small</h3>
                 <p>To make <small>smaller</small> text within a block element, apply the <code>&lt;small&gt;</code> tag to the text.</p>
                 <p>This tag can be helpful in a Hero to supply a second line of text, while keeping it relative to the parent element.</p>
                 <h3 id="Address">Address</h3>
-                <p>Wrap addresses in the <code>&lt;address&gt;</code> tag to supply context to the element and signifying to the browser or SEO crawler that this is an address.</p>
-                <p>The tag can also be helpful to style addresses in differently in the content.</p>
+                <p>Wrap addresses in the <code>&lt;address&gt;</code> tag to supply context to the element and to signify to the browser or SEO crawler that this is an address.</p>
+                <p>The tag can also be helpful to style addresses differently than the rest of the content.</p>
                 <h3 id="Span">Span</h3>
                 <p>When you need to do something else that's not listed above, use a <code>&lt;span&gt;</code> tag to wrap your element and apply a class to it.</p>
             </section>
@@ -439,13 +439,13 @@ figure {
                 <h2>Media Elements</h2>
                 <p>Media elements are used to provide visual or audio information such as images, videos, or audio clips.</p>
                 <h3 id="Images">Images</h3>
-                <p>Images should be added easier standalone as an <code>&lt;img /&gt;</code> tag or wrapped within a figure tag. If the image you are adding has a caption use the figure tag to wrap it and make it easier, if not and it's just an image add the <code>&lt;img /&gt;</code> tag directly where needed.</p>
-                <p>Adding classes for your different types of figures may be helpful, just keep them contextual to their meaning, if you need figures for videos, images, and tables, then use those as your class name to properly style each look out.</p>
-                <p>Properly set <code>alt</code> attribute for <strong>ALL</strong> images, if the image is completely meaningless then the <code>alt</code> attribute should be left blank, otherwise it should be meaningful text to help visually impaired users to understand what the image is. If there is text in the image, the <code>alt</code> attribute should match the text.</p>
+                <p>Images should be added either standalone as an <code>&lt;img /&gt;</code> tag or wrapped within a figure tag. If the image you are adding has a caption use the figure tag to wrap it and make it easier. If this is not the case, and it's just an image add the <code>&lt;img /&gt;</code> tag directly where needed.</p>
+                <p>Adding classes for your different types of figures may be helpful, just keep them contextual to their meaning, if you need figures for videos, images, and tables, then use one of those as your class name to properly style each look out.</p>
+                <p>Properly set <code>alt</code> attribute for <strong>ALL</strong> images, and if the image is completely meaningless then the <code>alt</code> attribute should be left blank. Otherwise it should be meaningful text to help visually impaired users to understand what the image is. If there is text in the image, the <code>alt</code> attribute should match the text.</p>
                 <h3 id="Video">Video</h3>
                 <p>Using HTML 5 Video tags can be helpful when you want to add a video to your website.  These require the use of two certain types of video files <code>mp4</code>, and <code>ogg/ogv</code>.</p>
-                <p>The default player doesn't come with any buttons, so you'll have to create your own player tools <em>(possibly will build out a tool for us to use if the need arises)</em>.  With that being said, it's much easier to use a third party video service, most commonly we suggest <a href="http://youtube.com" target="_blank">YouTube</a> or <a href="http://vimeo.com" target="_blank">Vimeo</a>.</p>
-                <p>Generally, we should wrap our videos in a wrapping element that has <code>position: relative; padding-top: 56.25%;</code> then on either the <code>iframe</code> from a third party video source or <code>video</code> if we are hosting gets <code>position: absolute; left: 0; top: 0; width: 100%; height: 100%;</code> to make the video responsive.</p>
+                <p>The default player doesn't come with any buttons, so you'll have to create your own player tools <em>(will possibly build out a tool for us to use if the need arises)</em>.  With that being said, it's much easier to use a third party video service. Most commonly we suggest <a href="http://youtube.com" target="_blank">YouTube</a> or <a href="http://vimeo.com" target="_blank">Vimeo</a>.</p>
+                <p>Generally, we should wrap our videos in a wrapping element that has <code>position: relative; padding-top: 56.25%;</code>. Then on either the <code>iframe</code> from a third party video source or <code>video</code> if we are hosting, gets <code>position: absolute; left: 0; top: 0; width: 100%; height: 100%;</code> to make the video responsive.</p>
                 <p>Use <code>data-aspectratio</code> to set the size in CSS of your video wrapping element.</p>
                 <figure class="tabs">
                     <div>

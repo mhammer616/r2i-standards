@@ -67,20 +67,20 @@
             </nav>
             <section id="BasicTabsGuidelines">
                 <h2>Basic Tables Guidelines</h2>
-                <p>Tables should <strong>only</strong> be used to display tabled data, it should <strong>never</strong> be used for layout purposes.</p>
+                <p>Tables should <strong>only</strong> be used to display tabled data. They should <strong>never</strong> be used for layout purposes.</p>
                 <p>Tables are used to form data that has rows and columns of information that should be scannable.</p>
                 <p>Tables are made up of a group of tags:</p>
                 <dl>
                     <dt><code>&lt;table&gt;</code></dt>
-                    <dd>This is used to wrap the table all elements.</dd>
+                    <dd>This is used to wrap all table elements.</dd>
                     <dt><code>&lt;thead&gt;</code></dt>
-                    <dd>This is optional, but should be used more often than not, and is used to wrap the table row elements that make up the head of the table.</dd>
+                    <dd>This is optional, though it should be used more often than not, and is used to wrap the table row elements that make up the head of the table.</dd>
                     <dt><code>&lt;tbody&gt;</code></dt>
-                    <dd>This is required of all tables, regardles of whether or not your table uses a thead or tfoot element, and is used to wrap the body of the table.</dd>
+                    <dd>This is required of all tables, regardless of whether or not your table uses a thead or tfoot element, and is used to wrap the body of the table.</dd>
                     <dt><code>&lt;tfoot&gt;</code></dt>
-                    <dd>This is optional, and used to wrap the footer of the table.</dd>
+                    <dd>This is optional and is used to wrap the footer of the table.</dd>
                     <dt><code>&lt;tr&gt;</code></dt>
-                    <dd>This is used to create a row containing either, or both, <code>&lt;td&gt;</code> and <code>&lt;th&gt;</code> elements.</dd>
+                    <dd>This is used to create a row containing either, or both <code>&lt;td&gt;</code> and <code>&lt;th&gt;</code> elements.</dd>
                     <dt><code>&lt;th&gt;</code></dt>
                     <dd>This is used to create a table cell that is designated as a heading.</dd>
                     <dt><code>&lt;td&gt;</code></dt>
@@ -89,21 +89,21 @@
             </section>
             <section id="ResponsiveTables">
                 <h2>Responsive Tables</h2>
-                <p>Just going to go ahead and say it... <strong>tables suck</strong> especially on mobile devices.  There's really no good solution to build a usable table on a mobile device and keep it readable and usable. We try to spin things positivly but when it comes to tables on devices, there is no way to do it.</p>
+                <p>I'm just going to go ahead and say it... <strong>tables suck</strong> especially on mobile devices.  There's really no good solution for building a usable table on a mobile device and keeping it readable and usable. We try to spin things positively but when it comes to tables on devices, there is no way to do it.</p>
                 <p>There are really three options when building tables for a responsive website, each with their own benefits and problems...</p>
                 <ol>
-                    <li>Wrap the element in a div that has <code>overflow: auto</code> turned on and then when the table becomes to big for the area it will cause a scrollbar to appear so the user can scroll to see more data.  Obviously this is less than ideal user experience, but the table still looks and feels like a table, and lets be honest if a user is trying to read a massive table of data they are probably on a device that it will work on.</li>
-                    <li>Change the table into a list using CSS, or if needed JS, to display it on the mobile device.  The CSS approach will only work on tables that have their data formatted horizontally instead of vertically.  The JS approach would be necessary for vertically formatted tables, and should be used over duplicating the content and using hide and show media queries, because of SEO reasons.</li>
-                    <li>Hide the table from mobile users and tell them to use a larger browser to view the table.  While this is the easiest it shouldn't be done without the client suggesting to do it this way, or at least approving this first.  I would recommend you do approach 1 and add a note below the table stating for optimal display, use a browser larger than xxx.</li>
+                    <li>Wrap the element in a div that has <code>overflow: auto</code> turned on and then when the table becomes too big for the area, a scrollbar will appear so the user can scroll to see more data.  Obviously this is less than ideal user experience, but the table still looks and feels like a table, and let's be honest - if a user is trying to read a massive table of data they are probably on a device that it will work on.</li>
+                    <li>Change the table into a list using CSS, or if needed, JS, to display it on the mobile device.  The CSS approach will only work on tables that have their data formatted horizontally instead of vertically.  The JS approach would be necessary for vertically formatted tables, and should be used over duplicating the content and using hide and show media queries because of SEO reasons.</li>
+                    <li>Hide the table from mobile users, and tell them to use a larger browser to view the table.  While this is the easiest it shouldn't be done without the client suggesting to do it this way, or at least approving this first.  I would recommend you do approach 1 and add a note below the table stating for optimal display, use a browser larger than xxx.</li>
                 </ol>
-                <p>Bootstrap has a lot of good stuff they do with tables, but, they are catering to the masses with their framework and trying to make something that's suitable for everyones website.  Most likely you have a couple tables on your website that all look the same, you may have one additional special table that shows some sales chart, but that's what a class is for.  Style the table element for the most common look on your website, then add a class for the special case.</p>
+                <p>Bootstrap has a lot of good stuff they do with tables, but, they are catering to the masses with their framework and trying to make something that's suitable for everyone's website.  Most likely, you have a couple tables on your website that all look the same, and you may have one additional special table that shows some sales chart, but that's what a class is for.  Style the table element for the most common look on your website, then add a class for the special case.</p>
                 <p>Below in the <a href="#Examples">examples section</a>, you will find examples of each of these approaches, as well as some basic styling of tables.</p>
             </section>
             <section id="DataTables">
                 <h2>Data Tables</h2>
                 <p><a href="https://datatables.net/" target="_blank">DataTables</a> is a jQuery plugin that will create searchable, sortable, and filterable, tables with pagination.</p>
                 <p>This plugin should be used when large amounts of data are displayed with the need for any or all of the above features.  There is no use to re-write this plugin as it does a lot of complex things and has a really good <a href="https://datatables.net/" target="_blank">website</a> full of <a href="https://datatables.net/manual/index" target="_blank">documentation</a> and <a href="https://datatables.net/examples/index">examples</a>.</p>
-                <p>To see examples, visit the links above, there's no reason to put that much effort when they do a really good job of showing it.</p>
+                <p>To see examples, visit the links above. There's no reason to put that much effort when they do a really good job of showing it.</p>
             </section>
             <section id="Examples">
                 <h2>Examples</h2>

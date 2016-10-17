@@ -73,30 +73,30 @@
             </nav>
             <section id="BasicNavGuidelines">
                 <h2>Basic Nav Guidelines</h2>
-                <p>Every site that we build has at least one navigation somewhere on them. Navs are probably one of the most time consuming things to style out on the website. It's also one of the places where we notice the most code bloat, between unnecessary wrapping elements and JavaScript to make a simple hover effect, it can get bloated fast.</p>
+                <p>Every site that we build has at least one navigation somewhere on it. The nav is probably one of the most time consuming things to style out on the website. It's also one of the places where we notice the most code bloat, between unnecessary wrapping elements and JavaScript used to make a simple hover effect, it can get bloated fast.</p>
                 <p>With that in mind, keep things simple, keep the markup simple, keep the CSS simple, and try only to use JS for the mobile version where you might be adding things for accordion or expansion functionality.</p>
-                <p>At the most basic level, navigations are just lists that help the user get around the site quickly.  By keeping the markup simple and list based it should make the CSS simpler, while maintaining flexibility for creative designs.</p>
-                <p>When building the navigation, start with the mobile version and work your way up through the tablet and desktop.  Remember touch for both sizing and functionality, and mouse interactions.</p>
+                <p>At the most basic level, navigations are just lists that help the user get around the site quickly.  Keeping the markup simple and list based should make the CSS simpler, while maintaining flexibility for creative designs.</p>
+                <p>When building the navigation, start with the mobile version and work your way up through the tablet and desktop.  Remember touch for both sizing and functionality, as well as mouse interactions.</p>
             </section>
             <section id="MarkupForTheHeader">
                 <h2>Markup For The Nav</h2>
                 <p>Below is a list of semantic markup that should be used in headers to create the layout.</p>
                 <dl>
                     <dt><code>&lt;nav&gt;</code></dt>
-                    <dd>this tag should be used to wrap each navigation</dd>
+                    <dd>This tag should be used to wrap each navigation</dd>
                     <dt><code>&lt;ul&gt;</code></dt>
-                    <dd>use unordered lists to wrap the navigations children, this is one place where an extra dom element is acceptable, because it provides meaningful information to users on screen reads and provides additional structure</dd>
+                    <dd>Use unordered lists to wrap the navigations children. This is one place where an extra dom element is acceptable, because it provides meaningful information to users on screen reads and provides additional structure</dd>
                     <dt><code>&lt;li&gt;</code></dt>
-                    <dd>wrap inidividual items in a list item, creating hierarchy for each level</dd>
+                    <dd>Wrap individual items in a list item, creating hierarchy for each level</dd>
                     <dt><code>&lt;div&gt;</code></dt>
-                    <dd>if needed for design purposes wrap child ul elements in an additional div for dropdowns</dd>
+                    <dd>If needed for design purposes, wrap child ul elements in an additional div for dropdowns</dd>
                 </dl>
-                <p>If the markup is structured properly there should be no need for additional classes for navigations, use wrapping semantic elements as the selector, if that's not enough and you do need a class, use a single on the nav element. The class should be related to the type of navigation it is, acceptable names: main, int, breadcrumb, footer, and utility.</p>
+                <p>If the markup is structured properly there should be no need for additional classes for navigations. Use wrapping semantic elements as the selector, if that's not enough and you do need a class, use a single class on the nav element. The class should be related to the type of navigation it is. Acceptable names: main, int, interior, landing, breadcrumb, footer, and utility.</p>
             </section>
             <section id="MainNavs">
                 <h2>Main Nav Examples</h2>
-                <p>These examples are meant to be starting points for the main navigation for your website, locate the one that closely resembles and build using that as a base.</p>
-                <p><em>The code below has everything stripped out from our <a href="/standards-guide/developer/headers.html#AverageHeader">Average Header Example</a>, start there to get the base less, the examples below focus in more just on HTML and CSS for just the navigation portion.</em></p>
+                <p>These examples are meant to be starting points for the main navigation for your website. Locate the one that closely resembles and build using that as a base.</p>
+                <p><em>The code below has everything stripped out from our <a href="/standards-guide/developer/headers.html#AverageHeader">Average Header Example</a>. Start there to get the base less. The examples below focus in more just on HTML and CSS for the navigation portion.</em></p>
                 <h3 id="SimpleMainNav">Simple Main Nav</h3>
                 <p>Our simple main nav example is a simple single tier example that will act as our foundation for the following examples.</p>
                 <figure class="tabs">
@@ -244,7 +244,7 @@
                     </figcaption>
                 </figure>
                 <h3 id="MainNavWithDropdowns">Main Nav With Dropdowns</h3>
-                <p>Our main nav with dropdowns example builds on the simple single main nav example and adds a second tier dropdown to each item, except the last.</p>
+                <p>Our main nav with dropdowns example builds on the simple single main nav example and adds a second tier dropdown to each item except the last.</p>
                 <figure class="tabs">
                     <div>
                         <div class="headers active main-nav-base" role="tabpanel" id="dropdownExample">
@@ -360,7 +360,7 @@
                     </figcaption>
                 </figure>
                 <h3 id="MegaMenu">Mega Menu</h3>
-                <p>Our Mega Menu example builds on the main nav with dropdowns example and adds additional items including multicolumns and call to actions, except to the last item.</p>
+                <p>Our Mega Menu example builds on the main nav with dropdowns example and adds additional items including multicolumns and call to actions except to the last item.</p>
                 <figure class="tabs">
                     <div>
                         <div class="headers active main-nav-base" role="tabpanel" id="megaMenuExample">
@@ -511,7 +511,7 @@
             <section id="IntNavs">
                 <h2>Interior Navigation Example</h2>
                 <p>The example below is meant to be a starting point for the interior navigation for your website.</p>
-                <p><em>The code below has everything stripped out from our <a href="/standards-guide/developer/layouts.html#Column2WithNav">2 Column - With Interior Navigation</a>, start there to get the base less, the examples below focus in more just on HTML and CSS for just the navigation portion.</em></p>
+                <p><em>The code below has everything stripped out from our <a href="/standards-guide/developer/layouts.html#Column2WithNav">2 Column - With Interior Navigation</a>. Start there to get the base less. The examples below focus in more just on HTML and CSS for the navigation portion.</em></p>
                 <figure class="tabs">
                     <div>
                         <div class="active int-nav-base" role="tabpanel" id="intNavExample">
@@ -624,7 +624,7 @@
                 </figure>
             </section>
             <section id="Breadcrumbs">
-                <h2>Breadcrumbs Example</h2>
+                <h2>Breadcrumb Example</h2>
                 <p>The example below is meant to be a starting point for Breadcrumbs for your website. These are used to show page hierarchy, location, and a quick way to navigate through the ancestors of the page.</p>
                 <figure class="tabs">
                     <div>
