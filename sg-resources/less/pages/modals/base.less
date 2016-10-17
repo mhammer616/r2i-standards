@@ -1,0 +1,98 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+/*---=== LAYOUTS ===---*/
+[role="tabpanel"] {
+    a {
+        &:hover {
+            color: @teal;
+        }
+    }
+}
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 10050;
+    overflow: hidden;
+    display: none;
+    background: rgba(0, 0, 0, 0);
+    .transition;
+    
+    &.in {
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .modal-open & {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    > figure {
+        width: 50%;
+        max-width: 800px;
+        left: 50%;
+        top: 50%;
+        .translate(-50%, -50%);
+        position: absolute;
+        background: @white;
+        padding: (@gutter * 2);
+        .border-radius(1rem);
+        .box-shadow;
+        z-index: 1;
+        
+        > header {
+            
+            > button {
+                position: absolute;
+                right: -1.5rem;
+                top: -1.5rem;
+                height: 3rem;
+                width: 3rem;
+                background: @white;
+                .border-radius(100%);
+                .ta-center;
+                line-height: 2.2rem;
+                font-size: 2rem;
+                .fw-bold;
+                color: @red;
+                border-color: @red;
+                cursor: pointer;
+                
+                &:focus, &:active {
+                    outline: none;
+                }
+            }
+        }
+        
+        p {
+            font-size: 1.6rem;
+            line-height: 1.5em;
+            margin: 0 0 1.5em;
+            color: @blue-grey;
+            
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+        
+        &.video {
+            
+            article {
+                position: relative;
+                padding-top: 56.25%;
+                
+                > iframe {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

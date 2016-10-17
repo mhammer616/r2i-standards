@@ -7,6 +7,7 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
 <link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/modals/base.less" rel="stylesheet/less" type="text/css" />
 <script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
 </script>
 <link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
@@ -50,45 +51,255 @@
         <article>
             <nav>
                 <ul>
-                    <li><a href="#">Basic Form Guidelines</a></li>
-                    <li><a href="#">Labels</a></li>
-                    <li><a href="#">Inputs</a>
+                    <li><a href="#BasicModalWindowGuidelines">Basic Modal Window Guidelines</a></li>
+                    <li><a href="#Examples">Examples</a>
                         <ul>
-                            <li><a href="#">Text Inputs</a></li>
-                            <li><a href="#">Date Inputs</a></li>
-                            <li><a href="#">Checkboxes</a></li>
-                            <li><a href="#">Radio Buttons</a></li>
-                            <li><a href="#">Button Inputs</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Selects</a></li>
-                    <li><a href="#">Textareas</a></li>
-                    <li><a href="#">Examples</a>
-                        <ul>
-                            <li><a href="#">Traditional Form</a></li>
-                            <li><a href="#">Inline Form</a></li>
-                            <li><a href="#">Vertical Form</a></li>
-                            <li><a href="#">Placeholder Form</a></li>
-                            <li><a href="#">MadLib Form</a></li>
+                            <li><a href="#">Basic Modal Window</a></li>
+                            <li><a href="#">Modal Window with YouTube Video</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
-            <section>
-                <h2>Basic Form Guidelines</h2>
-                <p>Every site or landing page that we build probably has at least one Form somewhere on them. Forms can be time consuming to build, style, and make functional, this section will help define some basic resets, and supply some code to help make this easier.</p>
-                <p>Forms, like the website in general, should follow a grid layout with rows of fields that cover any number of columns.</p>
-                <p>Forms are made up of various ways for the user to supply information back to the client. The basics of form elements are listed below, along with some custom implementations.</p>
+            <section id="BasicModalWindowGuidelines">
+                <h2>Basic Modal Window Guidelines</h2>
+                <p>A lot of our sites utilize Modal Windows to display additional information we don't want to appear in the body copy of the page.  They can also be used to prompt the user for additional information like gating content and showing a login or form to gather information needed to supply the person with that content, a video, or just a prompt that something went wrong.</p>
+                <p>Our standard for this follows a modified approach to <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Bootstrap's method</a>.</p>
+                <p>Bootstrap add's a ton of elements wrapping various pieces of the modal window. They also have various classes to change size of the dialog that appears.  These are all unnecessary to make the modal window function. In the examples we'll explore stripped down versions of the HTML that you can use as boilerplates.</p>
             </section>
-            <section>
-                <h2>Labels</h2>
-                <p>A label, even if hidden, has to be supplied for usability for every form element.</p>
-                <p>The label tag must be properly hooked up using the for attribute to associate it with the id of the input.</p>
-            </section>
-            <section>
-                <h2>Inputs</h2>
-                <p>Basic text inputs can be styled very simply by using CSS to manipulate the look and feel, we can easily control the following types: <code>text</code>, <code>password</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, and <code>tel</code>.</p>
-                <p>By using the proper type for the input, accessibility is increased by changing the keyboards on mobile and tablet devices, along with allowing basic validation of the elements to be performed.</p>
+            <section id="Examples">
+                <h2>Examples</h2>
+                <h3 id="BasicModalWindow">Basic Modal Window</h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="basicModalExample">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ut sapiente esse quibusdam consequuntur debitis reiciendis. Doloribus, atque, autem. At, quis fugiat labore voluptatem voluptatibus. <a href="#basicModal" data-toggle="modal">Click Here</a> lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, numquam perferendis maxime veritatis voluptatum facere libero quos et enim exercitationem sit nulla voluptatibus nam. Eaque, consequuntur, aut veniam earum error quae sit deserunt et numquam perferendis cumque sequi dolores itaque temporibus cupiditate delectus repellendus? Deleniti, eum, qui quisquam similique porro optio sequi facilis sunt nobis?</p>
+                        </div>
+                        <div role="tabpanel" id="basicModalHTML">
+                            <pre><code code="hljs html">&lt;!-- TO TOGGLE THE MODAL WINDOW --&gt;
+&lt;a href="#basicModal" data-toggle="modal"&gt;Click Here&lt;/a&gt;
+&lt;!-- CODE FOR THE MODAL WINDOW, 
+    IF YOU ARE USING RELATIVE POSITIONING ON THE WRAPPING ELEMENT, 
+    PLACE AT ROOT OF THE PAGE TO FIX DISPLAY ISSUES --&gt;
+&lt;div class="modal fade" id="basicModal" role="dialog" aria-labelledby="basicModalLabel"&gt;
+    &lt;figure role="document"&gt;
+        &lt;header&gt;
+            &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;/button&gt;
+        &lt;/header&gt;
+        &lt;article&gt;
+            ...
+        &lt;/article&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="basicModalLESS">
+                            <pre><code class="hljs css">.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 10050;
+    overflow: hidden;
+    display: none;
+    background: rgba(0, 0, 0, 0);
+    .transition;
+    
+    &amp;.in {
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .modal-open &amp; {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    &gt; figure {
+        width: 50%;
+        max-width: 800px;
+        left: 50%;
+        top: 50%;
+        .translate(-50%, -50%);
+        position: absolute;
+        background: @white;
+        padding: (@gutter * 2);
+        .border-radius(1rem);
+        .box-shadow;
+        z-index: 1;
+        
+        &gt; header {
+            
+            &gt; button {
+                position: absolute;
+                right: -1.5rem;
+                top: -1.5rem;
+                height: 3rem;
+                width: 3rem;
+                background: @white;
+                .border-radius(100%);
+                .ta-center;
+                line-height: 2.2rem;
+                font-size: 2rem;
+                .fw-bold;
+                color: @red;
+                border-color: @red;
+                cursor: pointer;
+                
+                &amp;:focus, &amp;:active {
+                    outline: none;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="basicModalJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#basicModalExample" role="tab">Example</a>
+                        <a href="#basicModalHTML" role="tab">HTML</a>
+                        <a href="#basicModalLESS" role="tab">LESS</a>
+                        <a href="#basicModalJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="ModalWindowWithYouTube">Modal Window with YouTube Video</h3>
+                <p>The same concept below can be applied to other video players as well like <a href="http://www.vimeo">Vimeo</a>.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="modalYouTubeExample">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ut sapiente esse quibusdam consequuntur debitis reiciendis. Doloribus, atque, autem. At, quis fugiat labore voluptatem voluptatibus. <a href="https://www.youtube.com/watch?v=frdj1zb9sMY" data-toggle="modal">Click Here</a> lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, numquam perferendis maxime veritatis voluptatum facere libero quos et enim exercitationem sit nulla voluptatibus nam. Eaque, consequuntur, aut veniam earum error quae sit deserunt et numquam perferendis cumque sequi dolores itaque temporibus cupiditate delectus repellendus? Deleniti, eum, qui quisquam similique porro optio sequi facilis sunt nobis?</p>
+                        </div>
+                        <div role="tabpanel" id="modalYouTubeHTML">
+                            <pre><code code="hljs html">&lt;!-- TO TOGGLE THE MODAL WINDOW --&gt;
+&lt;a href="https://www.youtube.com/watch?v=frdj1zb9sMY" data-toggle="modal"&gt;Click Here&lt;/a&gt;
+&lt;!-- CODE FOR THE MODAL WINDOW, 
+    IF YOU ARE USING RELATIVE POSITIONING ON THE WRAPPING ELEMENT, 
+    PLACE AT ROOT OF THE PAGE TO FIX DISPLAY ISSUES --&gt;
+&lt;div class="modal" id="videoModal" role="dialog" aria-labelledby="videoModalLabel"&gt;
+    &lt;figure role="document" class="video"&gt;
+        &lt;header&gt;
+            &lt;button type="button" data-dismiss="modal" aria-label="Close"&gt;&times;&lt;/button&gt;
+        &lt;/header&gt;
+        &lt;article&gt;
+            &lt;iframe width="560" height="315" src="" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+        &lt;/article&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="modalYouTubeLESS">
+                            <pre><code class="hljs css">.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 10050;
+    overflow: hidden;
+    display: none;
+    background: rgba(0, 0, 0, 0);
+    .transition;
+    
+    &amp;.in {
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .modal-open &amp; {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    &gt; figure {
+        width: 50%;
+        max-width: 800px;
+        left: 50%;
+        top: 50%;
+        .translate(-50%, -50%);
+        position: absolute;
+        background: @white;
+        padding: (@gutter * 2);
+        .border-radius(1rem);
+        .box-shadow;
+        z-index: 1;
+        
+        &gt; header {
+            
+            &gt; button {
+                position: absolute;
+                right: -1.5rem;
+                top: -1.5rem;
+                height: 3rem;
+                width: 3rem;
+                background: @white;
+                .border-radius(100%);
+                .ta-center;
+                line-height: 2.2rem;
+                font-size: 2rem;
+                .fw-bold;
+                color: @red;
+                border-color: @red;
+                cursor: pointer;
+                
+                &amp;:focus, &amp;:active {
+                    outline: none;
+                }
+            }
+        }
+        
+        p {
+            font-size: 1.6rem;
+            line-height: 1.5em;
+            margin: 0 0 1.5em;
+            color: @blue-grey;
+            
+            &amp;:last-of-type {
+                margin: 0;
+            }
+        }
+        
+        &amp;.video {
+            
+            article {
+                position: relative;
+                padding-top: 56.25%;
+                
+                &gt; iframe {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="modalYouTubeJS">
+                            <pre><code>$(document).ready(function() {
+    $('a[href^="https://www.youtube.com"]').on('click', function(event) {
+        event.preventDefault();
+        var videoID = $(this).attr('href').replace('https://www.youtube.com/watch?v=', ''),
+            videoURL = 'https://www.youtube.com/embed/' + videoID +'?rel=0&amp;showinfo=0';
+        
+        
+        $('#videoModal iframe').attr('src', videoURL);
+        $('#videoModal').modal('show');
+    });
+    
+    $('#videoModal').on('hidden.bs.modal', function(e) {
+        $('#videoModal iframe').attr('src', '');
+    });
+});</code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#modalYouTubeExample" role="tab">Example</a>
+                        <a href="#modalYouTubeHTML" role="tab">HTML</a>
+                        <a href="#modalYouTubeLESS" role="tab">LESS</a>
+                        <a href="#modalYouTubeJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
             </section>
         </article>
     </section>
@@ -123,6 +334,45 @@
         </div>
     </nav>
 </main>
+<div class="modal fade" id="basicModal" role="dialog" aria-labelledby="basicModalLabel">
+    <figure role="document">
+        <header>
+            <button type="button" data-dismiss="modal" aria-label="Close">&times;</button>
+        </header>
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, suscipit, fugiat minima officiis quasi quas magnam voluptatem reprehenderit expedita provident veritatis unde modi dolor accusamus.</p>
+            <p>Quidem, perspiciatis, quis, atque consequuntur deserunt expedita minima possimus culpa quod veniam aut ipsum magnam mollitia quia velit voluptatibus praesentium. Tempore adipisci error veritatis praesentium.</p>
+            <p>Omnis, dignissimos nobis recusandae voluptatibus beatae dolorum esse facilis ipsam rerum sunt ullam earum neque illum ex iure suscipit voluptas quo a odio dolores similique!</p>
+        </article>
+    </figure>
+</div>
+<div class="modal" id="videoModal" role="dialog" aria-labelledby="videoModalLabel">
+    <figure role="document" class="video">
+        <header>
+            <button type="button" data-dismiss="modal" aria-label="Close">&times;</button>
+        </header>
+        <article>
+            
+        </article>
+    </figure>
+</div>
+<script>
+$(document).ready(function() {
+    $('a[href^="https://www.youtube.com"]').on('click', function(event) {
+        event.preventDefault();
+        var videoID = $(this).attr('href').replace('https://www.youtube.com/watch?v=', ''),
+            videoMarkup = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID +'?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+        
+        
+        $('#videoModal article').html(videoMarkup);
+        $('#videoModal').modal('show');
+    });
+    
+    $('#videoModal').on('hidden.bs.modal', function(e) {
+        $('#videoModal iframe').remove();
+    });
+});
+</script>
 <script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
 </body>
 </html>
