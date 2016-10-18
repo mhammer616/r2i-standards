@@ -51,26 +51,27 @@
         <article>
             <nav>
                 <ul>
-                    <li><a href="#BasicTabsGuidelines">Basic Carousel Guidelines</a></li>
+                    <li><a href="#BasicCarouselGuidelines">Basic Carousel Guidelines</a></li>
                     <li><a href="#Examples">Examples</a>
                         <ul>
-                            <li><a href="#HorizontalTabs">Horizontal Tabs</a></li>
-                            <li><a href="#VerticalTabs">Vertical Tabs</a></li>
+                            <li><a href="#BasicCarousel">Basic Carousel</a></li>
+                            <li><a href="#ResponsiveCarousel">Responsive</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
             <section>
-                <h2 id="BasicTabsGuidelines">Basic Carousel Guidelines</h2>
-                <p>Almost all the sites we develop use tabs somewhere on them, to keep tabs consistent in functionality and code base, we have chosen to use Bootstraps Tabs as our standard and best practice. The Bootstrap Tab component is easy to setup and works with all of our CMS's.  Go to <a href="http://getbootstrap.com/javascript/#tabs" target="_blank">getbootstrap.com/javascript/#tabs</a> for additional documentation on how this can be customized. A few examples of layouts and styles have been added below along with the code to achieve their look and feel.</p>
+                <h2 id="BasicCarouselGuidelines">Basic Carousel Guidelines</h2>
+                <p>Carousels are used on practically ever website we create. While we have used a number of different carousel libraries, including <a href="http://sorgalla.com/jcarousel/" target="_blank">jCarousel</a>, <a href="http://kenwheeler.github.io/slick/" target="_blank">Slick</a> and Bootstraps very own <a href="http://getbootstrap.com/javascript/#carousel" target="_blank">Carousel</a> plugin, we have found that the most flexible library is <a href="http://www.owlcarousel.owlgraphic.com/" target="_blank">Owl Carousel</a>. Owl Carousel prvodies many <a href="http://www.owlcarousel.owlgraphic.com/docs/api-options.html" target="_blank">options</a> & <a href="http://www.owlcarousel.owlgraphic.com/docs/api-events.html" target="_blank">events</a> to acheive practically any carousel we use. In addition, the responsive set up is simple to use and already has touch swipe enabled by default.</p>
             </section>
             <section>
                 <h2 id="Examples">Examples</h2>
                 <h3 id="BasicCarousel">Basic Carousel</h3>
-                <figure class="carousels">
+                <p>This basic carousel function has the minimal HTML markup needed, and the accociated javascript snippet, to fire the carousel.</p>
+                <figure class="tabs carousels">
                     <div>
                         <div class="active" role="tabpanel" id="basicStyle">
-                            <div class="owl-carousel">
+                            <div class="owl-carousel" id="basicCarousel">
                                 <div class="item"><h4>1</h4></div>
                                 <div class="item"><h4>2</h4></div>
                                 <div class="item"><h4>3</h4></div>
@@ -85,99 +86,203 @@
                                 <div class="item"><h4>12</h4></div>
                             </div>
                         </div>
-                        <div role="tabpanel" id="formHoriTabsHTML">
-                            <pre><code class="hljs html">&lt;div class="horizontal-tabs"&gt;
-        &lt;ul role="tablist"&gt;
-            &lt;li role="presentation" class="active"&gt;
-                &lt;a href="#home" aria-controls="home" role="tab" data-toggle="tab"&gt;Home&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li role="presentation"&gt;
-                &lt;a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"&gt;Profile&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li role="presentation"&gt;
-                &lt;a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"&gt;Messages&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li role="presentation"&gt;
-                &lt;a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"&gt;Settings&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;div&gt;
-            &lt;div role="tabpanel" class="active" id="home"&gt;
-                &lt;h2&gt;Home&lt;/h2&gt;
-                ...
-            &lt;/div&gt;
-            &lt;div role="tabpanel" id="profile"&gt;
-                &lt;h2&gt;Profile&lt;/h2&gt;
-                ...
-            &lt;/div&gt;
-            &lt;div role="tabpanel" id="messages"&gt;
-                &lt;h2&gt;Messages&lt;/h2&gt;
-                ...
-            &lt;/div&gt;
-            &lt;div role="tabpanel" id="settings"&gt;
-                &lt;h2&gt;Settings&lt;/h2&gt;
-               ...
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
+                        <div role="tabpanel" id="basicStyleHTML">
+                            <pre><code class="hljs html">&lt;div class="owl-carousel" id="basicCarousel"&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                         </div>
-                        <div role="tabpanel" id="formHoriTabsLESS">
-                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; HORIZONTAL TABS &gt;&gt;&gt;===---*/
-    .horizontal-tabs {
-        &gt; ul[role="tablist"] {
-            .clearfix;
-            position: relative;
-            z-index: 10;
-            
-            &gt; li {
-                float: left;
-                list-style: none;
-                margin: 0 1px 0 0;
-                
-                a {
-                    padding: 1rem;
-                    border: 1px solid @grey;
-                    background: @grey;
-                    color: @white;
-                    .td-none;
-                    border-radius: 5px 5px 0 0;
-                    font-size: 1.4rem;
-                    display: block;
-                }
-                
-                &.active {
-                    a {
-                        background: @white;
-                        color: @grey;
-                        border-bottom: 1px solid @white;
-                    }
-                }
-            }
-        }
-        
-        &gt; div {
-            border: 1px solid @grey;
-            margin: -1px 0 0;
-            position: relative;
-            z-index: 0;
-            
+                        <div role="tabpanel" id="basicStyleLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; CAROUSELS &gt;&gt;&gt;===---*/
+.owl-carousel {
+    .owl-item {
+        background: @teal;
+        color: @white;
+        padding: 20px;
+        min-height:200px;
+    }
+    .owl-controls {
+        position: relative;
+        .owl-nav {
+            position:absolute;
+            width:100%;
+            padding-bottom: 10px;
+            top: 50%;
+            .transform(translateY(-50%));
             &gt; div {
-                padding: 25px;
+                position: absolute;
+                &.owl-prev {
+                    left: 0;
+                }
+                &.owl-next {
+                    right: 0;
+                }
             }
         }
-    }</code></pre>
+        .owl-dots {
+            text-align: center;
+            padding: 20px 0 0;
+            .owl-dot {
+                background: @grey;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+                .border-radius(50%);
+                margin: 0 3px;
+                &.active {
+                    background: @red;
+                }
+            }
+        }
+    }
+}</code></pre>
                         </div>
-                        <div role="tabpanel" id="formHoriTabsJS">
+                        <div role="tabpanel" id="basicStyleJS">
                             <pre>
-                                <code></code>
+                                <code>$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    items:5,
+    navText:['&amp;lsaquo;','&amp;rsaquo;']
+});</code>
                             </pre>
                         </div>
                     </div>
                     <figcaption role="tablist">
-                        <a class="active" href="#formHoriTabsExample" role="tab">Example</a>
-                        <a href="#formHoriTabsHTML" role="tab">HTML</a>
-                        <a href="#formHoriTabsLESS" role="tab">LESS</a>
-                        <a href="#formHoriTabsJS" role="tab" disabled>JavaScript</a>
+                        <a class="active" href="#basicStyle" role="tab">Example</a>
+                        <a href="#basicStyleHTML" role="tab">HTML</a>
+                        <a href="#basicStyleLESS" role="tab">LESS</a>
+                        <a href="#basicStyleJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="ResponsiveCarousel">Responsive Configuration</h3>
+                <p>Highlighting the responsive options that owl carousel provides because it's important to note. To change these options, including how many items are visible, use the repsonsive option in the configuration. Then create your array of media breakpoints to where you can include specific options to view. Click the JavaScript tab below to view a basic responsive configuration example.</p>
+                <figure class="tabs carousels">
+                    <div>
+                        <div class="active" role="tabpanel" id="respStyle">
+                            <div class="owl-carousel" id="responsiveCarousel">
+                                <div class="item"><h4>1</h4></div>
+                                <div class="item"><h4>2</h4></div>
+                                <div class="item"><h4>3</h4></div>
+                                <div class="item"><h4>4</h4></div>
+                                <div class="item"><h4>5</h4></div>
+                                <div class="item"><h4>6</h4></div>
+                                <div class="item"><h4>7</h4></div>
+                                <div class="item"><h4>8</h4></div>
+                                <div class="item"><h4>9</h4></div>
+                                <div class="item"><h4>10</h4></div>
+                                <div class="item"><h4>11</h4></div>
+                                <div class="item"><h4>12</h4></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="respStyleHTML">
+                            <pre><code class="hljs html">&lt;div class="owl-carousel" id="responsiveCarousel" &gt;
+    &lt;div class="item"&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="respStyleLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; CAROUSELS &gt;&gt;&gt;===---*/
+.owl-carousel {
+    .owl-item {
+        background: @teal;
+        color: @white;
+        padding: 20px;
+        min-height:200px;
+    }
+    .owl-controls {
+        position: relative;
+        .owl-nav {
+            position:absolute;
+            width:100%;
+            padding-bottom: 10px;
+            top: 50%;
+            .transform(translateY(-50%));
+            &gt; div {
+                position: absolute;
+                &.owl-prev {
+                    left: 0;
+                }
+                &.owl-next {
+                    right: 0;
+                }
+            }
+        }
+        .owl-dots {
+            text-align: center;
+            padding: 20px 0 0;
+            .owl-dot {
+                background: @grey;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+                .border-radius(50%);
+                margin: 0 3px;
+                &.active {
+                    background: @red;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="respStyleJS">
+                            <pre>
+                                <code>$('#responsiveCarousel').owlCarousel({
+    navText:['&amp;lsaquo;','&amp;rsaquo;'],
+    responsive : {
+        // breakpoint from 0 up
+        0 : {
+            items: 1,
+            loop: false,
+            margin: 0,
+            nav: false
+        },
+        // breakpoint from 480 up
+        480 : {
+            items: 2,
+            loop: true,
+            margin: 20,
+            nav: false
+        },
+        // breakpoint from 768 up
+        768 : {
+            items: 4,
+            loop: true,
+            margin: 10,
+            nav: true,
+        }
+    }
+});</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#respStyle" role="tab">Example</a>
+                        <a href="#respStyleHTML" role="tab">HTML</a>
+                        <a href="#respStyleLESS" role="tab">LESS</a>
+                        <a href="#respStyleJS" role="tab">JavaScript</a>
                     </figcaption>
                 </figure>
             </section>
@@ -186,6 +291,13 @@
     <nav id="developer">
         <button></button>
         <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
             <h2>I want to build...</h2>
             <ul>
                 <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
@@ -196,12 +308,13 @@
                 <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
                 <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
                 <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
                 <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
                 <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
-                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
-                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
-                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
                 <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
             </ul>
         </div>
     </nav>
@@ -209,11 +322,38 @@
 <script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
 <script type="text/javascript" src="/standards-guide/sg-resources/js/owl.carousel.min.js"></script>
 <script type="text/javascript">
-$('.owl-carousel').owlCarousel({
+$('#basicCarousel').owlCarousel({
     loop:true,
     margin:10,
     nav:true,
-    items:5
+    items:5,
+    navText:['&lsaquo;','&rsaquo;']
+});
+$('#responsiveCarousel').owlCarousel({
+    navText:['&lsaquo;','&rsaquo;'],
+    responsive : {
+        // breakpoint from 0 up
+        0 : {
+            items: 1,
+            loop: false,
+            margin: 0,
+            nav: false
+        },
+        // breakpoint from 480 up
+        480 : {
+            items: 2,
+            loop: true,
+            margin: 20,
+            nav: false
+        },
+        // breakpoint from 768 up
+        768 : {
+            items: 4,
+            loop: true,
+            margin: 10,
+            nav: true,
+        }
+    }
 });
 </script>
 </body>
