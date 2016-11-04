@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/tooltips/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Drupal</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#Guidelines">Drupal Guidelines</a></li>
+                    <li><a href="#Setup">Theme Setup</a></li>
+                    <li><a href="#Structure">Theme Structure</a></li>
+                    <li><a href="#Styles">Theme Styles</a></li>
+                    <li><a href="#Modules">Recommended Modules</a></li>
+                </ul>
+            </nav>
+            <section id="Guidelines">
+                <h2>Drupal Guidelines</h2>
+                <p>When you recieve a fresh Drupal installation, the following sections will help you properly set up your theme.</p>
+            </section>
+            <section id="Setup">
+                <h2>Theme Setup</h2>
+                <p>In order leverage bootstrap tools within the Drupal admin, it is required to install the Bootstrap theme.</p>
+                <ul>
+                    <li>If the developer on the project hasn’t instaleld the theme yet, you can download the bootstrap theme here, <a href="https://www.drupal.org/project/bootstrap" target="_blank">https://www.drupal.org/project/bootstrap</a>, and install it at Admin &gt; Appearance &gt; Install New Theme.
+                        <ul>
+                            <li>Note: The bootstrap theme requires you to install the jQuery Update module. You can find that here, <a href="https://www.drupal.org/project/jquery_update" target="_blank">https://www.drupal.org/project/jquery_update</a>, and install it a Admin &gt; Modules &gt; Install New Module.</li>
+                            <li>Once installed, go to Admin &gt; Config &gt; Development &gt; jQuery Update. Change the jQuery version to 1.9.</li>
+                        </ul>
+                    </li>
+                    <li>Once those are installed, you have to create the child theme, which is where you will be doing all of your work. Go into your file system and navigate to the Sites &gt; All &gt; Themes &gt; bootstrap &gt; starterkits. Copy the less folder and paste it in the Sites &gt; All &gt; Themes directory (same level as the bootstrap theme).</li>
+                    <li>After it's copied, rename the less folder to the name of your subtheme (usually the client name or acronym, no spaces).</li>
+                    <li>Inside the newly renamed theme, you'll find less.starterkit. Rename that file to &lt;same name as theme&gt;.info.</li>
+                    <li>Open the .info file you just renamed, and edit the Line 1 (Name) and Line 2 (Description) with a general description about what the theme is for.</li>
+                    <li>Now that your theme is updated, the final step is to download the Bootstrap. Go to <a href="http://getbootstrap.com/getting-started/#download" target="_blank">http://getbootstrap.com/getting-started/#download</a> and click the "Download Source" button. Unzip this file and rename the expanded folder to simply say "bootstrap". Move the bootstrap folder into the root level of your child theme.</li>
+                    <li>Lastly, go back to your browser and navigate to the Admin &gt; Appearance page. You'll see your newly created subtheme in the grid of selections. Simply click "Set Default" on it, and you'll be good to get started.</li>
+                </ul>
+            </section>
+            <section id="Structure">
+                <h2>Theme Structure</h2>
+                <p>The theme folder structure will vary a bit, from the standard folder structure outlined at the top of this notebook. There are some Drupal structural files and hooks that need to stay in place so that the theme functions properly.</p>
+                <h4>Root Level</h4>
+                <p>The most important file in the root level is the .info file. In this file, you create your regions and link your JS libraries. Additionally, you'll want to update the favicon.ico, logo.png & screenshot.png with the custom design you are working on. Attached is an example:</p>
+                <p><img src="../sg-resources/images/drupal-root-level.jpg" alt="" /></p>
+                <h4>JS Folder</h4>
+                <p>The JS folder will contain all your JS libraries and your main.js file. This file will have all the JS snippets that you'll use on throughout the website. To reference the files, update the Scripts section in the .info file (make sure the main.js is your last referenced file, see attached).</p>
+                <p><img src="../sg-resources/images/drupal-js-folder.jpg" alt="" /></p>
+                <h4>Less Folder</h4>
+                <p>The main less hook in the .info file references the styles.less file in this less folder. In this file, is the standard bootstrap hook, the default overrides hook, and our custom main.less file hook.  All of R2i's custom theme styles are created within the custom/ folder, please refer to the Drupal styles section for specifics.</p>
+                <p><img src="../sg-resources/images/drupal-less-folder.jpg" alt="" /></p>
+                <h4>Templates</h4>
+                <p>The templates folder, you can override and create custom Drupal template files by simply copying the template file you want to customize (like page.tpl.php for example) and place it in this folder. Any template file in this folder will override the default, so you'll want to create your structure here.</p>
+            </section>
+            <section id="Styles">
+                <h2>Theme Styles</h2>
+                <p>In your child theme, the less/custom folder will contains all the style that you're to create for the design. Ideally, based on our standard for files &amp; folder structures, we are supposed to have individual folders for each component (including less, js, & image files). But in Druapl, there is no real advantage of having individual folders within less files in them. Since we have to individually reference .js files in the .info file, it doesn’t make sense to edit this file every time you want to add a component snippet. Additionally, the js files referenced in the .info file are called on every page on the site, so it makes sense to just add snippets to main.js, and have individual .less file for each component (see below).</p>
+                <h4>Main.less</h4>
+                <p>Main.less is your main less file that connects all the pieces styles together. In this file, we have our pre-defined mixins, helpers, font references, media queries, base colors, bootstrap overrides, &amp; @imports to each component.</p>
+                <h4>General Components</h4>
+                <p>General components that are used on the site, include things like the Header, Navigation, Footer, Forms, Tables, etc. These .less file are named their respective names, and are referenced under the "Framework" section in the @imports portion of main.less</p>
+                <h4>Template Styles</h4>
+                <p>Template styles, which are intended to be structural or template specific variations, are included in template-homepage.less, template-interior.less, template-landing.less, etc.</p>
+                <h4>Component Styles</h4>
+                <p>Component styles are specific for components on your website. You should follow naming convention component-&lt;component name&gt;.less. So for example, if you have a general tabs styles on your website, you would give it a file name called component-tabs.less. If there is another version of tabs, you can narrow the specificity, such as component-tabs-landing.less. Just use your best judgment when naming components.</p>
+            </section>
+            <section id="Modules">
+                <h2>Recommended Modules</h2>
+                <p>Below is a list of useful modules to download/install on your next Drupal project.</p>
+                <ul>
+                    <li>
+                        <strong>Node Class</strong>
+                        <ul>
+                            <li><strong>Download:</strong> <a href="https://www.drupal.org/project/node_class" target="_blank">https://www.drupal.org/project/node_class</a></li>
+                            <li><strong>Summary:</strong> Allows you to add classes to any node</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Block Class</strong>
+                        <ul>
+                            <li><strong>Download:</strong> <a href="https://www.drupal.org/project/block_class" target="_blank">https://www.drupal.org/project/block_class</a></li>
+                            <li><strong>Summary:</strong> Allows you to add classes to any block</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Menu Attributes</strong>
+                        <ul>
+                            <li><strong>Download:</strong> <a href="https://www.drupal.org/project/menu_attributes" target="_blank">https://www.drupal.org/project/menu_attributes</a></li>
+                            <li><strong>Summary:</strong> Allows you to add menu attributes, such as ID, Class, Name, Target, etc. to any menu link</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Menu Block</strong>
+                        <ul>
+                            <li><strong>Download:</strong> <a href="https://www.drupal.org/project/menu_block" target="_blank">https://www.drupal.org/project/menu_block</a></li>
+                            <li><strong>Summary:</strong> Allows you to create clean menus with unlimited levels (recommended since standard Drupal menu only goes 1 level deep).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>TB Mega Menu</strong>
+                        <ul>
+                            <li><strong>Download:</strong> <a href="https://www.drupal.org/project/tb_megamenu" target="_blank">https://www.drupal.org/project/tb_megamenu</a></li>
+                            <li><strong>Summary:</strong> Allows you to easily create mega menu layouts. Each page has many custom options, including adding classes, columns, blocks etc.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>LessPHP</strong>
+                        <ul>
+                            <li><strong>Download:</strong> <a href="https://www.drupal.org/project/less" target="_blank">https://www.drupal.org/project/less</a></li>
+                            <li><strong>Summary:</strong> Adds CSS Preprocessor function to your theme, so you don’t have to run less.js.</li>
+                            <li><strong>Options:</strong> Includes various options for development
+                                <ul>
+                                    <li><strong>Developer Mode:</strong> When checked, less files are processed on every page refresh, rather than Flush Cache every time. No recommended to use on production.</li>
+                                    <li><strong>Source Maps:</strong> When checked, will allow you to inspect the precise file location &amp; line that the style is coming from, rather than reading a compiled less file.</li>
+                                    <li><strong>Watch More:</strong> When checked, the website pings the less file every few seconds, allowing you to make CSS changes and not refresh the website to see them.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>CKEditor</strong>
+                        <ul>
+                            <li><strong>Download:</strong> <a href="https://www.drupal.org/project/ckeditor" target="_blank">https://www.drupal.org/project/ckeditor</a></li>
+                            <li><strong>Summary:</strong> Turns the plain text box found in blocks, to handy dandy WYSIWYG editors</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+</body>
+</html>
