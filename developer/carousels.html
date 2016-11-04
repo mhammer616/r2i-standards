@@ -285,6 +285,128 @@
                         <a href="#respStyleJS" role="tab">JavaScript</a>
                     </figcaption>
                 </figure>
+                <h3 id="HeroCarousel">Hero Carousel</h3>
+                <p>Blah Blah Blah Text Here</p>
+                <figure class="tabs carousels">
+                    <div>
+                        <div class="active" role="tabpanel" id="heroStyle">
+                            <div class="owl-carousel hero" id="heroCarousel">
+                                <div class="item">
+                                    <h1>Hero Title 1</h1>
+                                    <p>Hero description lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="btn-primary">Hero CTA</a>
+                                </div>
+                                <div class="item">
+                                    <h1>Hero Title 2</h1>
+                                    <p>Hero description lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="btn-secondary">Hero CTA</a>
+                                </div>
+                                <div class="item">
+                                    <h1>Hero Title 2</h1>
+                                    <p>Hero description lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="btn-tertiary">Hero CTA</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="heroStyleHTML">
+                            <pre><code class="hljs html">&lt;div class="owl-carousel" id="responsiveCarousel" &gt;
+    &lt;div class="item"&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="heroStyleLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; CAROUSELS &gt;&gt;&gt;===---*/
+.owl-carousel {
+    .owl-item {
+        background: @teal;
+        color: @white;
+        padding: 20px;
+        min-height:200px;
+    }
+    .owl-controls {
+        position: relative;
+        .owl-nav {
+            position:absolute;
+            width:100%;
+            padding-bottom: 10px;
+            top: 50%;
+            .transform(translateY(-50%));
+            &gt; div {
+                position: absolute;
+                &.owl-prev {
+                    left: 0;
+                }
+                &.owl-next {
+                    right: 0;
+                }
+            }
+        }
+        .owl-dots {
+            text-align: center;
+            padding: 20px 0 0;
+            .owl-dot {
+                background: @grey;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+                .border-radius(50%);
+                margin: 0 3px;
+                &.active {
+                    background: @red;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="heroStyleJS">
+                            <pre>
+                                <code>$('#responsiveCarousel').owlCarousel({
+    navText:['&amp;lsaquo;','&amp;rsaquo;'],
+    responsive : {
+        // breakpoint from 0 up
+        0 : {
+            items: 1,
+            loop: false,
+            margin: 0,
+            nav: false
+        },
+        // breakpoint from 480 up
+        480 : {
+            items: 2,
+            loop: true,
+            margin: 20,
+            nav: false
+        },
+        // breakpoint from 768 up
+        768 : {
+            items: 4,
+            loop: true,
+            margin: 10,
+            nav: true,
+        }
+    }
+});</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#heroStyle" role="tab">Example</a>
+                        <a href="#heroStyleHTML" role="tab">HTML</a>
+                        <a href="#heroStyleLESS" role="tab">LESS</a>
+                        <a href="#heroStyleJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
             </section>
         </article>
     </section>
@@ -327,6 +449,12 @@ $('#basicCarousel').owlCarousel({
     margin:10,
     nav:true,
     items:5,
+    navText:['&lsaquo;','&rsaquo;']
+});
+$('#heroCarousel').owlCarousel({
+    loop:true,
+    nav:true,
+    items:1,
     navText:['&lsaquo;','&rsaquo;']
 });
 $('#responsiveCarousel').owlCarousel({
