@@ -84,13 +84,13 @@
                 <h2>Theme Structure</h2>
                 <p>The theme folder structure will vary a bit, from the standard folder structure outlined at the top of this notebook. There are some Drupal structural files and hooks that need to stay in place so that the theme functions properly.</p>
                 <h4>Root Level</h4>
-                <p>The most important file in the root level is the .info file. In this file, you create your regions and link your JS libraries. Additionally, you'll want to update the favicon.ico, logo.png & screenshot.png with the custom design you are working on. Attached is an example:</p>
+                <p>The most important file in the root level is the .info file. In this file, you create your regions and link your JS &amp; Less libraries. Additionally, you'll want to update the favicon.ico, logo.png & screenshot.png with the custom design you are working on. Attached is an example:</p>
                 <p><img src="../sg-resources/images/drupal-root-level.jpg" alt="" /></p>
                 <h4>JS Folder</h4>
-                <p>The JS folder will contain all your JS libraries and your main.js file. This file will have all the JS snippets that you'll use on throughout the website. To reference the files, update the Scripts section in the .info file (make sure the main.js is your last referenced file, see attached).</p>
+                <p>The JS within the resources boilerplate will contain all your JS libraries and your global.js file. This global.js file will have all the JS snippets that you'll use on throughout the website. To reference the files, update the Scripts section in the .info file (make sure the global.js is your last referenced file, see attached).</p>
                 <p><img src="../sg-resources/images/drupal-js-folder.jpg" alt="" /></p>
                 <h4>Less Folder</h4>
-                <p>The main less hook in the .info file references the styles.less file in this less folder. In this file, is the standard bootstrap hook, the default overrides hook, and our custom main.less file hook.  All of R2i's custom theme styles are created within the custom/ folder, please refer to the Drupal styles section for specifics.</p>
+                <p>The main less hook in the .info file references the style.less file in the root of the child theme. In this file, is the standard bootstrap import, the default overrides hook (necessary for drupal theme), and our custom base.less file hook.  All of R2i's custom theme styles are created within the custom/ folder, please refer to the Drupal styles section for specifics.</p>
                 <p><img src="../sg-resources/images/drupal-less-folder.jpg" alt="" /></p>
                 <h4>Templates</h4>
                 <p>The templates folder, you can override and create custom Drupal template files by simply copying the template file you want to customize (like page.tpl.php for example) and place it in this folder. Any template file in this folder will override the default, so you'll want to create your structure here.</p>
@@ -98,8 +98,10 @@
             <section id="Styles">
                 <h2>Theme Styles</h2>
                 <p>In your child theme, the less/custom folder will contains all the style that you're to create for the design. Ideally, based on our standard for files &amp; folder structures, we are supposed to have individual folders for each component (including less, js, & image files). But in Druapl, there is no real advantage of having individual folders within less files in them. Since we have to individually reference .js files in the .info file, it doesn’t make sense to edit this file every time you want to add a component snippet. Additionally, the js files referenced in the .info file are called on every page on the site, so it makes sense to just add snippets to main.js, and have individual .less file for each component (see below).</p>
-                <h4>Main.less</h4>
-                <p>Main.less is your main less file that connects all the pieces styles together. In this file, we have our pre-defined mixins, helpers, font references, media queries, base colors, bootstrap overrides, &amp; @imports to each component.</p>
+                <h4>Bootstrap.less</h4>
+                <p>Bootstrap.less is essential to your theme &amp; imports all bootstrap less files. You can customize and comment out the imports you are not going to use in order to propertly optimize you site weight.</p>
+                <h4>Base.less</h4>
+                <p>Base.less is your main less file that connects all the styles together. In this file, we have our pre-defined mixins, helpers, font references, media queries, base colors, bootstrap overrides, &amp; @imports to each component.</p>
                 <h4>General Components</h4>
                 <p>General components that are used on the site, include things like the Header, Navigation, Footer, Forms, Tables, etc. These .less file are named their respective names, and are referenced under the "Framework" section in the @imports portion of main.less</p>
                 <h4>Template Styles</h4>
