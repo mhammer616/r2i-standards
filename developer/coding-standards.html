@@ -53,6 +53,7 @@
                 <ul>
                     <li><a href="#BasicCodingGuidelines">Basic Coding Standards</a></li>
                     <li><a href="#ResponsiveDesign">Responsive Design</a></li>
+                    <li><a href="#AccessibilityGuidelines">Accessibility Guidelines</a></li>
                     <li><a href="#ProgressiveVsGraceful">Progressive Enhancement vs Graceful Degradation</a></li>
                     <li><a href="#VersionStandards">Version Control Standards</a></li>
                     <li><a href="#NamingConventions">Naming Conventions</a></li>
@@ -70,8 +71,28 @@
             </section>
             <section id="ResponsiveDesign">
                 <h2>Responsive Design</h2>
-                <p><strong>All our websites, emails, and landing pages should be responsive.</strong></p>
+                <h3>All our websites, emails, and landing pages should be responsive.</h3>
                 <p>If we are doing the designs for the website, you will receive a home page design for both mobile and desktop versions of the website.  Then, you wil receive either interior designs for each unique page, or a component library design to build the rest of the website. If budget and timeline allow you might receive additional responsive concepts for complex components, or if you really need something ask your project manager to request the designer to design something out.  We have decided on this workflow to do a couple things, a) it saves budget and time; b) it gives us flexibility in how we write the markup.</p>
+                <h3>Mobile First</h3>
+                <p>All sites, unless it's not responsive, should be built with the mobile device in mind first, then enhancing the site as the browser gets larger (more on <a href="#ProgressiveEnhancement">enhancing</a> the site later). This means, your mobile code should be accessed without the use of a media query.</p>
+                <p>Here's a few reasons why we're going mobile first:</p>
+                <ul>
+                    <li>Phones Processor<br />
+                        The processor on a phone is not as strong as the processor on a computer, connection speeds aren't as good, and therefore you don't want to load things that aren't necessary.</li>
+                    <li>Simpler Base<br>
+                        Generally the mobile device has simpler styles, but are still used to set a base for the others, this creates more streamlined code.</li>
+                    <li>Fewer Overrides<br>
+                        You'll probably have fewer things you'll need to override starting with the mobile device, you won't have to take out the annoying hover effects that only work on larger browsers.</li>
+                </ul>
+                <p>This approach also allows you to code media queries using min-width only and go in a single direction, making the code much easier to understand.</p>
+                <p>I don't want to re-write or plagiarize anymore content, so here is some further reading on the approach:</p>
+                <ul>
+                    <li><a href="http://gs.statcounter.com/#desktop+mobile-comparison-US-monthly-200812-201609">Stat Counter -  US Stat Desktop vs Mobile Platform Comparison</a></li>
+                    <li><a href="https://www.html5rocks.com/en/mobile/responsivedesign/">Creating a Mobile-First Responsive Web Design</a></li>
+                    <li><a href="https://www.mightyminnow.com/2013/11/what-is-mobile-first-css-and-why-does-it-rock/">What is Mobile First CSS and Why Does It Rock?</a></li>
+                    <li><a href="https://codemyviews.com/blog/mobilefirst">Mobile First Design: Why It's Great and Why It Sucks</a></li>
+                </ul> 
+                <h3>Configure the Viewport</h3>
                 <p>By placing this meta tag: <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>; at the top of your page you can make the page work on mobile and desktop.</p>
                 <p>Additonal settings can be applied:</p>
                 <table>
@@ -124,6 +145,44 @@
     width: device-width;
 }</code></pre>
                 </figure>
+            </section>
+            <section id="AccessibilityGuidelines">
+                <h2>Accessibility Guidelines</h2>
+                <h3>All our websites, emails, and landing pages should be accessible.</h3>
+                <p>At a basic level we should code our websites to follow the Web Content Accessibility Guidelines 2.0 (WCAG) which covers a range of recommendations that will make content accessible to people with disabilities, including blindness and low vision, deafness and hearing loss, learning disabilitys, cognitive limitations, limited movement, speech disabilities, photosensitivity or a combination of these.</p>
+                <p><em>While this is a baseline for 508(C) compliance, that goes into a little more detail and has higher standards, generally speaking we want to follow WCAG 2.0 standards, and if the client is requesting 508(C) compliance we will use an auditing company to tell us what to fix.</em></p>
+                <p>There are four main areas this guideline covers, perceivable, operable, understandable, and robust.</p>
+                <ol>
+                    <li>Perceivable
+                        <ul>
+                            <li>Provide text alternatives for any non-text content so that it can be changed into forms people need, such as large print, braille, speech, symbols or simpler language.</li>
+                            <li>Provide alternatives for time-based media.</li>
+                            <li>Create content that can be presented in different ways (for example simpler layout) without losing information or structure.</li>
+                            <li>Make it easier for users to see and hear content including separating foreground from background.</li>
+                        </ul>
+                    </li>
+                    <li>Operable
+                        <ul>
+                            <li>Make all functionality available from a keyboard.</li>
+                            <li>Provide users enough time to read and use content.</li>
+                            <li>Do not design content in a way that is known to cause seizures.</li>
+                            <li>Provide ways to help users navigate, find contnet, and determine where they are.</li>
+                        </ul>
+                    </li>
+                    <li>Understandable
+                        <ul>
+                            <li>Make content readable and understandable.</li>
+                            <li>Make web pages appear and operate in predictable ways.</li>
+                            <li>Help users avoid and correct mistakes.</li>
+                        </ul>
+                    </li>
+                    <li>Robust
+                        <ul>
+                            <li>Maximize compatibility with current and future user agents, including assistive technologies.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>For more information on these guidelines you can read the spec on <a href="https://www.w3.org/TR/WCAG20/" target="_blank">www.w3.org</a>.</p>
             </section>
             <section id="ProgressiveVsGraceful">
                 <h2>Progressive Enhancement vs Graceful Degradation</h2>
