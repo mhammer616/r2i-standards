@@ -1,0 +1,41 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+/*---===<<< GRID >>>===---*/
+.grid-example {
+    padding: 25px;
+    border: 5px solid #333;
+    .clearfix;
+    margin: 0 0 3rem;
+    
+    [class*="col-"] {
+        height: 50px;
+        position: relative;
+        background: fade(@teal, 25);
+        border: 1px solid @teal;
+        
+        &:before {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            width: ~"calc(100% - (@{gutter} * 2))";
+            content: '';
+            display: block;
+            border-left: @gutter solid fade(@red, 50); 
+            border-right: @gutter solid fade(@red, 50); 
+        }
+        
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: attr(class);
+            color: @teal;
+            font-size: 12px;
+            .translate(-50%, -50%);
+            white-space: nowrap;
+        }
+    }
+}

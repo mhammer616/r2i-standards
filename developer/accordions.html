@@ -1,0 +1,612 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/accordions/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Accordions</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicAccordionGuidelines">Basic Accordion Guidelines</a></li>
+                    <li><a href="#Examples">Examples</a>
+                        <ul>
+                            <li><a href="#PlusMinus">Plus/Minus</a></li>
+                            <li><a href="#PlusClose">Plus/Close</a></li>
+                            <li><a href="#Triangles">Triangles</a></li>
+                            <li><a href="#Arrows">Arrows</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="BasicAccordionGuidelines">
+                <h2>Basic Accordions Guidelines</h2>
+                <p>A majority of our sites utilize accordions. Very similar to tabs, they are used to hide and show data that may take up valuable real estate on the page.  They are also commonly used for Frequently Asked Questions so that you see questions and click to expand for the answer.</p>
+                <p>Below are a few examples of how Accordions should be setup, along with the JavaScript to make them work. Various toggles have been added with animations/transitions so that you can use the base setup that's right for your design.</p>
+            </section>
+            <section id="Examples">
+                <h2>Examples</h2>
+                <h3 id="PlusMinus">Plus/Minus Accordions</h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="accordPlusExample">
+                            <dl class="accordion plus-minus">
+                                <dt class="active">Collapsible Item 1</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 2</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 3</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 4</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div role="tabpanel" id="accordPlusHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;dl class="accordion"&gt;
+    &lt;dt class="active"&gt;Collapsible Item 1&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 2&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 3&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 4&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="accordPlusLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; ACCORDION BASE &gt;&gt;&gt;===---*/
+dl.accordion {
+    border: 2px solid @navy;
+    padding: .5rem;
+    
+    dt {
+        position: relative;
+        background: @navy;
+        cursor: pointer;
+        .spartan;
+        font-size: 15px;
+        padding: 1rem;
+        color: @white;
+        
+        ~ dt {
+            margin: 1rem 0 0;
+        }
+        
+        &amp;:before, &amp;:after {
+            content: '';
+            background: @white;
+            position: absolute;
+            top: 50%;
+            .transform(~"translate(-50%, -50%) rotate(0deg)");
+            .transition;
+        }
+        
+        &amp;:before {
+            height: 4px;
+            width: 14px;
+            right: 25px;
+        }
+        
+        &amp;:after {
+            height: 14px;
+            width: 4px;
+            right: 35px;
+        }
+        
+        &amp;.active {
+            &amp;:after {
+                .transform(~"translate(-50%, -50%) rotate(90deg)");
+            }
+            
+            + dd {
+                display: block;
+            }
+        }
+    }
+    
+    dd {
+        display: none;
+        border: 1px solid @navy;
+        padding: 25px;
+        
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="accordPlusJS" class="">
+                        <pre><code class="hljs javascript">$('.accordion &gt; dt').on('click', function() {
+    var $this = $(this);
+    
+    $this.siblings('.active').removeClass('active');
+    $this.addClass('active');
+});</code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#accordPlusExample" role="tab">Example</a>
+                        <a href="#accordPlusHTML" role="tab">HTML</a>
+                        <a href="#accordPlusLESS" role="tab">LESS</a>
+                        <a href="#accordPlusJS" role="tab" class="">JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="PlusClose">Plus/Close Accordions</h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="accordCloseExample">
+                            <dl class="accordion plus-close">
+                                <dt class="active">Collapsible Item 1</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 2</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 3</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 4</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div role="tabpanel" id="accordCloseHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;dl class="accordion"&gt;
+    &lt;dt class="active"&gt;Collapsible Item 1&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 2&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 3&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 4&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="accordCloseLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; ACCORDION BASE &gt;&gt;&gt;===---*/
+dl.accordion {
+    border: 2px solid @navy;
+    padding: .5rem;
+    
+    dt {
+        position: relative;
+        background: @navy;
+        cursor: pointer;
+        .spartan;
+        font-size: 15px;
+        padding: 1rem;
+        color: @white;
+        
+        ~ dt {
+            margin: 1rem 0 0;
+        }
+        
+        &amp;:before, &amp;:after {
+            content: '';
+            background: @white;
+            position: absolute;
+            top: 50%;
+            .transform(~"translate(-50%, -50%) rotate(0deg)");
+            .transition;
+        }
+        
+        &amp;:before {
+            height: 4px;
+            width: 14px;
+            right: 25px;
+        }
+        
+        &amp;:after {
+            height: 14px;
+            width: 4px;
+            right: 35px;
+        }
+        
+        &amp;.active {
+            &amp;:before, &amp;:after {
+                .transform(~"translate(-50%, -50%) rotate(45deg)");
+            }
+            
+            + dd {
+                display: block;
+            }
+        }
+    }
+    
+    dd {
+        display: none;
+        border: 1px solid @navy;
+        padding: 25px;
+        
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="accordCloseJS">
+                            <pre><code class="hljs javascript">$('.accordion &gt; dt').on('click', function() {
+    var $this = $(this);
+    
+    $this.siblings('.active').removeClass('active');
+    $this.addClass('active');
+});</code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#accordCloseExample" role="tab">Example</a>
+                        <a href="#accordCloseHTML" role="tab">HTML</a>
+                        <a href="#accordCloseLESS" role="tab">LESS</a>
+                        <a href="#accordCloseJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Triangles">Triangle Accordions</h3>
+                <p>Triangles should only be pointing up and down. Triangles that point right indicate going to a new page due to their use on mobile devices.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="accordTriangleExample">
+                            <dl class="accordion triangle">
+                                <dt class="active">Collapsible Item 1</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 2</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 3</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 4</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div role="tabpanel" id="accordTriangleHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;dl class="accordion"&gt;
+    &lt;dt class="active"&gt;Collapsible Item 1&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 2&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 3&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 4&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="accordTriangleLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; ACCORDION BASE &gt;&gt;&gt;===---*/
+dl.accordion {
+    border: 2px solid @navy;
+    padding: .5rem;
+    
+    dt {
+        position: relative;
+        background: @navy;
+        cursor: pointer;
+        .spartan;
+        font-size: 15px;
+        padding: 1rem;
+        color: @white;
+        
+        ~ dt {
+            margin: 1rem 0 0;
+        }
+        
+        &amp;:before, &amp;:after {
+            content: '';
+            background: @white;
+            position: absolute;
+            top: 50%;
+            .transform(~"translate(-50%, -50%) rotate(0deg)");
+            .transition;
+        }
+        
+        &amp;:before {
+            height: 4px;
+            width: 14px;
+            right: 25px;
+        }
+        
+        &amp;:after {
+            height: 14px;
+            width: 4px;
+            right: 35px;
+        }
+        
+        &amp;.active {
+            &amp;:after {
+                .transform(~"translate(-50%, -50%) rotate(90deg)");
+            }
+            
+            + dd {
+                display: block;
+            }
+        }
+    }
+    
+    dd {
+        display: none;
+        border: 1px solid @navy;
+        padding: 25px;
+        
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="accordTriangleJS">
+                            <pre><code class="hljs javascript">$('.accordion &gt; dt').on('click', function() {
+    var $this = $(this);
+    
+    $this.siblings('.active').removeClass('active');
+    $this.addClass('active');
+});</code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#accordTriangleExample" role="tab">Example</a>
+                        <a href="#accordTriangleHTML" role="tab">HTML</a>
+                        <a href="#accordTriangleLESS" role="tab">LESS</a>
+                        <a href="#accordTriangleJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Arrows">Arrow Accordions</h3>
+                <p>Arrows should only be pointing up and down. Arrows that point right indicate going to a new page due to their use on mobile devices.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="accordArrowExample">
+                            <dl class="accordion arrow">
+                                <dt class="active">Collapsible Item 1</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 2</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 3</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                                <dt>Collapsible Item 4</dt>
+                                <dd>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, dicta, inventore accusantium tempora magnam nobis soluta sit non porro nisi dignissimos maiores exercitationem iusto debitis?</p>
+                                    <p>Tenetur, eaque numquam laboriosam mollitia nesciunt dolore reprehenderit! Autem, quam, dolores, maiores rem nihil nam reprehenderit atque asperiores accusamus quibusdam porro explicabo laudantium dolor voluptatibus.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div role="tabpanel" id="accordArrowHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;dl class="accordion"&gt;
+    &lt;dt class="active"&gt;Collapsible Item 1&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 2&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 3&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+    &lt;dt&gt;Collapsible Item 4&lt;/dt&gt;
+    &lt;dd&gt;
+        ...
+    &lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="accordArrowLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; ACCORDION BASE &gt;&gt;&gt;===---*/
+dl.accordion {
+    border: 2px solid @navy;
+    padding: .5rem;
+    
+    dt {
+        position: relative;
+        background: @navy;
+        cursor: pointer;
+        .spartan;
+        font-size: 15px;
+        padding: 1rem;
+        color: @white;
+        
+        ~ dt {
+            margin: 1rem 0 0;
+        }
+        
+       &amp;:before {
+            content: '';
+            border-left: 2px solid @white;
+            border-bottom: 2px solid @white;
+            position: absolute;
+            top: 50%;
+            .transform(~"translate(-50%, -50%) rotate(-45deg)");
+            .transition;
+            height: 10px;
+            width: 10px;
+            right: 25px;
+        }
+        
+        &amp;.active {
+            &amp;:before {
+                .transform(~"translate(-50%, -50%) rotate(-225deg)");
+            }
+            
+            + dd {
+                display: block;
+            }
+        }
+    }
+    
+    dd {
+        display: none;
+        border: 1px solid @navy;
+        padding: 25px;
+        
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="accordArrowJS">
+                            <pre><code class="hljs javascript">$('.accordion &gt; dt').on('click', function() {
+    var $this = $(this);
+    
+    $this.siblings('.active').removeClass('active');
+    $this.addClass('active');
+});</code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#accordArrowExample" role="tab">Example</a>
+                        <a href="#accordArrowHTML" role="tab">HTML</a>
+                        <a href="#accordArrowLESS" role="tab">LESS</a>
+                        <a href="#accordArrowJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.accordion > dt').on('click', function() {
+        var $this = $(this);
+        
+        $this.siblings('.active').removeClass('active');
+        $this.addClass('active');
+    });
+});
+</script>
+</body>
+</html>

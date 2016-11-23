@@ -1,0 +1,488 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/carousels/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Carousels</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicCarouselGuidelines">Basic Carousel Guidelines</a></li>
+                    <li><a href="#Examples">Examples</a>
+                        <ul>
+                            <li><a href="#BasicCarousel">Basic Carousel</a></li>
+                            <li><a href="#ResponsiveCarousel">Responsive</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <h2 id="BasicCarouselGuidelines">Basic Carousel Guidelines</h2>
+                <p>Carousels are used on practically ever website we create. While we have used a number of different carousel libraries, including <a href="http://sorgalla.com/jcarousel/" target="_blank">jCarousel</a>, <a href="http://kenwheeler.github.io/slick/" target="_blank">Slick</a> and Bootstraps very own <a href="http://getbootstrap.com/javascript/#carousel" target="_blank">Carousel</a> plugin, we have found that the most flexible library is <a href="http://www.owlcarousel.owlgraphic.com/" target="_blank">Owl Carousel</a>. Owl Carousel prvodies many <a href="http://www.owlcarousel.owlgraphic.com/docs/api-options.html" target="_blank">options</a> & <a href="http://www.owlcarousel.owlgraphic.com/docs/api-events.html" target="_blank">events</a> to acheive practically any carousel we use. In addition, the responsive set up is simple to use and already has touch swipe enabled by default.</p>
+            </section>
+            <section>
+                <h2 id="Examples">Examples</h2>
+                <h3 id="BasicCarousel">Basic Carousel</h3>
+                <p>This basic carousel function has the minimal HTML markup needed, and the accociated javascript snippet, to fire the carousel.</p>
+                <figure class="tabs carousels">
+                    <div>
+                        <div class="active" role="tabpanel" id="basicStyle">
+                            <div class="owl-carousel" id="basicCarousel">
+                                <div class="item"><h4>1</h4></div>
+                                <div class="item"><h4>2</h4></div>
+                                <div class="item"><h4>3</h4></div>
+                                <div class="item"><h4>4</h4></div>
+                                <div class="item"><h4>5</h4></div>
+                                <div class="item"><h4>6</h4></div>
+                                <div class="item"><h4>7</h4></div>
+                                <div class="item"><h4>8</h4></div>
+                                <div class="item"><h4>9</h4></div>
+                                <div class="item"><h4>10</h4></div>
+                                <div class="item"><h4>11</h4></div>
+                                <div class="item"><h4>12</h4></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="basicStyleHTML">
+                            <pre><code class="hljs html">&lt;div class="owl-carousel" id="basicCarousel"&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="basicStyleLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; CAROUSELS &gt;&gt;&gt;===---*/
+.owl-carousel {
+    .owl-item {
+        background: @teal;
+        color: @white;
+        padding: 20px;
+        min-height:200px;
+    }
+    .owl-controls {
+        position: relative;
+        .owl-nav {
+            position:absolute;
+            width:100%;
+            padding-bottom: 10px;
+            top: 50%;
+            .transform(translateY(-50%));
+            &gt; div {
+                position: absolute;
+                &.owl-prev {
+                    left: 0;
+                }
+                &.owl-next {
+                    right: 0;
+                }
+            }
+        }
+        .owl-dots {
+            text-align: center;
+            padding: 20px 0 0;
+            .owl-dot {
+                background: @grey;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+                .border-radius(50%);
+                margin: 0 3px;
+                &.active {
+                    background: @red;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="basicStyleJS">
+                            <pre>
+                                <code>$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    items:5,
+    navText:['&amp;lsaquo;','&amp;rsaquo;']
+});</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#basicStyle" role="tab">Example</a>
+                        <a href="#basicStyleHTML" role="tab">HTML</a>
+                        <a href="#basicStyleLESS" role="tab">LESS</a>
+                        <a href="#basicStyleJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="ResponsiveCarousel">Responsive Configuration</h3>
+                <p>Highlighting the responsive options that owl carousel provides because it's important to note. To change these options, including how many items are visible, use the repsonsive option in the configuration. Then create your array of media breakpoints to where you can include specific options to view. Click the JavaScript tab below to view a basic responsive configuration example.</p>
+                <figure class="tabs carousels">
+                    <div>
+                        <div class="active" role="tabpanel" id="respStyle">
+                            <div class="owl-carousel" id="responsiveCarousel">
+                                <div class="item"><h4>1</h4></div>
+                                <div class="item"><h4>2</h4></div>
+                                <div class="item"><h4>3</h4></div>
+                                <div class="item"><h4>4</h4></div>
+                                <div class="item"><h4>5</h4></div>
+                                <div class="item"><h4>6</h4></div>
+                                <div class="item"><h4>7</h4></div>
+                                <div class="item"><h4>8</h4></div>
+                                <div class="item"><h4>9</h4></div>
+                                <div class="item"><h4>10</h4></div>
+                                <div class="item"><h4>11</h4></div>
+                                <div class="item"><h4>12</h4></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="respStyleHTML">
+                            <pre><code class="hljs html">&lt;div class="owl-carousel" id="responsiveCarousel" &gt;
+    &lt;div class="item"&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="respStyleLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; CAROUSELS &gt;&gt;&gt;===---*/
+.owl-carousel {
+    .owl-item {
+        background: @teal;
+        color: @white;
+        padding: 20px;
+        min-height:200px;
+    }
+    .owl-controls {
+        position: relative;
+        .owl-nav {
+            position:absolute;
+            width:100%;
+            padding-bottom: 10px;
+            top: 50%;
+            .transform(translateY(-50%));
+            &gt; div {
+                position: absolute;
+                &.owl-prev {
+                    left: 0;
+                }
+                &.owl-next {
+                    right: 0;
+                }
+            }
+        }
+        .owl-dots {
+            text-align: center;
+            padding: 20px 0 0;
+            .owl-dot {
+                background: @grey;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+                .border-radius(50%);
+                margin: 0 3px;
+                &.active {
+                    background: @red;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="respStyleJS">
+                            <pre>
+                                <code>$('#responsiveCarousel').owlCarousel({
+    navText:['&amp;lsaquo;','&amp;rsaquo;'],
+    responsive : {
+        // breakpoint from 0 up
+        0 : {
+            items: 1,
+            loop: false,
+            margin: 0,
+            nav: false
+        },
+        // breakpoint from 480 up
+        480 : {
+            items: 2,
+            loop: true,
+            margin: 20,
+            nav: false
+        },
+        // breakpoint from 768 up
+        768 : {
+            items: 4,
+            loop: true,
+            margin: 10,
+            nav: true,
+        }
+    }
+});</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#respStyle" role="tab">Example</a>
+                        <a href="#respStyleHTML" role="tab">HTML</a>
+                        <a href="#respStyleLESS" role="tab">LESS</a>
+                        <a href="#respStyleJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="HeroCarousel">Hero Carousel</h3>
+                <p>Blah Blah Blah Text Here</p>
+                <figure class="tabs carousels">
+                    <div>
+                        <div class="active" role="tabpanel" id="heroStyle">
+                            <div class="owl-carousel hero" id="heroCarousel">
+                                <div class="item">
+                                    <h1>Hero Title 1</h1>
+                                    <p>Hero description lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="btn-primary">Hero CTA</a>
+                                </div>
+                                <div class="item">
+                                    <h1>Hero Title 2</h1>
+                                    <p>Hero description lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="btn-secondary">Hero CTA</a>
+                                </div>
+                                <div class="item">
+                                    <h1>Hero Title 2</h1>
+                                    <p>Hero description lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="#" class="btn-tertiary">Hero CTA</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="heroStyleHTML">
+                            <pre><code class="hljs html">&lt;div class="owl-carousel" id="responsiveCarousel" &gt;
+    &lt;div class="item"&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="heroStyleLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; CAROUSELS &gt;&gt;&gt;===---*/
+.owl-carousel {
+    .owl-item {
+        background: @teal;
+        color: @white;
+        padding: 20px;
+        min-height:200px;
+    }
+    .owl-controls {
+        position: relative;
+        .owl-nav {
+            position:absolute;
+            width:100%;
+            padding-bottom: 10px;
+            top: 50%;
+            .transform(translateY(-50%));
+            &gt; div {
+                position: absolute;
+                &.owl-prev {
+                    left: 0;
+                }
+                &.owl-next {
+                    right: 0;
+                }
+            }
+        }
+        .owl-dots {
+            text-align: center;
+            padding: 20px 0 0;
+            .owl-dot {
+                background: @grey;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+                .border-radius(50%);
+                margin: 0 3px;
+                &.active {
+                    background: @red;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="heroStyleJS">
+                            <pre>
+                                <code>$('#responsiveCarousel').owlCarousel({
+    navText:['&amp;lsaquo;','&amp;rsaquo;'],
+    responsive : {
+        // breakpoint from 0 up
+        0 : {
+            items: 1,
+            loop: false,
+            margin: 0,
+            nav: false
+        },
+        // breakpoint from 480 up
+        480 : {
+            items: 2,
+            loop: true,
+            margin: 20,
+            nav: false
+        },
+        // breakpoint from 768 up
+        768 : {
+            items: 4,
+            loop: true,
+            margin: 10,
+            nav: true,
+        }
+    }
+});</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#heroStyle" role="tab">Example</a>
+                        <a href="#heroStyleHTML" role="tab">HTML</a>
+                        <a href="#heroStyleLESS" role="tab">LESS</a>
+                        <a href="#heroStyleJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/owl.carousel.min.js"></script>
+<script type="text/javascript">
+$('#basicCarousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    items:5,
+    navText:['&lsaquo;','&rsaquo;']
+});
+$('#heroCarousel').owlCarousel({
+    loop:true,
+    nav:true,
+    items:1,
+    navText:['&lsaquo;','&rsaquo;']
+});
+$('#responsiveCarousel').owlCarousel({
+    navText:['&lsaquo;','&rsaquo;'],
+    responsive : {
+        // breakpoint from 0 up
+        0 : {
+            items: 1,
+            loop: false,
+            margin: 0,
+            nav: false
+        },
+        // breakpoint from 480 up
+        480 : {
+            items: 2,
+            loop: true,
+            margin: 20,
+            nav: false
+        },
+        // breakpoint from 768 up
+        768 : {
+            items: 4,
+            loop: true,
+            margin: 10,
+            nav: true,
+        }
+    }
+});
+</script>
+</body>
+</html>

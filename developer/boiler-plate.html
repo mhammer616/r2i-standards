@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/tooltips/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Boilerplates</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicTooltipGuidelines">Boilerplate Guidelines</a></li>
+                    <li><a href="#Static">Static Site Boilerplate</a></li>
+                    <li><a href="#Adobe">Adobe Boilerplate</a></li>
+                    <li><a href="#Sitecore">Sitecore Boilerplate</a></li>
+                    <li><a href="#DNN">DNN Boilerplate</a></li>
+                    <li><a href="#Drupal">Drupal Boilerplate</a></li>
+                    <li><a href="#Wordpress">WordPress Boilerplate</a></li>
+                </ul>
+            </nav>
+            <section id="BasicTooltipGuidelines">
+                <h2>Boilerplate Guidelines</h2>
+                <p>The boilerplate is meant to help get the folder structure setup for resources and give you a base set of files to use as a starting point.</p>
+                <p>The boilerplate downloads below give you the following files:</p>
+                <ul>
+                	<li>Less Files and Folders
+                    	<ul>
+		                	<li>base/base.less - this is where you will load everything needed for the site</li>
+		                	<li>base/mixins.less - a set of mixins that should be used when developing the site</li>
+		                	<li>base/variables.less - a set of variables that should be used when developing the site</li>
+		                	<li>base/resets.less - a set of resets and classes that should be used when developing the site</li>
+		                	<li>framework/grid.less - the file used to generate the grid and everything that goes with it, documentation found <a href="grid.html">here</a></li>
+		                	<li>framework/header.less - a file that should be used for the header of the website</li>
+		                	<li>framework/footer.less - a file that should be used for the footer of the website</li>
+		                	<li>framework/layouts.less - a file that should be used for the layouts of the website</li>
+                            <li>components/component - a base folder that contains a base.less file for you to build out each component used throughout the site.</li>
+                        </ul>
+                    </li>
+                	<li>JS Files
+                    	<ul>
+		                	<li>base.js - this is where you will put js that is used throughout the site</li>
+                            <li>components/component - a base folder for you to copy for each component used throughout the site.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section id="Static">
+                <h2>Static Site Boilerplate</h2>
+                <p>The static site boilerplate is the most generic and can be used when building a landing page or site that does not have a CMS behind it.</p>
+                <h5><a href="../sg-resources/boilerplates/StaticSite.zip">Download Static Site Boilerplate</a></h5>
+            </section>
+            <section id="Adobe">
+                <h2>Adobe Boilerplate</h2>
+                <p>The Adobe boilerplate has a separate section for components. The individual components are hosted with their specific js/less files under the apps folder. All global css/less files are kept in the clientlib-site folder in the etc directory. </p>
+                <h5><a href="../sg-resources/boilerplates/AEM.zip">Download AEM Boilerplate</a></h5>
+            </section>
+            <section id="Sitecore">
+                <h2>Sitecore Boilerplate</h2>
+                <p>The sitecore boilerplate is basically a duplicate of the Static Site Boilerplate, and should be layered on top of the build when you get started.</p>
+                <h5><a href="../sg-resources/boilerplates/Sitecore.zip">Download Sitecore Boilerplate</a></h5>
+            </section>
+            <section id="DNN">
+                <h2>DNN Boilerplate</h2>
+                <p>The DNN boilerplate is modified from the static site boilerplate to include a Skin and Container folder that should be renamed to match your site. The Container folder will contain blank, and h1-h5 containers. The Skin folder will contain a home skin file, includes (header, and footer), and navs.</p>
+                <h5><a href="../sg-resources/boilerplates/DNN.zip">Download DNN Boilerplate</a></h5>
+            </section>
+            <section id="Drupal">
+                <h2>Drupal Boilerplate</h2>
+                <p>The Drupal boilerplate is modified fromt he static site boilerplate, to include some drupal speicif files &amp; paths.</p>
+                <p>To complete proper implmentation, place the resrouces folder into your child theme folder and follow the steps in the <a href="/standards-guide/developer/drupal-guidelines.html#!watch">Drupal Guidelines</a>.</p>
+                <h5><a href="../sg-resources/boilerplates/Drupal.zip">Download Drupal Boilerplate</a></h5>
+            </section>
+            <section id="Wordpress">
+                <h2>WordPress Boilerplate</h2>
+                <p><em><strong>JV CREATE ME AND UPDATE TEXT</strong></em></p>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+</body>
+</html>

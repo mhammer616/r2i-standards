@@ -1,0 +1,35 @@
+/* CSS Document */
+&.plus-minus {
+    dt {
+          &:before, &:after {
+            content: '';
+            background: @white;
+            position: absolute;
+            top: 50%;
+            .transform(~"translate(-50%, -50%) rotate(0deg)");
+            .transition;
+        }
+        
+        &:before {
+            height: 4px;
+            width: 14px;
+            right: 25px;
+        }
+        
+        &:after {
+            height: 14px;
+            width: 4px;
+            right: 35px;
+        }
+        
+        &.active {
+            &:after {
+                .transform(~"translate(-50%, -50%) rotate(90deg)");
+            }
+            
+            + dd {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,141 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+/*---=== LAYOUTS ===---*/
+.layout {
+    code {
+        background: none;
+        width: 100%;
+        .ta-center;
+        display: block;
+        padding: .5rem;
+        height: 5rem;
+        line-height: 5rem;
+        
+        &:only-child {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            .translate(-50%, -50%);
+        }
+    }
+    > header {
+        height: 75px;
+        position: relative;
+        background: fade(@grey, 25);
+        border: .2rem solid darken(@grey, 75);
+    }
+    > footer {
+        .clear;
+        height: 150px;
+        position: relative;
+        background: fade(@grey, 15);
+        border: .2rem solid darken(@grey, 75);
+        border-top: none;
+    }
+    > main {
+        height: 515px;
+        position: relative;
+        min-height: 300px;
+        padding: 0 1rem;
+        border: .2rem solid darken(@grey, 75);
+        border-top: none;
+        
+        > nav, > article, > aside, > footer, > section {
+            position: relative;
+            left: auto;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            padding: 0;
+            margin: 0;
+            
+            > code {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                .translate(-50%, -50%);
+            }
+        }
+        > nav, > article, > aside {
+            float: left;
+            height: 250px;
+        }
+        > nav {
+            background: fade(@grey, 25);
+        }
+
+        > article {
+            background: fade(@grey, 50);
+        }
+
+        > aside {
+            background: fade(@grey, 66.667);
+        }
+        > header {
+            clear: both;
+            height: 100px;
+            background: fade(@grey, 40);
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+        > footer {
+            clear: both;
+            height: 100px;
+            background: fade(@grey, 40);
+            > code {
+                position: relative;
+                top: 0;
+                left: 0;
+                .transform(none);
+            }
+            > section {
+                float: left;
+                width: 33.333%;
+                height: 50px;
+                position: relative;
+                margin: 0;
+                
+                &:nth-child(2) {
+                    background: fade(@grey, 30);
+                }
+                &:nth-child(3) {
+                    background: fade(@grey, 45);
+                }
+                &:nth-child(4) {
+                    background: fade(@grey, 60);
+                }
+            }
+        }
+        
+        &.col-1 {
+            
+            > nav, > article, > section, > aside {
+                width: 100%;
+            }
+        }
+        
+        &.col-2 {
+            
+            > nav, > aside {
+                width: 25%;
+            }
+            
+            > article, > section {
+                width: 75%;
+            }
+        }
+        
+        &.col-3 {
+            
+            > nav, > aside {
+                width: 20%;
+            }
+            > article, > section {
+                width: 60%;
+            }
+        }
+    }
+}

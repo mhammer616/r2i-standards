@@ -1,0 +1,56 @@
+/* CSS Document */
+> nav {
+    > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        > li {
+            margin: 0 0 .5rem;
+            padding: 0 0 .5rem;
+            border-bottom: 1px solid @grey;
+            
+            &:last-child {
+                margin: 0;
+                padding: 0;
+                border-bottom: none;
+            }
+            
+            a {
+                &:hover {
+                    color: @teal;
+                }
+            }
+            
+            ul {
+                margin: .5rem 0 0 2.5rem;
+                list-style: none;
+                
+                li {
+                    font-size: 1.4rem;
+                    margin: 0 0 .5rem;
+                    padding: 0 0 .5rem;
+                    border-bottom: 1px solid @grey;
+                    
+                    &:last-child {
+                        margin: 0;
+                        padding: 0;
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+            
+        .bread, .active {
+            > a {
+                font-weight: bold;
+            }
+        }
+        
+        .active {
+            > a {
+                color: @grey;
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+> nav#mega {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    
+    > ul {
+        position: static;
+        .ta-right;
+        margin: 0 0 -.75rem;
+        
+        @media @mediaMD {
+            > li {
+                float: none;
+                position: static;
+                display: inline-block;
+                
+                > a {}
+                
+                > div {
+                    display: none;
+                    position: absolute;
+                    left: 50%;
+                    top: 100%;
+                    .translate(-50%, 0);
+                    background: @grey;
+                    list-style: none;
+                    margin: 0;
+                    padding: 2.5rem 0;
+                    width: 100%;
+                    
+                    > ul {
+                        list-style: none;
+                        padding: 0 @gutter;
+                        margin: 0;
+                        width: 66.667%;
+                        float: left;
+                        .columns(@count: 3, @gap: (@gutter * 2), @rule-w: 1px, @rule-color: @white);
+                        
+                        &:only-child {
+                            width: 100%;
+                            float: none;
+                            .columns(@count: 4, @gap: (@gutter * 2), @rule-w: 1px, @rule-color: @white);
+                        }
+                        
+                        + section {
+                            float: right;
+                            width: 33.333%;
+                            .ta-left;
+                            padding: 0 @gutter;
+                            
+                            h5, p {
+                                color: @white;
+                            }
+                        }
+                    }
+                    
+                    li {
+                        display: inline-block;
+                        width: 100%;
+                        margin: .5em 0 0;
+                        padding: .5em 0 0;
+                    }
+                    
+                    a {
+                        display: block;
+                        width: 12.5rem;
+                        height: 1em;
+                        background: fade(@white, 50);
+                    }
+                }
+                
+                &:hover {
+                    > div, > ul {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

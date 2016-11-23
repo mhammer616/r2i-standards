@@ -1,0 +1,147 @@
+#expandedFooterExample {
+    footer {
+        padding: 2.5rem 0;
+        .ta-center;
+        
+        section {
+            .clearfix;
+            
+            + section {
+                margin: 2.5rem 0 0;
+                padding: 2.5rem 0 0;
+                border-top: 1px solid fade(@white, 75);
+            }
+        }
+        
+        p {
+            font-size: 1.4rem;
+            margin: 0 0 1.5rem;
+            padding: 0;
+            color: fade(@white, 50);
+            .ta-left;
+        }
+        
+        h5 {
+            .ta-left;
+            color: @white;
+        }
+        nav {
+            margin: 0;
+            font-size: 1.4rem;
+            
+            a {
+                margin: 0 1rem;
+                color: fade(@white, 50);
+                .transition;
+                
+                &:hover {
+                    color: @white;
+                }
+                
+                &:before {
+                    position: static;
+                    display: inline;
+                    background: none;
+                }
+                
+                display: inline-block;
+                width: 7.5rem;
+                background: @grey;
+                height: 1.5em;
+            }
+            
+                    
+            > ul {
+                list-style: none;
+                .ta-left;
+                .columns(@count: 2, @gap: (@gutter * 2), @rule-w: 1px, @rule-color: fade(@white, 75));
+                margin: 0 0 1.5rem;
+                padding: 0 0 1.5rem;
+                border-bottom: 1px solid fade(@white, 75);
+                
+                > li {
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                a {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+
+            + nav {
+                margin: 1.5rem 0 0;
+                
+                a {
+                    width: 1.5em;
+                }
+            }
+        }
+        
+        @media @mediaMD {
+            padding: 2.5rem 0;
+            
+            p {
+                margin: 0;
+            }
+            
+            > div {
+            }
+            
+            section {
+                margin: 0 (-1 * @gutter);
+                
+                > * {
+                    padding: 0 @gutter;
+                }
+                
+                nav {
+                    float: left;
+                    white-space: nowrap;
+                    width: 66.667%;
+                    
+                    > ul {
+                        .columns(@count: 4, @gap: (@gutter * 2), @rule-w: 1px, @rule-color: fade(@white, 75));
+                        margin: 0;
+                        padding: 0;
+                        border-bottom: none;
+                        
+                        > li {
+                            margin: 0;
+                            padding: 0;
+                        }
+                        
+                        a {
+                            width: 100%;
+                            margin: 0;
+                        }
+                    }
+                }
+                
+                + section {
+                    margin: 5rem (-1 * @gutter) 0;
+                    
+                    > p {
+                        float: left;
+                        width: 33.333%;
+                    }
+
+                    > nav {   
+                        width: 33.333%;
+                        &:nth-of-type(1) {
+                        }
+                        &:nth-of-type(2) {
+                            margin: 0;
+                            .ta-right;
+                            
+                            > a {
+                                margin: 0 0 0 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

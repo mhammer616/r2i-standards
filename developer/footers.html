@@ -1,0 +1,475 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/footers/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Footers</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicFooterGuidelines">Basic Footer Guidelines</a>
+                        <ul>
+                            <li><a href="#MarkupForTheFooter">Markup For The Footer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Examples">Examples</a>
+                        <ul>
+                            <li><a href="#SimpleFooter">Simple Footer</a></li>
+                            <li><a href="#ExpandedFooter">Expanded Footer</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="BasicFooterGuidelines">
+                <h2>Basic Footer Guidelines</h2>
+                <p>Every site and landing page we build will have a footer. The footer is generally a place where items with the lowest priority/value will live.  The purpose of our site footers is to give legal information, organizational links, social links, and sometimes a call to action or two to help users navigate through the site.</p>
+                <p>Generally, they are very simple to build and shouldn't require much effort unless the designer is doing something cute, like having a fixed element that, when the element gets to the footer, it locks in place above the footer and continues allowing the user to scroll past it.  Other than that scenario, footers are generally easy.</p>
+            </section>
+            <section id="MarkupForTheFooter">
+                <h2>Markup For The Footer</h2>
+                <p>Below is a list of semantic markup that should be used in footers to create the layout.</p>
+                <dl>
+                    <dt><code>&lt;Footer&gt;</code></dt>
+                    <dd>This tag should wrap the entire contents of the footer</dd>
+                    <dt><code>&lt;nav&gt;</code></dt>
+                    <dd>This tag should be used to wrap each navigation found in the header</dd>
+                    <dt><code>&lt;ul&gt;</code></dt>
+                    <dd>Use unordered lists to wrap the navigations children. This is one place where an extra dom element is acceptable, because it provides meaningful information to users on screen reads and provides additional structure</dd>
+                    <dt><code>&lt;section&gt;</code></dt>
+                    <dd>Any sections in the footer should be wrapped in section tags</dd>
+                    <dt><code>&lt;form&gt;</code></dt>
+                    <dd>Any forms in the footer should be wrapped in form tags</dd>
+                </dl>
+            </section>
+            <section id="Examples">
+                <h2>Examples</h2>
+                <p>These examples are meant to be starting points for the header for your website. Locate the one that closely resembles yours, and build using the code as a base.</p>
+                <h3 id="SimpleFooter">Simple Footer</h3>
+                <p>Our simple footer example is based on the bottom of R2i website footer, where it is simply the three items: copyright, legal nav, and social nav.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="footers active" role="tabpanel" id="simpleFooterExample">
+                            <footer>
+                                <div>
+                                    <p>&copy; 2016 COMPANY NAME, all rights reserved.</p>
+                                    <nav>
+                                        <a href="#"></a> <a href="#"></a> <a href="#"></a>
+                                    </nav>
+                                    <nav>
+                                        <a href="#" target="_blank"></a>
+                                        <a href="#" target="_blank"></a>
+                                        <a href="#" target="_blank"></a>
+                                        <a href="#" target="_blank"></a>
+                                        <a href="#" target="_blank"></a>
+                                    </nav>
+                                </div>
+                            </footer>
+                        </div>
+                        <div role="tabpanel" id="simpleFooterHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;footer&gt;
+    &lt;div&gt;
+        &lt;p&gt;&copy; 2016 COMPANY NAME, all rights reserved.&lt;/p&gt;
+        &lt;nav&gt;
+            &lt;a href="#"&gt;&lt;/a&gt; &lt;a href="#"&gt;&lt;/a&gt; &lt;a href="#"&gt;&lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;nav&gt;
+            &lt;a href="#" target="_blank" class="ico-facebook"&gt;&lt;span class="sr-only"&gt;Facebook&lt;/span&gt;&lt;/a&gt;
+            ...
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="simpleFooterLESS">
+                            <pre><code class="hljs css">footer {
+    padding: 2.5rem 0;
+    .ta-center;
+    
+    p {
+        font-size: 1.4rem;
+        margin: 0;
+        padding: 0;
+        color: fade(@white, 50);
+    }
+    nav {
+        margin: 0;
+        font-size: 1.4rem;
+        
+        a {
+            margin: 0 1.5rem;
+            color: fade(@white, 50);
+            .transition;
+            
+            &:hover {
+                color: @white;
+            }
+            
+            &:before {
+                position: static;
+                display: inline;
+                background: none;
+            }
+        }
+        
+        + nav {
+            margin: 1.5rem 0 0;
+        }
+    }
+    
+    @media @mediaMD {
+        padding: 0;
+        height: 7.5rem;
+        
+        &gt; div {
+            height: 7.5rem;
+        }
+        
+        p {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            .translate(0, -50%);
+        }
+        
+        nav {
+            position: absolute;
+            top: 50%;
+            white-space: nowrap;
+            
+            &:nth-of-type(1) {
+                left: 50%;
+                .translate(-50%, -50%);
+            }
+            &:nth-of-type(2) {
+                margin: 0;
+                right: 0;
+                .translate(0, -50%);
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="simpleFooterJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#simpleFooterExample" role="tab">Example</a>
+                        <a href="#simpleFooterHTML" role="tab">HTML</a>
+                        <a href="#simpleFooterLESS" role="tab">LESS</a>
+                        <a href="#simpleFooterJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="ExpandedFooter">Expanded Footer</h3>
+                <p>Our expanded footer example is an expansion of the simple footer where we have additional content above the simple footer.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="footers active" role="tabpanel" id="expandedFooterExample">
+                            <footer>
+                                <div>
+                                    <section>
+                                        <nav>
+                                            <h5>Quick Links</h5>
+                                            <ul>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                            </ul>
+                                        </nav>
+                                        <div>
+                                            <h5>Get In Touch</h5>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, sint, tempora debitis animi asperiores cumque voluptatum laboriosam pariatur velit cum ab quae nisi sapiente. Natus.</p>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <p>&copy; 2016 COMPANY NAME, all rights reserved.</p>
+                                        <nav>
+                                            <a href="#"></a> <a href="#"></a> <a href="#"></a>
+                                        </nav>
+                                        <nav>
+                                            <a href="#" target="_blank"></a>
+                                            <a href="#" target="_blank"></a>
+                                            <a href="#" target="_blank"></a>
+                                            <a href="#" target="_blank"></a>
+                                            <a href="#" target="_blank"></a>
+                                        </nav>
+                                    </section>
+                                </div>
+                            </footer>
+                        </div>
+                        <div role="tabpanel" id="expandedFooterHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;footer&gt;
+    &lt;div&gt;
+        &lt;section&gt;
+            &lt;nav&gt;
+                &lt;h5&gt;Quick Links&lt;/h5&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                    ...
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;div&gt;
+                &lt;h5&gt;Get In Touch&lt;/h5&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, sint, tempora debitis animi asperiores cumque voluptatum laboriosam pariatur velit cum ab quae nisi sapiente. Natus.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;p&gt;&copy; 2016 COMPANY NAME, all rights reserved.&lt;/p&gt;
+            &lt;nav&gt;
+                &lt;a href="#"&gt;&lt;/a&gt; &lt;a href="#"&gt;&lt;/a&gt; &lt;a href="#"&gt;&lt;/a&gt;
+            &lt;/nav&gt;
+            &lt;nav&gt;
+                &lt;a href="#" target="_blank"&gt;&lt;/a&gt;
+                ...
+            &lt;/nav&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="expandedFooterLESS">
+                            <pre><code class="hljs css">footer {
+    padding: 2.5rem 0;
+    .ta-center;
+    
+    section {
+        .clearfix;
+        
+        + section {
+            margin: 2.5rem 0 0;
+            padding: 2.5rem 0 0;
+            border-top: 1px solid fade(@white, 75);
+        }
+    }
+    
+    p {
+        font-size: 1.4rem;
+        margin: 0 0 1.5rem;
+        padding: 0;
+        color: fade(@white, 50);
+        .ta-left;
+    }
+    
+    h5 {
+        .ta-left;
+        color: @white;
+    }
+    nav {
+        margin: 0;
+        font-size: 1.4rem;
+        
+        a {
+            margin: 0 1rem;
+            color: fade(@white, 50);
+            .transition;
+            
+            &:hover {
+                color: @white;
+            }
+            
+            &:before {
+                position: static;
+                display: inline;
+                background: none;
+            }
+            
+            display: inline-block;
+            width: 7.5rem;
+            background: @grey;
+            height: 1.5em;
+        }
+        
+                
+        &gt; ul {
+            list-style: none;
+            .ta-left;
+            .columns(@count: 2, @gap: (@gutter * 2), @rule-w: 1px, @rule-color: fade(@white, 75));
+            margin: 0 0 1.5rem;
+            padding: 0 0 1.5rem;
+            border-bottom: 1px solid fade(@white, 75);
+            
+            &gt; li {
+                margin: 0;
+                padding: 0;
+            }
+            
+            a {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        + nav {
+            margin: 1.5rem 0 0;
+            
+            a {
+                width: 1.5em;
+            }
+        }
+    }
+    
+    @media @mediaMD {
+        padding: 2.5rem 0;
+        
+        p {
+            margin: 0;
+        }
+        
+        &gt; div {
+        }
+        
+        section {
+            margin: 0 (-1 * @gutter);
+            
+            &gt; * {
+                padding: 0 @gutter;
+            }
+            
+            nav {
+                float: left;
+                white-space: nowrap;
+                width: 66.667%;
+                
+                &gt; ul {
+                    .columns(@count: 4, @gap: (@gutter * 2), @rule-w: 1px, @rule-color: fade(@white, 75));
+                    margin: 0;
+                    padding: 0;
+                    border-bottom: none;
+                    
+                    &gt; li {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    
+                    a {
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+            
+            + section {
+                margin: 5rem (-1 * @gutter) 0;
+                
+                &gt; p {
+                    float: left;
+                    width: 33.333%;
+                }
+
+                &gt; nav {   
+                    width: 33.333%;
+                    &:nth-of-type(1) {
+                    }
+                    &:nth-of-type(2) {
+                        margin: 0;
+                        .ta-right;
+                        
+                        &gt; a {
+                            margin: 0 0 0 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="expandedFooterJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#simpleHeaderExample" role="tab">Example</a>
+                        <a href="#simpleHeaderHTML" role="tab">HTML</a>
+                        <a href="#simpleHeaderLESS" role="tab">LESS</a>
+                        <a href="#simpleHeaderJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* CSS Document */
+article {
+    > nav {
+		display: none;
+        padding: 0 (@gutter * 4) 0 0;
+        .spartan;
+        font-size: 1.4rem;
+        font-weight: normal;
+		
+        a {
+            .td-none;
+            color: @navy;
+            &:before {
+                display: none;
+            }
+            
+            &:hover, &.active {
+                color: @teal;
+            }
+        }
+        
+        > ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+            li {
+                + li {
+                    padding: 15px 0 0;
+                }
+                ul {
+                    font-size: 1.3rem;
+                    list-style: none;
+                    padding: 15px 0 0 15px;
+                    display: none;
+                }
+                
+                &.active {
+                    > a {
+                        color: @teal;
+                    }
+                    ul {
+                        display: block;
+                        
+                    }
+                }
+            }
+        }
+		@media @mediaMD {
+			float: left;
+			width: 28.333%;
+			display: block;
+
+            &.fixed {
+                position: fixed;
+                left: auto;
+                top: 5vw;
+				max-width: 320px;
+            }
+		}
+		@media @mediaLG {
+            width: 20%;
+		}
+    }
+}

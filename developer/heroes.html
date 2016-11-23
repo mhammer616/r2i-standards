@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/heroes/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Heroes</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicTooltipGuidelines">Basic Hero Guidelines</a></li>
+                    <li><a href="#ImagesAndVideosInHeroes">Images And Videos In Heroes</a></li>
+                    <li><a href="#Examples">Examples</a>
+                        <ul>
+                            <li><a href="#HeroH1">Hero with H1</a></li>
+                            <li><a href="#HeroText">Hero with Text</a></li>
+                            <li><a href="#SmallHeroH1">Small Hero with H1</a></li>
+                            <li><a href="#SmallHeroText">Small Hero with Text</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="BasicTooltipGuidelines">
+                <h2>Basic Hero Guidelines</h2>
+                <p>These go by a lot of different names, so we want to try and unify these different names and use the term Hero.  The different terms you may hear are home campaign, landing banner, page banner, banner, header, page header, or hero.</p>
+                <p>The hero generally contains a background graphic, color, image or video, a heading, and subheading. Depending on SEO's recommendation, the heading text may or may not be the <code>&lt;h1&gt;</code> tag, always check with them before placing the <code>&lt;h1&gt;</code> in the hero. </p>
+                <p>The hero may also contain a carousel that rotates through various slides. Using semantic markup, you should place a <code>&lt;header&gt;</code> tag as a direct descendent of the <code>&lt;main&gt;</code> tag to place the hero inside, then style based on that hierarchy. All the examples below will use that as a base.</p>
+            </section>
+            <section id="ImagesAndVideosInHeroes">
+            	<h2>Images and Videos in Heroes</h2>
+                <h3>Sitecore, Adobe, Drupal, WordPress and Static Sites should use this approach for images:</h3>
+                <p>Images should be done as background images, which probably means using inline styles wight <code>background-image</code> to apply it.  Then in the CSS files we can do everything else with background properties that is necessary, such <code>background-size: cover;</code> and <code>background-position: center center;</code> or <code>background-position: center top;</code>.</p>
+                <h3>DNN should use this approach for images:</h3>
+                <p>If the previous approach is not possible within the CMS, then use an <code>&lt;img /&gt;</code> tag and position the image absolute and size appropriately using CSS. If taking this approach, make sure the image properly scales within the wrapping element and doesn't appear less than the height or width. This can be done using <code>position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); min-height: 100%; min-width: 100%;</code>.</p>
+                <h3>Placing videos as a background:</h3>
+                <p>Match the aspect ratio of the video to the wrapping element and apply using <code>padding-top</code>.  Absolute position all child elements, including the video.  The video should have the following properties set: <code>height: 100%; width: 100%; left: 0; top: 0; position: absolute;</code>.</p>
+                <p>The video should also be set to <code>loop</code> and have no audio track so that it doesn't annoy people when your page loads.</p>
+            </section>
+            <section id="Examples">
+                <h2>Examples</h2>
+                <p>These examples are meant to be starting points for the header for your website. Locate the one that closely resembles yours, and build using the following code as a base.</p>
+                <h3 id="HeroH1">Hero with H1</h3>
+                <p>Good for just the basic starting point of a hero, this solution is simple with a background color, h1, and subheading.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="heroes active" role="tabpanel" id="heroH1Example">
+                            <main>
+                            	<header>
+                                	<div>
+                                    	<h1>Lorem ipsum dolor sit amet.</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, non cum ipsum maiores itaque perferendis?</p>
+                                    </div>
+                                </header>
+                                <section>
+                                	<nav></nav>
+                                	<article></article>
+                                </section>
+                            </main>
+                        </div>
+                        <div role="tabpanel" id="heroH1HTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;main&gt;
+    &lt;header&gt;
+        &lt;div&gt;
+            &lt;h1&gt;Lorem ipsum dolor sit amet.&lt;/h1&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, non cum ipsum maiores itaque perferendis?&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;nav&gt;&lt;/nav&gt;
+        &lt;article&gt;&lt;/article&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="heroH1LESS">
+                            <pre><code class="hljs css">main {
+    &gt; header {
+        height: 40vh;
+        position: relative;
+        
+        &gt; div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-width: 1600px;
+            width: 90%;
+            .translate(-50%, -50%);
+        }
+        
+        h1, .title {
+            .spartan;
+            color: @white;
+            font-size: 3.5rem;
+            line-height: 1.125em;
+        }
+        p {
+            font-size: 1.75rem;
+            line-height: 1.5em;
+            color: @white;
+            width: 55%;
+            margin: 0 auto;
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="heroH1JS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#heroH1Example" role="tab">Example</a>
+                        <a href="#heroH1HTML" role="tab">HTML</a>
+                        <a href="#heroH1LESS" role="tab">LESS</a>
+                        <a href="#heroH1JS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="HeroText">Hero with Text</h3>
+                <p>Good for just the basic starting point of a hero, this solution is simple with a background color, title, and subheading.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="heroes active" role="tabpanel" id="heroTextExample">
+                            <main>
+                            	<header>
+                                	<div>
+                                    	<div class="title">Lorem ipsum dolor sit amet.</div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, non cum ipsum maiores itaque perferendis?</p>
+                                    </div>
+                                </header>
+                                <section>
+                                	<nav></nav>
+                                	<article></article>
+                                </section>
+                            </main>
+                        </div>
+                        <div role="tabpanel" id="heroTextHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;main&gt;
+    &lt;header&gt;
+        &lt;div&gt;
+            &lt;div class="title"&gt;Lorem ipsum dolor sit amet.&lt;/div&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, non cum ipsum maiores itaque perferendis?&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;nav&gt;&lt;/nav&gt;
+        &lt;article&gt;&lt;/article&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="heroTextLESS">
+                            <pre><code class="hljs css">main {
+    &gt; header {
+        height: 40vh;
+        position: relative;
+        
+        &gt; div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-width: 1600px;
+            width: 90%;
+            .translate(-50%, -50%);
+        }
+        
+        h1, .title {
+            font-size: 3.5rem;
+            line-height: 1.125em;
+        }
+        p {
+            font-size: 1.75rem;
+            line-height: 1.5em;
+            color: @white;
+            width: 55%;
+            margin: 0 auto;
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="heroTextJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#heroTextExample" role="tab">Example</a>
+                        <a href="#heroTextHTML" role="tab">HTML</a>
+                        <a href="#heroTextLESS" role="tab">LESS</a>
+                        <a href="#heroTextJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="SmallHeroH1">Small Hero with H1</h3>
+                <p>Good for just the basic starting point of a hero, this solution is simple with a background color, h1, and subheading.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="heroes active" role="tabpanel" id="smallHeroH1Example">
+                            <main class="int">
+                            	<header>
+                                	<div>
+                                    	<h1>Lorem ipsum dolor sit amet.</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, non cum ipsum maiores itaque perferendis?</p>
+                                    </div>
+                                </header>
+                                <section>
+                                	<nav></nav>
+                                	<article></article>
+                                </section>
+                            </main>
+                        </div>
+                        <div role="tabpanel" id="smallHeroH1HTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;main&gt;
+    &lt;header&gt;
+        &lt;div&gt;
+            &lt;h1&gt;Lorem ipsum dolor sit amet.&lt;/h1&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, non cum ipsum maiores itaque perferendis?&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;nav&gt;&lt;/nav&gt;
+        &lt;article&gt;&lt;/article&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="smallHeroH1LESS">
+                            <pre><code class="hljs css">main.int {
+    &gt; header {
+        height: 20vh;
+        position: relative;
+        
+        &gt; div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-width: 1600px;
+            width: 90%;
+            .translate(-50%, -50%);
+        }
+        
+        h1, .title {
+            .spartan;
+            color: @white;
+            .tt-upper;
+            margin: 0 0 .5em;
+            font-size: 3.5rem;
+            line-height: 1.125em;
+            .ta-left;
+        }
+        p {
+            font-size: 1.75rem;
+            line-height: 1.5em;
+            color: @white;
+            width: 100%;
+            margin: 0;
+            .ta-left;
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="smallHeroH1JS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#smallHeroH1Example" role="tab">Example</a>
+                        <a href="#smallHeroH1HTML" role="tab">HTML</a>
+                        <a href="#smallHeroH1LESS" role="tab">LESS</a>
+                        <a href="#smallHeroH1JS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="SmallHeroText">Small Hero with Text</h3>
+                <p>Good for just the basic starting point of a hero, this solution is simple with a background color, div, and subheading.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="heroes active" role="tabpanel" id="smallHeroTextExample">
+                            <main class="int">
+                            	<header>
+                                	<div>
+                                    	<div class="title">Lorem ipsum dolor sit amet.</div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, non cum ipsum maiores itaque perferendis?</p>
+                                    </div>
+                                </header>
+                                <section>
+                                	<nav></nav>
+                                	<article></article>
+                                </section>
+                            </main>
+                        </div>
+                        <div role="tabpanel" id="smallHeroTextHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;main&gt;
+    &lt;header&gt;
+        &lt;div&gt;
+            &lt;div class="title"&gt;Lorem ipsum dolor sit amet.&lt;/div&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, non cum ipsum maiores itaque perferendis?&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;nav&gt;&lt;/nav&gt;
+        &lt;article&gt;&lt;/article&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="smallHeroTextLESS">
+                            <pre><code class="hljs css">main.int {
+    &gt; header {
+        height: 20vh;
+        position: relative;
+        
+        &gt; div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-width: 1600px;
+            width: 90%;
+            .translate(-50%, -50%);
+        }
+        
+        h1, .title {
+            .spartan;
+            color: @white;
+            .tt-upper;
+            margin: 0 0 .5em;
+            font-size: 3.5rem;
+            line-height: 1.125em;
+            .ta-left;
+        }
+        p {
+            font-size: 1.75rem;
+            line-height: 1.5em;
+            color: @white;
+            width: 100%;
+            margin: 0;
+            .ta-left;
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="smallHeroTextJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#smallHeroTextExample" role="tab">Example</a>
+                        <a href="#smallHeroTextHTML" role="tab">HTML</a>
+                        <a href="#smallHeroTextLESS" role="tab">LESS</a>
+                        <a href="#smallHeroTextJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+</body>
+</html>

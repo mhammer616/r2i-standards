@@ -1,0 +1,1108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/headers/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Headers</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicHeaderGuidelines">Basic Header Guidelines</a></li>
+                    <li><a href="#MarkupForTheHeader">Markup For The Header</a></li>
+                    <li><a href="#BuildingOutTheHeader">Examples</a>
+                        <ul>
+                            <li><a href="#SimpleHeader">Simple Header</a></li>
+                            <li><a href="#AverageHeader">Average Header</a></li>
+                            <li><a href="#CenteredHeader">Centered Header</a></li>
+                            <li><a href="#ComplexHeader">Complex Header</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="BasicHeaderGuidelines">
+                <h2>Basic Header Guidelines</h2>
+                <p>Every website we build will no doubt have a site header. It may be at its simplest. just holding the logo, or at its most complex, housing the logo, a utility navigation, login form, and main navigation.  Most likely the header will be either fixed or relative positioned at the top of the page, but sometimes the header could be fixed to the left of the page.  Whatever way the designers layout the header, the more complex headers can be one of the most time consuming pieces we build for the whole project.</p>
+                <p>For responsive needs, our approach to headers and its contents is not to have multiple for mobile devices or hide and show elements. Write your code in a way that elements can be positioned and moved to the correct location for various screen sizes. Start with the mobile header to get your code structure in place, and move up through each macro media query adjusting font-sizes, padding, heights, and widths as needed. Everything from logo to the utility and main navs should only appear once in the dom.</p>
+            </section>
+            <section id="MarkupForTheHeader">
+                <h2>Markup For The Header</h2>
+                <p>Below is a list of semantic markup that should be used in headers to create the layout.</p>
+                <dl>
+                    <dt><code>&lt;header&gt;</code></dt>
+                    <dd>This tag should wrap the entire contents of the header</dd>
+                    <dt><code>&lt;nav&gt;</code></dt>
+                    <dd>This tag should be used to wrap each navigation found in the header</dd>
+                    <dt><code>&lt;ul&gt;</code></dt>
+                    <dd>Use unordered lists to wrap the navigations children, this is one place where an extra dom element is acceptable, because it provides meaningful information to users on screen reads and provides additional structure</dd>
+                    <dt><code>&lt;form&gt;</code></dt>
+                    <dd>Any forms in the header should be wrapped in form tags</dd>
+                </dl>
+            </section>
+            <section id="Examples">
+                <h2>Examples</h2>
+                <p>These examples are meant to be starting points for the header for your website. Locate the one that closely resembles yours, and build using the following code as a base.</p>
+                <h3 id="SimpleHeader">Simple Header</h3>
+                <p>Our simple header example is based on the R2i website header, where it utilizes simply the logo and a button to expand the main navigation.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="headers active" role="tabpanel" id="simpleHeaderExample">
+                            <header>
+                                <div>
+                                    <a href="#"></a>
+                                    <button></button>
+                                </div>
+                            </header>
+                        </div>
+                        <div role="tabpanel" id="simpleHeaderHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;header&gt;
+    &lt;div&gt;
+        &lt;a href="#"&gt;&lt;/a&gt;
+        &lt;button&gt;&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="simpleHeaderLESS">
+                            <pre><code class="hljs css">
+.headers {
+    height: 50vh;
+    
+    header {
+        position: relative;
+        width: 100%;
+        background: fade(@grey, 50);
+        
+        &gt; div {
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+            max-width: 1600px;
+            height: 7.5rem;
+            
+            &gt; a {
+                width: 8rem;
+                height: 5rem;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                .translate(0, -50%);
+                background: @grey;
+            }
+            
+            &gt; button {
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                .translate(0, -50%);
+                height: 2rem;
+                
+                &:nth-of-type(1) {
+                    width: 3rem;
+                    border: .4rem solid @navy;
+                    border-left: none;
+                    border-right: none;
+                
+                    &:before, &:after {
+                        content: '';
+                        height: 4px;
+                        top: 50%;
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        .translate(0, -50%);
+                        background: @navy;
+                    }
+                }
+                
+                &:nth-of-type(2) {
+                    right: 6rem;
+                    border: none;
+                    background: none;
+                }
+            }
+            
+            &gt; nav, &gt; form {
+                display: none;
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="simpleHeaderJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#simpleHeaderExample" role="tab">Example</a>
+                        <a href="#simpleHeaderHTML" role="tab">HTML</a>
+                        <a href="#simpleHeaderLESS" role="tab">LESS</a>
+                        <a href="#simpleHeaderJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="AverageHeader">Average Header</h3>
+                <p>The average header example is our most commonly used header and has a logo, utility navigation, and main navigation included.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="headers active" role="tabpanel" id="averageHeaderExample">
+                            <header>
+                                <div>
+                                    <a href="#"></a>
+                                    <button></button>
+                                    <nav>
+                                        <ul>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li>
+                                                <form>
+                                                    <label for="search">Search</label>
+                                                    <input id="search" type="search" placeholder="keyword here" />
+                                                    <input type="submit" value="Search" />
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </header>
+                        </div>
+                        <div role="tabpanel" id="averageHeaderHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;header&gt;
+    &lt;div&gt;
+        &lt;a href="#"&gt;&lt;/a&gt;
+        &lt;button&gt;&lt;/button&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;
+                    &lt;form&gt;
+                        &lt;label for="search"&gt;Search&lt;/label&gt;
+                        &lt;input id="search" type="search" placeholder="keyword here" /&gt;
+                        &lt;input type="submit" value="Search" /&gt;
+                    &lt;/form&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="averageHeaderLESS">
+                            <pre><code class="hljs css">header {
+    position: relative;
+    width: 100%;
+    background: fade(@grey, 50);
+    
+    &gt; div {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        max-width: 1600px;
+        height: 7.5rem;
+        
+        &gt; a {
+            width: 8rem;
+            height: 5rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            .translate(0, -50%);
+            background: @grey;
+        }
+        
+        &gt; button {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            .translate(0, -50%);
+            height: 2rem;
+            
+            &:nth-of-type(1) {
+                width: 3rem;
+                border: .4rem solid @navy;
+                border-left: none;
+                border-right: none;
+            
+                &:before, &:after {
+                    content: '';
+                    height: 4px;
+                    top: 50%;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    .translate(0, -50%);
+                    background: @navy;
+                }
+            }
+            
+            &:nth-of-type(2) {
+                right: 6rem;
+                border: none;
+                background: none;
+            }
+        }
+        
+        &gt; nav, &gt; form {
+            display: none;
+        }
+        
+        &gt; nav {
+            position: absolute;
+            left: -5.5555%;
+            height: ~"calc(40vh - 7.5rem)";
+            top: 7.5rem;
+            width: 111.1111%;
+            
+            &gt; ul {
+                background: fade(@grey, 50);
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                
+                &gt; li {
+                    border-top: .2rem solid @grey;
+                    padding: 1.5rem 5.555%;
+                    
+                    &gt; a {
+                        display: block;
+                        height: 2rem;
+                        background: darken(@grey, 15);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        height: 10rem;
+        
+        &gt; div {
+            height: 10rem;
+            
+            &gt; a {
+                height: 6.665rem;
+                width: 10.664rem;
+            }
+            
+            &gt; button {
+                display: none;
+            }
+            
+            &gt; nav {
+                display: block;
+                position: static;
+                left: auto;
+                height: auto;
+                top: 0;
+                width: auto;
+                
+                &gt; ul {
+                    background: none;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                                        
+                    &gt; li {
+                        border-top: none;
+                        padding: 0 .5rem 1.5rem;
+                        float: left;
+                        
+                        &gt; a {
+                            display: block;
+                            height: 2rem;
+                            background: darken(@grey, 15);
+                            width: 8rem;
+                        }
+                    }
+                    
+                    &:nth-of-type(1) {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        
+                        &gt; li {
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        position: absolute;
+                        right: 0;
+                        top: 1.5rem;
+                        
+                        form {
+                            font-size: 1.2rem;
+                            
+                            input[type="submit"] {
+                                background: @grey;
+                                font-size: 1rem;
+                                border: none;
+                                padding: .5rem;
+                                color: @white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media @mediaXL {
+        height: 11.25rem;
+        
+        &gt; div {
+            height: 11.25rem;
+            &gt; a {
+                height: 8rem;
+                width: 12.8rem;
+            }
+            
+            &gt; nav {
+                
+                &gt; ul {
+                                        
+                    &gt; li {
+                        padding: 0 1rem 1.5rem;
+                    }
+                    
+                    &:nth-of-type(1) {
+                        &gt; li {
+                            &gt; a {
+                                height: 2.25rem;
+                                width: 9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="averageHeaderJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#averageHeaderExample" role="tab">Example</a>
+                        <a href="#averageHeaderHTML" role="tab">HTML</a>
+                        <a href="#averageHeaderLESS" role="tab">LESS</a>
+                        <a href="#averageHeaderJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="CenteredHeader">Centered Header</h3>
+                <p>The centered header example is when the header contains everything the simple does, but with a more complex layout that involves items being centered.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="headers active" role="tabpanel" id="centeredHeaderExample">
+                            <header>
+                                <div>
+                                    <a href="#"></a>
+                                    <button></button>
+                                    <button>Login</button>
+                                    <nav>
+                                        <ul>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                        </ul>
+                                        <form>
+                                            <label for="search3">Search</label>
+                                            <input id="search3" type="search" placeholder="keyword here" />
+                                            <input type="submit" value="Search" />
+                                        </form>
+                                    </nav>
+                                </div>
+                            </header>
+                        </div>
+                        <div role="tabpanel" id="centeredHeaderHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;header&gt;
+    &lt;div&gt;
+        &lt;a href="#"&gt;&lt;/a&gt;
+        &lt;button&gt;&lt;/button&gt;
+        &lt;button&gt;Login&lt;/button&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;form&gt;
+                &lt;label for="search3"&gt;Search&lt;/label&gt;
+                &lt;input id="search3" type="search" placeholder="keyword here" /&gt;
+                &lt;input type="submit" value="Search" /&gt;
+            &lt;/form&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="centeredHeaderLESS">
+                            <pre><code class="hljs css">header {
+    position: relative;
+    width: 100%;
+    background: fade(@grey, 50);
+    
+    &gt; div {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        max-width: 1600px;
+        height: 7.5rem;
+        
+        &gt; a {
+            width: 8rem;
+            height: 5rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            .translate(0, -50%);
+            background: @grey;
+        }
+        
+        &gt; button {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            .translate(0, -50%);
+            height: 2rem;
+            
+            &:nth-of-type(1) {
+                width: 3rem;
+                border: .4rem solid @navy;
+                border-left: none;
+                border-right: none;
+            
+                &:before, &:after {
+                    content: '';
+                    height: 4px;
+                    top: 50%;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    .translate(0, -50%);
+                    background: @navy;
+                }
+            }
+            
+            &:nth-of-type(2) {
+                right: 6rem;
+                border: none;
+                background: none;
+            }
+        }
+        
+        &gt; nav, &gt; form {
+            display: none;
+        }
+        
+        &gt; nav {
+            position: absolute;
+            left: -5.5555%;
+            height: ~"calc(40vh - 7.5rem)";
+            top: 7.5rem;
+            width: 111.1111%;
+            
+            &gt; ul {
+                background: fade(@grey, 50);
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                
+                &gt; li {
+                    border-top: .2rem solid @grey;
+                    padding: 1.5rem 5.555%;
+                    
+                    &gt; a {
+                        display: block;
+                        height: 2rem;
+                        background: darken(@grey, 15);
+                    }
+                }
+            }
+        }
+    }
+    
+    @media screen and (min-width: 1200px) {
+        height: 10rem;
+        
+        &gt; div {
+            height: 10rem;
+            
+            &gt; a {
+                left: 50%;
+                top: 0;
+                .translate(-50%, 0);
+                height: 6rem;
+                width: 9rem;
+            }
+            
+            &gt; button {
+                display: none;
+            }
+            
+            
+            &gt; nav {
+                display: block;
+                position: static;
+                left: auto;
+                height: auto;
+                top: 0;
+                width: auto;
+                
+                &gt; ul {
+                    background: none;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                                        
+                    &gt; li {
+                        border-top: none;
+                        padding: 0 .5rem 1.5rem;
+                        float: left;
+                        
+                        &gt; a {
+                            display: block;
+                            height: 2rem;
+                            background: darken(@grey, 15);
+                            width: 8rem;
+                        }
+                    }
+                    
+                    &:nth-of-type(1) {
+                        display: table;
+                        width: 100%;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        
+                        &gt; li {
+                            display: table-cell;
+                            float: none;
+                            .ta-center;
+                            padding: 0 .5rem .5rem;
+                            &gt; a {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        position: absolute;
+                        left: 0;
+                        top: 1rem;
+                        
+                        form {
+                            font-size: 1.2rem;
+                            
+                            input[type="submit"] {
+                                background: @grey;
+                                font-size: 1rem;
+                                border: none;
+                                padding: .5rem;
+                                color: @white;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            form {
+                font-size: 1.2rem;
+                position: absolute;
+                right: 0;
+                top: 1rem;
+
+                label {
+                    color: @white;
+                    display: none;
+                }
+                
+                input {
+                    border: none;
+                    font-size: 1rem;
+                    padding: .5rem;
+                }
+
+                input[type="submit"] {
+                    background: @grey;
+                    padding: .5rem;
+                    color: @white;
+                }
+                input[type="text"], input[type="search"], input[type="password"] {
+                    width: 10rem;
+                }
+            }
+        }
+    }
+    @media @mediaXL {
+        height: 11.25rem;
+        
+        &gt; div {
+            height: 11.25rem;
+            &gt; a {
+                height: 7rem;
+                width: 12rem;
+            }
+            
+            &gt; nav {
+                
+                &gt; ul {
+                                        
+                    &gt; li {
+                        padding: 0 1rem 1.5rem;
+                    }
+                    
+                    &:nth-of-type(1) {
+                        &gt; li {
+                            &gt; a {
+                                height: 2.25rem;
+                                width: 9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="centeredHeaderJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#centeredHeaderExample" role="tab">Example</a>
+                        <a href="#centeredHeaderHTML" role="tab">HTML</a>
+                        <a href="#centeredHeaderLESS" role="tab">LESS</a>
+                        <a href="#centeredHeaderJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="ComplexHeader">Complex Header</h3>
+                <p>The complex header example is when the header contains everything the simple does, but with a more complex layout, and shows the inclsion of a login form.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="headers active" role="tabpanel" id="complexHeaderExample">
+                            <header>
+                                <div>
+                                    <a href="#"></a>
+                                    <button></button>
+                                    <button>Login</button>
+                                    <nav>
+                                        <ul>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                            <li><a href="#"></a></li>
+                                        </ul>
+                                        <form>
+                                            <label for="search2">Search</label>
+                                            <input id="search2" type="search" placeholder="keyword here" />
+                                            <input type="submit" value="Search" />
+                                        </form>
+                                    </nav>
+                                    <form>
+                                        <label for="username">Username</label>
+                                        <input id="username" type="text" placeholder="username" />
+                                        <label for="password">Password</label>
+                                        <input id="password" type="password" placeholder="password" />
+                                        <input type="submit" value="Login" />
+                                    </form>
+                                </div>
+                            </header>
+                        </div>
+                        <div role="tabpanel" id="complexHeaderHTML">
+                            <pre><code code="hljs html" class="hljs xml">&lt;header&gt;
+    &lt;div&gt;
+        &lt;a href="#"&gt;&lt;/a&gt;
+        &lt;button&gt;&lt;/button&gt;
+        &lt;button&gt;Login&lt;/button&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;form&gt;
+                &lt;label for="search2"&gt;Search&lt;/label&gt;
+                &lt;input id="search2" type="search" placeholder="keyword here" /&gt;
+                &lt;input type="submit" value="Search" /&gt;
+            &lt;/form&gt;
+        &lt;/nav&gt;
+        &lt;form&gt;
+            &lt;label for="username"&gt;Username&lt;/label&gt;
+            &lt;input id="username" type="text" placeholder="username" /&gt;
+            &lt;label for="password"&gt;Password&lt;/label&gt;
+            &lt;input id="password" type="password" placeholder="password" /&gt;
+            &lt;input type="submit" value="Login" /&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="complexHeaderLESS">
+                            <pre><code class="hljs css">header {
+    position: relative;
+    width: 100%;
+    background: fade(@grey, 50);
+    
+    &gt; div {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        max-width: 1600px;
+        height: 7.5rem;
+        
+        &gt; a {
+            width: 8rem;
+            height: 5rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            .translate(0, -50%);
+            background: @grey;
+        }
+        
+        &gt; button {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            .translate(0, -50%);
+            height: 2rem;
+            
+            &:nth-of-type(1) {
+                width: 3rem;
+                border: .4rem solid @navy;
+                border-left: none;
+                border-right: none;
+            
+                &:before, &:after {
+                    content: '';
+                    height: 4px;
+                    top: 50%;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    .translate(0, -50%);
+                    background: @navy;
+                }
+            }
+            
+            &:nth-of-type(2) {
+                right: 6rem;
+                border: none;
+                background: none;
+            }
+        }
+        
+        &gt; nav, &gt; form {
+            display: none;
+        }
+        
+        &gt; nav {
+            position: absolute;
+            left: -5.5555%;
+            height: ~"calc(40vh - 7.5rem)";
+            top: 7.5rem;
+            width: 111.1111%;
+            
+            &gt; ul {
+                background: fade(@grey, 50);
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                
+                &gt; li {
+                    border-top: .2rem solid @grey;
+                    padding: 1.5rem 5.555%;
+                    
+                    &gt; a {
+                        display: block;
+                        height: 2rem;
+                        background: darken(@grey, 15);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        border-top: 3rem solid darken(@grey, 10);
+        
+        &gt; div {
+            height: 10rem;
+            
+            &gt; a {
+                height: 6.665rem;
+                width: 10.664rem;
+                top: 50%;
+            }
+            
+            
+            &gt; nav {
+                display: block;
+                position: static;
+                left: auto;
+                height: auto;
+                top: 0;
+                width: auto;
+                
+                &gt; ul {
+                    background: none;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                                        
+                    &gt; li {
+                        border-top: none;
+                        padding: 0 .5rem 1.5rem;
+                        float: left;
+                        
+                        &:last-child {
+                            padding: 0 0 1.5rem .5rem;
+                        }
+                        &gt; a {
+                            display: block;
+                            height: 2rem;
+                            background: darken(@grey, 15);
+                            width: 8rem;
+                        }
+                    }
+                    
+                    &:nth-of-type(1) {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        .translate(0, -50%);
+                        
+                        &gt; li {
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        position: absolute;
+                        left: -1rem;
+                        top: -3rem;
+                        padding: .5rem 0 0;
+                        
+                        &gt;li {
+                            &gt; a {
+                                width: 6rem;
+                                background: @white;
+                            }
+                        }
+                    }
+                }
+                
+                form {
+                    right: 0;
+                    top: -3rem;
+                    padding: .25rem 0 0;
+                }
+            }
+            
+            &gt; form {
+                display: block;
+                position: absolute;
+                top: -3rem;
+                padding: .25rem 0 0;
+                left: 50%;
+                .translate(-50%, 0);
+            }
+            form {
+                font-size: 1.2rem;
+                position: absolute;
+
+                label {
+                    color: @white;
+                    display: none;
+                }
+                
+                input {
+                    border: none;
+                    font-size: 1rem;
+                    padding: .5rem;
+                }
+
+                input[type="submit"] {
+                    background: @grey;
+                    padding: .5rem;
+                    color: @white;
+                }
+                input[type="text"], input[type="search"], input[type="password"] {
+                    width: 10rem;
+                }
+            }
+        }
+    }
+    @media @mediaXL {
+        
+        &gt; div {
+            height: 11.25rem;
+            &gt; a {
+                height: 8rem;
+                width: 12.8rem;
+            }
+            
+            &gt; nav {
+                
+                &gt; ul {
+                                        
+                    &gt; li {
+                        padding: 0 1rem 1.5rem;
+                        
+                        &:last-child {
+                            padding: 0 0 1.5rem 1rem;
+                        }
+                    }
+                    
+                    &:nth-of-type(1) {
+                        &gt; li {
+                            &gt; a {
+                                height: 2.25rem;
+                                width: 9rem;
+                            }
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        &gt; li {
+                            &gt; a {
+                                width: 7.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                    <div role="tabpanel" id="complexHeaderJS" class="">
+                        <pre><code class="hljs javascript"></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#complexHeaderExample" role="tab">Example</a>
+                        <a href="#complexHeaderHTML" role="tab">HTML</a>
+                        <a href="#complexHeaderLESS" role="tab">LESS</a>
+                        <a href="#complexHeaderJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+</body>
+</html>

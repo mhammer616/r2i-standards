@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/modals/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Modal Windows</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicModalWindowGuidelines">Basic Modal Window Guidelines</a></li>
+                    <li><a href="#Examples">Examples</a>
+                        <ul>
+                            <li><a href="#">Basic Modal Window</a></li>
+                            <li><a href="#">Modal Window with YouTube Video</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="BasicModalWindowGuidelines">
+                <h2>Basic Modal Window Guidelines</h2>
+                <p>A lot of our sites utilize Modal Windows to display additional information we don't want to appear in the body copy of the page.  They can also be used to prompt the user for additional information like gating content and showing a login or form to gather information needed to supply the person with that content, a video, or just a prompt that something went wrong.</p>
+                <p>Our standard for this follows a modified approach to <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Bootstrap's method</a>.</p>
+                <p>Bootstrap adds a ton of elements wrapping various pieces of the modal window. It also has various classes to change the size of the dialog that appears.  These are all unnecessary to make the modal window function. In the examples, we'll explore stripped-down versions of the HTML that you can use as boilerplates.</p>
+            </section>
+            <section id="Examples">
+                <h2>Examples</h2>
+                <h3 id="BasicModalWindow">Basic Modal Window</h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="basicModalExample">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ut sapiente esse quibusdam consequuntur debitis reiciendis. Doloribus, atque, autem. At, quis fugiat labore voluptatem voluptatibus. <a href="#basicModal" data-toggle="modal">Click Here</a> lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, numquam perferendis maxime veritatis voluptatum facere libero quos et enim exercitationem sit nulla voluptatibus nam. Eaque, consequuntur, aut veniam earum error quae sit deserunt et numquam perferendis cumque sequi dolores itaque temporibus cupiditate delectus repellendus? Deleniti, eum, qui quisquam similique porro optio sequi facilis sunt nobis?</p>
+                        </div>
+                        <div role="tabpanel" id="basicModalHTML">
+                            <pre><code code="hljs html">&lt;!-- TO TOGGLE THE MODAL WINDOW --&gt;
+&lt;a href="#basicModal" data-toggle="modal"&gt;Click Here&lt;/a&gt;
+&lt;!-- CODE FOR THE MODAL WINDOW, 
+    IF YOU ARE USING RELATIVE POSITIONING ON THE WRAPPING ELEMENT, 
+    PLACE AT ROOT OF THE PAGE TO FIX DISPLAY ISSUES --&gt;
+&lt;div class="modal fade" id="basicModal" role="dialog" aria-labelledby="basicModalLabel"&gt;
+    &lt;figure role="document"&gt;
+        &lt;header&gt;
+            &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;/button&gt;
+        &lt;/header&gt;
+        &lt;article&gt;
+            ...
+        &lt;/article&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="basicModalLESS">
+                            <pre><code class="hljs css">.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 10050;
+    overflow: hidden;
+    display: none;
+    background: rgba(0, 0, 0, 0);
+    .transition;
+    
+    &amp;.in {
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .modal-open &amp; {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    &gt; figure {
+        width: 50%;
+        max-width: 800px;
+        left: 50%;
+        top: 50%;
+        .translate(-50%, -50%);
+        position: absolute;
+        background: @white;
+        padding: (@gutter * 2);
+        .border-radius(1rem);
+        .box-shadow;
+        z-index: 1;
+        
+        &gt; header {
+            
+            &gt; button {
+                position: absolute;
+                right: -1.5rem;
+                top: -1.5rem;
+                height: 3rem;
+                width: 3rem;
+                background: @white;
+                .border-radius(100%);
+                .ta-center;
+                line-height: 2.2rem;
+                font-size: 2rem;
+                .fw-bold;
+                color: @red;
+                border-color: @red;
+                cursor: pointer;
+                
+                &amp;:focus, &amp;:active {
+                    outline: none;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="basicModalJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#basicModalExample" role="tab">Example</a>
+                        <a href="#basicModalHTML" role="tab">HTML</a>
+                        <a href="#basicModalLESS" role="tab">LESS</a>
+                        <a href="#basicModalJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="ModalWindowWithYouTube">Modal Window with YouTube Video</h3>
+                <p>The same concept below can be applied to other video players as well like <a href="http://www.vimeo">Vimeo</a>.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="modalYouTubeExample">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ut sapiente esse quibusdam consequuntur debitis reiciendis. Doloribus, atque, autem. At, quis fugiat labore voluptatem voluptatibus. <a href="https://www.youtube.com/watch?v=frdj1zb9sMY" data-toggle="modal">Click Here</a> lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, numquam perferendis maxime veritatis voluptatum facere libero quos et enim exercitationem sit nulla voluptatibus nam. Eaque, consequuntur, aut veniam earum error quae sit deserunt et numquam perferendis cumque sequi dolores itaque temporibus cupiditate delectus repellendus? Deleniti, eum, qui quisquam similique porro optio sequi facilis sunt nobis?</p>
+                        </div>
+                        <div role="tabpanel" id="modalYouTubeHTML">
+                            <pre><code code="hljs html">&lt;!-- TO TOGGLE THE MODAL WINDOW --&gt;
+&lt;a href="https://www.youtube.com/watch?v=frdj1zb9sMY" data-toggle="modal"&gt;Click Here&lt;/a&gt;
+&lt;!-- CODE FOR THE MODAL WINDOW, 
+    IF YOU ARE USING RELATIVE POSITIONING ON THE WRAPPING ELEMENT, 
+    PLACE AT ROOT OF THE PAGE TO FIX DISPLAY ISSUES --&gt;
+&lt;div class="modal" id="videoModal" role="dialog" aria-labelledby="videoModalLabel"&gt;
+    &lt;figure role="document" class="video"&gt;
+        &lt;header&gt;
+            &lt;button type="button" data-dismiss="modal" aria-label="Close"&gt;&times;&lt;/button&gt;
+        &lt;/header&gt;
+        &lt;article&gt;
+            &lt;iframe width="560" height="315" src="" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+        &lt;/article&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="modalYouTubeLESS">
+                            <pre><code class="hljs css">.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 10050;
+    overflow: hidden;
+    display: none;
+    background: rgba(0, 0, 0, 0);
+    .transition;
+    
+    &amp;.in {
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .modal-open &amp; {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    &gt; figure {
+        width: 50%;
+        max-width: 800px;
+        left: 50%;
+        top: 50%;
+        .translate(-50%, -50%);
+        position: absolute;
+        background: @white;
+        padding: (@gutter * 2);
+        .border-radius(1rem);
+        .box-shadow;
+        z-index: 1;
+        
+        &gt; header {
+            
+            &gt; button {
+                position: absolute;
+                right: -1.5rem;
+                top: -1.5rem;
+                height: 3rem;
+                width: 3rem;
+                background: @white;
+                .border-radius(100%);
+                .ta-center;
+                line-height: 2.2rem;
+                font-size: 2rem;
+                .fw-bold;
+                color: @red;
+                border-color: @red;
+                cursor: pointer;
+                
+                &amp;:focus, &amp;:active {
+                    outline: none;
+                }
+            }
+        }
+        
+        p {
+            font-size: 1.6rem;
+            line-height: 1.5em;
+            margin: 0 0 1.5em;
+            color: @blue-grey;
+            
+            &amp;:last-of-type {
+                margin: 0;
+            }
+        }
+        
+        &amp;.video {
+            
+            article {
+                position: relative;
+                padding-top: 56.25%;
+                
+                &gt; iframe {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="modalYouTubeJS">
+                            <pre><code>$(document).ready(function() {
+    $('a[href^="https://www.youtube.com"]').on('click', function(event) {
+        event.preventDefault();
+        var videoID = $(this).attr('href').replace('https://www.youtube.com/watch?v=', ''),
+            videoURL = 'https://www.youtube.com/embed/' + videoID +'?rel=0&amp;showinfo=0';
+        
+        
+        $('#videoModal iframe').attr('src', videoURL);
+        $('#videoModal').modal('show');
+    });
+    
+    $('#videoModal').on('hidden.bs.modal', function(e) {
+        $('#videoModal iframe').attr('src', '');
+    });
+});</code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#modalYouTubeExample" role="tab">Example</a>
+                        <a href="#modalYouTubeHTML" role="tab">HTML</a>
+                        <a href="#modalYouTubeLESS" role="tab">LESS</a>
+                        <a href="#modalYouTubeJS" role="tab">JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<div class="modal fade" id="basicModal" role="dialog" aria-labelledby="basicModalLabel">
+    <figure role="document">
+        <header>
+            <button type="button" data-dismiss="modal" aria-label="Close">&times;</button>
+        </header>
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, suscipit, fugiat minima officiis quasi quas magnam voluptatem reprehenderit expedita provident veritatis unde modi dolor accusamus.</p>
+            <p>Quidem, perspiciatis, quis, atque consequuntur deserunt expedita minima possimus culpa quod veniam aut ipsum magnam mollitia quia velit voluptatibus praesentium. Tempore adipisci error veritatis praesentium.</p>
+            <p>Omnis, dignissimos nobis recusandae voluptatibus beatae dolorum esse facilis ipsam rerum sunt ullam earum neque illum ex iure suscipit voluptas quo a odio dolores similique!</p>
+        </article>
+    </figure>
+</div>
+<div class="modal" id="videoModal" role="dialog" aria-labelledby="videoModalLabel">
+    <figure role="document" class="video">
+        <header>
+            <button type="button" data-dismiss="modal" aria-label="Close">&times;</button>
+        </header>
+        <article>
+            
+        </article>
+    </figure>
+</div>
+<script>
+$(document).ready(function() {
+    $('a[href^="https://www.youtube.com"]').on('click', function(event) {
+        event.preventDefault();
+        var videoID = $(this).attr('href').replace('https://www.youtube.com/watch?v=', ''),
+            videoMarkup = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID +'?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+        
+        
+        $('#videoModal article').html(videoMarkup);
+        $('#videoModal').modal('show');
+    });
+    
+    $('#videoModal').on('hidden.bs.modal', function(e) {
+        $('#videoModal iframe').remove();
+    });
+});
+</script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+</body>
+</html>

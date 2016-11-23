@@ -1,0 +1,43 @@
+/*---===<<< CAROUSELS >>>===---*/
+.owl-carousel {
+    .owl-item {
+        background: @teal;
+        color: @white;
+        padding: 20px;
+        min-height:200px;
+    }
+    .owl-controls {
+        position: relative;
+        .owl-nav {
+            position:absolute;
+            width:100%;
+            padding-bottom: 10px;
+            top: 50%;
+            .transform(translateY(-50%));
+            > div {
+                position: absolute;
+                &.owl-prev {
+                    left: 0;
+                }
+                &.owl-next {
+                    right: 0;
+                }
+            }
+        }
+        .owl-dots {
+            text-align: center;
+            padding: 20px 0 0;
+            .owl-dot {
+                background: @grey;
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+                .border-radius(50%);
+                margin: 0 3px;
+                &.active {
+                    background: @red;
+                }
+            }
+        }
+    }
+}

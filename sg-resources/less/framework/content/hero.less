@@ -1,0 +1,38 @@
+/*---===<<< HERO >>>===---*/
+> header {
+    background: @navy url(../../images/bg-hero-teal.png) repeat-x 50% 100%;
+    > div {
+        .ta-center;
+        
+        h1 {
+            font-size: 5vw;
+            .spartan;
+            .tt-upper;
+            color: @white;
+            line-height: 1em;
+            margin: 0 0 1em;
+        }
+        h2 {
+            font-size: 2.5vw;
+            .spartan;
+            .tt-upper;
+            color: @white;
+            margin: 0 0 .5em;
+        }
+        a {
+            display: inline-block;
+            padding: 1.5rem 2.5rem 1.25rem;
+            margin: 0 .75vw;
+            background: @white;
+            color: @teal;
+            .td-none;
+            .spartan;
+            .tt-upper;
+            font-size: 1.6rem;
+            
+            &[disabled] {
+                opacity: .5;
+            }
+        }
+    }
+}

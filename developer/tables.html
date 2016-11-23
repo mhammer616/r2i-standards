@@ -1,0 +1,922 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/tables/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Tables</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicTabsGuidelines">Basic Tables Guidelines</a></li>
+                    <li><a href="#ResponsiveTables">Responsive Tables</a></li>
+                    <li><a href="#DataTables">Data Tables</a></li>
+                    <li><a href="#Examples">Examples</a>
+                        <ul>
+                            <li><a href="#BasicTables">Basic Tables</a></li>
+                            <li><a href="#StripedTables">Striped Tables</a></li>
+                            <li><a href="#HoverTables">Hover Tables</a></li>
+                            <li><a href="#Responsive2aTables">Responsive Option 2</a></li>
+                            <li><a href="#Responsive3Tables">Responsive Option 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="BasicTabsGuidelines">
+                <h2>Basic Tables Guidelines</h2>
+                <p>Tables should <strong>only</strong> be used to display tabled data. They should <strong>never</strong> be used for layout purposes.</p>
+                <p>Tables are used to form data that has rows and columns of information that should be scannable.</p>
+                <p>Tables are made up of a group of tags:</p>
+                <dl>
+                    <dt><code>&lt;table&gt;</code></dt>
+                    <dd>This is used to wrap all table elements.</dd>
+                    <dt><code>&lt;thead&gt;</code></dt>
+                    <dd>This is optional, though it should be used more often than not, and is used to wrap the table row elements that make up the head of the table.</dd>
+                    <dt><code>&lt;tbody&gt;</code></dt>
+                    <dd>This is required of all tables, regardless of whether or not your table uses a thead or tfoot element, and is used to wrap the body of the table.</dd>
+                    <dt><code>&lt;tfoot&gt;</code></dt>
+                    <dd>This is optional and is used to wrap the footer of the table.</dd>
+                    <dt><code>&lt;tr&gt;</code></dt>
+                    <dd>This is used to create a row containing either, or both <code>&lt;td&gt;</code> and <code>&lt;th&gt;</code> elements.</dd>
+                    <dt><code>&lt;th&gt;</code></dt>
+                    <dd>This is used to create a table cell that is designated as a heading.</dd>
+                    <dt><code>&lt;td&gt;</code></dt>
+                    <dd>This is used to create a table cell.</dd>
+                </dl>
+            </section>
+            <section id="ResponsiveTables">
+                <h2>Responsive Tables</h2>
+                <p>I'm just going to go ahead and say it... <strong>tables suck</strong> especially on mobile devices.  There's really no good solution for building a usable table on a mobile device and keeping it readable and usable. We try to spin things positively but when it comes to tables on devices, there is no way to do it.</p>
+                <p>There are really three options when building tables for a responsive website, each with their own benefits and problems...</p>
+                <ol>
+                    <li>Wrap the element in a div that has <code>overflow: auto</code> turned on and then when the table becomes too big for the area, a scrollbar will appear so the user can scroll to see more data.  Obviously this is less than ideal user experience, but the table still looks and feels like a table, and let's be honest - if a user is trying to read a massive table of data they are probably on a device that it will work on.</li>
+                    <li>Change the table into a list using CSS, or if needed, JS, to display it on the mobile device.  The CSS approach will only work on tables that have their data formatted horizontally instead of vertically.  The JS approach would be necessary for vertically formatted tables, and should be used over duplicating the content and using hide and show media queries because of SEO reasons.</li>
+                    <li>Hide the table from mobile users, and tell them to use a larger browser to view the table.  While this is the easiest it shouldn't be done without the client suggesting to do it this way, or at least approving this first.  I would recommend you do approach 1 and add a note below the table stating for optimal display, use a browser larger than xxx.</li>
+                </ol>
+                <p>Bootstrap has a lot of good stuff they do with tables, but, they are catering to the masses with their framework and trying to make something that's suitable for everyone's website.  Most likely, you have a couple tables on your website that all look the same, and you may have one additional special table that shows some sales chart, but that's what a class is for.  Style the table element for the most common look on your website, then add a class for the special case.</p>
+                <p>Below in the <a href="#Examples">examples section</a>, you will find examples of each of these approaches, as well as some basic styling of tables.</p>
+            </section>
+            <section id="DataTables">
+                <h2>Data Tables</h2>
+                <p><a href="https://datatables.net/" target="_blank">DataTables</a> is a jQuery plugin that will create searchable, sortable, and filterable, tables with pagination.</p>
+                <p>This plugin should be used when large amounts of data are displayed with the need for any or all of the above features.  There is no use to re-write this plugin as it does a lot of complex things and has a really good <a href="https://datatables.net/" target="_blank">website</a> full of <a href="https://datatables.net/manual/index" target="_blank">documentation</a> and <a href="https://datatables.net/examples/index">examples</a>.</p>
+                <p>To see examples, visit the links above. There's no reason to put that much effort when they do a really good job of showing it.</p>
+            </section>
+            <section id="Examples">
+                <h2>Examples</h2>
+                <h3 id="BasicTables">Basic Table<small> - with responsive option 1</small></h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="basicTableExample">
+                            <div class="responsive-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>4</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>5</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>6</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>7</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>8</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>9</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>10</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="basicTableHTML">
+                            <pre><code code="hljs html">&lt;div class="responsive-table"&gt;
+                                &lt;table&gt;
+                                    &lt;thead&gt;
+                                        &lt;tr&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/thead&gt;
+                                    &lt;tbody&gt;
+                                        &lt;tr&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;td&gt;...&lt;/td&gt;
+                                            &lt;td&gt;...&lt;/td&gt;
+                                            &lt;td&gt;...&lt;/td&gt;
+                                            &lt;td&gt;...&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        ...
+                                    &lt;/tbody&gt;
+                                &lt;/table&gt;
+                            &lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="basicTableLESS">
+                            <pre><code class="hljs css">table {
+    min-width: 700px;
+    border-collapse: collapse;
+    width: 100%;
+        
+    td, th {
+        padding: .5rem;
+        .ta-left;
+    }
+    
+    thead {
+        th {
+            border-bottom: 2px solid @grey;
+        }
+    }
+    tbody {
+        tr {
+            th, td {
+                border-top: 1px solid @grey;
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="basicTableJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#basicTableExample" role="tab">Example</a>
+                        <a href="#basicTableHTML" role="tab">HTML</a>
+                        <a href="#basicTableLESS" role="tab">LESS</a>
+                        <a href="#basicTableJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="StripedTables">Striped Tables<small> - with responsive option 1</small></h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="stripedTableExample">
+                            <div class="responsive-table">
+                                <table class="striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>4</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>5</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>6</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>7</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>8</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>9</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>10</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="stripedTableHTML">
+                            <pre><code code="hljs html">&lt;div class="responsive-table"&gt;
+                                &lt;table&gt;
+                                    &lt;thead&gt;
+                                        &lt;tr&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/thead&gt;
+                                    &lt;tbody&gt;
+                                        &lt;tr&gt;
+                                            &lt;th&gt;...&lt;/th&gt;
+                                            &lt;td&gt;...&lt;/td&gt;
+                                            &lt;td&gt;...&lt;/td&gt;
+                                            &lt;td&gt;...&lt;/td&gt;
+                                            &lt;td&gt;...&lt;/td&gt;
+                                        &lt;/tr&gt;
+                                        ...
+                                    &lt;/tbody&gt;
+                                &lt;/table&gt;
+                            &lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="stripedTableLESS">
+                            <pre><code class="hljs css"></code></pre>
+                        </div>
+                        <div role="tabpanel" id="stripedTableJS">
+                            <pre><code>table {
+    min-width: 700px;
+    border-collapse: collapse;
+    width: 100%;
+        
+    td, th {
+        padding: .5rem;
+        .ta-left;
+    }
+    
+    thead {
+        th {
+            border-bottom: 2px solid @grey;
+        }
+    }
+    tbody {
+        tr {
+            th, td {
+                border-top: 1px solid @grey;
+            }
+            &:nth-child(odd) {
+                th, td {
+                    background: fade(@grey, 15);
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#stripedTableExample" role="tab">Example</a>
+                        <a href="#stripedTableHTML" role="tab">HTML</a>
+                        <a href="#stripedTableLESS" role="tab">LESS</a>
+                        <a href="#stripedTableJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="HoverTables">Hover Row Tables<small> - with responsive option 1</small></h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="hoverTableExample">
+                            <div class="responsive-table">
+                                <table class="hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>4</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>5</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>6</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>7</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>8</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>9</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>10</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="hoverTableHTML">
+                            <pre><code code="hljs html">&lt;div class="responsive-table"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+            &lt;/tr&gt;
+            ...
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="hoverTableLESS">
+                            <pre><code class="hljs css">table {
+    min-width: 700px;
+    border-collapse: collapse;
+    width: 100%;
+        
+    td, th {
+        padding: .5rem;
+        .ta-left;
+    }
+    
+    thead {
+        th {
+            border-bottom: 2px solid @grey;
+        }
+    }
+    tbody {
+        tr {
+            th, td {
+                border-top: 1px solid @grey;
+            }
+            &:hover {
+                th, td {
+                    background: fade(@grey, 25);
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="hoverTableJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#hoverTableExample" role="tab">Example</a>
+                        <a href="#hoverTableHTML" role="tab">HTML</a>
+                        <a href="#hoverTableLESS" role="tab">LESS</a>
+                        <a href="#hoverTableJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Responsive2aTables">Responsive Table Option 2 - CSS Version</h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="responsive2aExample">
+                            <div class="responsive-table">
+                                <table class="resp-2a">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>4</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>5</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>6</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>7</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>8</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>9</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>10</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="responsive2aHTML">
+                            <pre><code code="hljs html">&lt;div class="responsive-table"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+            &lt;/tr&gt;
+            ...
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="responsive2aLESS">
+                            <pre><code class="hljs css">table {
+    min-width: 700px;
+    border-collapse: collapse;
+    width: 100%;
+        
+    td, th {
+        padding: .5rem;
+        .ta-left;
+    }
+    
+    thead {
+        th {
+            border-bottom: 2px solid @grey;
+        }
+    }
+    tbody {
+        tr {
+            th, td {
+                border-top: 1px solid @grey;
+            }
+            &:hover {
+                th, td {
+                    background: fade(@grey, 25);
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="responsive2aJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#responsive2aExample" role="tab">Example</a>
+                        <a href="#responsive2aHTML" role="tab">HTML</a>
+                        <a href="#responsive2aLESS" role="tab">LESS</a>
+                        <a href="#responsive2aJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Responsive3Tables">Responsive Table Option 3</h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="responsive3Example">
+                            <div class="responsive-table resp-3">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                            <th>Col Heading</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>4</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>5</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>6</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>7</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>8</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>9</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                        <tr>
+                                            <th>10</th>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                            <td>Col Heading</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="responsive3HTML">
+                            <pre><code code="hljs html">&lt;div class="responsive-table"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;th&gt;...&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th&gt;...&lt;/th&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+                &lt;td&gt;...&lt;/td&gt;
+            &lt;/tr&gt;
+            ...
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="responsive3LESS">
+                            <pre><code class="hljs css">table {
+    min-width: 700px;
+    border-collapse: collapse;
+    width: 100%;
+        
+    td, th {
+        padding: .5rem;
+        .ta-left;
+    }
+    
+    thead {
+        th {
+            border-bottom: 2px solid @grey;
+        }
+    }
+    tbody {
+        tr {
+            th, td {
+                border-top: 1px solid @grey;
+            }
+            &:hover {
+                th, td {
+                    background: fade(@grey, 25);
+                }
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="responsive3JS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#responsive3Example" role="tab">Example</a>
+                        <a href="#responsive3HTML" role="tab">HTML</a>
+                        <a href="#responsive3LESS" role="tab">LESS</a>
+                        <a href="#responsive3JS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+
+</body>
+</html>

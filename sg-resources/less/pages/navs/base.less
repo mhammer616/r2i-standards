@@ -1,0 +1,51 @@
+/*---===<<< LOAD BASE FILES >>>===---*/
+@import url(../../base/variables.less);
+@import url(../../base/mixins.less);
+@import url(../../base/resets.less);
+/*---=== LAYOUTS ===---*/
+.main-nav-base {
+    header {
+        > div {
+            @import url(dropdown.less);
+            @import url(megamenu.less);
+        }
+    }
+}
+
+.int-nav-base {
+    .clearfix;
+    height: 33.333vh;
+    
+    > nav {
+        display: none;
+        
+        @media @mediaSM {
+            display: block;
+            float: left;
+            width: 33.333%;
+        }
+        @media @mediaLG {
+            width: 25%;
+        }
+    }
+    
+    
+    @import url(interior.less);
+}
+.breadcrumb-base {
+    .clearfix;
+    height: 33.333vh;
+    
+    article {
+        float: right;
+        width: 75%;
+        
+        > nav {
+            float: none;
+            width: auto;
+            padding: 0;
+        }
+    }
+    
+    @import url(breadcrumb.less);
+}

@@ -1,0 +1,191 @@
+#complexHeaderExample {
+    header {
+        
+        > div {
+            
+            > a {
+            }
+            
+            > button {
+                @media screen and (min-width: 1200px) {
+                    display: none;
+                }
+            }
+            
+            > nav {
+                position: absolute;
+                left: -5.5555%;
+                height: ~"calc(40vh - 7.5rem)";
+                top: 7.5rem;
+                width: 111.1111%;
+                
+                > ul {
+                    background: fade(@grey, 50);
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    
+                    > li {
+                        border-top: .2rem solid @grey;
+                        padding: 1.5rem 5.555%;
+                        
+                        > a {
+                            display: block;
+                            height: 2rem;
+                            background: darken(@grey, 15);
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media screen and (min-width: 1200px) {
+            border-top: 3rem solid darken(@grey, 10);
+            
+            > div {
+                height: 10rem;
+                
+                > a {
+                    height: 6.665rem;
+                    width: 10.664rem;
+                    top: 50%;
+                }
+                
+                
+                > nav {
+                    display: block;
+                    position: static;
+                    left: auto;
+                    height: auto;
+                    top: 0;
+                    width: auto;
+                    
+                    > ul {
+                        background: none;
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                                            
+                        > li {
+                            border-top: none;
+                            padding: 0 .5rem 1.5rem;
+                            float: left;
+                            
+                            &:last-child {
+                                padding: 0 0 1.5rem .5rem;
+                            }
+                            > a {
+                                display: block;
+                                height: 2rem;
+                                background: darken(@grey, 15);
+                                width: 8rem;
+                            }
+                        }
+                        
+                        &:nth-of-type(1) {
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            .translate(0, -50%);
+                            
+                            > li {
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            position: absolute;
+                            left: -1rem;
+                            top: -3rem;
+                            padding: .5rem 0 0;
+                            
+                            >li {
+                                > a {
+                                    width: 6rem;
+                                    background: @white;
+                                }
+                            }
+                        }
+                    }
+                    
+                    form {
+                        right: 0;
+                        top: -3rem;
+                        padding: .25rem 0 0;
+                    }
+                }
+                
+                > form {
+                    display: block;
+                    position: absolute;
+                    top: -3rem;
+                    padding: .25rem 0 0;
+                    left: 50%;
+                    .translate(-50%, 0);
+                }
+                form {
+                    font-size: 1.2rem;
+                    position: absolute;
+        
+                    label {
+                        color: @white;
+                        display: none;
+                    }
+                    
+                    input {
+                        border: none;
+                        font-size: 1rem;
+                        padding: .5rem;
+                    }
+        
+                    input[type="submit"] {
+                        background: @grey;
+                        padding: .5rem;
+                        color: @white;
+                    }
+                    input[type="text"], input[type="search"], input[type="password"] {
+                        width: 10rem;
+                    }
+                }
+            }
+        }
+        @media @mediaXL {
+            
+            > div {
+                height: 11.25rem;
+                > a {
+                    height: 8rem;
+                    width: 12.8rem;
+                }
+                
+                > nav {
+                    
+                    > ul {
+                                            
+                        > li {
+                            padding: 0 1rem 1.5rem;
+                            
+                            &:last-child {
+                                padding: 0 0 1.5rem 1rem;
+                            }
+                        }
+                        
+                        &:nth-of-type(1) {
+                            > li {
+                                > a {
+                                    height: 2.25rem;
+                                    width: 9rem;
+                                }
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            > li {
+                                > a {
+                                    width: 7.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

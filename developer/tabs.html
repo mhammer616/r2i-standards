@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/tabs/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Tabs</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicTabsGuidelines">Basic Tabs Guidelines</a></li>
+                    <li><a href="#Examples">Examples</a>
+                        <ul>
+                            <li><a href="#HorizontalTabs">Horizontal Tabs</a></li>
+                            <li><a href="#VerticalTabs">Vertical Tabs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <h2 id="BasicTabsGuidelines">Basic Tabs Guidelines</h2>
+                <p>Almost all the sites we develop use tabs somewhere on them. To keep tabs consistent in functionality and code base, we have chosen to use Bootstraps Tabs as our standard and best practice. The Bootstrap Tab component is easy to setup and works with all of our CMS's.  Go to <a href="http://getbootstrap.com/javascript/#tabs" target="_blank">getbootstrap.com/javascript/#tabs</a> for additional documentation on how this can be customized. A few examples of layouts and styles have been added below along with the code to achieve their look and feel.</p>
+            </section>
+            <section>
+                <h2 id="Examples">Examples</h2>
+                <h3 id="HorizontalTabs">Horizontal Tabs</h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="formHoriTabsExample">
+                            <div class="horizontal-tabs">
+                                <ul role="tablist">
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                                </ul>
+                                <div>
+                                    <div role="tabpanel" class="active" id="home">
+                                        <h2>Home</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, veritatis fugiat dolorem beatae libero itaque voluptatum quaerat iusto. Maxime, placeat, minima libero quia temporibus ducimus.</p>
+                                        <p>Voluptates, voluptatibus, iure, temporibus reprehenderit facilis ratione sunt ipsa aut aliquam dolores fugit necessitatibus adipisci perspiciatis iste neque eos quidem quam. Earum rerum natus atque?</p>
+                                        <p>Quas, alias eius officia quis eos corrupti deleniti! Voluptas, repellat, quia deserunt alias labore vel officiis dolor quibusdam cumque quos maxime pariatur culpa similique cum.</p>
+                                    </div>
+                                    <div role="tabpanel" id="profile">
+                                        <h2>Profile</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, veritatis fugiat dolorem beatae libero itaque voluptatum quaerat iusto. Maxime, placeat, minima libero quia temporibus ducimus.</p>
+                                        <p>Voluptates, voluptatibus, iure, temporibus reprehenderit facilis ratione sunt ipsa aut aliquam dolores fugit necessitatibus adipisci perspiciatis iste neque eos quidem quam. Earum rerum natus atque?</p>
+                                        <p>Quas, alias eius officia quis eos corrupti deleniti! Voluptas, repellat, quia deserunt alias labore vel officiis dolor quibusdam cumque quos maxime pariatur culpa similique cum.</p>
+                                    </div>
+                                    <div role="tabpanel" id="messages">
+                                        <h2>Messages</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, veritatis fugiat dolorem beatae libero itaque voluptatum quaerat iusto. Maxime, placeat, minima libero quia temporibus ducimus.</p>
+                                        <p>Voluptates, voluptatibus, iure, temporibus reprehenderit facilis ratione sunt ipsa aut aliquam dolores fugit necessitatibus adipisci perspiciatis iste neque eos quidem quam. Earum rerum natus atque?</p>
+                                        <p>Quas, alias eius officia quis eos corrupti deleniti! Voluptas, repellat, quia deserunt alias labore vel officiis dolor quibusdam cumque quos maxime pariatur culpa similique cum.</p>
+                                    </div>
+                                    <div role="tabpanel" id="settings">
+                                        <h2>Settings</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, veritatis fugiat dolorem beatae libero itaque voluptatum quaerat iusto. Maxime, placeat, minima libero quia temporibus ducimus.</p>
+                                        <p>Voluptates, voluptatibus, iure, temporibus reprehenderit facilis ratione sunt ipsa aut aliquam dolores fugit necessitatibus adipisci perspiciatis iste neque eos quidem quam. Earum rerum natus atque?</p>
+                                        <p>Quas, alias eius officia quis eos corrupti deleniti! Voluptas, repellat, quia deserunt alias labore vel officiis dolor quibusdam cumque quos maxime pariatur culpa similique cum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="formHoriTabsHTML">
+                            <pre><code class="hljs html">&lt;div class="horizontal-tabs"&gt;
+        &lt;ul role="tablist"&gt;
+            &lt;li role="presentation" class="active"&gt;
+                &lt;a href="#home" aria-controls="home" role="tab" data-toggle="tab"&gt;Home&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li role="presentation"&gt;
+                &lt;a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"&gt;Profile&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li role="presentation"&gt;
+                &lt;a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"&gt;Messages&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li role="presentation"&gt;
+                &lt;a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"&gt;Settings&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div&gt;
+            &lt;div role="tabpanel" class="active" id="home"&gt;
+                &lt;h2&gt;Home&lt;/h2&gt;
+                ...
+            &lt;/div&gt;
+            &lt;div role="tabpanel" id="profile"&gt;
+                &lt;h2&gt;Profile&lt;/h2&gt;
+                ...
+            &lt;/div&gt;
+            &lt;div role="tabpanel" id="messages"&gt;
+                &lt;h2&gt;Messages&lt;/h2&gt;
+                ...
+            &lt;/div&gt;
+            &lt;div role="tabpanel" id="settings"&gt;
+                &lt;h2&gt;Settings&lt;/h2&gt;
+               ...
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="formHoriTabsLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; HORIZONTAL TABS &gt;&gt;&gt;===---*/
+    .horizontal-tabs {
+        &gt; ul[role="tablist"] {
+            .clearfix;
+            position: relative;
+            z-index: 10;
+            
+            &gt; li {
+                float: left;
+                list-style: none;
+                margin: 0 1px 0 0;
+                
+                a {
+                    padding: 1rem;
+                    border: 1px solid @grey;
+                    background: @grey;
+                    color: @white;
+                    .td-none;
+                    border-radius: 5px 5px 0 0;
+                    font-size: 1.4rem;
+                    display: block;
+                }
+                
+                &.active {
+                    a {
+                        background: @white;
+                        color: @grey;
+                        border-bottom: 1px solid @white;
+                    }
+                }
+            }
+        }
+        
+        &gt; div {
+            border: 1px solid @grey;
+            margin: -1px 0 0;
+            position: relative;
+            z-index: 0;
+            
+            &gt; div {
+                padding: 25px;
+            }
+        }
+    }</code></pre>
+                        </div>
+                        <div role="tabpanel" id="formHoriTabsJS">
+                            <pre>
+                                <code></code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#formHoriTabsExample" role="tab">Example</a>
+                        <a href="#formHoriTabsHTML" role="tab">HTML</a>
+                        <a href="#formHoriTabsLESS" role="tab">LESS</a>
+                        <a href="#formHoriTabsJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="VerticalTabs">Vertical Tabs</h3>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="formVertTabsExample">
+                            <div class="vertical-tabs">
+                                <ul role="tablist">
+                                    <li role="presentation" class="active"><a href="#vertHome" aria-controls="vertHome" role="tab" data-toggle="tab">Home</a></li>
+                                    <li role="presentation"><a href="#vertProfile" aria-controls="vertProfile" role="tab" data-toggle="tab">Profile</a></li>
+                                    <li role="presentation"><a href="#vertMessages" aria-controls="vertMessages" role="tab" data-toggle="tab">Messages</a></li>
+                                    <li role="presentation"><a href="#vertSettings" aria-controls="vertSettings" role="tab" data-toggle="tab">Settings</a></li>
+                                </ul>
+                                <div>
+                                    <div role="tabpanel" class="active" id="vertHome">
+                                        <h2>Home</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, veritatis fugiat dolorem beatae libero itaque voluptatum quaerat iusto. Maxime, placeat, minima libero quia temporibus ducimus.</p>
+                                        <p>Voluptates, voluptatibus, iure, temporibus reprehenderit facilis ratione sunt ipsa aut aliquam dolores fugit necessitatibus adipisci perspiciatis iste neque eos quidem quam. Earum rerum natus atque?</p>
+                                        <p>Quas, alias eius officia quis eos corrupti deleniti! Voluptas, repellat, quia deserunt alias labore vel officiis dolor quibusdam cumque quos maxime pariatur culpa similique cum.</p>
+                                    </div>
+                                    <div role="tabpanel" id="vertProfile">
+                                        <h2>Profile</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, veritatis fugiat dolorem beatae libero itaque voluptatum quaerat iusto. Maxime, placeat, minima libero quia temporibus ducimus.</p>
+                                        <p>Voluptates, voluptatibus, iure, temporibus reprehenderit facilis ratione sunt ipsa aut aliquam dolores fugit necessitatibus adipisci perspiciatis iste neque eos quidem quam. Earum rerum natus atque?</p>
+                                        <p>Quas, alias eius officia quis eos corrupti deleniti! Voluptas, repellat, quia deserunt alias labore vel officiis dolor quibusdam cumque quos maxime pariatur culpa similique cum.</p>
+                                    </div>
+                                    <div role="tabpanel" id="vertMessages">
+                                        <h2>Messages</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, veritatis fugiat dolorem beatae libero itaque voluptatum quaerat iusto. Maxime, placeat, minima libero quia temporibus ducimus.</p>
+                                        <p>Voluptates, voluptatibus, iure, temporibus reprehenderit facilis ratione sunt ipsa aut aliquam dolores fugit necessitatibus adipisci perspiciatis iste neque eos quidem quam. Earum rerum natus atque?</p>
+                                        <p>Quas, alias eius officia quis eos corrupti deleniti! Voluptas, repellat, quia deserunt alias labore vel officiis dolor quibusdam cumque quos maxime pariatur culpa similique cum.</p>
+                                    </div>
+                                    <div role="tabpanel" id="vertSettings">
+                                        <h2>Settings</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, veritatis fugiat dolorem beatae libero itaque voluptatum quaerat iusto. Maxime, placeat, minima libero quia temporibus ducimus.</p>
+                                        <p>Voluptates, voluptatibus, iure, temporibus reprehenderit facilis ratione sunt ipsa aut aliquam dolores fugit necessitatibus adipisci perspiciatis iste neque eos quidem quam. Earum rerum natus atque?</p>
+                                        <p>Quas, alias eius officia quis eos corrupti deleniti! Voluptas, repellat, quia deserunt alias labore vel officiis dolor quibusdam cumque quos maxime pariatur culpa similique cum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="formVertTabsHTML">
+                            <pre><code class="hljs html">&lt;div class="vertical-tabs"&gt;
+        &lt;ul role="tablist"&gt;
+            &lt;li role="presentation" class="active"&gt;
+                &lt;a href="#home" aria-controls="home" role="tab" data-toggle="tab"&gt;Home&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li role="presentation"&gt;
+                &lt;a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"&gt;Profile&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li role="presentation"&gt;
+                &lt;a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"&gt;Messages&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li role="presentation"&gt;
+                &lt;a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"&gt;Settings&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div&gt;
+            &lt;div role="tabpanel" class="active" id="home"&gt;
+                &lt;h2&gt;Home&lt;/h2&gt;
+                ...
+            &lt;/div&gt;
+            &lt;div role="tabpanel" id="profile"&gt;
+                &lt;h2&gt;Profile&lt;/h2&gt;
+                ...
+            &lt;/div&gt;
+            &lt;div role="tabpanel" id="messages"&gt;
+                &lt;h2&gt;Messages&lt;/h2&gt;
+                ...
+            &lt;/div&gt;
+            &lt;div role="tabpanel" id="settings"&gt;
+                &lt;h2&gt;Settings&lt;/h2&gt;
+               ...
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="formVertTabsLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; HORIZONTAL TABS &gt;&gt;&gt;===---*/
+    .horizontal-tabs {
+        &gt; ul[role="tablist"] {
+            .clearfix;
+            position: relative;
+            z-index: 10;
+            
+            &gt; li {
+                float: left;
+                list-style: none;
+                margin: 0 1px 0 0;
+                
+                a {
+                    padding: 1rem;
+                    border: 1px solid @grey;
+                    background: @grey;
+                    color: @white;
+                    .td-none;
+                    border-radius: 5px 5px 0 0;
+                    font-size: 1.4rem;
+                    display: block;
+                }
+                
+                &.active {
+                    a {
+                        background: @white;
+                        color: @grey;
+                        border-bottom: 1px solid @white;
+                    }
+                }
+            }
+        }
+        
+        &gt; div {
+            border: 1px solid @grey;
+            margin: -1px 0 0;
+            position: relative;
+            z-index: 0;
+            
+            &gt; div {
+                padding: 25px;
+            }
+        }
+    }</code></pre>
+                        </div>
+                        <div role="tabpanel" id="formVertTabsJS">
+                            <pre>
+                                <code></code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#formVertTabsExample" role="tab">Example</a>
+                        <a href="#formVertTabsHTML" role="tab">HTML</a>
+                        <a href="#formVertTabsLESS" role="tab">LESS</a>
+                        <a href="#formVertTabsJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+
+</body>
+</html>

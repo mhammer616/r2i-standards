@@ -1,0 +1,56 @@
+/*---===<<< GRID >>>===---*/
+[class*="col-"] {
+    float: left;
+    padding: 0 @gutter;
+    position: relative;
+}
+/*---=== GENERATE COLUMNS LOOP ===---*/
+/*--- COLUMNS ---*/
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+    
+    &@{i} {
+        width: (@i * 100% / @n);
+    }
+    
+    &offset-@{i} {
+        margin-left: (@i * 100% / @n);
+    }
+    
+    &pull-@{i} {
+        right: (@i * 100% / @n);
+    }
+    
+    &push-@{i} {
+        left: (@i * 100% / @n);
+    }
+    
+    .generate-columns(@n, (@i + 1));
+}
+/*---=== XS ===---*/
+.col-xs- {
+    .generate-columns(@colCount);
+}
+/*---=== SM ===---*/
+@media @mediaSM {
+    .col-sm- {
+        .generate-columns(@colCount);
+    }
+}
+/*---=== MD ===---*/
+@media @mediaMD {
+    .col-md- {
+        .generate-columns(@colCount);
+    }
+}
+/*---=== LG ===---*/
+@media @mediaLG {
+    .col-lg- {
+        .generate-columns(@colCount);
+    }
+}
+/*---=== XL ===---*/
+@media @mediaXL {
+    .col-xl- {
+        .generate-columns(@colCount);
+    }
+}

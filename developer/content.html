@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R2integrated - UX and Front End Standards Guide</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
+<link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet/less" type="text/css" />
+<link href="/standards-guide/sg-resources/less/pages/content/base.less" rel="stylesheet/less" type="text/css" />
+<script type="text/javascript" src="/standards-guide/sg-resources/js/less.js">
+</script>
+<link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
+<script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<header>
+    <a href="/standards-guide/#!watch"> 
+        <!-- START SVG LOGO -->
+        <svg version="1.1" viewBox="0 0 50 50">
+            <path d="M50,24.9999C50,11.8558,39.8012,1.0501,26.9051,0.0718v3.4505
+                C37.9061,4.49,46.5643,13.7529,46.5643,24.9999c0,11.2472-8.6582,20.5101-19.6591,21.4778v3.4505
+                C39.8012,48.9499,50,38.1442,50,24.9999"/>
+            <path d="M3.4357,24.9999c0-11.2279,8.6262-20.476,19.5996-21.4734V0.0782
+                C10.1648,1.0818,0,11.877,0,24.9999C0,38.123,10.1648,48.9182,23.0353,49.9218v-3.4484
+                C12.0619,45.4782,3.4357,36.228,3.4357,24.9999"/>
+            <path d="M11.9443,30.0163L11.9443,30.0163C11.9443,30.1649,11.9443,30.0163,11.9443,30.0163"/>
+            <rect x="36.5796" y="19.0037"  width="2.9328" height="1.789"/>
+            <polygon points="39.5128,22.5128 34.7848,22.5128 34.7848,24.1937 36.5801,24.1937 36.5801,30.4899 
+               39.5128,30.4899"/>
+            <path d="M12.2674,23.3757v-2.4148H8.5941v1.6785h1.0165v7.8497h2.6569v-4.0829
+               c0-2.1497,1.2138-3.1195,4.1443-3.1407v-2.5974C14.2855,20.6892,13.0144,21.4786,12.2674,23.3757"/>
+            <path d="M18.6351,23.7921h2.9815c0-2.3236,1.2732-3.9555,4.1847-3.9555
+                c2.3365,0,3.6309,1.0695,3.6309,2.6292c0,1.4728-0.5156,2.4468-4.5242,2.797c-4.8405,0.4265-6.9711,2.0457-6.9711,4.7259v2.7141
+                h14.1968v-2.5063H21.1116c0-2.1708,1.9396-2.4912,6.1221-2.801c3.3636-0.2505,5.2289-1.7062,5.1143-5.0761
+                c-0.1124-3.2128-3.1407-5.2288-7.2428-5.0357C20.98,17.479,18.6351,19.6096,18.6351,23.7921"/>
+        </svg>
+        <!-- END SVG LOGO --> 
+    </a>
+    <button data-toggle="nav" href="#developer"></button>
+</header>
+<main>
+    <header>
+        <div>
+            <h1>Content</h1>
+        </div>
+    </header>
+    <section>
+        <article>
+            <nav>
+                <ul>
+                    <li><a href="#BasicTypographyGuidelines">Basic Typography Guidelines</a>
+                        <ul>
+                            <li><a href="#MeasuringFont-Sizes">Measuring Font-Sizes</a></li>
+                            <li><a href="#DeterminingFont-Sizes">Determining Font-Sizes for Responsive</a></li>
+                            <li><a href="#TextAlignments">Text Alignments</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#HeadingElements">Heading Elements</a>
+                        <ul>
+                            <li><a href="#Heading1">Heading 1</a></li>
+                            <li><a href="#Heading2">Headings 2 - 4</a></li>
+                            <li><a href="#Heading5">Headings 5 &amp; 6</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#BlockElements">Block Elements</a>
+                        <ul>
+                            <li><a href="#Paragraph">Paragraph</a></li>
+                            <li><a href="#Blockquote">Blockquote</a></li>
+                            <li><a href="#Figure">Figure</a></li>
+                            <li><a href="#Div">Div</a></li>
+                            <li><a href="#LineBreak">Line Break</a></li>
+                            <li><a href="#HorizontalRule">Horizontal Rule</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#ListElements">List Elements</a>
+                        <ul>
+                            <li><a href="#UnorderedList">Unordered List</a></li>
+                            <li><a href="#OrderedList">Ordered List</a></li>
+                            <li><a href="#DefinitionList">Definition List</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#InlineElements">Inline Elements</a>
+                        <ul>
+                            <li><a href="#Anchors">Anchors</a></li>
+                            <li><a href="#Bold">Bold</a></li>
+                            <li><a href="#Italics">Italics</a></li>
+                            <li><a href="#Underline">Underline</a></li>
+                            <li><a href="#Small">Small</a></li>
+                            <li><a href="#Address">Address</a></li>
+                            <li><a href="#Span">Span</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#MediaElements">Media Elements</a>
+                        <ul>
+                            <li><a href="#Video">Video</a></li>
+                            <li><a href="#Images">Images</a></li>
+                            <!--li><a href="#Audio">Audio</a></li-->
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section id="BasicTypographyGuidelines">
+                <h2>Basic Typography Guidelines</h2>
+                <p>Designers spend a lot of time making sure the right fonts are paired together and the sizes work well with the design.  It's our job to make sure that when those fonts are placed on the page, the pairings work well at all sizes.  There are different approaches that can be taken from choosing which font-size to use at different media-queries to alter the font size. We'll review some basic guidelines that should be followed in order to maintain the designers' intent.</p>
+                <h3 id="MeasuringFont-Sizes">Measuring Font-Sizes</h3>
+                <p>We have many different ways to write our CSS measurements: pixels, points, ems, rems, viewport, percentage, inches, centimeters, etc... Why limit ourselves to just using one on the whole website?  Before diving into how to choose which measurement to use, lets first get a good understanding of what each measurement type means.</p>
+                <dl>
+                    <dt>Pixels (px)</dt>
+                    <dd>This is an absolute measurement related to pixels on the screen, 1px = 1pixel of the monitor.</dd>
+                    <dt>Points (pt)</dt>
+                    <dd>This is an absolute measurement used for print. There are 72 points in an inch.</dd>
+                    <dt>Inches (in), Centimeters (cm), Millimeters (mm)</dt>
+                    <dd>These are all absolute forms of measurement; they really shouldn't be used in CSS.</dd>
+                    <dt>Percentage (%)</dt>
+                    <dd>This is a relative form of measurement that is based on the parent element.</dd>
+                    <dt>EM (em)</dt>
+                    <dd>Relative to the font-size of the parent element, a <code>font-size</code> of 1.5 em is 1.5 times the size of the parent element's <code>font-size</code>.</dd>
+                    <dt>REM (rem)</dt>
+                    <dd>Relative to the root element's font-size, when coupled with resetting the <code>font-size</code> of the <code>body</code>, or <code>html</code> tag to 62.5%, means everything is base 10 (on normal browser settings), with that set, setting the property of font-size to 1.6rem would be the same as setting it to 16px at a default browser install. However, if someone altered their browser's zoom or font-size to large or 18px as the base, now our 1.6rem would be equal to 18px, making the user who has difficulty reading smaller font sizes now able to read and see at a scale that is more comfortable for them.</dd>
+                    <dt>Viewport Height (vh), Viewport Width (vw)</dt>
+                    <dd>These are relative forms of measurement, where 1vh = 1% of the viewports height, and 1vw = 1% of the viewports width.</dd>
+                </dl>
+                <p>Now that we understand what each measurement means, here's a list to help choose which type of measurement you should use.</p>
+                <ul>
+                    <li><strong>Hero headings and text</strong> - use viewport measurements so the scale will stay consistent, and use media queries to set minimum and maximum font-sizes in rems.</li>
+                    <li><strong>Body copy</strong> - start by setting <code>body {font-size: 62.5%;}</code>, then use rems to set heading, paragraph, etc. font-sizes.</li>
+                    <li><strong>Line Heights</strong> - these should be set in ems related to the font-size set for the body copy. Typical line-heights are 1.5em or 2em.</li>
+                    <li><strong>Padding and Margins</strong> - these can be set in REMs or EMs depending on if you want them to be relative to the root element or the element itself.</li>
+                </ul>
+                <h3 id="DeterminingFont-Sizes">Determining Font-Sizes for Responsive</h3>
+                <p>Line-length is the most important part for determining font-sizes on a website. While the designers set this up for large desktops, it's on the Front End Developer to make sure the site maintains readability throughout the build. Optimal line-length is between <strong>45 to 75 characters</strong> for body copy. Ideally the number is <strong>66 characters</strong>.  This helps the reader ability to maintain their line when reading the copy.</p>
+                <p>Mobile sites should be on the lower end of that line-length, usually being somewhere between 45-55 characters per line, while large devices shouldn't exceed 75 characters.</p>
+                <p>To achieve optimal line-length use media-queries to set font-sizes that are flexible, <em>but don't go overboard creating code bloat</em>. Adjusting at the macro media-queries should be substantial.</p>
+                <p>Lock in our max-width for the main article to something between 1440px and 1600px. This should also help with achieving an optimal line-length.</p>
+                <p><a href="https://css-tricks.com/bookmarklet-colorize-text-45-75-characters-line-length-testing/" target="_blank">Bookmarklet</a> is a tool that can help determine line-length and highlights characters 45-75 in any copy you want to test. This tool should only be used when testing, and never be enabled on a production site.</p>
+                <p>Optimal line-lengths don't apply to large format fonts used in headings, although they shouldn't look bad when they line-break either.</p>
+                <h3 id="TextAlignments">Text Alignments</h3>
+                <p>Most of your copy on the site should be left aligned, while headers and large text may break this rule, body copy should be left aligned to make things easier to read.</p>
+                <p>Your options for the text-align property are <code>left</code>, <code>right</code>, <code>center</code>, and <code>justify</code>. While some people like reading and having nice flush-ending points for their lines of copy that justify provides, the jagged edge that left provides actually increases readibility. Centering creates too much disruption with jagged edges on both sides of the block of text. Right should be used when building a website for rtl languages or aligning something in an element, like a button or navigation.</p>
+            </section>
+            <section id="HeadingElements">
+                <h2>Heading Elements</h2>
+                <p>Heading elements are used to define importance of text, with the <code>&lt;h1&gt;</code> being the most important heading on the page, and the <code>&lt;h6&gt;</code> is the least important.</p>
+                <p>Headings should be used to style text, as well as create an outline of the page. Each section of copy with equal importance should have a heading associated with it that defines its importance in the copy hierarchy.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="headingsExample">
+                            <h1>Sample H1 Tag</h1>
+                            <h2>Sample H2 Tag</h2>
+                            <h3>Sample H3 Tag</h3>
+                            <h4>Sample H4 Tag</h4>
+                            <h5>Sample H5 Tag</h5>
+                            <h6>Sample H6 Tag</h6>
+                        </div>
+                        <div role="tabpanel" id="headingsHTML">
+                            <pre><code code="hljs html">&lt;h1&gt;Sample H1 Tag&lt;/h1&gt;
+&lt;h2&gt;Sample H2 Tag&lt;/h2&gt;
+&lt;h3&gt;Sample H3 Tag&lt;/h3&gt;
+&lt;h4&gt;Sample H4 Tag&lt;/h4&gt;
+&lt;h5&gt;Sample H5 Tag&lt;/h5&gt;
+&lt;h6&gt;Sample H6 Tag&lt;/h6&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="headingsLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; HEADINGS &gt;&gt;&gt;===---*/
+h1, h2, h3, h4, h5, h6 {
+}
+h1 {
+}
+h2 {
+}
+h3 {
+}
+h4 {
+}
+h5 {
+}
+h6 {
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="headingsJS">
+                            <pre>
+                                <code></code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#headingsExample" role="tab">Example</a>
+                        <a href="#headingsHTML" role="tab">HTML</a>
+                        <a href="#headingsLESS" role="tab">LESS</a>
+                        <a href="#headingsJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Heading1">Heading 1 <code>&lt;h1&gt;</code></h3>
+                <p>The <code>&lt;h1&gt;</code> should only be used once on the page, this is the most important heading and is the title of the page. Before determining what copy should be in the <code>&lt;h1&gt;</code> check with SEO for their recommendation.  Depending on how the client structures their copy and the design of the site, the most important heading may reside in the page banner or as the first line of text.  In addition to this, you may also need muliple banners that allow for the <code>&lt;h1&gt;</code> to be located out of the page banner only on certain pages like News, Events, and Blog detail pages.</p>
+                <p>Since there should only be one of these on a page, use parent elements to target styling of the <code>h1</code> in CSS.  There should <strong><em>almost</em> never</strong> be a need for a class on an <code>h1</code> other than to set colors if the client has control to do so through options in the CMS.</p>
+                <h3 id="Heading2">Headings 2 <code>&lt;h2&gt;</code> - 4 <code>&lt;h4&gt;</code></h3>
+                <p><code>&lt;h2&gt;</code> through <code>&lt;h4&gt;</code> should be used primarily in the body copy to separate sections of copy.  These can appear multiple times on the page and provide both structure and SEO value to body copy.</p>
+                <h3 id="Heading5">Headings 5 <code>&lt;h5&gt;</code> &amp; 6 <code>&lt;h6&gt;</code></h3>
+                <p><code>&lt;h5&gt;</code> and <code>&lt;h6&gt;</code> tags can be used for styling content as they have little impact with SEO value.  These are commonly used in <code>asides</code>, <code>navs</code>, and <code>footer</code> elements to provide styling capabilities without the use of classnames.</p>
+            </section>
+            <section id="BlockElements">
+                <h2>Block Elements</h2>
+                <p>Block elements are elements that are <code>display: block;</code> by default in CSS, and unless you set properties on them will create new lines of copy.</p>
+                <h3 id="Paragraph">Paragraph</h3>
+                <p>This one's obvious, so not really going to go into any real detail. If you don't know what a paragraph is <a href="http://lmgtfy.com/?q=paragraph" target="_blank">click here</a>.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="paragraphsExample">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae dolorem quisquam voluptatum quas necessitatibus quo culpa ipsum consequuntur recusandae? Culpa, tempora, qui ex deleniti voluptatum suscipit sit rem quia ipsum ut eveniet nesciunt sequi aperiam eum voluptas iusto hic nostrum commodi esse tempore id eos exercitationem cum assumenda consectetur iste reprehenderit modi fugit corporis. Natus, et illum adipisci aliquam quos voluptatem fugiat. Accusamus, blanditiis, asperiores dolor beatae ipsum quia aliquam nobis. Commodi, consequatur aliquam tempore atque quae placeat expedita saepe illum totam asperiores perferendis temporibus architecto ipsam corporis repellat sunt labore incidunt praesentium id cum reprehenderit eius eum quam deleniti minima beatae error amet quos cupiditate enim! Porro, laboriosam, qui sunt ipsam ipsa quibusdam nobis amet minima temporibus tempora totam iusto cum nihil nesciunt accusantium aliquam molestias odit eligendi dolorem cupiditate! Cum, in reiciendis nam atque commodi praesentium quos velit. Unde, explicabo, dicta ab delectus corporis vitae amet! Similique, dolorum, aliquid velit suscipit deserunt quo debitis doloremque impedit minus eligendi aut beatae officiis cum. Dolore, quis unde molestias quisquam quibusdam aliquid qui saepe magnam!</p>
+                            <p>Magni, dolores, obcaecati, nobis, alias ullam rerum atque natus similique expedita explicabo recusandae provident dolore vitae cum quidem nihil error aliquam eligendi et numquam! Placeat, in, cum, vero sint debitis quo pariatur nihil asperiores possimus ipsam expedita delectus velit illo repellat cumque explicabo omnis voluptatibus quas provident maiores nulla inventore soluta! Omnis, impedit, debitis, nobis animi obcaecati nulla neque minus magnam ipsam quibusdam fugit consectetur eos tempore nemo blanditiis dicta esse eum iusto aperiam id exercitationem praesentium dolorum enim architecto tempora accusamus quia totam temporibus commodi deserunt odit libero molestias vero reprehenderit provident voluptas iste cum recusandae fuga sint officia quae odio quos reiciendis laudantium corporis nesciunt aut quidem ipsum optio. Quae, veritatis molestiae temporibus commodi ducimus reiciendis eius voluptatibus et. Natus, quam pariatur unde molestiae ipsam atque eligendi velit amet! Libero, ullam, laudantium, quis maxime ipsam quae voluptatibus magnam sed delectus doloribus nisi maiores. Veritatis, officiis, quia, animi nobis cum tenetur unde sapiente necessitatibus aut placeat architecto deserunt veniam et facere minima sint ipsam tempora distinctio quo nostrum soluta fugit obcaecati exercitationem non modi.</p>
+                        </div>
+                        <div role="tabpanel" id="paragraphsHTML">
+                            <pre><code code="hljs html"><p>...</p>
+<p>...</p></code></pre>
+                        </div>
+                        <div role="tabpanel" id="paragraphsLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; BLOCK ELEMENTS &gt;&gt;&gt;===---*/
+p, blockquote, figure, div, li {
+    /*---=== FONT INFORMATION AND LINE HEIGHTS THAT APPLY TO ALL THESE ELEMENTS ===---*/
+}
+p {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO PARAGRAPHS ===---*/
+}
+blockquote {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO PARAGRAPHS ===---*/
+}
+figure {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO FIGURES ===---*/
+    figcaption {
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="paragraphsJS">
+                            <pre>
+                                <code></code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#paragraphsExample" role="tab">Example</a>
+                        <a href="#paragraphsHTML" role="tab">HTML</a>
+                        <a href="#paragraphsLESS" role="tab">LESS</a>
+                        <a href="#paragraphsJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Blockquote">Blockquote</h3>
+                <p>The <code>blockquote</code> is used to show quoted text, and while it's commonly used for client/customer testimonials, it should also be styled out for use within text to show a quote from source.</p>
+                <p>You can use the <code>cite</code> attribute to provide context in conjunction with the <code>blockquote</code>. If your attribution line is simple enough, the attribute could be used for content in the <code>:after</code> to add the attribution line to your <code>blockquote</code>.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="blockquoteExample">
+                            <blockquote class="with-citation" cite="James Earl Jones - Field of Dreams">The one constant through all the years has been baseball America has rolled by like an army of steamrollers. It's been erassed like a blackboard rebuilt and erased again. But baseball has marked the time. This field. This game. Is a part of our past. It reminds us of all that once was good and that could be again.</blockquote>
+                            <blockquote cite="Babe Ruth - The Sandlot">
+                                <p>Let me tell you something kid; everybody gets one chance to do something great. Most people never take the chance, either because they're scared or they don't recognize it when it spits on their shoes. Remember kid, there's hero's and there's legends. Hero's get remembered, but legends never die.  Follow your heart kid, and you'll never go wrong.</p>
+                                <strong>Babe Ruth - <em>The Sandlot</em></strong>
+                            </blockquote>
+                        </div>
+                        <div role="tabpanel" id="blockquoteHTML">
+                            <pre><code code="hljs html">&lt;!-- For our purposes I added a class to the blockquote to style the two differently --&gt;
+&lt;blockquote class="with-citation" cite="James Earl Jones - Field of Dreams"&gt;The one constant through all the years has been baseball, America has rolled by like an army of steamrollers. It's been erassed like a blackboard rebuilt and erased again. But baseball has marked the time. This field this game, is a part of our past. It reminds us of all that once was good and that could be again.&lt;/blockquote&gt;
+&lt;blockquote cite="Babe Ruth - The Sandlot"&gt;
+    &lt;p&gt;Let me tell you something kid; everybody gets one chance to do something great. Most people never take teh chance, either because they're scared or the don't recognize it when it spits on their shoes. Remember kid, there's hero's and there's legends. Hero's get remembered, but legends never die.  Follow your heart kid, and you'll never go wrong.&lt;/p&gt;
+    &lt;strong&gt;Babe Ruth - &lt;em&gt;The Sandlot&lt;/em&gt;&lt;/strong&gt;
+&lt;/blockquote&gt;</code></pre>
+                        </div>
+                        <div role="tabpanel" id="blockquoteLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; BLOCK ELEMENTS &gt;&gt;&gt;===---*/
+p, blockquote, figure, div, li {
+    /*---=== FONT INFORMATION AND LINE HEIGHTS THAT APPLY TO ALL THESE ELEMENTS ===---*/
+}
+p {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO blockquote ===---*/
+}
+blockquote {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO blockquote ===---*/
+    /*--- IF CITATION CAN GO IN THE CITE ---*/
+    &:after {
+        content: attr(cite);
+    }
+    /*--- IF CITATION CAN'T GO IN THE CITE ---*/
+    &gt; strong {
+        display: block;
+        .ta-right;
+    }
+    
+}
+figure {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO FIGURES ===---*/
+    figcaption {
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="blockquoteJS">
+                            <pre>
+                                <code></code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#blockquoteExample" role="tab">Example</a>
+                        <a href="#blockquoteHTML" role="tab">HTML</a>
+                        <a href="#blockquoteLESS" role="tab">LESS</a>
+                        <a href="#blockquoteJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Figure">Figure</h3>
+                <p>One of the new HTML5 tags, <code>figure</code>, allows you to add context to information that is supplemental to the content.</p>
+                <p>This tag has two parts, the <code>figure</code> where an image, video, audio, or table can be inserted, and a <code>figcaption</code> to add a caption underneath the figure.</p>
+                <p>These can be used to style and call out various pieces of supplemental information.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="figureExample">
+                            <figure class="video">
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VJDJs9dumZI" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <figcaption>Beatles - While My Guitar Gently Weeps Video</figcaption>
+                            </figure>
+                            <p>I look at you all see the love there that's sleeping<br>
+                                While my guitar gently weeps<br>
+                                I look at the floor and I see it needs sweeping<br>
+                                Still my guitar gently weeps</p>
+                            <p>I don't know why nobody told you<br>
+                                How to unfold your love<br>
+                                I don't know how someone controlled you<br>
+                                They bought and sold you</p>
+                            <p>I look at the world and I notice it's turning<br>
+                                While my guitar gently weeps<br>
+                                With every mistake we must surely be learning<br>
+                                Still my guitar gently weeps</p>
+                            <p>Well...</p>
+                            <p>I don't know how you were diverted<br>
+                                You were perverted too<br>
+                                I don't know how you were inverted<br>
+                                No one alerted you</p>
+                            <p>I look at you all see the love there that's sleeping<br>
+                                While my guitar gently weeps<br>
+                                Look at you all<br>
+                                Still my guitar gently weeps</p>
+                            <p>Oh, oh<br>
+                                Oh, oh, oh, oh, oh, oh, oh<br>
+                                Oh, oh, oh, oh</p>
+                            <p>Yeah, yeah, yeah, yeah, yeah<br>
+                                Yeah, yeah, yeah, yeah, oh, ooh</p>
+                        </div>
+                        <div role="tabpanel" id="figureHTML">
+                            <pre><code code="hljs html"></code></pre>
+                        </div>
+                        <div role="tabpanel" id="figureLESS">
+                            <pre><code class="hljs css">/*---===&lt;&lt;&lt; BLOCK ELEMENTS &gt;&gt;&gt;===---*/
+p, blockquote, figure, div, li {
+    /*---=== FONT INFORMATION AND LINE HEIGHTS THAT APPLY TO ALL THESE ELEMENTS ===---*/
+}
+p {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO blockquote ===---*/
+}
+blockquote {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO blockquote ===---*/
+    /*--- IF CITATION CAN GO IN THE CITE ---*/
+    &:after {
+        content: attr(cite);
+    }
+    /*--- IF CITATION CAN'T GO IN THE CITE ---*/
+    &gt; strong {
+        display: block;
+        .ta-right;
+    }
+    
+}
+figure {
+    /*---=== STYLING THAT ONLY SHOULD APPLY TO FIGURES ===---*/
+    figcaption {
+    }
+}</code></pre>
+                        </div>
+                        <div role="tabpanel" id="figureJS">
+                            <pre>
+                                <code></code>
+                            </pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#figureExample" role="tab">Example</a>
+                        <a href="#figureHTML" role="tab">HTML</a>
+                        <a href="#figureLESS" role="tab">LESS</a>
+                        <a href="#figureJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+                <h3 id="Div">Div</h3>
+                <p><code>Div</code>s should be used for any element that doesn't fall into the above contexts.</p>
+                <p>Adding classes to divs becomes a necessity if they are used multiple times in the same element.</p>
+                <h3 id="LineBreak">Line Break</h3>
+                <p><code>&lt;br /&gt;</code> can be used to insert a new line of text without causing additional spacing from margins and padding.</p>
+                <p>They should not be used to apply two line breaks to create a space for a paragraph of text, for that should be accomplished using a closing and new <code>p</code> tag.</p>
+                <h3 id="HorizontalRule">Horizontal Rule</h3>
+                <p>The <code>hr</code> tag can be used to create lines separating blocks of copy.</p>
+            </section>
+            <section id="ListElements">
+                <h2>List Elements</h2>
+                <p>While lists are block elements, they have additional elements, so we separated them from normal block related content elements.</p>
+                <h3 id="UnorderedList">Unordered List</h3>
+                <p>The <code>&lt;ul&gt;</code> element should be used to create lists where the order doesn't matter to the context of the list. Each item is either of similar importance or doesn't involve the previous item to be read first.</p>
+                <p>The <code>&lt;ul&gt;</code> element wraps its child elements using <code>&lt;li&gt;</code> tags.</p>
+                <h3 id="OrderedList">Ordered List</h3>
+                <p>The <code>&lt;ol&gt;</code> element should be used to create lists where the order does matter to the context of the list. The order of each child element is important to the context of the list.</p>
+                <p>The <code>&lt;ol&gt;</code> element wraps its child elements using <code>&lt;li&gt;</code> tags.</p>
+                <h3 id="DefinitionList">Definition List</h3>
+                <p>The <code>&lt;dl&gt;</code> element should be used to create lists where a definition is being given.</p>
+                <p>The <code>&lt;dl&gt;</code> element wraps its child elements using <code>&lt;dt&gt;</code> for the term and <code>&lt;dd&gt;</code> for the definitions. Multiple definitions can be given to a single term.  Both the <code>dt</code> and <code>dd</code> are direct children of the wrapping <code>dl</code> tag.</p>
+            </section>
+            <section id="InlineElements">
+                <h2>Inline Elements</h2>
+                <p>Inline elements are used mainly to style and provide context to content.</p>
+                <h3 id="Anchors">Anchors</h3>
+                <p>Anchors <code>&lt;a&gt;</code> are used to create hyperlinks either to external pages or internal id's.</p>
+                <p>When linking to an external website, or any site other than the domain of the website you are building, you should set the browser to open a new tab or window by using the <code>target="_blank"</code> attribute.</p>
+                <h3 id="Bold">Bold</h3>
+                <p>To <strong>bold</strong> text within a block element, apply the <code>&lt;strong&gt;</code> tag to the text.</p>
+                <p>Even though the <code>&lt;b&gt;</code> tag will do the same thing, it is deprecated from the HTML spec and should not be used anymore.</p>
+                <h3 id="Italics">Italics</h3>
+                <p>To <em>italicize</em> text within a block element, apply the <code>&lt;em&gt;</code> tag to the text.</p>
+                <p>Even though the <code>&lt;i&gt;</code> tag will do the same thing, it is deprecated from the HTML spec and should not be used anymore.</p>
+                <h3 id="Underline">Underline</h3>
+                <p>To <u>underline</u> text within a block element, apply the <code>&lt;u&gt;</code> tag to the text.</p>
+                <p>Be careful when using the underline tag as it could cause confusion. A lot of websites use an underline to signify clickable text on a page.</p>
+                <h3 id="Small">Small</h3>
+                <p>To make <small>smaller</small> text within a block element, apply the <code>&lt;small&gt;</code> tag to the text.</p>
+                <p>This tag can be helpful in a Hero to supply a second line of text, while keeping it relative to the parent element.</p>
+                <h3 id="Address">Address</h3>
+                <p>Wrap addresses in the <code>&lt;address&gt;</code> tag to supply context to the element and to signify to the browser or SEO crawler that this is an address.</p>
+                <p>The tag can also be helpful to style addresses differently than the rest of the content.</p>
+                <h3 id="Span">Span</h3>
+                <p>When you need to do something else that's not listed above, use a <code>&lt;span&gt;</code> tag to wrap your element and apply a class to it.</p>
+            </section>
+            <section id="MediaElements">
+                <h2>Media Elements</h2>
+                <p>Media elements are used to provide visual or audio information such as images, videos, or audio clips.</p>
+                <h3 id="Images">Images</h3>
+                <p>Images should be added either standalone as an <code>&lt;img /&gt;</code> tag or wrapped within a figure tag. If the image you are adding has a caption use the figure tag to wrap it and make it easier. If this is not the case, and it's just an image add the <code>&lt;img /&gt;</code> tag directly where needed.</p>
+                <p>Adding classes for your different types of figures may be helpful, just keep them contextual to their meaning, if you need figures for videos, images, and tables, then use one of those as your class name to properly style each look out.</p>
+                <p>Properly set <code>alt</code> attribute for <strong>ALL</strong> images, and if the image is completely meaningless then the <code>alt</code> attribute should be left blank. Otherwise it should be meaningful text to help visually impaired users to understand what the image is. If there is text in the image, the <code>alt</code> attribute should match the text.</p>
+                <h3 id="Video">Video</h3>
+                <p>Using HTML 5 Video tags can be helpful when you want to add a video to your website.  These require the use of two certain types of video files <code>mp4</code>, and <code>ogg/ogv</code>.</p>
+                <p>The default player doesn't come with any buttons, so you'll have to create your own player tools <em>(will possibly build out a tool for us to use if the need arises)</em>.  With that being said, it's much easier to use a third party video service. Most commonly we suggest <a href="http://youtube.com" target="_blank">YouTube</a> or <a href="http://vimeo.com" target="_blank">Vimeo</a>.</p>
+                <p>Generally, we should wrap our videos in a wrapping element that has <code>position: relative; padding-top: 56.25%;</code>. Then on either the <code>iframe</code> from a third party video source or <code>video</code> if we are hosting, gets <code>position: absolute; left: 0; top: 0; width: 100%; height: 100%;</code> to make the video responsive.</p>
+                <p>Use <code>data-aspectratio</code> to set the size in CSS of your video wrapping element.</p>
+                <figure class="tabs">
+                    <div>
+                        <div class="active" role="tabpanel" id="videoExample">
+                            <figure class="video" data-aspectratio="16:9">
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VJDJs9dumZI" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <figcaption>16:9 aspect ratio responsive video</figcaption>
+                            </figure>
+                            <figure class="video" data-aspectratio="4:3">
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VJDJs9dumZI" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <figcaption>4:3 aspect ratio responsive video</figcaption>
+                            </figure>
+                        </div>
+                        <div role="tabpanel" id="videoHTML">
+                            <pre><code code="hljs html"></code></pre>
+                        </div>
+                        <div role="tabpanel" id="videoLESS">
+                            <pre><code class="hljs css"></code></pre>
+                        </div>
+                        <div role="tabpanel" id="videoJS">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                    <figcaption role="tablist">
+                        <a class="active" href="#videoExample" role="tab">Example</a>
+                        <a href="#videoHTML" role="tab">HTML</a>
+                        <a href="#videoLESS" role="tab">LESS</a>
+                        <a href="#videoJS" role="tab" disabled>JavaScript</a>
+                    </figcaption>
+                </figure>
+            </section>
+        </article>
+    </section>
+    <nav id="developer">
+        <button></button>
+        <div>
+        	<h2>I want to...</h2>
+            <ul>
+            	<li><a href="/standards-guide/developer/coding-standards.html#!watch">View Coding Standards</a></li>
+            	<li><a href="/standards-guide/developer/suggested-tools.html#!watch">View Suggested Tools</a></li>
+            	<li><a href="/standards-guide/developer/online-resources.html#!watch">View Online Resources</a></li>
+            	<li><a href="/standards-guide/developer/boiler-plate.html#!watch">Download a Boiler Plate</a></li>
+            </ul>
+            <h2>I want to build...</h2>
+            <ul>
+                <li><a href="/standards-guide/developer/layouts.html#!watch">Layouts</a></li>
+                <li><a href="/standards-guide/developer/grid.html#!watch">Grid</a></li>
+                <li><a href="/standards-guide/developer/headers.html#!watch">Headers</a></li>
+                <li><a href="/standards-guide/developer/footers.html#!watch">Footers</a></li>
+                <li><a href="/standards-guide/developer/heroes.html#!watch">Heroes</a></li>
+                <li><a href="/standards-guide/developer/navs.html#!watch">Navs</a></li>
+                <li><a href="/standards-guide/developer/tabs.html#!watch">Tabs</a></li>
+                <li><a href="/standards-guide/developer/carousels.html#!watch">Carousels</a></li>
+                <li><a href="/standards-guide/developer/modals.html#!watch">Modal Windows</a></li>
+                <li><a href="/standards-guide/developer/accordions.html#!watch">Accordions</a></li>
+                <li><a href="/standards-guide/developer/tooltips.html#!watch">Tooltips</a></li>
+                <li><a href="/standards-guide/developer/content.html#!watch">Content</a></li>
+                <li><a href="/standards-guide/developer/forms.html#!watch">Forms</a></li>
+                <li><a href="/standards-guide/developer/tables.html#!watch">Tables</a></li>
+                <li><a href="/standards-guide/developer/buttons.html#!watch">Buttons</a></li>
+            </ul>
+        </div>
+    </nav>
+</main>
+<script type="text/javascript" src="/standards-guide/sg-resources/js/base.js"></script>
+</body>
+</html>
