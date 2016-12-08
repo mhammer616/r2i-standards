@@ -19,8 +19,8 @@ $(document).ready(function() {
             var $this = $(this),
                 id = $this.attr('href'),
                 $id = $(id);
-            $this.closest('.tabs').find('[role="tabpanel"].active').removeClass('active');
-            $this.closest('.tabs').find('[role="tab"].active').removeClass('active');
+            $this.closest('.tabs-code').find('[role="tabpanel"].active').removeClass('active');
+            $this.closest('.tabs-code').find('[role="tab"].active').removeClass('active');
             $id.addClass('active');
             $this.addClass('active');
         }

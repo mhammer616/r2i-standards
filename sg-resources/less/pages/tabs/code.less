@@ -1,26 +1,30 @@
 /*---===<<< FIGURES >>>===---*/
-
+.tabs-code {
     border: 1px solid #333;
     background: #333;
+    margin: 0 0 3rem;
 
     > div {
         padding: 5px;
-    }
+        border: none;
         
-    div[role="tabpanel"] {
-        display: none;
-        
-        &.active {
-            display: block;
+        > div[role="tabpanel"] {
+            display: none;
+            padding: 0;
+
+            &.active {
+                display: block;
+            }
+
+            &:first-child {
+                background: @white;
+                padding: 25px;
+            }
+
+
         }
-        
-        &:first-child {
-            background: @white;
-            padding: 25px;
-        }
-        
-        
     }
+    
     
     figcaption {
         .clearfix;
@@ -54,3 +58,4 @@
         font-size: 1.4rem;
         color: @white;
     }
+}

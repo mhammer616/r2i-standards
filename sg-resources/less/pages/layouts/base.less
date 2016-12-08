@@ -1,7 +1,3 @@
-/*---===<<< LOAD BASE FILES >>>===---*/
-@import url(../../base/variables.less);
-@import url(../../base/mixins.less);
-@import url(../../base/resets.less);
 /*---=== LAYOUTS ===---*/
 .layout {
     code {
@@ -23,15 +19,15 @@
     > header {
         height: 75px;
         position: relative;
-        background: fade(@grey, 25);
-        border: .2rem solid darken(@grey, 75);
+        background: fade(@grey, .25);
+        border: .2rem solid darken(@grey, .75);
     }
     > footer {
         .clear;
         height: 150px;
         position: relative;
-        background: fade(@grey, 15);
-        border: .2rem solid darken(@grey, 75);
+        background: fade(@grey, .15);
+        border: .2rem solid darken(@grey, .75);
         border-top: none;
     }
     > main {
@@ -39,7 +35,7 @@
         position: relative;
         min-height: 300px;
         padding: 0 1rem;
-        border: .2rem solid darken(@grey, 75);
+        border: .2rem solid darken(@grey, .75);
         border-top: none;
         
         > nav, > article, > aside, > footer, > section {
@@ -63,20 +59,20 @@
             height: 250px;
         }
         > nav {
-            background: fade(@grey, 25);
+            background: fade(@grey, .25);
         }
 
         > article {
-            background: fade(@grey, 50);
+            background: fade(@grey, .50);
         }
 
         > aside {
-            background: fade(@grey, 66.667);
+            background: fade(@grey, .66667);
         }
         > header {
             clear: both;
             height: 100px;
-            background: fade(@grey, 40);
+            background: fade(@grey, .40);
             position: relative;
             padding: 0;
             margin: 0;
@@ -84,7 +80,7 @@
         > footer {
             clear: both;
             height: 100px;
-            background: fade(@grey, 40);
+            background: fade(@grey, .40);
             > code {
                 position: relative;
                 top: 0;
@@ -99,13 +95,13 @@
                 margin: 0;
                 
                 &:nth-child(2) {
-                    background: fade(@grey, 30);
+                    background: fade(@grey, .30);
                 }
                 &:nth-child(3) {
-                    background: fade(@grey, 45);
+                    background: fade(@grey, .45);
                 }
                 &:nth-child(4) {
-                    background: fade(@grey, 60);
+                    background: fade(@grey, .60);
                 }
             }
         }

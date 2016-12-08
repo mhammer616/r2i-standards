@@ -7,7 +7,6 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
 <link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet" type="text/css" />
-<link href="/standards-guide/sg-resources/less/pages/content/base.less" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
 <script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
@@ -144,7 +143,7 @@
                 <h2>Heading Elements</h2>
                 <p>Heading elements are used to define importance of text, with the <code>&lt;h1&gt;</code> being the most important heading on the page, and the <code>&lt;h6&gt;</code> is the least important.</p>
                 <p>Headings should be used to style text, as well as create an outline of the page. Each section of copy with equal importance should have a heading associated with it that defines its importance in the copy hierarchy.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="headingsExample">
                             <h1>Sample H1 Tag</h1>
@@ -205,7 +204,7 @@ h6 {
                 <p>Block elements are elements that are <code>display: block;</code> by default in CSS, and unless you set properties on them will create new lines of copy.</p>
                 <h3 id="Paragraph">Paragraph</h3>
                 <p>This one's obvious, so not really going to go into any real detail. If you don't know what a paragraph is <a href="http://lmgtfy.com/?q=paragraph" target="_blank">click here</a>.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="paragraphsExample">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quae dolorem quisquam voluptatum quas necessitatibus quo culpa ipsum consequuntur recusandae? Culpa, tempora, qui ex deleniti voluptatum suscipit sit rem quia ipsum ut eveniet nesciunt sequi aperiam eum voluptas iusto hic nostrum commodi esse tempore id eos exercitationem cum assumenda consectetur iste reprehenderit modi fugit corporis. Natus, et illum adipisci aliquam quos voluptatem fugiat. Accusamus, blanditiis, asperiores dolor beatae ipsum quia aliquam nobis. Commodi, consequatur aliquam tempore atque quae placeat expedita saepe illum totam asperiores perferendis temporibus architecto ipsam corporis repellat sunt labore incidunt praesentium id cum reprehenderit eius eum quam deleniti minima beatae error amet quos cupiditate enim! Porro, laboriosam, qui sunt ipsam ipsa quibusdam nobis amet minima temporibus tempora totam iusto cum nihil nesciunt accusantium aliquam molestias odit eligendi dolorem cupiditate! Cum, in reiciendis nam atque commodi praesentium quos velit. Unde, explicabo, dicta ab delectus corporis vitae amet! Similique, dolorum, aliquid velit suscipit deserunt quo debitis doloremque impedit minus eligendi aut beatae officiis cum. Dolore, quis unde molestias quisquam quibusdam aliquid qui saepe magnam!</p>
@@ -248,7 +247,7 @@ figure {
                 <h3 id="Blockquote">Blockquote</h3>
                 <p>The <code>blockquote</code> is used to show quoted text, and while it's commonly used for client/customer testimonials, it should also be styled out for use within text to show a quote from source.</p>
                 <p>You can use the <code>cite</code> attribute to provide context in conjunction with the <code>blockquote</code>. If your attribution line is simple enough, the attribute could be used for content in the <code>:after</code> to add the attribution line to your <code>blockquote</code>.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="blockquoteExample">
                             <blockquote class="with-citation" cite="James Earl Jones - Field of Dreams">The one constant through all the years has been baseball America has rolled by like an army of steamrollers. It's been erassed like a blackboard rebuilt and erased again. But baseball has marked the time. This field. This game. Is a part of our past. It reminds us of all that once was good and that could be again.</blockquote>
@@ -309,7 +308,7 @@ figure {
                 <p>One of the new HTML5 tags, <code>figure</code>, allows you to add context to information that is supplemental to the content.</p>
                 <p>This tag has two parts, the <code>figure</code> where an image, video, audio, or table can be inserted, and a <code>figcaption</code> to add a caption underneath the figure.</p>
                 <p>These can be used to style and call out various pieces of supplemental information.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="figureExample">
                             <figure class="video">
@@ -446,7 +445,7 @@ figure {
                 <p>The default player doesn't come with any buttons, so you'll have to create your own player tools <em>(will possibly build out a tool for us to use if the need arises)</em>.  With that being said, it's much easier to use a third party video service. Most commonly we suggest <a href="http://youtube.com" target="_blank">YouTube</a> or <a href="http://vimeo.com" target="_blank">Vimeo</a>.</p>
                 <p>Generally, we should wrap our videos in a wrapping element that has <code>position: relative; padding-top: 56.25%;</code>. Then on either the <code>iframe</code> from a third party video source or <code>video</code> if we are hosting, gets <code>position: absolute; left: 0; top: 0; width: 100%; height: 100%;</code> to make the video responsive.</p>
                 <p>Use <code>data-aspectratio</code> to set the size in CSS of your video wrapping element.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="videoExample">
                             <figure class="video" data-aspectratio="16:9">

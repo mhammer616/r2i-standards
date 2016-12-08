@@ -1,7 +1,3 @@
-/*---===<<< LOAD BASE FILES >>>===---*/
-@import url(../../base/variables.less);
-@import url(../../base/mixins.less);
-@import url(../../base/resets.less);
 /*---===<<< GRID >>>===---*/
 .grid-example {
     padding: 25px;
@@ -12,7 +8,7 @@
     [class*="col-"] {
         height: 50px;
         position: relative;
-        background: fade(@teal, 25);
+        background: fade(@teal, .25);
         border: 1px solid @teal;
         
         &:before {
@@ -23,8 +19,8 @@
             width: ~"calc(100% - (@{gutter} * 2))";
             content: '';
             display: block;
-            border-left: @gutter solid fade(@red, 50); 
-            border-right: @gutter solid fade(@red, 50); 
+            border-left: @gutter solid fade(@red, .50); 
+            border-right: @gutter solid fade(@red, .50); 
         }
         
         &:after {

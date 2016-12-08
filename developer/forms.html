@@ -7,7 +7,6 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="/standards-guide/sg-resources/js/bootstrap.min.js"></script>
 <link href="/standards-guide/sg-resources/less/base/base.less" rel="stylesheet" type="text/css" />
-<link href="/standards-guide/sg-resources/less/pages/forms/base.less" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" type="text/css" href="/standards-guide/sg-resources/less/highlight/atelier-cave-dark.css">
 <script src="/standards-guide/sg-resources/js/highlight.pack.js"></script>
@@ -90,7 +89,7 @@
                 <h3 id="TextInputs">Text Inputs</h3>
                 <p>Basic text inputs can be styled very simply by using CSS to manipulate the look and feel, we can easily control the following types: <code>text</code>, <code>password</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, and <code>tel</code>.</p>
                 <p>By using the proper type for the input, accessibility is increased by changing the keyboards on mobile and tablet devices, along with allowing basic validation of the elements to be performed.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="inputsExample">
                             <form id="inputs">
@@ -244,7 +243,7 @@ form {
                 <p>The <a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">Bootstrap Datepicker by eternicode</a> is the plugin we have chosen to be our standard use. The styling of the datepicker gives the desired flexibility and usability.</p>
                 <p>There is even an <a href="https://eternicode.github.io/bootstrap-datepicker/?markup=input&amp;format=&amp;weekStart=&amp;startDate=&amp;endDate=&amp;startView=0&amp;minViewMode=0&amp;maxViewMode=4&amp;todayBtn=false&amp;clearBtn=false&amp;language=en&amp;orientation=auto&amp;multidate=&amp;multidateSeparator=&amp;keyboardNavigation=on&amp;forceParse=on#sandbox" target="_blank">online sandbox</a> that will write out the code needed to supply the desired end result. Use this to define what options are necessary to create the Datepicker you want to show on the website.</p>
                 <p>Download the latest version of the plugin on <a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">GitHub</a>, or use the version we are using <a href="downloads/bootstrap-datepicker-1.6.1-dist.zip">here</a>.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="dateInputsExample">
                             <form id="dateInputs">
@@ -479,7 +478,7 @@ form {
                 </figure>
                 <h3 id="Checkboxes">Checkboxes</h3>
                 <p>It's common in our designs that checkboxes are styled. This can be a relatively easy process if the code is setup and written properly. It does, however, require the use of a different method than the standard approach to setting up checkboxes inputs, but, this approach will require no JavaScript, and will allow the checkboxes to function properly.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="checkboxesExample">
                             <form>
@@ -570,7 +569,7 @@ input[type="radio"] {
                 </figure>
                 <h3 id="RadioButtons">Radio Buttons</h3>
                 <p>It's common in our designs that radio buttons are styled. This can be a relatively easy process if the code is setup and written properly. It does, however, require the use of a different method than the standard approach to setting up radio buttons, but, this approach will require no JavaScript, and will allow the radio buttons to function properly.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="radioExample">
                             <form>
@@ -662,7 +661,7 @@ input[type="radio"] {
                 <h3 id="Buttons">Buttons</h3>
                 <p>There are two different ways to write buttons for forms, one with the <code>input</code> tag and using <code>type</code> to assign one of three options <code>submit</code>, <code>reset</code>, or <code>button</code>, or, using the <code>button</code> tag and setting one of the same three options.  It all depends on your styling need and whether you need to have additional code inside the button to add <code>:before</code> or <code>:after</code> attributes or icons. If you do have to use additional code, then the <code>button</code> tag is appropriate since it has a closing tag, where if you don't need any additional markup then you can use the <code>input</code> tag.</p>
                 <p>See the <a href="buttons.html">buttons</a> page for more information on buttons.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="buttonsExample">
                             <form>
@@ -714,7 +713,7 @@ input[type="radio"] {
                 </figure>
                 <p>If you still want to use selects or dropdowns use Chosen by HarvestHQ for all selects to make styling easier. The capabilities this tool gives us are worth doing the custom implementation for, even if you just want to use it with basic styles. The other added benefit is that it will look just like the traditional select on mobile devices, still giving us the default functionality people expect when on the go.</p>
                 <p>Download the latest version of the plugin on <a href="https://github.com/harvesthq/chosen" target="_blank">GitHub</a>, or use the version we are using <a href="downloads/chosen_v1.6.2.zip">here</a>.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="selectsExample">
                             <form>
@@ -2232,7 +2231,7 @@ input[type="radio"] {
             <section id="Textareas">
                 <h2>Textareas</h2>
                 <p>Commonly used for comments, concerns, or a freeform box, textareas are used to show multiple lines for a response.</p>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="textareasExample">
                             <form>
@@ -2273,7 +2272,7 @@ textarea {
             <section id="Examples">
                 <h2>Examples</h2>
                 <h3 id="TraditionalForm">Traditional Form</h3>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="traditionalExample">
                             <form class="traditional">
@@ -2553,7 +2552,7 @@ fieldset {
                     </figcaption>
                 </figure>
                 <h3 id="InlineForm">Inline Form</h3>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="inlineExample">
                             <form class="inline">
@@ -2610,7 +2609,7 @@ fieldset {
                     </figcaption>
                 </figure>
                 <h3 id="VerticalForm">Vertical Form</h3>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="verticalExample">
                             <form class="vertical">
@@ -2829,7 +2828,7 @@ fieldset {
                     </figcaption>
                 </figure>
                 <!--h3 id="PlaceholderForm">Placeholder Form</h3>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="placeholderExample"></div>
                         <div role="tabpanel" id="placeholderHTML">
@@ -2852,7 +2851,7 @@ fieldset {
                     </figcaption>
                 </figure-->
                 <h3 id="MadLibForm">MadLib Form</h3>
-                <figure class="tabs">
+                <figure class="tabs-code">
                     <div>
                         <div class="active" role="tabpanel" id="madLibExample"><form class="mad-lib">
                             <p>Picture yourself in a <input type="text" placeholder="noun" /> on a river,<br />

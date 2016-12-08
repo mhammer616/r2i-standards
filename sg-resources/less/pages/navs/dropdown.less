@@ -1,41 +1,47 @@
-> nav {
-    > ul {
-        @media @mediaMD {
-            > li {
-                position: relative;
-                
-                > a {}
-                
+.main-nav-base {
+    header {
+        > div {
+            > nav {
                 > ul {
-                    display: none;
-                    position: absolute;
-                    left: 50%;
-                    top: 100%;
-                    .translate(-50%, 0);
-                    background: @grey;
-                    list-style: none;
-                    margin: 0;
-                    padding: 1rem;
-                    
-                    li {
-                        + li {
-                            margin: .5em 0 0;
-                            padding: .5em 0 0;
-                            border-top: 1px solid @white;
+                    @media @mediaMD {
+                        > li {
+                            position: relative;
+
+                            > a {}
+
+                            > ul {
+                                display: none;
+                                position: absolute;
+                                left: 50%;
+                                top: 100%;
+                                .translate(-50%, 0);
+                                background: @grey;
+                                list-style: none;
+                                margin: 0;
+                                padding: 1rem;
+
+                                li {
+                                    + li {
+                                        margin: .5em 0 0;
+                                        padding: .5em 0 0;
+                                        border-top: 1px solid @white;
+                                    }
+                                }
+
+                                a {
+                                    display: block;
+                                    width: 12.5rem;
+                                    height: 1em;
+                                    background: fade(@white, .50);
+                                }
+                            }
+
+                            &:hover {
+                                ul {
+                                    display: block;
+                                }
+                            }
                         }
-                    }
-                    
-                    a {
-                        display: block;
-                        width: 12.5rem;
-                        height: 1em;
-                        background: fade(@white, 50);
-                    }
-                }
-                
-                &:hover {
-                    ul {
-                        display: block;
                     }
                 }
             }

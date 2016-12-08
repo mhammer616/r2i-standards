@@ -1,50 +1,53 @@
 /*---===<<< HORIZONTAL TABS >>>===---*/
-.vertical-tabs {
-    padding: 0 0 0 40%;
-    background: @grey;
-    position: relative;
-    
-    > ul[role="tablist"] {
-        .clearfix;
-        position: absolute;
-        left: 5%;
-        top: 5%;
-        width: 30%;
-        z-index: 10;
-        
-        > li {
-            list-style: none;
-            
-            a {
-                padding: 1rem;
-                border: 1px solid @grey;
-                background: @grey;
-                color: @white;
-                .td-none;
-                border-radius: 5px;
-                font-size: 1.4rem;
-                display: block;
-            }
-            
-            &.active {
+.tabs-vertical {
+    @media @mediaSM {
+        padding: 0 0 0 40%;
+        background: @grey;
+        position: relative;
+
+        > ul[role="tablist"] {
+            .clearfix;
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            width: 30%;
+            z-index: 10;
+
+            > li {
+                list-style: none;
+                float: none;
+
                 a {
-                    background: @white;
-                    color: @grey;
-                    border-bottom: 1px solid @white;
+                    padding: 1rem;
+                    border: 1px solid @grey;
+                    background: @grey;
+                    color: @white;
+                    .td-none;
+                    border-radius: 5px;
+                    font-size: 1.4rem;
+                    display: block;
+                }
+
+                &.active {
+                    a {
+                        background: @white;
+                        color: @grey;
+                        border-bottom: 1px solid @white;
+                    }
                 }
             }
         }
-    }
-    
-    > div {
-        border: 1px solid @grey;
-        margin: -1px 0 0;
-        position: relative;
-        background: @white;
-        z-index: 0;
-        
+
         > div {
-            padding: 25px;
+            border: 1px solid @grey;
+            margin: -1px 0 0;
+            position: relative;
+            background: @white;
+            z-index: 0;
+
+            > div {
+                padding: 25px;
+            }
         }
     }
 }
