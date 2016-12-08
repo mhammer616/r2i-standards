@@ -1,6 +1,12 @@
 /*---=== NAVS ===---*/
-@import url(dropdown.less);
-@import url(megamenu.less);
+.main-nav-base {
+    header {
+        > div {
+            @import url('dropdown.less');
+            @import url('megamenu.less');
+        }
+    }
+}
 
 .int-nav-base {
     .clearfix;
@@ -17,9 +23,10 @@
         @media @mediaLG {
             width: 25%;
         }
+        
+        @import url('interior.less');
     }
 }
-@import url(interior.less);
 .breadcrumb-base {
     .clearfix;
     height: 33.333vh;
@@ -35,5 +42,5 @@
         }
     }
     
+    @import url('breadcrumb.less');
 }
-@import url(breadcrumb.less);
