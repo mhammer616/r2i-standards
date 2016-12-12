@@ -1719,6 +1719,7 @@ main figure.tabs > figcaption > a.active {
 [class^="tabs"] > ul[role="tablist"] {
   position: relative;
   z-index: 10;
+  display: none;
 }
 [class^="tabs"] > ul[role="tablist"]:before,
 [class^="tabs"] > ul[role="tablist"]:after {
@@ -1749,18 +1750,66 @@ main figure.tabs > figcaption > a.active {
   color: #a6bbc3;
   border-bottom: 1px solid #ffffff;
 }
+@media  screen and (min-width: 768px) {
+  [class^="tabs"] > ul[role="tablist"] {
+    display: block;
+  }
+}
 [class^="tabs"] > div {
   border: 1px solid #a6bbc3;
   margin: -1px 0 0;
   position: relative;
   z-index: 0;
 }
-[class^="tabs"] > div > div {
-  padding: 25px;
+[class^="tabs"] > div > [role="tabpanel"] {
   display: none;
 }
-[class^="tabs"] > div > div.active {
+[class^="tabs"] > div > [role="tabpanel"].active {
   display: block;
+}
+@media  screen and (min-width: 768px) {
+  [class^="tabs"] > div > [role="tabpanel"] {
+    padding: 2.5rem;
+  }
+}
+@media  screen and (max-width: 767px) {
+  [class^="tabs"] > div > [role="tabpanel"] {
+    display: block;
+  }
+  [class^="tabs"] > div > [role="tabpanel"] + div {
+    margin: .5rem 0 0;
+  }
+  [class^="tabs"] > div > [role="tabpanel"] header h2 {
+    font-size: 1.4rem;
+    line-height: 1em;
+    padding: 1rem 1rem .5rem;
+    text-transform: uppercase;
+    background: #7c98ab;
+    color: #ffffff;
+    position: relative;
+    cursor: pointer;
+  }
+  [class^="tabs"] > div > [role="tabpanel"] header h2:after {
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    content: '+';
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  [class^="tabs"] > div > [role="tabpanel"] > article {
+    display: none;
+    padding: 1.5rem;
+  }
+  [class^="tabs"] > div > [role="tabpanel"].active > header h2:after {
+    content: '-';
+  }
+  [class^="tabs"] > div > [role="tabpanel"].active > article {
+    display: block;
+  }
 }
 /*---===<<< HORIZONTAL TABS >>>===---*/
 @media  screen and (min-width: 768px) {
